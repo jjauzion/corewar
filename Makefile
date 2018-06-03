@@ -6,7 +6,7 @@
 #    By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 11:25:23 by jjauzion          #+#    #+#              #
-#    Updated: 2018/06/03 15:40:09 by jjauzion         ###   ########.fr        #
+#    Updated: 2018/06/03 16:33:55 by smortier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,14 +38,14 @@ $(NAME1):
 	make -C vm
 
 $(NAME2): 
-	make -C asm
+	make -C assembleur
 
 clean:
 	@make -C vm clean
-#	@make -C asm clean
+	@make -C assembleur clean
 
 fclean: clean
 	@make -C vm fclean
-#	@make -C asm fclean
+	@make -C assembleur fclean
 
 re: fclean all
