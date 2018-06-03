@@ -6,13 +6,14 @@
 #    By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 11:25:23 by jjauzion          #+#    #+#              #
-#    Updated: 2018/06/03 16:32:24 by smortier         ###   ########.fr        #
+#    Updated: 2018/06/03 17:37:29 by smortier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: all, clean, fclean, re, LIB, asm
 
-SRC_NAME1 = main.c
+SRC_NAME1 = main.c \
+			lexer.c \
 
 SRC_NAME2 = 
 
