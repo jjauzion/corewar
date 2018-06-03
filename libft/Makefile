@@ -6,7 +6,7 @@
 #    By: jjauzion <jjauzion@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/17 14:43:00 by jjauzion          #+#    #+#              #
-#    Updated: 2018/06/03 15:26:11 by jjauzion         ###   ########.fr        #
+#    Updated: 2018/06/03 16:39:20 by smortier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -194,7 +194,7 @@ $(OBJ_PATH2)%.o: $(SRC_PATH2)%.c $(INC) Makefile
 	@$(CC) $(CFLAGS) -c $< $(CPPFLAGS) -o $@
 
 clean:
-	rm -f $(OBJ)
+	@rm -f $(OBJ)
 	@rmdir $(OBJ_PATH2) 2> /dev/null || true
 	@rmdir $(OBJ_PATH1) 2> /dev/null || true
 

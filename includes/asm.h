@@ -6,7 +6,7 @@
 /*   By: smortier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 13:06:00 by smortier          #+#    #+#             */
-/*   Updated: 2018/06/03 13:47:16 by smortier         ###   ########.fr       */
+/*   Updated: 2018/06/03 18:54:31 by smortier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,9 @@ typedef struct		s_label
 	struct s_label		*next;
 }					t_label;
 
-typedef union		u_test
-{
-	int			val;
-	char		*value;
-}					t_test;
-
 typedef struct		s_lexer
 {
+	char			*line;
 	char			*name;
 	int				instruction_id;
 	int				instruction_number;
@@ -41,6 +36,14 @@ typedef struct		s_lexer
 	int				value_arg[3]; // valeur de chaque arg (Dans un deuxieme temps)
 	struct s_lexer	*next;
 }					t_lexer;
+
+typedef struct		s_params
+{
+	char	**file;
+	t_lexer	*lexer;
+}					t_params;
+
+void	lexer(t_params *params);
 
 #endif
 
