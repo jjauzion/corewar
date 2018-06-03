@@ -6,7 +6,7 @@
 #    By: jjauzion <jjauzion@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/17 14:43:00 by jjauzion          #+#    #+#              #
-#    Updated: 2018/05/28 12:05:56 by jjauzion         ###   ########.fr        #
+#    Updated: 2018/06/03 15:26:11 by jjauzion         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -182,16 +182,16 @@ CPPFLAGS = $(addprefix -I,$(INC_PATH1)) \
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rc $@ $^
-	ranlib $(NAME)
+	@ar rc $@ $^
+	@ranlib $(NAME)
 
 $(OBJ_PATH1)%.o: $(SRC_PATH1)%.c $(INC) Makefile
 	@mkdir $(OBJ_PATH1) 2> /dev/null || true
-	$(CC) $(CFLAGS) -c $< $(CPPFLAGS) -o $@
+	@$(CC) $(CFLAGS) -c $< $(CPPFLAGS) -o $@
 
 $(OBJ_PATH2)%.o: $(SRC_PATH2)%.c $(INC) Makefile
 	@mkdir $(OBJ_PATH2) 2> /dev/null || true
-	$(CC) $(CFLAGS) -c $< $(CPPFLAGS) -o $@
+	@$(CC) $(CFLAGS) -c $< $(CPPFLAGS) -o $@
 
 clean:
 	rm -f $(OBJ)
@@ -199,7 +199,7 @@ clean:
 	@rmdir $(OBJ_PATH1) 2> /dev/null || true
 
 fclean: clean
-	rm -fv $(NAME)
+	@rm -fv $(NAME)
 
 re: fclean all
 
