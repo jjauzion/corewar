@@ -6,13 +6,15 @@
 #    By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 11:25:23 by jjauzion          #+#    #+#              #
-#    Updated: 2018/06/03 15:35:07 by jjauzion         ###   ########.fr        #
+#    Updated: 2018/06/03 17:42:45 by jjauzion         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: all, clean, fclean, re, LIB
 
-SRC_NAME1 = main.c
+SRC_NAME1 = main.c \
+			error.c \
+			read_champ.c
 
 SRC_NAME2 = 
 
