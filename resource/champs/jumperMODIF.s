@@ -4,7 +4,7 @@
 .comment "en fait C forker !"
 
 gobepc:	st r1,:buff
-	st r6,-4
+				st r6,-4
 	ld :buff,r1
 debut:	ld %0,r7
 	zjmp %:suite
@@ -30,21 +30,9 @@ livel:	live %66
 go:	ld %48,r5
 	sti r1,%:goboucle0,%1
 	sti r1,%:goboucle1,%1
-	sti r1,%:live0,%1
-	sti r1,%:live1,%1
-	sti r1,%:live2,%1
-	sti r1,%:live3,%1
-	sti r1,%:live4,%1
-live0:	live %66
-live1:	live %66
-live2:	live %66
-live3:	live %66
-live4:	live %66
-	zjmp %:live0
 	xor r3,r3,r3
 	sti r1,%:livex,%1
 livex:	live %66
-	fork %:live0
 	sti r1,%:boucle,%1
 	sti r1,%:boucle,%9
 	sti r1,%:boucle,%17
