@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:02:07 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/03 15:01:29 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/03 16:36:08 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@ typedef	struct		s_op
 	int			m_carry;
 	int			plop;
 }					t_op;
+
+typedef struct		s_process
+{
+	int			reg[REG_NUMBER][REG_SIZE];
+}					t_process;
 
 # include "op.c"
 

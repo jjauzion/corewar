@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:30:29 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/03 15:20:10 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/03 16:36:16 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,5 @@
 
 int		main()
 {
-	int		i;
-
-	i = 5;
-	printf("op_tab[i].name = %s\n", op_tab[i].name);
-	printf("op_tab[i].arg_type[0] = %i\n", op_tab[i].arg_type[0]);
-	printf("op_tab[i].arg_type[1] = %i\n", op_tab[i].arg_type[1]);
-	printf("op_tab[i].arg_type[2] = %i\n", op_tab[i].arg_type[2]);
+	char	*str;
 }
