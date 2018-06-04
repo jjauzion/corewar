@@ -48,7 +48,7 @@ void		lexer(t_params *params)
 	int		index;
 
 	index = 0;
-	while (params->file[index][0] == '.')
+	while (params->file[index][0] == COMMENT_CHAR)
 		index += 1; //on zap les comments
 	index--;
 	while (params->file[++index])

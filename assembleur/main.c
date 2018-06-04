@@ -22,7 +22,7 @@ int		main (int ac, char **av)
 	index = 0;
 	while (get_next_line(fd, &line) == 1)
 	{
-		if (line[0] && line[0] != '#')
+		if (line[0] && line[0] != COMMENT_CHAR)
 			index += 1;
 		ft_memdel((void **)&line);
 	}
@@ -34,12 +34,13 @@ int		main (int ac, char **av)
 	index2 = -1;
 	while (get_next_line(fd, &line) == 1)
 	{
-		if (line[0] && line[0] != '#')
+		if (line[0] && line[0] != '#' && !str_is_empty(line))
 			params.file[++index2] = line;
 		else
 			ft_memdel((void **)&line);
 	}
 	ft_memdel((void **)&line);
 	close(fd);
-	lexer(&params);
+	//lexer(&params);
+	get_label(&params);
 }
