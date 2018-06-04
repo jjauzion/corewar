@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/28 12:02:58 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/05/28 12:04:14 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/04 10:16:52 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,5 @@ void		ft_print_mem(void *adr, size_t length)
 		ft_printf("%02X", (unsigned)byte_array[i]);
 		i++;
 	}
+	ft_printf("\n");
 }
