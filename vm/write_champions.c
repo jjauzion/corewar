@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   write_champion.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/03 17:35:05 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/04 16:08:48 by jjauzion         ###   ########.fr       */
+/*   Created: 2018/06/04 17:05:31 by jjauzion          #+#    #+#             */
+/*   Updated: 2018/06/04 17:23:28 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vm.h"
 
-void	*error_ptr(void *ptr, char *msg)
+int		write_champions(t_arena *arena, t_champion **champions)
 {
-	if (ptr)
-		free(ptr);
-	ft_printf("%s\n", msg);
-	return (NULL);
-}
+	int i;
 
-int		error_int(char *msg)
-{
-	perror(msg);
-	return (ERROR);
+	i = 0;
+	while (i < arena->nb_champion)
+	{
+		ft_memcpy(&arena->mem[i * MEM_SIZE / arena->nb_champion], champions[i]->code,
+				champions[i]->header.prog_size);
+		i++;
+	}
+	return (SUCCESS);
 }

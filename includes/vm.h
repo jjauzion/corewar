@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:02:07 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/03 19:05:55 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/04 17:22:38 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,15 @@ typedef struct			s_arena
 	uintmax_t		cycle;
 	int				cycle2die;
 	t_champion		*players;
+	int				nb_champion;
 }						t_arena;
 
-void					*error_ptr(char *msg);
+void					*error_ptr(void *ptr, char *msg);
 int						error_int(char *msg);
-t_champion				*read_champ(int argc, char **argv, int nb_champ);
+t_champion				*read_champ(char *file);
+t_champion				**check_input(int argc, char **argv, int *option, int *nb_champ);
+int						option(int *index, char **argv, char *valid_option, int *option);
+void					print_option(int option);
+int						write_champions(t_arena *arena, t_champion **champions);
 
 #endif
