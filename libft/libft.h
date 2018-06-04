@@ -133,5 +133,7 @@ char				*ft_str_del_char(char **str, char c);
 int					ft_count_cinstr(const char *str, char c);
 int					ft_max(int a, int b);
 int					ft_min(int a, int b);
+int					ft_nbcwords(char const *s, char c);
+int					ft_strclen(char const *s, char c);
 
 #endif

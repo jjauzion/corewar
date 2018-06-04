@@ -106,7 +106,9 @@ SRC_NAME1 = ft_memset.c \
 			ft_tab_min.c \
 			ft_tab_max.c \
 			get_next_line.c \
-			ft_print_mem.c
+			ft_print_mem.c \
+			ft_nbcwords.c \
+			ft_strclen.c \
 
 SRC_NAME2 =	ft_printf.c \
 			ft_parse.c \

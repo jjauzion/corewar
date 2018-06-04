@@ -12,8 +12,10 @@
 
 .PHONY: all, clean, fclean, re, LIB, asm
 
-SRC_NAME1 = main.c \
-			lexer.c \
+SRC_NAME1 =	main.c \
+		lexer.c \
+		get_label.c \
+		str_is_empty.c \
 
 SRC_NAME2 = 
 
