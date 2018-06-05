@@ -6,7 +6,7 @@
 /*   By: smortier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 13:06:00 by smortier          #+#    #+#             */
-/*   Updated: 2018/06/03 18:54:31 by smortier         ###   ########.fr       */
+/*   Updated: 2018/06/05 09:17:49 by smortier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,34 +16,47 @@
 
 #include "libft.h"
 
+#include "op.h"
+
 typedef struct		s_label
 {
-	int					Adress;
+	int					pos;
 	int					value;
 	char				*name;
 	struct s_label		*next;
 }					t_label;
 
+typedef	struct		s_instr
+{
+	int					id;
+	int					nb_arg;
+	char				**arg;//les arg en valeur brut
+	int					arg_type[3];//type de l'arg = 1:label(2oct), 2:direct(4), 3:indirect(2), 4:registre(1)
+	int					arg_value[3];//valeur de l'arg en fonction de son type.
+	int					ocp; //trouve la velur de l'ocp si yen a un, en fct des args
+	struct s_instr		*next;
+}					t_instr;
+
 typedef struct		s_lexer
 {
 	char			*line;
 	char			*name;
-	int				instruction_id;
-	int				instruction_number;
-	int				instruction_octal;
-	int				arg_type[3]; // 1: reg, 2:label, 3:direct, 4:indirect
-	char			**arg; // "valeur brut"
-	int				value_arg[3]; // valeur de chaque arg (Dans un deuxieme temps)
+	t_inst			*instr;
 	struct s_lexer	*next;
 }					t_lexer;
 
 typedef struct		s_params
 {
-	char	**file;
-	t_lexer	*lexer;
+	char		**file;
+	t_lexer		*lexer;
+	t_label		*label;
 }					t_params;
 
 void	lexer(t_params *params);
+
+void	get_label(t_params *params);
+
+int		str_is_empty(char *str);
 
 #endif
 

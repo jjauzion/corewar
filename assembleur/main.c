@@ -41,6 +41,8 @@ int		main (int ac, char **av)
 	}
 	ft_memdel((void **)&line);
 	close(fd);
-	//lexer(&params);
 	get_label(&params);
+	lexer(&params);
+	//determiner l'instruction des label + enlever les labels
+	//fonction qui remplie s_instr (en passant sur s_lexer)
 }
