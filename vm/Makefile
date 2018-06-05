@@ -6,7 +6,7 @@
 #    By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 11:25:23 by jjauzion          #+#    #+#              #
-#    Updated: 2018/06/04 17:22:04 by jjauzion         ###   ########.fr        #
+#    Updated: 2018/06/05 18:14:13 by jjauzion         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,9 @@ SRC_NAME1 = main.c \
 			read_champ.c \
 			option.c \
 			check_input.c \
-			write_champions.c
+			init_arena.c \
+			create_process.c \
+			run_arena.c
 
 SRC_NAME2 = 
 

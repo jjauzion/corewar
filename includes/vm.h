@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:02:07 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/04 17:22:38 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/05 18:19:13 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,24 +38,30 @@ typedef struct			s_process
 	int					exe_cycle;
 	t_op				*op;
 	struct s_process	*next;
+	uintmax_t			last_live_cycle;
 }						t_process;
 
 typedef struct			s_champion
 {
 	int			id;
 	int			nb_live;
-	uintmax_t	last_live_cycle;	
 	header_t	header;
 	char		*code;
+	uintmax_t	last_live_cycle;
 }						t_champion;
 
 typedef struct			s_arena
 {
 	char			*mem;
-	uintmax_t		cycle;
+	int				cycle;
 	int				cycle2die;
-	t_champion		*players;
+	int				last_check;
+	int				nb_check;
+	int				nb_process;
+	t_champion		**champions;
 	int				nb_champion;
+	t_process		*process;
+	int				nb_live;
 }						t_arena;
 
 void					*error_ptr(void *ptr, char *msg);
@@ -64,6 +70,8 @@ t_champion				*read_champ(char *file);
 t_champion				**check_input(int argc, char **argv, int *option, int *nb_champ);
 int						option(int *index, char **argv, char *valid_option, int *option);
 void					print_option(int option);
-int						write_champions(t_arena *arena, t_champion **champions);
+int						init_arena(t_arena *arena, t_champion **champions);
+t_process				*create_process(int address, int id, t_process *origin_process);
+int						run_arena(t_arena *arena);
 
 #endif

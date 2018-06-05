@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:30:29 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/05 11:44:57 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/05 18:18:35 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,11 @@ int		main(int argc, char **argv)
 		return (ERROR);
 	if (!(arena.mem = (char*)ft_memalloc(MEM_SIZE)))
 		return (error_int("main"));
-	ft_printf("nom champ 1 = %s\n", champions[0]->header.prog_name);
-	//ft_printf("nom champ 2 = %s\n", champions[1]->header.prog_name);
-	write_champions(&arena, champions);
+	init_arena(&arena, champions);
 	ft_print_mem(arena.mem, MEM_SIZE);
-//	run_arena(&arena);
+ft_printf("nom champ 1 = %s\n", arena.champions[0]->header.prog_name);
+ft_printf("id champ 1 = %d\n", arena.champions[0]->id);
+ft_print_mem(arena.process->reg[0], 4);
+	run_arena(&arena);
 	return (SUCCESS);
 }

@@ -1,7 +1,7 @@
 .name "tracer"
 .comment "tu me vois, tu me vois plus"
 
-sti:	sti		r1,%:live,%1
+sti:	sti		r2,%:live,%1
 		ld		%0,r9				#cpt
 		ld		%4,r8				#increment
 		ld		%88, r7				#limite
