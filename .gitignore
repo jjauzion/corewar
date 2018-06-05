@@ -1,9 +1,11 @@
 # My Files #
 ############
 push_swap
-assembleur/asm
-vm/corewar
+asm
+corewar
 *.swp
+*.dSYM
+*.a
 
 # Compiled source #
 ###################

@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/05 15:12:10 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/05 18:24:36 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/05 18:38:21 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int					run_arena(t_arena *arena)
 	arena->cycle = 0;
 	arena->cycle2die = CYCLE_TO_DIE;
 	arena->last_check = 0;
-	arena->cycle = 0;
 	while (arena->process)
 	{
 printf("cycle = %d ; nb_process = %d\n", arena->last_check + arena->cycle, arena->nb_process);
