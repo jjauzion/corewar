@@ -6,7 +6,7 @@
 #    By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 11:25:23 by jjauzion          #+#    #+#              #
-#    Updated: 2018/06/03 17:37:29 by smortier         ###   ########.fr        #
+#    Updated: 2018/06/05 12:42:50 by smortier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,8 @@ SRC_NAME1 =	main.c \
 		lexer.c \
 		get_label.c \
 		str_is_empty.c \
+		get_instr.c \
+
 
 SRC_NAME2 = 
 
