@@ -3,6 +3,7 @@
 push_swap
 assembleur/asm
 vm/corewar
+*.swp
 
 # Compiled source #
 ###################
