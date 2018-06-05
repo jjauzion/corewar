@@ -6,7 +6,7 @@
 /*   By: smortier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 13:06:00 by smortier          #+#    #+#             */
-/*   Updated: 2018/06/05 09:17:49 by smortier         ###   ########.fr       */
+/*   Updated: 2018/06/05 14:14:23 by smortier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct		s_label
 typedef	struct		s_instr
 {
 	int					id;
+	char				*name;
 	int					nb_arg;
 	char				**arg;//les arg en valeur brut
 	int					arg_type[3];//type de l'arg = 1:label(2oct), 2:direct(4), 3:indirect(2), 4:registre(1)
@@ -40,8 +41,6 @@ typedef	struct		s_instr
 typedef struct		s_lexer
 {
 	char			*line;
-	char			*name;
-	t_inst			*instr;
 	struct s_lexer	*next;
 }					t_lexer;
 
@@ -57,6 +56,8 @@ void	lexer(t_params *params);
 void	get_label(t_params *params);
 
 int		str_is_empty(char *str);
+
+void	get_instr(t_params *params);
 
 #endif
 

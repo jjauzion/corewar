@@ -6,7 +6,7 @@
 /*   By: smortier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 16:41:31 by smortier          #+#    #+#             */
-/*   Updated: 2018/06/03 18:54:28 by smortier         ###   ########.fr       */
+/*   Updated: 2018/06/05 14:14:24 by smortier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ t_lexer		*create_lexer(t_params *params, char *line)
 {
 	t_lexer		*tmp;
 	t_lexer		*save;
+
 	if (params->lexer == NULL)
 	{
 		tmp = new_lexer(line);
@@ -43,6 +44,20 @@ t_lexer		*create_lexer(t_params *params, char *line)
 	}
 }
 
+char		*parse_line(char *line)
+{
+	char	*parsed;
+	char	*tmp;
+
+	parsed = NULL;
+	if (ft_strchr(line, LABEL_CHAR))
+	{
+		tmp = ft_strchr(line, LABEL_CHAR);
+		printf("\e[33m%s\e[0m\n", tmp);
+	}
+	return (line);
+}
+
 void		lexer(t_params *params)
 {
 	int		index;
@@ -52,11 +67,5 @@ void		lexer(t_params *params)
 		index += 1; //on zap les comments
 	index--;
 	while (params->file[++index])
-		params->lexer = create_lexer(params, params->file[index]);
-	//ft_printf("\e[31m%s\e[0m\n", params->file[index]);
-	while (params->lexer)
-	{
-		ft_printf("\e[32m Line = [%s]\e[0m\n", params->lexer->line);
-		params->lexer = params->lexer->next;
-	}
+		params->lexer = create_lexer(params, parse_line(params->file[index]));
 }
