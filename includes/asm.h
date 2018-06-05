@@ -6,7 +6,7 @@
 /*   By: smortier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 13:06:00 by smortier          #+#    #+#             */
-/*   Updated: 2018/06/05 09:17:49 by smortier         ###   ########.fr       */
+/*   Updated: 2018/06/05 11:48:08 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ typedef struct		s_lexer
 {
 	char			*line;
 	char			*name;
-	t_inst			*instr;
+	t_instr			*instr;
 	struct s_lexer	*next;
 }					t_lexer;
 
