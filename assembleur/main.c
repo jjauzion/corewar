@@ -41,9 +41,8 @@ int		main (int ac, char **av)
 	}
 	ft_memdel((void **)&line);
 	close(fd);
-	get_label(&params);
-	lexer(&params); //au final ce tru ne sert a rien go le parser pour qui est plus que les instructions
-	get_instr(&params);
-	//determiner l'instruction des label + enlever les labels
-	//fonction qui remplie s_instr (en passant sur s_lexer)
+	//From here we got the entire file (line by line) in params.file;
+	get_label(&params); //Function to initate the stuct label (name and pos)
+	lexer(&params); //Function to clear file of labels, to reach an easier parsing
+	get_instr(&params); //Function to get every instruction, their arguments, name etc
 }
