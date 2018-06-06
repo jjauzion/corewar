@@ -48,12 +48,22 @@ char		*parse_line(char *line)
 {
 	char	*parsed;
 	char	*tmp;
+	int	index;
 
 	parsed = NULL;
 	if (ft_strchr(line, LABEL_CHAR))
 	{
+		index = -1;
+		while (line[++index] && line[index] != LABEL_CHAR)
+			;
 		tmp = ft_strchr(line, LABEL_CHAR);
-		printf("\e[33m%s\e[0m\n", tmp);
+		if (!str_is_empty(tmp + 1) && line[index - 1] != DIRECT_CHAR)
+		{
+			printf("\e[31m%s\e[0m\n", tmp);
+			return (tmp + 1);
+		}
+		else if (str_is_empty(tmp + 1))
+			return (" label ");
 	}
 	return (line);
 }
@@ -64,7 +74,7 @@ void		lexer(t_params *params)
 
 	index = 0;
 	while (params->file[index][0] == COMMENT_CHAR)
-		index += 1; //on zap les comments
+		index += 1;
 	index--;
 	while (params->file[++index])
 		params->lexer = create_lexer(params, parse_line(params->file[index]));
