@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   libcorewar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/03 17:35:05 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/06 15:27:01 by jjauzion         ###   ########.fr       */
+/*   Created: 2018/06/06 14:16:45 by jjauzion          #+#    #+#             */
+/*   Updated: 2018/06/06 14:27:05 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vm.h"
 
-void	*error_ptr(void *ptr, char *msg)
+int		mem2int(char *mem)
 {
-	if (ptr)
-		free(ptr);
-	ft_printf("%s", msg);
-	return (NULL);
-}
+	int		i;
+	int		size_int;
+	int		value;
+	void	*ptr;
 
-int		error_int(char *msg)
-{
-	perror(msg);
-	return (ERROR);
+	size_int = sizeof(int);
+	ptr = (void*)&value;
+	i = -1;
+	while (++i < size_int)
+		ft_memset(&ptr[size_int - 1 - i], (int)mem[i], 1);
+	return (value);
 }

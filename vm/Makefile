@@ -6,7 +6,7 @@
 #    By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 11:25:23 by jjauzion          #+#    #+#              #
-#    Updated: 2018/06/05 18:14:13 by jjauzion         ###   ########.fr        #
+#    Updated: 2018/06/06 17:59:11 by jjauzion         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,10 @@ SRC_NAME1 = main.c \
 			check_input.c \
 			init_arena.c \
 			create_process.c \
-			run_arena.c
+			run_arena.c \
+			libcorewar.c \
+			read_op.c \
+			exec_process.c
 
 SRC_NAME2 = 
 

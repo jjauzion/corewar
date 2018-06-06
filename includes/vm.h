@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:02:07 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/05 18:19:13 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/06 17:58:52 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "op.h"
 # include "ft_printf.h"
-
 # define SUCCESS 0
 
 typedef	struct			s_op
@@ -24,9 +23,9 @@ typedef	struct			s_op
 	int			nb_arg;
 	int			arg_type[3];
 	int			op_code;
-	int			nb_cylce;
+	int			nb_cycle;
 	char		*def;
-	int			m_carry;
+	int			ocp;
 	int			plop;
 }						t_op;
 
@@ -37,8 +36,9 @@ typedef struct			s_process
 	char				carry;
 	int					exe_cycle;
 	t_op				*op;
-	struct s_process	*next;
+	int					op_size;
 	uintmax_t			last_live_cycle;
+	struct s_process	*next;
 }						t_process;
 
 typedef struct			s_champion
@@ -73,5 +73,9 @@ void					print_option(int option);
 int						init_arena(t_arena *arena, t_champion **champions);
 t_process				*create_process(int address, int id, t_process *origin_process);
 int						run_arena(t_arena *arena);
+int						mem2int(char *mem);
+int						check_ocp(t_op *op, int op_index, t_process *process);
+t_op					*read_op(t_arena *arena, t_process *process);
+int						exec_process(t_process *process, t_arena *arena);
 
 #endif

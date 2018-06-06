@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/03 17:35:05 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/06 15:27:01 by jjauzion         ###   ########.fr       */
+/*   Created: 2018/06/06 15:41:56 by jjauzion          #+#    #+#             */
+/*   Updated: 2018/06/06 15:54:43 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vm.h"
+#include "op.c"
 
-void	*error_ptr(void *ptr, char *msg)
+int main()
 {
-	if (ptr)
-		free(ptr);
-	ft_printf("%s", msg);
-	return (NULL);
-}
+	t_op op;
 
-int		error_int(char *msg)
-{
-	perror(msg);
-	return (ERROR);
+	op.ocp = 40;
+
+	check_ocp(&op, 0, NULL);
 }
