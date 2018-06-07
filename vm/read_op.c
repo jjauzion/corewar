@@ -6,14 +6,14 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/06 13:43:43 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/06 18:18:58 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/07 10:18:26 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vm.h"
 #include "op.c"
 
-int			get_op_size(int arg_type[3], int nb_arg)
+static int			get_op_size(int arg_type[3], int nb_arg)
 {
 	int	i;
 	int	op_size;
@@ -37,10 +37,12 @@ int			get_op_size(int arg_type[3], int nb_arg)
 }
 	
 
-int			check_ocp(t_op *op, int op_index, t_process *process)
+static int		read_ocp(t_op *op, int op_index, t_process *process)
 {
 	int		i;
+	int		ret;
 
+	ret = SUCCESS;
 	process->op_size = 1;
 	printf("op-ocp = %c\n", op->ocp);
 	op->arg_type[0] = op->ocp >> 6;
@@ -57,18 +59,16 @@ int			check_ocp(t_op *op, int op_index, t_process *process)
 			op->arg_type[i] = T_IND;
 		/*printf("arg_type[%d] = %d\n", i, op->arg_type[i]);
 		printf("op_tab = %d\n", op_tab[op_index].arg_type[i]);
-		printf("op_size = %d\n", op_size);
-		if ((op->arg_type[i] | op_tab[op_index].arg_type[i]) == op_tab[op_index].arg_type[i])
-			printf("OK\n");
-		else
-			printf("NOK\n");*/
+		printf("op_size = %d\n", op_size);*/
+		if ((op->arg_type[i] | op_tab[op_index].arg_type[i]) != op_tab[op_index].arg_type[i])
+			ret = ERROR;
 		i++;
 	}
 	process->op_size += get_op_size(op->arg_type, op_tab[op_index].nb_arg);
-	return (1);
+	return (ret);
 }
 
-t_op		*read_op(t_arena *arena, t_process *process)
+t_op			*read_op(t_arena *arena, t_process *process)
 {
 	int		i;
 	t_op	*op;
@@ -83,7 +83,7 @@ t_op		*read_op(t_arena *arena, t_process *process)
 	if (op_tab[i].name == NULL)
 		return (error_ptr(op, ""));
 	op->ocp = arena->mem[process->pc + 1];
-	if (op_tab[i].ocp == 1 && !check_ocp(op, i, process))
+	if (op_tab[i].ocp == 1 && (read_ocp(op, i, process) == ERROR))
 		return (error_ptr(op, ""));
 	else if (op_tab[i].ocp == 0)
 		process->op_size = get_op_size(op_tab[i].arg_type, op_tab[i].nb_arg);
