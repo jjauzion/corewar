@@ -3,19 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   asm.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smortier <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: smortier <smortier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 13:06:00 by smortier          #+#    #+#             */
-/*   Updated: 2018/06/05 15:03:17 by smortier         ###   ########.fr       */
+/*   Updated: 2018/06/07 17:12:14 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILLER_H
-
+#ifndef ASM_H
 # define ASM_H
 
 #include "libft.h"
-
 #include "op.h"
 
 typedef struct		s_label
@@ -49,6 +47,7 @@ typedef struct		s_params
 	char		**file;
 	t_lexer		*lexer;
 	t_label		*label;
+	t_instr		*instr;
 }					t_params;
 
 void	lexer(t_params *params);
@@ -60,4 +59,3 @@ int		str_is_empty(char *str);
 void	get_instr(t_params *params);
 
 #endif
-
