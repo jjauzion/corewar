@@ -20,7 +20,7 @@
 
 typedef struct		s_label
 {
-	int					pos;
+	int					pos; // means the line in the file
 	int					value;
 	char				*name;
 	struct s_label		*next;
@@ -28,23 +28,23 @@ typedef struct		s_label
 
 typedef	struct		s_instr
 {
-	int					id;
+	int					id; // supposed to his place in the memory
 	char				*name;
-	int					nb_arg;
-	char				**arg;//les arg en valeur brut
-	int					arg_type[3];//type de l'arg = 1:label(2oct), 2:direct(4), 3:indirect(2), 4:registre(1)
-	int					arg_value[3];//valeur de l'arg en fonction de son type.
-	int					ocp; //trouve la velur de l'ocp si yen a un, en fct des args
+	int					nb_arg; // number of arg
+	char				**arg; //just the args withouts parsings
+	int					arg_type[3]; //type of the arg like : 1 for label, 2 for direct etc
+	int					arg_value[3]; //final parsing to get the value of each arg
+	int					ocp; //the ocp finded thx to arg_type
 	struct s_instr		*next;
 }					t_instr;
 
-typedef struct		s_lexer
+typedef struct		s_lexer //actually just the file cleared from labels
 {
 	char			*line;
 	struct s_lexer	*next;
 }					t_lexer;
 
-typedef struct		s_params
+typedef struct		s_params // The main struct, the one we put in each functions of main
 {
 	char		**file;
 	t_lexer		*lexer;
