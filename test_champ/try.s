@@ -1,4 +1,7 @@
 .name "blip"
 .comment "blop"
 
-aff r1
+ici:
+ld %10,r5
+ld 1,r5
+ld %:ici,r5
