@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 17:25:23 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/06 15:27:25 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/07 16:54:17 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_champion		*read_champ(char *file)
 	ret = read(fd, buff, CHAMP_MAX_SIZE + PROG_NAME_LENGTH + COMMENT_LENGTH);
 	close(fd);
 //	ft_print_mem((void*)buff, ret);
-	champion->header.magic = mem2int(buff);
+	champion->header.magic = mem2int(buff, 4);
 /*	ptr = &champion->header.magic;
 	j = -1;
 	while (++j < nb_byte)

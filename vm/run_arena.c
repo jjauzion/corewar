@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/05 15:12:10 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/06 18:19:19 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/07 18:51:31 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,13 +67,17 @@ printf("cycle = %d ; nb_process = %d\n", arena->last_check + arena->cycle, arena
 		while (current_process)
 		{
 printf("process[%d].pc = %d\n", (int)current_process->reg[0][3], current_process->pc);
+getchar();
 			if (current_process->op == NULL)
 			{
 				if (!(current_process->op = read_op(arena, current_process)))
 					current_process->pc++;
 			}
 			else if (arena->cycle + arena->last_check == current_process->exe_cycle)
-				exec_process(current_process, arena);
+				exec_op(current_process, arena);
+printf(">>>>>>>>>>>>>>\n");
+ft_print_mem((void*)current_process->reg[4], 4);
+printf("<<<<<<<<<<<<<<\n");
 			current_process = current_process->next;
 		}
 		arena->cycle++;

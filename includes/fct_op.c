@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exec_process.c                                     :+:      :+:    :+:   */
+/*   fct_op.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/06 13:29:32 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/06 18:06:46 by jjauzion         ###   ########.fr       */
+/*   Created: 2018/06/07 16:16:31 by jjauzion          #+#    #+#             */
+/*   Updated: 2018/06/07 17:51:53 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vm.h"
 
-int		exec_process(t_process *process, t_arena *arena)
+t_op_fct	g_op_fct_tab[] =
 {
-	process->pc += process->op_size;
-	free(process->op);
-	process->op_size = 0;
-	process->op = read_op(arena, process);
-	printf("process->op : %p\n", process->op);
-	return (0);
-}
+	//{1, live},
+	{2, ld},
+	/*{3, st},
+	{4, add},
+	{5, sub},
+	{6, and},
+	{7, or},
+	{8, xor},
+	{9, zjump},
+	{10, ldi},
+	{11, sti},
+	{12, fork},
+	{13, lld},
+	{14, lldi},
+	{15, lfork},
+	{16, aff},*/
+	{0, NULL}
+};

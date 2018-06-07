@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:02:07 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/07 10:18:37 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/07 18:55:00 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@
 
 typedef	struct			s_op
 {
-	char		*name;
-	int			nb_arg;
-	int			arg_type[3];
-	int			op_code;
-	int			nb_cycle;
-	char		*def;
-	int			ocp;
-	int			plop;
+	char			*name;
+	int				nb_arg;
+	int				arg_type[3];
+	int				op_code;
+	int				nb_cycle;
+	char			*def;
+	unsigned char	ocp;
+	int				dir_size;
 }						t_op;
 
 typedef struct			s_process
@@ -37,6 +37,7 @@ typedef struct			s_process
 	int					exe_cycle;
 	t_op				*op;
 	int					op_size;
+	int					exe_op;
 	uintmax_t			last_live_cycle;
 	struct s_process	*next;
 }						t_process;
@@ -64,6 +65,12 @@ typedef struct			s_arena
 	int				nb_live;
 }						t_arena;
 
+typedef struct			s_op_fct
+{
+	int		op_code;
+	int		(*fct)(t_process *process, t_arena *arena);
+}						t_op_fct;
+
 void					*error_ptr(void *ptr, char *msg);
 int						error_int(char *msg);
 t_champion				*read_champ(char *file);
@@ -73,8 +80,11 @@ void					print_option(int option);
 int						init_arena(t_arena *arena, t_champion **champions);
 t_process				*create_process(int address, int id, t_process *origin_process);
 int						run_arena(t_arena *arena);
-int						mem2int(char *mem);
+int						mem2int(char *mem, int size);
 t_op					*read_op(t_arena *arena, t_process *process);
-int						exec_process(t_process *process, t_arena *arena);
+int						exec_op(t_process *process, t_arena *arena);
+int						get_address(int address);
+
+int						ld(t_process *process, t_arena *arena);
 
 #endif
