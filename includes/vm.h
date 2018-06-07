@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:02:07 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/06 17:58:52 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/07 10:18:37 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ int						init_arena(t_arena *arena, t_champion **champions);
 t_process				*create_process(int address, int id, t_process *origin_process);
 int						run_arena(t_arena *arena);
 int						mem2int(char *mem);
-int						check_ocp(t_op *op, int op_index, t_process *process);
 t_op					*read_op(t_arena *arena, t_process *process);
 int						exec_process(t_process *process, t_arena *arena);
 
