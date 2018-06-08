@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/06 13:43:43 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/08 18:44:21 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/08 19:48:58 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ t_op			*read_op(t_arena *arena, t_process *process)
 	if (op_tab[i].name == NULL)
 		return (error_ptr(op, ""));
 	op->ocp = arena->mem[get_address(process->pc + 1)];
+	op->name = ft_strdup(op_tab[i].name);
 	op->dir_size = (op_tab[i].dir_size == 1) ? DIR_SIZE - 2 : DIR_SIZE;
 	if (op_tab[i].ocp == 1 && (read_ocp(op, i, process) == ERROR))
 		process->exe_op = 0;

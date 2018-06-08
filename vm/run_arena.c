@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/05 15:12:10 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/08 19:24:12 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/08 19:56:54 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ int					run_arena(t_arena *arena)
 	arena->last_check = 0;
 	while (arena->process)
 	{
-SPAM((">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n"));
-SPAM(("cycle = %d ; nb_process = %d ; ", arena->last_check + arena->cycle, arena->nb_process));
-SPAM(("cycle to die = %d ; last check = %d\n", arena->cycle2die, arena->last_check));
+ft_printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
+ft_printf("cycle = %d ; nb_process = %d ; ", arena->last_check + arena->cycle, arena->nb_process);
+ft_printf("cycle to die = %d ; last check = %d\n", arena->cycle2die, arena->last_check);
 		if (arena->cycle == CYCLE_TO_DIE)
 		{
 			arena->last_check += arena->cycle;
@@ -49,7 +49,7 @@ SPAM(("cycle to die = %d ; last check = %d\n", arena->cycle2die, arena->last_che
 			{
 				if (current_process->last_live_cycle == 0)
 				{
-SPAM(("process %d has been killed\n", current_process->pid));
+ft_printf("process %d has been killed\n", current_process->pid);
 					current_process = kill_process(arena, last_process, current_process);
 					arena->nb_process--;
 				}
@@ -70,21 +70,31 @@ SPAM(("process %d has been killed\n", current_process->pid));
 		while (current_process)
 		{
 ft_printf("--------------\nprocess %d:\n", current_process->pid);
-ft_printf("reg1 = %d ; pc = %d\n", reg2int(current_process, 1), current_process->pc);
+ft_printf("reg[0] = %d ; pc = %d\n", reg2int(current_process, 1), current_process->pc);
 			if (current_process->op == NULL)
 			{
+ft_printf("op = NULL\n");
+ft_print_mem((void*)&arena->mem[current_process->pc], 1);
 				if (!(current_process->op = read_op(arena, current_process)))
 					current_process->pc++;
 			}
 			else if (arena->cycle + arena->last_check == current_process->exe_cycle)
+			{
+ft_printf("op = %s executed\n", current_process->op->name);
+ft_print_mem((void*)&arena->mem[current_process->pc], current_process->op_size);
 				exec_op(current_process, arena);
-SPAM2(((void*)current_process->reg[2], 4));
+			}
+			else
+			{
+ft_printf("op = %s ; exe cycle = %d\n", current_process->op->name, current_process->exe_cycle);
+ft_print_mem((void*)&arena->mem[current_process->pc], current_process->op_size);
+			}
 			current_process = current_process->next;
 		}
 		arena->cycle++;
-SPAM(("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n"));
+ft_printf("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n");
 SPAM3(());
 	}
-SPAM(("FINAL cycle = %d ; nb_process = %d\n", arena->last_check + arena->cycle, arena->nb_process));
+ft_printf("FINAL cycle = %d ; nb_process = %d\n", arena->last_check + arena->cycle, arena->nb_process);
 	return (SUCCESS);
 }
