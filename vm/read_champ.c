@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 17:25:23 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/07 16:54:17 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/08 11:39:06 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,21 @@ t_champion		*read_champ(char *file)
 {
 	int			j;
 	int			fd;
-	char		buff[CHAMP_MAX_SIZE + PROG_NAME_LENGTH + COMMENT_LENGTH];
+	t_uchar		buff[CHAMP_MAX_SIZE + PROG_NAME_LENGTH + COMMENT_LENGTH];
 	t_champion	*champion;
 	void		*ptr;
 	int			nb_byte;
 	int			ret;
 
-	nb_byte = sizeof(unsigned int);
+	nb_byte = (int)S_UINT;
 	if (!(champion = (t_champion*)malloc(sizeof(t_champion))))
 		return (error_ptr(NULL, "malloc error\n"));
 	if ((fd = open(file, O_RDONLY)) == -1)
 		return (error_ptr(champion, "File not found\n"));
-	ret = read(fd, buff, CHAMP_MAX_SIZE + PROG_NAME_LENGTH + COMMENT_LENGTH);
+	ret = read(fd, (void*)buff, CHAMP_MAX_SIZE + PROG_NAME_LENGTH + COMMENT_LENGTH);
 	close(fd);
 //	ft_print_mem((void*)buff, ret);
-	champion->header.magic = mem2int(buff, 4);
+	champion->header.magic = mem2int(buff, 0, S_UINT);
 /*	ptr = &champion->header.magic;
 	j = -1;
 	while (++j < nb_byte)
@@ -62,7 +62,7 @@ t_champion		*read_champ(char *file)
 	}
 	champion->header.comment[j] = '\0';
 //	ft_printf("%s\n", champion->header.comment);
-	if (!(champion->code = ft_memalloc(champion->header.prog_size)))
+	if (!(champion->code = (t_uchar*)ft_memalloc(champion->header.prog_size)))
 		return (error_ptr(champion, "malloc error\n"));
 	ft_memcpy(champion->code, &buff[nb_byte * 2 + PROG_NAME_LENGTH + 1 + COMMENT_LENGTH + 1 + 6],
 			champion->header.prog_size);

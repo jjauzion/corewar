@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:30:29 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/06 17:35:46 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/08 09:34:08 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int		main(int argc, char **argv)
 		return (ERROR);
 	if ((champions = check_input(argc, argv, &option, &arena->nb_champion)) == NULL)
 		return (ERROR);
-	if (!(arena->mem = (char*)ft_memalloc(MEM_SIZE)))
+	if (!(arena->mem = (t_uchar*)ft_memalloc(MEM_SIZE)))
 		return (error_int("main"));
 	init_arena(arena, champions);
 	ft_print_mem(arena->mem, MEM_SIZE);

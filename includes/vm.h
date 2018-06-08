@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:02:07 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/07 18:55:00 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/08 13:01:44 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 # include "op.h"
 # include "ft_printf.h"
 # define SUCCESS 0
+# define S_UINT sizeof(unsigned int)
+# define S_SHORT sizeof(short)
+
+typedef unsigned char	t_uchar;
 
 typedef	struct			s_op
 {
@@ -25,15 +29,15 @@ typedef	struct			s_op
 	int				op_code;
 	int				nb_cycle;
 	char			*def;
-	unsigned char	ocp;
+	t_uchar			ocp;
 	int				dir_size;
 }						t_op;
 
 typedef struct			s_process
 {
-	char				reg[REG_NUMBER][REG_SIZE];
+	t_uchar				reg[REG_NUMBER][REG_SIZE];
 	int					pc;
-	char				carry;
+	t_uchar				carry;
 	int					exe_cycle;
 	t_op				*op;
 	int					op_size;
@@ -47,13 +51,13 @@ typedef struct			s_champion
 	int			id;
 	int			nb_live;
 	header_t	header;
-	char		*code;
+	t_uchar		*code;
 	uintmax_t	last_live_cycle;
 }						t_champion;
 
 typedef struct			s_arena
 {
-	char			*mem;
+	t_uchar			*mem;
 	int				cycle;
 	int				cycle2die;
 	int				last_check;
@@ -80,10 +84,14 @@ void					print_option(int option);
 int						init_arena(t_arena *arena, t_champion **champions);
 t_process				*create_process(int address, int id, t_process *origin_process);
 int						run_arena(t_arena *arena);
-int						mem2int(char *mem, int size);
 t_op					*read_op(t_arena *arena, t_process *process);
 int						exec_op(t_process *process, t_arena *arena);
+
 int						get_address(int address);
+int						mem2int(t_uchar *mem, int index, int size);
+int						reg2int(t_process *process, int reg);
+void					int2reg(t_process *process, int reg, int value);
+int						arg2int(t_process *process, int arg_id, t_uchar *mem, int arg_index);
 
 int						ld(t_process *process, t_arena *arena);
 

@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/06 13:43:43 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/07 18:43:43 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/08 11:30:39 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,13 +75,14 @@ t_op			*read_op(t_arena *arena, t_process *process)
 		return (error_ptr(NULL, "error op malloc\n"));
 	op->ocp = 0;
 	process->exe_op = 1;
-	op->op_code = (int)arena->mem[process->pc];
+	op->op_code = (int)arena->mem[get_address(process->pc)];
 	i = -1;
 	while (op_tab[++i].op_code != op->op_code && op_tab[i].name)
 	{}
+printf("op_tab[%d].name = %s ; op_code = %d\n", i, op_tab[i].name, op->op_code);
 	if (op_tab[i].name == NULL)
 		return (error_ptr(op, ""));
-	op->ocp = (unsigned char)arena->mem[process->pc + 1]; //use get_adress()
+	op->ocp = arena->mem[get_address(process->pc + 1)];
 	if (op_tab[i].ocp == 1 && (read_ocp(op, i, process) == ERROR))
 		process->exe_op = 0;
 	else if (op_tab[i].ocp == 0)

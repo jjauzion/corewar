@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/06 13:29:32 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/07 18:50:23 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/08 10:29:48 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int			exec_op(t_process *process, t_arena *arena)
 	{
 		process->pc += process->op_size;
 		free(process->op);
+		process->op = NULL;
 		return(SUCCESS);
 	}
 	i = -1;
@@ -28,7 +29,9 @@ int			exec_op(t_process *process, t_arena *arena)
 	{}
 	if (g_op_fct_tab[i].op_code == 0)
 	{
-		error_ptr(process->op, "op code not found in g_op_fct_tab"); 
+		process->pc += process->op_size;
+		error_ptr(process->op, "op code not found in g_op_fct_tab\n"); 
+		process->op = NULL;
 		return(ERROR); 
 	}
 	g_op_fct_tab[i].fct(process, arena);
