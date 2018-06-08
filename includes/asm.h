@@ -6,7 +6,7 @@
 /*   By: smortier <smortier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 13:06:00 by smortier          #+#    #+#             */
-/*   Updated: 2018/06/07 17:12:14 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/07 19:10:05 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,55 @@ void	get_label(t_params *params);
 int		str_is_empty(char *str);
 
 void	get_instr(t_params *params);
+
+/*
+**	save functions
+**/
+
+void	save_live(t_params *params, char *line);
+void	save_ld(t_params *params, char *line);
+void	save_st(t_params *params, char *line);
+void	save_add(t_params *params, char *line);
+void	save_sub(t_params *params, char *line);
+void	save_and(t_params *params, char *line);
+void	save_or(t_params *params, char *line);
+void	save_xor(t_params *params, char *line);
+void	save_zjmp(t_params *params, char *line);
+void	save_ldi(t_params *params, char *line);
+void	save_sti(t_params *params, char *line);
+void	save_fork(t_params *params, char *line);
+void	save_lld(t_params *params, char *line);
+void	save_lldi(t_params *params, char *line);
+void	save_lfork(t_params *params, char *line);
+void	save_aff(t_params *params, char *line);
+
+/*
+**	check parameters
+**/
+
+int		check_live_par(char *line);
+int		check_ld_par(char *line);
+int		check_st_par(char *line);
+int		check_add_par(char *line);
+int		check_sub_par(char *line);
+int		check_and_par(char *line);
+int		check_or_par(char *line);
+int		check_xor_par(char *line);
+int		check_zjmp_par(char *line);
+int		check_ldi_par(char *line);
+int		check_sti_par(char *line);
+int		check_fork_par(char *line);
+int		check_lld_par(char *line);
+int		check_lldi_par(char *line);
+int		check_lfork_par(char *line);
+int		check_aff_par(char *line);
+
+/*
+**	utility functions
+**/
+
+char	*skip_whitespace(char *line);
+
+void	ft_error(char *line);
 
 #endif
