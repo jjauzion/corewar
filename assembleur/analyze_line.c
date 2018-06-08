@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/07 13:24:32 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/07 19:07:02 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/08 14:24:19 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,10 @@ void	analyze_line(t_params *params, char *line)
 		save_lfork(params, line);
 	else if (ft_strncmp("aff", line, 3) == 0 && check_aff_par(line) == 1)
 		save_aff(params, line);
+	else if (check_comment(line))
+		;
+	else if (check_label(line))
+		save_label(params, line);
 	else
 		ft_error(line);
 }
