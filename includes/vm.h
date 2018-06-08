@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:02:07 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/08 13:01:44 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/08 19:06:16 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,25 @@
 
 # include "op.h"
 # include "ft_printf.h"
+
 # define SUCCESS 0
+# define PID_MAX 2147483648
+
 # define S_UINT sizeof(unsigned int)
 # define S_SHORT sizeof(short)
 
+#if 1
+# define SPAM(a) printf a
+# define SPAM2(a) ft_print_mem a
+# define SPAM3(a) getchar a
+#else
+# define SPAM(a) (void)0
+# define SPAM2(a) (void)0
+# define SPAM3(a) (void)0
+#endif
+
 typedef unsigned char	t_uchar;
+typedef unsigned int	t_uint;
 
 typedef	struct			s_op
 {
@@ -36,6 +50,7 @@ typedef	struct			s_op
 typedef struct			s_process
 {
 	t_uchar				reg[REG_NUMBER][REG_SIZE];
+	t_uint				pid;
 	int					pc;
 	t_uchar				carry;
 	int					exe_cycle;
@@ -88,11 +103,13 @@ t_op					*read_op(t_arena *arena, t_process *process);
 int						exec_op(t_process *process, t_arena *arena);
 
 int						get_address(int address);
-int						mem2int(t_uchar *mem, int index, int size);
-int						reg2int(t_process *process, int reg);
-void					int2reg(t_process *process, int reg, int value);
-int						arg2int(t_process *process, int arg_id, t_uchar *mem, int arg_index);
+t_uint					mem2int(t_uchar *mem, int index, int size);
+int						reg2int(t_process *process, t_uint reg);
+void					int2reg(t_process *process, t_uint reg, int value);
+int						get_arg_val(t_process *process, int arg_id, t_uchar *mem, int arg_index);
+int						get_arg_id(t_process *process, int arg_id, t_uchar *mem, int arg_index);
 
 int						ld(t_process *process, t_arena *arena);
+int						ldi(t_process *process, t_arena *arena);
 
 #endif

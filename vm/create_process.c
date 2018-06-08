@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/05 15:38:10 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/05 16:24:08 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/08 19:05:06 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 t_process		*create_process(int address, int id, t_process *origin_process)
 {
+	static t_uint	pid = 0;
 	t_process		*new_process;
 	int				i;
 	char			*tmp;
@@ -21,6 +22,8 @@ t_process		*create_process(int address, int id, t_process *origin_process)
 	if (!(new_process = (t_process*)ft_memalloc(sizeof(t_process))))
 		return (error_ptr(NULL, "new process malloc error"));
 	new_process->pc = address;
+	new_process->pid = pid;
+	pid = (pid > PID_MAX) ? 0 : pid + 1; //pour etre propre trouve un pid libre
 	i = (REG_SIZE > 4) ? 3 : REG_SIZE - 1;
 	tmp = (char*)&id;
 	while (i >= 0)

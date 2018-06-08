@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/06 13:43:43 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/08 11:30:39 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/08 18:44:21 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ static int			get_op_size(int arg_type[3], int op_index)
 			op_size += (op_tab[op_index].dir_size == 1) ? DIR_SIZE - 2 : DIR_SIZE;
 		if (arg_type[i] == T_IND)
 			op_size += IND_SIZE;
-printf("1.%d: op_size : %d\n", i, op_size);
 		i++;
 	}
 	return (op_size);
@@ -42,11 +41,9 @@ static int		read_ocp(t_op *op, int op_index, t_process *process)
 
 	ret = SUCCESS;
 	process->op_size = 1;
-printf("0: op_size : %d\n", process->op_size );
 	op->arg_type[0] = op->ocp >> 6;
 	op->arg_type[1] = op->ocp >> 4 & 0x3;
 	op->arg_type[2] = op->ocp >> 2 & 0x3;
-printf("op code = |%02X| ocp = |%02X|\n", op->op_code, op->ocp);
 	i = 0;
 	while (i < op_tab[op_index].nb_arg)
 	{
@@ -56,13 +53,11 @@ printf("op code = |%02X| ocp = |%02X|\n", op->op_code, op->ocp);
 			op->arg_type[i] = T_DIR;
 		if (op->arg_type[i] == IND_CODE)
 			op->arg_type[i] = T_IND;
-printf("arg_type[%d] = %d\n", i, op->arg_type[i]);
 		if ((op->arg_type[i] | op_tab[op_index].arg_type[i]) != op_tab[op_index].arg_type[i])
 			ret = ERROR;
 		i++;
 	}
 	process->op_size += get_op_size(op->arg_type, op_index);
-printf("2: op_size : %d\n", process->op_size );
 	return (ret);
 }
 
@@ -79,10 +74,10 @@ t_op			*read_op(t_arena *arena, t_process *process)
 	i = -1;
 	while (op_tab[++i].op_code != op->op_code && op_tab[i].name)
 	{}
-printf("op_tab[%d].name = %s ; op_code = %d\n", i, op_tab[i].name, op->op_code);
 	if (op_tab[i].name == NULL)
 		return (error_ptr(op, ""));
 	op->ocp = arena->mem[get_address(process->pc + 1)];
+	op->dir_size = (op_tab[i].dir_size == 1) ? DIR_SIZE - 2 : DIR_SIZE;
 	if (op_tab[i].ocp == 1 && (read_ocp(op, i, process) == ERROR))
 		process->exe_op = 0;
 	else if (op_tab[i].ocp == 0)

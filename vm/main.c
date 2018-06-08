@@ -6,22 +6,12 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:30:29 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/08 09:34:08 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/08 18:54:46 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vm.h"
 #include "stdio.h"
-
-/*
-int main()
-{
-	t_op op;
-
-	op.ocp = 0xff;
-	check_ocp(&op, 16, NULL);
-}
-*/
 
 int		main(int argc, char **argv)
 {
@@ -37,11 +27,10 @@ int		main(int argc, char **argv)
 	if (!(arena->mem = (t_uchar*)ft_memalloc(MEM_SIZE)))
 		return (error_int("main"));
 	init_arena(arena, champions);
-	ft_print_mem(arena->mem, MEM_SIZE);
-ft_printf("nom champ 1 = %s\n", arena->champions[0]->header.prog_name);
-printf("magic champ 1 = %d\n", arena->champions[0]->header.magic);
-ft_printf("id champ 1 = %d\n", arena->champions[0]->id);
-ft_print_mem(arena->process->reg[0], 4);
+SPAM2((arena->mem, MEM_SIZE));
+SPAM(("nom champ 1 = %s\n", arena->champions[0]->header.prog_name));
+SPAM(("magic champ 1 = %d\n", arena->champions[0]->header.magic));
+SPAM(("id champ 1 = %d\n", arena->champions[0]->id));
 	run_arena(arena);
 	free(arena->mem);
 	while (arena->nb_champion)

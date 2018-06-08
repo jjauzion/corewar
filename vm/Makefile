@@ -6,7 +6,7 @@
 #    By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 11:25:23 by jjauzion          #+#    #+#              #
-#    Updated: 2018/06/07 17:53:03 by jjauzion         ###   ########.fr        #
+#    Updated: 2018/06/08 19:20:52 by jjauzion         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,10 @@ INC_PATH2 = ../includes/
 
 INC_NAME1 = libft.h
 
-INC_NAME2 = vm.h
+INC_NAME2 = vm.h \
+			op.h \
+			op.c \
+			fct_op.c
 
 NAME = ../corewar
 
@@ -77,13 +80,15 @@ LDFLAGS = $(addprefix $(LIB_PATH),$(LDLIBS))
 CPPFLAGS = $(addprefix -I,$(INC_PATH1)) \
 		   $(addprefix -I,$(INC_PATH2))
 
-all: LIB $(NAME)
+all: LIB $(NAME) $(INC) Makefile
 
 $(NAME): $(LDFLAGS) $(OBJ1) $(OBJ2)
 	$(CC) $(DBFLAGS) $(LDFLAGS) $(EXT_LIB) $(OBJ1) $(OBJ2) -o $(NAME)
 
 LIB:
+	@echo "libft compiling ..."
 	@make -C $(LIB_PATH)
+	@echo "libft compiled!"
 
 $(OBJ_PATH1)%.o: $(SRC_PATH1)%.c $(INC) Makefile
 	@mkdir $(OBJ_PATH1) 2> /dev/null || true
