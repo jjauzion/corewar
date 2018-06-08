@@ -6,7 +6,7 @@
 #    By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 11:25:23 by jjauzion          #+#    #+#              #
-#    Updated: 2018/06/08 19:20:52 by jjauzion         ###   ########.fr        #
+#    Updated: 2018/06/08 19:27:01 by jjauzion         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,9 +86,7 @@ $(NAME): $(LDFLAGS) $(OBJ1) $(OBJ2)
 	$(CC) $(DBFLAGS) $(LDFLAGS) $(EXT_LIB) $(OBJ1) $(OBJ2) -o $(NAME)
 
 LIB:
-	@echo "libft compiling ..."
-	@make -C $(LIB_PATH)
-	@echo "libft compiled!"
+	make -C $(LIB_PATH)
 
 $(OBJ_PATH1)%.o: $(SRC_PATH1)%.c $(INC) Makefile
 	@mkdir $(OBJ_PATH1) 2> /dev/null || true

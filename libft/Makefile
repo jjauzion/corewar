@@ -6,7 +6,7 @@
 #    By: jjauzion <jjauzion@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/17 14:43:00 by jjauzion          #+#    #+#              #
-#    Updated: 2018/06/03 16:39:20 by smortier         ###   ########.fr        #
+#    Updated: 2018/06/08 19:29:48 by jjauzion         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -186,6 +186,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@ar rc $@ $^
 	@ranlib $(NAME)
+	@echo "libft compiled!"
 
 $(OBJ_PATH1)%.o: $(SRC_PATH1)%.c $(INC) Makefile
 	@mkdir $(OBJ_PATH1) 2> /dev/null || true
