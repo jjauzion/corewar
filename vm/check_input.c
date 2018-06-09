@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/04 14:05:19 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/08 09:31:46 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/09 17:01:56 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void				usage(char *prog_name)
 	ft_printf("Usage : %s [-abcdefghi]\n", prog_name);
 }
 
-t_champion			**check_input(int argc, char **argv, int *opt, int *nb_champ)
+t_champion			**check_input(int argc, char **argv, t_arena *arena)
 {
 	int			i;
 	t_champion	**champions;
@@ -29,22 +29,27 @@ t_champion			**check_input(int argc, char **argv, int *opt, int *nb_champ)
 	}
 	i = 0;
 	champions = NULL;
-	*nb_champ = 0;
+	arena->nb_champion = 0;
+	if (!(arena->option = (t_option*)ft_memalloc(sizeof(t_option))))
+		return (NULL);
+	arena->option->option = 0;
 	while (++i < argc)
 	{
-		if (option(&i, argv, "adsv", opt) == ERROR)
+		if (option(&i, argc, argv, arena->option) == SUCCESS)
 		{
-			if (!(champions = realloc(champions, sizeof(t_champion*) * (*nb_champ + 1))))
+			if (!(champions = realloc(champions, sizeof(t_champion*) * (arena->nb_champion + 1))))
 				return (error_ptr(NULL, "error realloc at champion creation"));
-			if (!(champions[*nb_champ] = read_champ(argv[i])))
+			if (!(champions[arena->nb_champion] = read_champ(argv[i])))
 			{
-				while (*nb_champ-- >= 0)
-					free(champions[*nb_champ]);
+				while (arena->nb_champion-- >= 0)
+					free(champions[arena->nb_champion]);
 				free(champions);
 				return (NULL);
 			}
-			(*nb_champ)++;
+			(arena->nb_champion)++;
 		}
+		else
+			return (NULL);
 	}
 	return (champions);
 }

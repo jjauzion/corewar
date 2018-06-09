@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/05 15:12:10 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/08 19:56:54 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/09 17:09:26 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,21 +73,24 @@ ft_printf("--------------\nprocess %d:\n", current_process->pid);
 ft_printf("reg[0] = %d ; pc = %d\n", reg2int(current_process, 1), current_process->pc);
 			if (current_process->op == NULL)
 			{
-ft_printf("op = NULL\n");
-ft_print_mem((void*)&arena->mem[current_process->pc], 1);
+ft_printf("op = (null)\n");
+print_arena(arena->mem, current_process->pc, 1);
 				if (!(current_process->op = read_op(arena, current_process)))
 					current_process->pc++;
 			}
 			else if (arena->cycle + arena->last_check == current_process->exe_cycle)
 			{
-ft_printf("op = %s executed\n", current_process->op->name);
-ft_print_mem((void*)&arena->mem[current_process->pc], current_process->op_size);
+if (current_process->exe_op == 1)
+	ft_printf("op_code = %d executed\n", current_process->op->op_code);
+else
+	ft_printf("op_code = %d not executed\n", current_process->op->op_code);
+print_arena(arena->mem, current_process->pc, current_process->op_size);
 				exec_op(current_process, arena);
 			}
 			else
 			{
-ft_printf("op = %s ; exe cycle = %d\n", current_process->op->name, current_process->exe_cycle);
-ft_print_mem((void*)&arena->mem[current_process->pc], current_process->op_size);
+ft_printf("op_code = %d ; exe cycle = %d\n", current_process->op->op_code, current_process->exe_cycle);
+print_arena(arena->mem, current_process->pc, current_process->op_size);
 			}
 			current_process = current_process->next;
 		}

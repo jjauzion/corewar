@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/06 14:16:45 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/08 18:29:48 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/09 14:58:41 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,25 @@ t_uint	mem2int(t_uchar *mem, int index, int size)
 	return (value);
 }
 
+void	int2mem(t_uchar *mem, int index, int value)
+{
+	int		i;
+	char	*ptr;
+
+	ptr = (char*)&value;
+	i = -1;
+	while (++i < 4)
+		ft_memset(&mem[get_address(index + i)], (int)*(ptr + 3 - i), 1);
+}
+
 int		reg2int(t_process *process, t_uint reg)
 {
 	int		value;
 	char	*ptr;
 	int		i;
 
+	if (reg <= 0 || reg >= REG_NUMBER)
+		return (ERROR);
 	value = 0;
 	ptr = (char*)&value;
 	i = (REG_SIZE > 4) ? 3 : REG_SIZE - 1;
@@ -52,11 +65,13 @@ int		reg2int(t_process *process, t_uint reg)
 	return (value);
 }
 
-void	int2reg(t_process *process, t_uint reg, int value)
+int		int2reg(t_process *process, t_uint reg, int value)
 {
 	int		i;
 	char	*ptr;
 
+	if (reg <= 0 || reg >= REG_NUMBER)
+		return (ERROR);
 	ptr = (char*)&value;
 	i = (REG_SIZE > 4) ? 3 : REG_SIZE - 1;
 	while (i >= 0)
@@ -65,6 +80,7 @@ void	int2reg(t_process *process, t_uint reg, int value)
 		ptr++;
 		i--;
 	}
+	return (SUCCESS);
 }
 
 int		get_arg_id(t_process *process, int arg_id, t_uchar *mem, int arg_index)

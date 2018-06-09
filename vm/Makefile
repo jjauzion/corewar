@@ -6,7 +6,7 @@
 #    By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 11:25:23 by jjauzion          #+#    #+#              #
-#    Updated: 2018/06/08 19:27:01 by jjauzion         ###   ########.fr        #
+#    Updated: 2018/06/09 17:04:59 by jjauzion         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,9 @@ SRC_NAME1 = main.c \
 			libcorewar.c \
 			read_op.c \
 			exec_op.c \
-			op_fct_1.c
+			print_arena.c \
+			op_fct_1.c \
+			op_fct_2.c
 
 SRC_NAME2 = 
 

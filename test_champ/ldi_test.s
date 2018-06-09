@@ -10,7 +10,5 @@ ldi r3,%5,r3
 st r3,1000
 ldi %:ici,%0,r3
 st r3,1000
-ld 0,r6
-zjmp %:ici
-ld 50,r6
-zjmp %:ici
+ldi 3,%5,r0
+sti r0,%0,%1000

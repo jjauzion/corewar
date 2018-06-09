@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fct_op.c                                           :+:      :+:    :+:   */
+/*   print_arena.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/07 16:16:31 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/09 12:43:27 by jjauzion         ###   ########.fr       */
+/*   Created: 2018/06/09 17:05:07 by jjauzion          #+#    #+#             */
+/*   Updated: 2018/06/09 17:17:38 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vm.h"
 
-t_op_fct	g_op_fct_tab[] =
+void		print_arena(t_uchar *mem, size_t index, size_t length)
 {
-	//{1, live},
-	{2, ld},
-	{3, st},
-/*	{4, add},
-	{5, sub},
-	{6, and},
-	{7, or},
-	{8, xor},
-	{9, zjump},
-*/	{10, ldi},
-/*	{11, sti},
-	{12, fork},
-	{13, lld},
-	{14, lldi},
-	{15, lfork},
-	{16, aff},*/
-	{0, NULL}
-};
+	size_t			i;
+	size_t			ligne;
+
+	i = index;
+	ligne = 0;
+	while (i < index + length)
+	{
+		if (i % 64 == 0 && i > index)
+			ft_printf("\n");
+		if (i % 64 == 0)
+		{
+			if (i == index)
+				ft_printf("0x%04x : ", ligne);
+			else
+				ft_printf("%#06x : ", ligne);
+			ligne += 64;
+		}
+		ft_printf("%02x ", mem[get_address(i)]);
+		i++;
+	}
+	ft_printf("\n");
+}

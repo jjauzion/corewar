@@ -6,22 +6,29 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/04 14:05:31 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/04 17:05:12 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/09 17:00:45 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vm.h"
 
-static int		is_valid_option(char *arg, char *valid_option)
+static int		is_valid_option(char *arg)
 {
 	int		i;
 
-	if (!arg || arg[0] != '-')
+	if (!arg || arg[0] != '-' || arg[1] == '\0')
 		return (ERROR);
+	if (ft_strchr(VALID_OPT_WITH_VAL, (int)arg[1]))
+	{
+		if (ft_strlen(arg) > 2)
+			return (ERROR);
+		else
+			return (SUCCESS);
+	}
 	i = 0;
 	while (arg[++i])
 	{
-		if (!ft_strchr(valid_option, (int)arg[i]))
+		if (!ft_strchr(VALID_OPT, (int)arg[i]))
 			return (ERROR);
 	}
 	if (i <= 1)
@@ -30,23 +37,33 @@ static int		is_valid_option(char *arg, char *valid_option)
 		return (SUCCESS);
 }
 
-static void		set_option(int *option, char *arg)
+static int		set_option(int *index, t_option *option, char *arg1, char *arg2)
 {
 	int		tmp;
 
-	if (!arg || !option)
-		return ;
-	arg++;
-	while (*arg)
+	if (!arg1 || !option)
+		return (ERROR);
+	arg1++;
+	while (*arg1)
 	{
+		if (*arg1 == 'd')
+		{
+			if (arg2 == NULL || !ft_isnumber(arg2))
+				return (ERROR);
+			else
+				option->d_cycle = ft_atoi(arg2);
+			(*index)++;
+		}
 		tmp = 1;
-		tmp = tmp << (*arg - 'a');
-		*option = *option | tmp;
-		arg++;
+		tmp = tmp << (*arg1 - 'a');
+		option->option = option->option | tmp;
+		arg1++;
 	}
+	(*index)++;
+	return (SUCCESS);
 }
 
-void		print_option(int option)
+void			print_option(int option)
 {
 	int		bit;
 	int		i;
@@ -68,20 +85,18 @@ void		print_option(int option)
 	ft_putchar('\n');
 }
 
-int				option(int *index, char **argv, char *valid_option, int *option)
+int				option(int *index, int argc, char **argv, t_option *option)
 {
 	int		valid;
 
 	if (argv[*index][0] == '-')
 	{
-		if ((valid = is_valid_option(argv[*index], valid_option)) == ERROR)
-		{
-			ft_putstr("Invalid Option\n");
-			return (ERROR);
-		}
-		set_option(option, argv[*index]);
-		(*index)++;
-		return (SUCCESS);
+		if ((valid = is_valid_option(argv[*index])) == ERROR)
+			return (SUCCESS);
+		if (*index + 1 < argc)
+			return (set_option(index, option, argv[*index], argv[*index + 1]));
+		else
+			return (set_option(index, option, argv[*index], NULL));
 	}
-	return (ERROR);
+	return (SUCCESS);
 }

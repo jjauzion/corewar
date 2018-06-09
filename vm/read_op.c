@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/06 13:43:43 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/08 19:48:58 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/09 14:47:45 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int			get_op_size(int arg_type[3], int op_index)
 	while (i < op_tab[op_index].nb_arg)
 	{
 		if (arg_type[i] == T_REG)
-			op_size += 1; //check define
+			op_size += REG_LENGTH; //check si define existe dans op.h
 		if (arg_type[i] == T_DIR)
 			op_size += (op_tab[op_index].dir_size == 1) ? DIR_SIZE - 2 : DIR_SIZE;
 		if (arg_type[i] == T_IND)
@@ -61,6 +61,27 @@ static int		read_ocp(t_op *op, int op_index, t_process *process)
 	return (ret);
 }
 
+static int		check_arg(t_op *op, t_uchar *mem, int index_arg1)
+{
+	int		i;
+
+	i = -1;
+	while (++i < op->nb_arg)
+	{
+		if (op->arg_type[i] == T_REG)
+		{
+			if (mem[index_arg1] == 0)
+				return (ERROR);
+			index_arg1 += REG_LENGTH;
+		}
+		else if (op->arg_type[i] == T_DIR)
+			index_arg1 += (op->dir_size == 1) ? DIR_SIZE - 2 : DIR_SIZE;
+		else
+			index_arg1 += IND_SIZE;
+	}
+	return (SUCCESS);
+}
+
 t_op			*read_op(t_arena *arena, t_process *process)
 {
 	int		i;
@@ -86,5 +107,7 @@ t_op			*read_op(t_arena *arena, t_process *process)
 	op->nb_arg = op_tab[i].nb_arg;
 	op->nb_cycle = op_tab[i].nb_cycle;
 	process->exe_cycle = arena->cycle + op->nb_cycle;
+	if (check_arg(op, arena->mem, process->pc + 1 + op_tab[i].ocp) == ERROR)
+		process->exe_op = 0;
 	return (op);
 }

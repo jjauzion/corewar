@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:02:07 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/08 19:06:16 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/09 17:13:04 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 # define SUCCESS 0
 # define PID_MAX 2147483648
+# define REG_LENGTH 1
 
 # define S_UINT sizeof(unsigned int)
 # define S_SHORT sizeof(short)
@@ -34,6 +35,15 @@
 
 typedef unsigned char	t_uchar;
 typedef unsigned int	t_uint;
+
+# define VALID_OPT "v"
+# define VALID_OPT_WITH_VAL "d"
+
+typedef struct			s_option
+{
+	int				option;
+	int				d_cycle;
+}						t_option;
 
 typedef	struct			s_op
 {
@@ -72,6 +82,7 @@ typedef struct			s_champion
 
 typedef struct			s_arena
 {
+	t_option		*option;
 	t_uchar			*mem;
 	int				cycle;
 	int				cycle2die;
@@ -93,23 +104,26 @@ typedef struct			s_op_fct
 void					*error_ptr(void *ptr, char *msg);
 int						error_int(char *msg);
 t_champion				*read_champ(char *file);
-t_champion				**check_input(int argc, char **argv, int *option, int *nb_champ);
-int						option(int *index, char **argv, char *valid_option, int *option);
+t_champion				**check_input(int argc, char **argv, t_arena *arena);
+int						option(int *index, int argc, char **argv, t_option *option);
 void					print_option(int option);
 int						init_arena(t_arena *arena, t_champion **champions);
 t_process				*create_process(int address, int id, t_process *origin_process);
 int						run_arena(t_arena *arena);
 t_op					*read_op(t_arena *arena, t_process *process);
 int						exec_op(t_process *process, t_arena *arena);
+void					print_arena(t_uchar *mem, size_t index, size_t length);
 
 int						get_address(int address);
 t_uint					mem2int(t_uchar *mem, int index, int size);
+void					int2mem(t_uchar *mem, int index, int value);
 int						reg2int(t_process *process, t_uint reg);
-void					int2reg(t_process *process, t_uint reg, int value);
+int						int2reg(t_process *process, t_uint reg, int value);
 int						get_arg_val(t_process *process, int arg_id, t_uchar *mem, int arg_index);
 int						get_arg_id(t_process *process, int arg_id, t_uchar *mem, int arg_index);
 
 int						ld(t_process *process, t_arena *arena);
 int						ldi(t_process *process, t_arena *arena);
+int						st(t_process *process, t_arena *arena);
 
 #endif

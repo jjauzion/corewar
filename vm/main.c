@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:30:29 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/08 18:54:46 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/09 17:18:17 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,24 @@ int		main(int argc, char **argv)
 {
 	t_arena		*arena;
 	t_champion	**champions;
-	int			option;
+	int			i;
 
 	(void)argv;
 	if (!(arena = (t_arena*)ft_memalloc(sizeof(t_arena))))
 		return (ERROR);
-	if ((champions = check_input(argc, argv, &option, &arena->nb_champion)) == NULL)
+	if ((champions = check_input(argc, argv, arena)) == NULL)
 		return (ERROR);
 	if (!(arena->mem = (t_uchar*)ft_memalloc(MEM_SIZE)))
 		return (error_int("main"));
 	init_arena(arena, champions);
-SPAM2((arena->mem, MEM_SIZE));
-SPAM(("nom champ 1 = %s\n", arena->champions[0]->header.prog_name));
-SPAM(("magic champ 1 = %d\n", arena->champions[0]->header.magic));
-SPAM(("id champ 1 = %d\n", arena->champions[0]->id));
+	ft_printf("Introducing contestants...\n");
+	i = -1;
+	while (++i < arena->nb_champion)
+		ft_printf("* Player %d, weighing %d bytes, \"%s\" (\"%s\") !\n",
+				i + 1, arena->champions[i]->header.prog_size,
+				arena->champions[i]->header.prog_name,
+				arena->champions[i]->header.comment);
+print_arena(arena->mem, 0, MEM_SIZE);
 	run_arena(arena);
 	free(arena->mem);
 	while (arena->nb_champion)
