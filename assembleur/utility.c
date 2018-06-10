@@ -6,18 +6,8 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/07 18:52:59 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/07 19:01:57 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/10 13:28:49 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "asm.h"
-
-char	*skip_whitespace(line)
-{
-	int	i;
-
-	i = 0;
-	while (line[i] == ' ' || line[i] == '\t')
-		i++;
-	return (&line[i]);
-}

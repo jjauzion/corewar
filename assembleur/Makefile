@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: jjauzion <jjauzion@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 11:25:23 by jjauzion          #+#    #+#              #
-#    Updated: 2018/06/05 12:42:50 by smortier         ###   ########.fr        #
+#    Updated: 2018/06/10 13:28:29 by spliesei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,11 +17,16 @@ SRC_NAME1 =	main.c \
 		get_label.c \
 		str_is_empty.c \
 		get_instr.c \
+		analyze_line.c \
+		utility.c \
+		check_params.c \
+		save.c \
+		error.c \
+		
 
+SRC_NAME2 =
 
-SRC_NAME2 = 
-
-SRC_PATH1 = 
+SRC_PATH1 =
 
 SRC_PATH2 =
 

@@ -6,7 +6,7 @@
 /*   By: smortier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 16:41:31 by smortier          #+#    #+#             */
-/*   Updated: 2018/06/10 11:16:52 by smortier         ###   ########.fr       */
+/*   Updated: 2018/06/10 13:03:33 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char		*parse_line(char *line)
 			return (tmp + 1);
 		}
 		else if (str_is_empty(tmp + 1))
-			return (line);
+			return ("    ");
 	}
 	return (line);
 }

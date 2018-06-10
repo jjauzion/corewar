@@ -6,7 +6,7 @@
 /*   By: smortier <smortier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 13:06:00 by smortier          #+#    #+#             */
-/*   Updated: 2018/06/07 19:10:05 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/10 15:22:18 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void	get_label(t_params *params);
 int		str_is_empty(char *str);
 
 void	get_instr(t_params *params);
+void	analyze_line(t_params *params, char *line, int index_line);
 
 /*
 **	save functions
@@ -83,7 +84,7 @@ void	save_aff(t_params *params, char *line);
 **	check parameters
 **/
 
-int		check_live_par(char *line);
+int		check_live_par(t_params *params, char *line, int index_line);
 int		check_ld_par(char *line);
 int		check_st_par(char *line);
 int		check_add_par(char *line);
@@ -103,8 +104,6 @@ int		check_aff_par(char *line);
 /*
 **	utility functions
 **/
-
-char	*skip_whitespace(char *line);
 
 void	ft_error(char *line);
 
