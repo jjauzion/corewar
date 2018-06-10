@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/07 13:24:32 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/10 15:22:55 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/10 16:48:44 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,11 @@ void	analyze_line(t_params *params, char *line, int index_line)
 
 	(void)params;
 	if (ft_strncmp("live", split[0], 4) == 0 && check_live_par(params, line + 4,
-			index_line) == 1)
+			index_line))
 		// save_live(params, line + 4);
 		;
-	// else if (ft_strncmp("ld", split[0], 2) == 0 && check_ld_par(line) == 1)
+	else if (ft_strncmp("ld", split[0], 2) == 0 && check_ld_par(params, line + 2, index_line))
+		;
 	// 	save_ld(params, line);
 	// else if (ft_strncmp("st", split[0], 2) == 0 && check_st_par(line) == 1)
 	// 	save_st(params, line);

@@ -6,7 +6,7 @@
 #    By: jjauzion <jjauzion@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/17 14:43:00 by jjauzion          #+#    #+#              #
-#    Updated: 2018/06/10 14:55:35 by spliesei         ###   ########.fr        #
+#    Updated: 2018/06/10 18:03:00 by spliesei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -111,6 +111,7 @@ SRC_NAME1 = ft_memset.c \
 			ft_strclen.c \
 			ft_split_whitespaces.c \
 			ft_str_ws_len.c \
+			ft_nbrlen.c \
 
 SRC_NAME2 =	ft_printf.c \
 			ft_parse.c \

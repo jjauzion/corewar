@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_params.c                                     :+:      :+:    :+:   */
+/*   check_live.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/07 17:31:50 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/10 16:16:41 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/10 18:46:40 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@
 // 	}
 // 	return (0);
 // }
-//
+
 
 void check_label_name(t_params *params, char *name)
 {
@@ -55,7 +55,10 @@ void check_label_name(t_params *params, char *name)
 	while (tmp)
 	{
 		if (!ft_strncmp(tmp->name, name, ft_str_ws_len(name)))
-			ok = 1;
+		{
+			if (ft_strlen(tmp->name) == ft_strlen(name))
+				ok = 1;
+		}
 		tmp = tmp->next;
 	}
 	if (ok != 1)
@@ -64,6 +67,8 @@ void check_label_name(t_params *params, char *name)
 		exit(0);
 	}
 }
+
+// trim label name
 
 int	check_int(t_params *params, char *line)
 {
@@ -119,12 +124,7 @@ int	check_live_par(t_params *params, char *line, int index_line)
 	ft_printf("Error: Wrong usage of live: (live (DIRECT))\n");
 	exit (0);
 }
-//
-// int	check_ld_par(char *line)
-// {
-//
-// }
-//
+
 // int	check_st_par(char *line)
 // {
 //
