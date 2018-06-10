@@ -6,7 +6,7 @@
 /*   By: smortier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/05 12:38:35 by smortier          #+#    #+#             */
-/*   Updated: 2018/06/05 12:51:57 by smortier         ###   ########.fr       */
+/*   Updated: 2018/06/10 11:48:47 by smortier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	get_instr(t_params *params)
 	file = params->lexer;
 	while (file)
 	{
-		ft_printf("line = [%s]\n", file->line);
+		ft_printf("-- %s\n", file->line);
 		file = file->next;
 	}
 }

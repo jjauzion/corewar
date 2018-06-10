@@ -6,7 +6,7 @@
 /*   By: smortier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 16:41:31 by smortier          #+#    #+#             */
-/*   Updated: 2018/06/05 15:09:56 by smortier         ###   ########.fr       */
+/*   Updated: 2018/06/10 11:16:52 by smortier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,10 @@ char		*parse_line(char *line)
 {
 	char	*parsed;
 	char	*tmp;
-	int	index;
+	int		index;
 
-	parsed = NULL;
+	parsed = line;
+	ft_printf("%s\n", line);
 	if (ft_strchr(line, LABEL_CHAR))
 	{
 		index = -1;
@@ -59,11 +60,10 @@ char		*parse_line(char *line)
 		tmp = ft_strchr(line, LABEL_CHAR);
 		if (!str_is_empty(tmp + 1) && line[index - 1] != DIRECT_CHAR)
 		{
-			printf("\e[31m%s\e[0m\n", tmp);
 			return (tmp + 1);
 		}
 		else if (str_is_empty(tmp + 1))
-			return (" label ");
+			return (line);
 	}
 	return (line);
 }
@@ -73,7 +73,7 @@ void		lexer(t_params *params)
 	int		index;
 
 	index = 0;
-	while (params->file[index][0] == COMMENT_CHAR)
+	while (params->file[index][0] == '.')
 		index += 1;
 	index--;
 	while (params->file[++index])
