@@ -47,16 +47,16 @@ void	analyze_line(t_params *params, char *line, int index_line)
 	// 	save_ldi(params, line);
 	// else if (ft_strncmp("sti", split[0], 3) == 0 && check_sti_par(line) == 1)
 	// 	save_sti(params, line);
-	// else if (ft_strncmp("fork", split[0], 4) == 0 && check_fork_par(line) == 1)
-	// 	save_fork(params, line);
-	// else if (ft_strncmp("lld", split[0], 3) == 0 && check_lld_par(line) == 1)
-	// 	save_lld(params, line);
-	// else if (ft_strncmp("lldi", split[0], 4) == 0 && check_lldi_par(line) == 1)
-	// 	save_lldi(params, line);
-	// else if (ft_strncmp("lfork", split[0], 5) == 0 && check_lfork_par(line) == 1)
-	// 	save_lfork(params, line);
-	// else if (ft_strncmp("aff", split[0], 3) == 0 && check_aff_par(line) == 1)
-	// 	save_aff(params, line);
+	else if (ft_strncmp("fork", split[0], 4) == 0 && check_fork_par(params, line+ 4, index_line))
+			;// 	save_fork(params, line);
+	else if (ft_strncmp("lldi", split[0], 4) == 0 && check_lldi_par(params, line + 4, index_line))
+			;// 	save_lldi(params, line);
+	else if (ft_strncmp("lld", split[0], 3) == 0 && check_lld_par(params, line + 3, index_line))
+			;// 	save_lld(params, line);
+	else if (ft_strncmp("lfork", split[0], 5) == 0 && check_lfork_par(params, line + 5, index_line))
+			;// 	save_lfork(params, line);
+	else if (ft_strncmp("aff", split[0], 3) == 0 && check_aff_par(params, line + 3, index_line))
+			; //save_aff(params, line);
 	// else
 	// 	ft_error(line);
 	index = -1;

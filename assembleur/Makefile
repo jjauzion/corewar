@@ -23,6 +23,11 @@ SRC_NAME1 =	main.c \
 		error.c \
 		check_live.c \
 		check_ld.c \
+		check_fork.c \
+		check_lld.c \
+	 	check_lldi.c \
+		check_lfork.c \
+		check_aff.c \
 		# check_st.c \
 		# check_add.c \
 		# check_sub.c \
@@ -32,11 +37,6 @@ SRC_NAME1 =	main.c \
 		# check_zjmp.c \
 		# check_ldi.c \
 		# check_sti.c \
-		# check_fork.c \
-		# check_lld.c \
-		# check_lldi.c \
-		# check_lfork.c \
-		# check_aff.c
 
 SRC_NAME2 =
 
