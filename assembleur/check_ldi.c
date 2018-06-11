@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 13:04:58 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/11 13:42:50 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/11 15:37:14 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static	void check_nbr_arg_ldi(char **split)
 	i = -1;
 	while (split[++i])
 		;
-	if (i != 2)
+	if (i != 3)
 	{
 		ft_printf("Error:\n");
 		exit (0);
