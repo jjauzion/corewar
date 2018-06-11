@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/04 14:05:31 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/09 17:00:45 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/11 11:01:24 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ static int		set_option(int *index, t_option *option, char *arg1, char *arg2)
 		option->option = option->option | tmp;
 		arg1++;
 	}
-	(*index)++;
 	return (SUCCESS);
 }
 
@@ -85,6 +84,17 @@ void			print_option(int option)
 	ft_putchar('\n');
 }
 
+int				opt_is_set(int option, char test_opt)
+{
+	int mask;
+
+	mask = 1 << (test_opt - 'a');
+	if ((option & mask) != 0)
+		return (1);
+	else
+		return (0);
+}
+
 int				option(int *index, int argc, char **argv, t_option *option)
 {
 	int		valid;
@@ -92,11 +102,11 @@ int				option(int *index, int argc, char **argv, t_option *option)
 	if (argv[*index][0] == '-')
 	{
 		if ((valid = is_valid_option(argv[*index])) == ERROR)
-			return (SUCCESS);
+			return (1);
 		if (*index + 1 < argc)
 			return (set_option(index, option, argv[*index], argv[*index + 1]));
 		else
 			return (set_option(index, option, argv[*index], NULL));
 	}
-	return (SUCCESS);
+	return (1);
 }

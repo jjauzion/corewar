@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 17:25:23 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/08 11:39:06 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/11 18:54:06 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ t_champion		*read_champ(char *file)
 	int			ret;
 
 	nb_byte = (int)S_UINT;
-	if (!(champion = (t_champion*)malloc(sizeof(t_champion))))
+	if (!(champion = (t_champion*)ft_memalloc(sizeof(t_champion))))
 		return (error_ptr(NULL, "malloc error\n"));
 	if ((fd = open(file, O_RDONLY)) == -1)
-		return (error_ptr(champion, "File not found\n"));
+		return (error_ptr(NULL, "File not found\n"));
 	ret = read(fd, (void*)buff, CHAMP_MAX_SIZE + PROG_NAME_LENGTH + COMMENT_LENGTH);
 	close(fd);
 //	ft_print_mem((void*)buff, ret);

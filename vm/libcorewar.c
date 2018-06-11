@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/06 14:16:45 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/09 14:58:41 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/11 18:15:28 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,7 @@ int		get_arg_val(t_process *process, int arg_id, t_uchar *mem, int arg_index)
 	int			value;
 
 
+	value = -1;
 	if (process->op->arg_type[arg_id] == T_IND)
 	{
 		address = (unsigned short)mem2int(mem, arg_index, (int)S_SHORT) % IDX_MOD;
@@ -121,7 +122,5 @@ int		get_arg_val(t_process *process, int arg_id, t_uchar *mem, int arg_index)
 		reg = mem[get_address(arg_index)];
 		value = reg2int(process, reg);
 	}
-	else
-		value = -1;
 	return (value);
 }
