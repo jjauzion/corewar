@@ -12,7 +12,7 @@
 
 #include "asm.h"
 
-void check_nbr_arg(char **split)
+void check_nbr_arg_ld(char **split)
 {
 	int		i;
 
@@ -41,6 +41,16 @@ int	check_ld_par(t_params *params, char *line, int index_line)
 	while (split[++index])
 		ft_strdel(&split[index]);
 	ft_memdel((void *)&split);
+	if (check_type(params, arg1) != DIR_CODE && check_type(params, arg1) != IND_CODE)
+	{
+		ft_printf("Error : Wrong type of arg1 on instr %d\n", index_line);
+		exit(0);
+	}
+	if (check_type(params, arg2) != REG_CODE)
+{
+		ft_printf("Error : Wrong type of arg2\n");
+		exit(0);
+	}
 	ft_printf("first: [%s]\n", arg1);
 	ft_printf("second: [%s]\n", arg2);
 	ft_printf("arg_type 1: %d\n", check_type(params, arg1));

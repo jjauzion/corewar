@@ -48,7 +48,7 @@ int	check_dir(t_params *params, char *arg)
 	if (arg[1] == LABEL_CHAR)
 	{
 		check_label_name(params, arg + 2);
-		return (1);
+			return (DIR_CODE);
 	}
 	else if (arg[0] == DIRECT_CHAR && check_integer(arg + 1))
 		return (DIR_CODE);
