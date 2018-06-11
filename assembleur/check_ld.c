@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/10 16:23:57 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/10 18:55:16 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/11 13:26:42 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	check_ld_par(t_params *params, char *line, int index_line)
 		exit(0);
 	}
 	if (check_type(params, arg2) != REG_CODE)
-{
+	{
 		ft_printf("Error : Wrong type of arg2\n");
 		exit(0);
 	}
