@@ -43,9 +43,8 @@ int	check_ld_par(t_params *params, char *line, int index_line)
 	ft_memdel((void *)&split);
 	ft_printf("first: [%s]\n", arg1);
 	ft_printf("second: [%s]\n", arg2);
-	ft_printf("arg_type 1: %d\n", check_type(params, arg1, IND_CODE));
-	ft_printf("arg_type 2: %d\n", check_type(params, arg2, DIR_CODE));
-
+	ft_printf("arg_type 1: %d\n", check_type(params, arg1));
+	ft_printf("arg_type 2: %d\n", check_type(params, arg2));
 	(void)index_line;
 	return (1);
 }

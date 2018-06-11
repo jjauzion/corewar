@@ -112,7 +112,7 @@ int		check_lfork_par(t_params *params, char *line, int index_line);
 int		check_aff_par(t_params *params, char *line, int index_line);
 
 
-int		check_type(t_params *params, char *arg, int type);
+int		check_type(t_params *params, char *arg);
 
 /*
 **	utility functions
