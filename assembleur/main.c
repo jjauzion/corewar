@@ -28,6 +28,8 @@ int		main (int ac, char **av)
 	}
 	ft_memdel((void **)&line);
 	lseek(fd, 0, SEEK_SET);
+	params.lexer = NULL;
+	params.label = NULL;
 	if (!(params.file = (char **)ft_memalloc(sizeof(char *) * index + 1)))
 		return (0);
 	params.file[index] = NULL;

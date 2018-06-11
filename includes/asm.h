@@ -6,7 +6,7 @@
 /*   By: smortier <smortier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 13:06:00 by smortier          #+#    #+#             */
-/*   Updated: 2018/06/07 19:10:05 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/10 18:29:43 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,17 @@ void	get_label(t_params *params);
 int		str_is_empty(char *str);
 
 void	get_instr(t_params *params);
+void	analyze_line(t_params *params, char *line, int index_line);
+
+
+/*
+**	check label
+**/
+
+
+void 	check_label_name(t_params *params, char *name);
+
+
 
 /*
 **	save functions
@@ -83,29 +94,30 @@ void	save_aff(t_params *params, char *line);
 **	check parameters
 **/
 
-int		check_live_par(char *line);
-int		check_ld_par(char *line);
-int		check_st_par(char *line);
-int		check_add_par(char *line);
-int		check_sub_par(char *line);
-int		check_and_par(char *line);
-int		check_or_par(char *line);
-int		check_xor_par(char *line);
-int		check_zjmp_par(char *line);
-int		check_ldi_par(char *line);
-int		check_sti_par(char *line);
-int		check_fork_par(char *line);
-int		check_lld_par(char *line);
-int		check_lldi_par(char *line);
-int		check_lfork_par(char *line);
-int		check_aff_par(char *line);
+int		check_live_par(t_params *params, char *line, int index_line);
+int		check_ld_par(t_params *params, char *line, int index_line);
+int		check_st_par(t_params *params, char *line, int index_line);
+int		check_add_par(t_params *params, char *line, int index_line);
+int		check_sub_par(t_params *params, char *line, int index_line);
+int		check_and_par(t_params *params, char *line, int index_line);
+int		check_or_par(t_params *params, char *line, int index_line);
+int		check_xor_par(t_params *params, char *line, int index_line);
+int		check_zjmp_par(t_params *params, char *line, int index_line);
+int		check_ldi_par(t_params *params, char *line, int index_line);
+int		check_sti_par(t_params *params, char *line, int index_line);
+int		check_fork_par(t_params *params, char *line, int index_line);
+int		check_lld_par(t_params *params, char *line, int index_line);
+int		check_lldi_par(t_params *params, char *line, int index_line);
+int		check_lfork_par(t_params *params, char *line, int index_line);
+int		check_aff_par(t_params *params, char *line, int index_line);
+
+
+int		check_type(t_params *params, char *arg);
 
 /*
 **	utility functions
 **/
 
-char	*skip_whitespace(char *line);
-
-void	ft_error(char *line);
+// void	ft_error(t_params *params, char *line, int index_line);
 
 #endif

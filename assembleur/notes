@@ -7,3 +7,4 @@ error messages:
 Invalid parameter 1 type direct for instruction live (too many params)
 Syntax error at token [TOKEN][004:010] ENDLINE (, at the end of the line)
 Lexical error at [4:6] ('+' sign in front of the direct) ('-' is fine)
+Syntax error at token [TOKEN][004:007] INSTRUCTION "a0"

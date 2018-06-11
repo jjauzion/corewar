@@ -84,9 +84,4 @@ void	get_label(t_params *params)
 		}
 		position += 1;
 	}
-	while (params->label)
-	{
-		ft_printf("\e[32mName : [%s], pos = [%d]\e[0m\n", params->label->name, params->label->pos);
-		params->label = params->label->next;
-	}
 }
