@@ -28,15 +28,15 @@ SRC_NAME1 =	main.c \
 	 	check_lldi.c \
 		check_lfork.c \
 		check_aff.c \
-		# check_st.c \
-		# check_add.c \
-		# check_sub.c \
-		# check_and.c \
-		# check_or.c \
-		# check_xor.c \
-		# check_zjmp.c \
-		# check_ldi.c \
-		# check_sti.c \
+		check_st.c \
+		check_add.c \
+		check_sub.c \
+		check_and.c \
+		check_or.c \
+		check_xor.c \
+		check_zjmp.c \
+		check_ldi.c \
+		check_sti.c \
 
 SRC_NAME2 =
 
