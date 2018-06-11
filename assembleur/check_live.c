@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/07 17:31:50 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/10 18:46:40 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/11 13:09:27 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,73 +124,3 @@ int	check_live_par(t_params *params, char *line, int index_line)
 	ft_printf("Error: Wrong usage of live: (live (DIRECT))\n");
 	exit (0);
 }
-
-// int	check_st_par(char *line)
-// {
-//
-// }
-//
-// int	check_add_par(char *line)
-// {
-//
-// }
-//
-// int	check_sub_par(char *line)
-// {
-//
-// }
-//
-// int	check_and_par(char *line)
-// {
-//
-// }
-//
-// int	check_or_par(char *line)
-// {
-//
-// }
-//
-// int	check_xor_par(char *line)
-// {
-//
-// }
-//
-// int	check_zjmp_par(char *line)
-// {
-//
-// }
-//
-// int	check_ldi_par(char *line)
-// {
-//
-// }
-//
-// int	check_sti_par(char *line)
-// {
-//
-// }
-//
-// int	check_fork_par(char *line)
-// {
-//
-// }
-//
-// int	check_lld_par(char *line)
-// {
-//
-// }
-//
-// int	check_lldi_par(char *line)
-// {
-//
-// }
-//
-// int	check_lfork_par(char *line)
-// {
-//
-// }
-//
-// int	check_aff_par(char *line)
-// {
-//
-// }

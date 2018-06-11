@@ -6,7 +6,7 @@
 #    By: jjauzion <jjauzion@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 11:25:23 by jjauzion          #+#    #+#              #
-#    Updated: 2018/06/10 16:23:35 by spliesei         ###   ########.fr        #
+#    Updated: 2018/06/11 13:11:06 by spliesei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,20 @@ SRC_NAME1 =	main.c \
 		error.c \
 		check_live.c \
 		check_ld.c \
+		# check_st.c \
+		# check_add.c \
+		# check_sub.c \
+		# check_and.c \
+		# check_or.c \
+		# check_xor.c \
+		# check_zjmp.c \
+		# check_ldi.c \
+		# check_sti.c \
+		# check_fork.c \
+		# check_lld.c \
+		# check_lldi.c \
+		# check_lfork.c \
+		# check_aff.c
 
 SRC_NAME2 =
 
