@@ -32,13 +32,13 @@ int	check_integer(char *arg)
 		if (-2147483647 <= ft_atoi(arg) && ft_atoi(arg) <= 0)
 		{
 			if ((int)ft_strlen(arg + 1) == ft_nbrlen(ft_atoi(arg + 1), 10))
-				return (1);
+				return (IND_CODE);
 		}
 	}
 	else if (0 <= ft_atoi(arg) && ft_atoi(arg) <= 2147483647)
 	{
 		if ((int)ft_strlen(arg) == ft_nbrlen(ft_atoi(arg), 10))
-			return (1);
+			return (IND_CODE);
 	}
 	return (0);
 }
