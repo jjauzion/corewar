@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:30:29 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/09 17:18:17 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/11 11:23:48 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int		main(int argc, char **argv)
 				i + 1, arena->champions[i]->header.prog_size,
 				arena->champions[i]->header.prog_name,
 				arena->champions[i]->header.comment);
-print_arena(arena->mem, 0, MEM_SIZE);
 	run_arena(arena);
 	free(arena->mem);
 	while (arena->nb_champion)

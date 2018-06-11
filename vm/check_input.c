@@ -6,27 +6,28 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/04 14:05:19 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/09 17:01:56 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/11 11:09:28 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vm.h"
 
-void				usage(char *prog_name)
+void				*usage(char *prog_name)
 {
-	ft_printf("Usage : %s [-abcdefghi]\n", prog_name);
+	ft_printf("Usage : %s [-d N -v]\n", prog_name);
+	ft_printf("\t -d N\t: Dumps memory after N cycles then exits\n", prog_name);
+	ft_printf("\t -v  \t: Verbose mode\n", prog_name);
+	return (NULL);
 }
 
 t_champion			**check_input(int argc, char **argv, t_arena *arena)
 {
 	int			i;
 	t_champion	**champions;
+	int			ret;
 
 	if (argc <= 1)
-	{
-		usage(argv[0]);
-		return (NULL);
-	}
+		return (usage(argv[0]));
 	i = 0;
 	champions = NULL;
 	arena->nb_champion = 0;
@@ -35,21 +36,24 @@ t_champion			**check_input(int argc, char **argv, t_arena *arena)
 	arena->option->option = 0;
 	while (++i < argc)
 	{
-		if (option(&i, argc, argv, arena->option) == SUCCESS)
+		if ((ret = option(&i, argc, argv, arena->option)) == 1)
 		{
 			if (!(champions = realloc(champions, sizeof(t_champion*) * (arena->nb_champion + 1))))
 				return (error_ptr(NULL, "error realloc at champion creation"));
 			if (!(champions[arena->nb_champion] = read_champ(argv[i])))
 			{
-				while (arena->nb_champion-- >= 0)
+				while (arena->nb_champion >= 0)
+				{
 					free(champions[arena->nb_champion]);
+					(arena->nb_champion)--;
+				}
 				free(champions);
 				return (NULL);
 			}
 			(arena->nb_champion)++;
 		}
-		else
-			return (NULL);
+		else if (ret == ERROR)
+			return (usage(argv[0]));
 	}
 	return (champions);
 }

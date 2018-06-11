@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/06 13:43:43 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/09 14:47:45 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/11 18:53:36 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,12 @@ static int		check_arg(t_op *op, t_uchar *mem, int index_arg1)
 	{
 		if (op->arg_type[i] == T_REG)
 		{
-			if (mem[index_arg1] == 0)
+			if (mem[get_address(index_arg1)] <= 0 || mem[get_address(index_arg1)] > REG_NUMBER)
 				return (ERROR);
 			index_arg1 += REG_LENGTH;
 		}
 		else if (op->arg_type[i] == T_DIR)
-			index_arg1 += (op->dir_size == 1) ? DIR_SIZE - 2 : DIR_SIZE;
+			index_arg1 += op->dir_size;
 		else
 			index_arg1 += IND_SIZE;
 	}
@@ -106,7 +106,7 @@ t_op			*read_op(t_arena *arena, t_process *process)
 		process->op_size = get_op_size(op_tab[i].arg_type, i);
 	op->nb_arg = op_tab[i].nb_arg;
 	op->nb_cycle = op_tab[i].nb_cycle;
-	process->exe_cycle = arena->cycle + op->nb_cycle;
+	process->exe_cycle = arena->last_check +arena->last_check +  arena->cycle + op->nb_cycle;
 	if (check_arg(op, arena->mem, process->pc + 1 + op_tab[i].ocp) == ERROR)
 		process->exe_op = 0;
 	return (op);

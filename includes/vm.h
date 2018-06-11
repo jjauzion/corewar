@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:02:07 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/09 17:13:04 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/11 17:25:12 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # define S_UINT sizeof(unsigned int)
 # define S_SHORT sizeof(short)
 
-#if 1
+#if 0
 # define SPAM(a) printf a
 # define SPAM2(a) ft_print_mem a
 # define SPAM3(a) getchar a
@@ -107,6 +107,7 @@ t_champion				*read_champ(char *file);
 t_champion				**check_input(int argc, char **argv, t_arena *arena);
 int						option(int *index, int argc, char **argv, t_option *option);
 void					print_option(int option);
+int						opt_is_set(int option, char test_opt);
 int						init_arena(t_arena *arena, t_champion **champions);
 t_process				*create_process(int address, int id, t_process *origin_process);
 int						run_arena(t_arena *arena);
@@ -125,5 +126,8 @@ int						get_arg_id(t_process *process, int arg_id, t_uchar *mem, int arg_index)
 int						ld(t_process *process, t_arena *arena);
 int						ldi(t_process *process, t_arena *arena);
 int						st(t_process *process, t_arena *arena);
+int						sti(t_process *process, t_arena *arena);
+int						live(t_process *process, t_arena *arena);
+int						zjmp(t_process *process, t_arena *arena);
 
 #endif
