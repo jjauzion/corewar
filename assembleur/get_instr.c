@@ -6,7 +6,7 @@
 /*   By: smortier <smortier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/05 12:38:35 by smortier          #+#    #+#             */
-/*   Updated: 2018/06/10 15:03:46 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/11 19:21:12 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,10 @@ void	get_instr(t_params *params)
 			analyze_line(params, file->line, index);
 		file = file->next;
 		index ++;
+	}
+	while (params->instr)
+	{
+		ft_printf("OPCODE : [%d], OCP : [%d]\n", params->instr->opcode, params->instr->ocp);
+		params->instr = params->instr->next;
 	}
 }

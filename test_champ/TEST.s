@@ -1,6 +1,7 @@
 .name "TEST_champ"
 .comment "TEST TEST TEST"
 
+aff r4
 st r3, r4
 add r1, r2, r3
 sub r1, r2, r3

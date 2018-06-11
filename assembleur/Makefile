@@ -6,7 +6,7 @@
 #    By: jjauzion <jjauzion@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 11:25:23 by jjauzion          #+#    #+#              #
-#    Updated: 2018/06/11 13:11:06 by spliesei         ###   ########.fr        #
+#    Updated: 2018/06/11 19:07:29 by spliesei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ SRC_NAME1 =	main.c \
 		get_instr.c \
 		analyze_line.c \
 		utility.c \
+		utils.c \
 		save.c \
 		error.c \
 		check_live.c \
@@ -37,6 +38,27 @@ SRC_NAME1 =	main.c \
 		check_zjmp.c \
 		check_ldi.c \
 		check_sti.c \
+		save_add.c \
+		save_tools.c \
+		save_and.c \
+		save_sub.c \
+		save_or.c \
+		save_xor.c \
+		save_zjmp.c \
+		save_ldi.c \
+		save_sti.c \
+		save_fork.c \
+		save_lldi.c \
+		save_lld.c \
+		save_lfork.c \
+		save_aff.c \
+		save_live.c \
+		save_ld.c \
+		save_st.c
+
+
+
+
 
 SRC_NAME2 =
 

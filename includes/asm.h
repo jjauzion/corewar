@@ -6,7 +6,7 @@
 /*   By: smortier <smortier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 13:06:00 by smortier          #+#    #+#             */
-/*   Updated: 2018/06/10 18:29:43 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/11 19:28:45 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,13 @@ typedef struct		s_label
 typedef	struct		s_instr
 {
 	int					id; // supposed to his place in the memory
-	char				*name;
-	int					nb_arg; // number of arg
+	int					opcode;
+	int					nbr_arg;
 	char				**arg; //just the args withouts parsings
-	int					arg_type[3]; //type of the arg like : 1 for label, 2 for direct etc
+	int					*arg_type; //type of the arg like : 1 for label, 2 for direct etc
 	int					arg_value[3]; //final parsing to get the value of each arg
 	int					ocp; //the ocp finded thx to arg_type
+	int 				nbr_bytes;
 	struct s_instr		*next;
 }					t_instr;
 
@@ -58,6 +59,7 @@ int		str_is_empty(char *str);
 
 void	get_instr(t_params *params);
 void	analyze_line(t_params *params, char *line, int index_line);
+void	init_instr(t_params *params);
 
 
 /*
@@ -73,22 +75,28 @@ void 	check_label_name(t_params *params, char *name);
 **	save functions
 **/
 
-void	save_live(t_params *params, char *line);
-void	save_ld(t_params *params, char *line);
-void	save_st(t_params *params, char *line);
-void	save_add(t_params *params, char *line);
-void	save_sub(t_params *params, char *line);
-void	save_and(t_params *params, char *line);
-void	save_or(t_params *params, char *line);
-void	save_xor(t_params *params, char *line);
-void	save_zjmp(t_params *params, char *line);
-void	save_ldi(t_params *params, char *line);
-void	save_sti(t_params *params, char *line);
-void	save_fork(t_params *params, char *line);
-void	save_lld(t_params *params, char *line);
-void	save_lldi(t_params *params, char *line);
-void	save_lfork(t_params *params, char *line);
-void	save_aff(t_params *params, char *line);
+void	get_params(t_instr *tmp, char *line);
+void 	calc_ocp(t_instr *tmp);
+void	fill_arg_types(t_params *params, t_instr *tmp);
+
+
+
+void	save_live(t_params *params, int id, char *line);
+void	save_ld(t_params *params, int id, char *line);
+void	save_st(t_params *params, int id, char *line);
+void	save_add(t_params *params, int id, char *line);
+void	save_sub(t_params *params, int id, char *line);
+void	save_and(t_params *params, int id, char *line);
+void	save_or(t_params *params, int id, char *line);
+void	save_xor(t_params *params, int id, char *line);
+void	save_zjmp(t_params *params, int id, char *line);
+void	save_ldi(t_params *params, int id, char *line);
+void	save_sti(t_params *params, int id, char *line);
+void	save_fork(t_params *params, int id, char *line);
+void	save_lld(t_params *params, int id, char *line);
+void	save_lldi(t_params *params, int id, char *line);
+void	save_lfork(t_params *params, int id, char *line);
+void	save_aff(t_params *params, int id, char *line);
 
 /*
 **	check parameters
