@@ -40,9 +40,10 @@ int	check_lfork_par(t_params *params, char *line, int index_line)
 		ft_strdel(&split[index]);
 	ft_memdel((void *)&split);
 	if (check_type(params, arg1) != DIR_CODE)
-  {
+	{
 		ft_printf("Error : Wrong type of arg1 on instr %d (lfork)\n", index_line);
 		exit(0);
 	}
+	ft_strdel(&arg1);
 	return (1);
 }

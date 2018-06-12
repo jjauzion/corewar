@@ -61,5 +61,8 @@ int			check_ldi_par(t_params *params, char *line, int index_line)
 		exit(0);
 	}
 	(void)index_line;
+	ft_strdel(&arg1);
+	ft_strdel(&arg2);
+	ft_strdel(&arg3);
 	return (1);
 }

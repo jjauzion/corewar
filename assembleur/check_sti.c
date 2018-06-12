@@ -58,5 +58,8 @@ int	check_sti_par(t_params *params, char *line, int index_line)
 		ft_printf("Error : Wrong type of arg3 on instr %d (fork)\n", index_line);
 		exit(0);
 	}
+	ft_strdel(&arg1);
+	ft_strdel(&arg2);
+	ft_strdel(&arg3);
 	return (1);
 }

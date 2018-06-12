@@ -51,5 +51,7 @@ int	check_lld_par(t_params *params, char *line, int index_line)
     ft_printf("Error : Wrong type of arg1=2 on instr %d (lldi)\n", index_line);
     exit(0);
   }
+  ft_strdel(&arg1);
+  ft_strdel(&arg2);
 	return (1);
 }

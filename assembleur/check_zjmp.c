@@ -47,5 +47,6 @@ int			check_zjmp_par(t_params *params, char *line, int index_line)
 	ft_printf("first: [%s]\n", arg1);
 	ft_printf("arg_type 1: %d\n", check_type(params, arg1));
 	(void)index_line;
+	ft_strdel(&arg1);
 	return (1);
 }

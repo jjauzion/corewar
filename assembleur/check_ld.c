@@ -56,5 +56,7 @@ int	check_ld_par(t_params *params, char *line, int index_line)
 	ft_printf("arg_type 1: %d\n", check_type(params, arg1));
 	ft_printf("arg_type 2: %d\n", check_type(params, arg2));
 	(void)index_line;
+	ft_strdel(&arg1);
+	ft_strdel(&arg2);
 	return (1);
 }

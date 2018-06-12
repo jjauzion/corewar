@@ -32,7 +32,7 @@ int		main (int ac, char **av)
 	params.label = NULL;
 	if (!(params.file = (char **)ft_memalloc(sizeof(char *) * index + 1)))
 		return (0);
-	params.file[index] = NULL;
+	params.file[index] = 0;
 	index2 = -1;
 	while (get_next_line(fd, &line) == 1)
 	{
