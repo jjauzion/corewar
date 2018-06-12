@@ -64,6 +64,9 @@ int			check_add_par(t_params *params, char *line, int index_line)
 	ft_printf("arg_type 1: %d\n", check_type(params, arg1));
 	ft_printf("arg_type 2: %d\n", check_type(params, arg2));
 	ft_printf("arg_type 3: %d\n", check_type(params, arg3));
+	ft_strdel(&arg1);
+	ft_strdel(&arg2);
+	ft_strdel(&arg3);
 	(void)index_line;
 	return (1);
 }
