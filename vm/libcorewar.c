@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/06 14:16:45 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/11 18:15:28 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/12 18:21:45 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ int		get_arg_id(t_process *process, int arg_id, t_uchar *mem, int arg_index)
 	int					id;
 
 	if (process->op->arg_type[arg_id] == T_IND)
-		id = (short)mem2int(mem, arg_index, (int)S_SHORT) % IDX_MOD;
+		id = (short)mem2int(mem, arg_index, (int)S_SHORT);
 	else if (process->op->arg_type[arg_id] == T_DIR && process->op->dir_size == 2)
 		id = (short)mem2int(mem, arg_index, process->op->dir_size);
 	else if (process->op->arg_type[arg_id] == T_DIR)

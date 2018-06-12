@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/06 13:43:43 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/11 18:53:36 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/12 18:34:19 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static int		read_ocp(t_op *op, int op_index, t_process *process)
 			op->arg_type[i] = T_DIR;
 		if (op->arg_type[i] == IND_CODE)
 			op->arg_type[i] = T_IND;
-		if ((op->arg_type[i] | op_tab[op_index].arg_type[i]) != op_tab[op_index].arg_type[i])
+		if (((op->arg_type[i] | op_tab[op_index].arg_type[i]) != op_tab[op_index].arg_type[i]) || (op->ocp < 4))
 			ret = ERROR;
 		i++;
 	}

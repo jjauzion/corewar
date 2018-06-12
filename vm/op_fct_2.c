@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/09 12:01:46 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/11 18:42:37 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/12 19:09:45 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,44 @@
 
 int		st(t_process *process, t_arena *arena)
 {
-	int				value;
-	int				address;
+	int				arg[3];
 
-	value = get_arg_val(process, 0, arena->mem, process->pc + 2);
-	address = get_arg_id(process, 1, arena->mem, process->pc + 3);
+	arg[0] = get_arg_val(process, 0, arena->mem, process->pc + 2);
+	arg[1] = get_arg_id(process, 1, arena->mem, process->pc + 3);
 	if (process->op->arg_type[1] == T_REG)
-		int2reg(process, address, value);
+		int2reg(process, arg[1], arg[0]);
 	else
-		int2mem(arena->mem, (address % IDX_MOD) + process->pc, value);
+		int2mem(arena->mem, (arg[1] % IDX_MOD) + process->pc, arg[0]);
+	//	show_operation(arena, process, arg, NULL);
+	arg[0] = get_arg_id(process, 0, arena->mem, process->pc + 2);
+	if (opt_is_set(arena->option->option, 'o'))
+		ft_printf("P% 5d | %s r%d %d\n", process->pid, process->op->name,
+				arg[0], arg[1]);
 	return (SUCCESS);
 }
 
 int		sti(t_process *process, t_arena *arena)
 {
-	int value;
-	int adress;
+	int arg[3];
 	int position;
 
-	value  = get_arg_val(process, 0, arena->mem, process->pc + 2);
-	adress = get_arg_val(process, 1, arena->mem, process->pc + 3);
+	arg[0]  = get_arg_val(process, 0, arena->mem, process->pc + 2);
+	arg[1] = get_arg_val(process, 1, arena->mem, process->pc + 3);
 	position = 1;
 	if (process->op->arg_type[1] != T_REG)
 		position++;
-	adress += get_arg_val(process, 2, arena->mem, process->pc + 3 + position);
-	int2mem(arena->mem, (adress % IDX_MOD) + process->pc, value);
+	arg[2] = get_arg_val(process, 2, arena->mem, process->pc + 3 + position);
+	int2mem(arena->mem, ((arg[1] + arg[2]) % IDX_MOD) + process->pc, arg[0]);
+	//	show_operation(arena, process, arg, NULL);
+	arg[0] = get_arg_id(process, 0, arena->mem, process->pc + 2);
+	if (opt_is_set(arena->option->option, 'o'))
+	{
+		ft_printf("P% 5d | %s r%d %d %d\n",
+				process->pid, process->op->name, arg[0], arg[1], arg[2]);
+		ft_printf("       | -> store to %d + %d = %d (with pc and mod %d)\n",
+				arg[1], arg[2], arg[1] + arg[2],
+				get_address((arg[1] + arg[2]) % IDX_MOD + process->pc));
+	}
 	return (SUCCESS);
 }
 
@@ -46,21 +59,24 @@ int		sti(t_process *process, t_arena *arena)
 int		live(t_process *process, t_arena *arena)
 {
 	int		i;
-	int		value;
+	int		arg[3];
 
 	process->op->arg_type[0] = T_DIR;
-	value = get_arg_val(process, 0, arena->mem, process->pc + 1);
+	arg[0] = get_arg_val(process, 0, arena->mem, process->pc + 1);
 	process->last_live_cycle = arena->cycle;
 	arena->nb_live++;
 	i = -1;
 	while (++i < arena->nb_champion)
 	{
-		if (value == arena->champions[i]->id)
+		if (arg[0] == arena->champions[i]->id)
 		{
+			if (opt_is_set(arena->option->option, 'l'))
+				ft_printf("Player %d (%s) is said to be alive\n", i + 1, arena->champions[i]->header.prog_name);
 			arena->champions[i]->last_live_cycle = arena->last_check + arena->cycle;
 			arena->champions[i]->nb_live++;
 		}
 	}
+	show_operation(arena, process, arg, NULL);
 	return (SUCCESS);
 }
 
@@ -72,8 +88,12 @@ int		zjmp(t_process *process, t_arena *arena)
 	value = get_arg_val(process, 0, arena->mem, process->pc + 1);
 	if (process->carry == 1)
 	{
+		if (opt_is_set(arena->option->option, 'o'))
+			ft_printf("P% 5d | zjmp %d OK\n", process->pid, (value % IDX_MOD));
 		process->op_size = 0;
 		process->pc = get_address(process->pc + (value % IDX_MOD));
 	}
+	else if (opt_is_set(arena->option->option, 'o'))
+			ft_printf("P% 5d | zjmp %d FAILED\n", process->pid, (value % IDX_MOD));
 	return (SUCCESS);
 }

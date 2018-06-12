@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/05 15:38:10 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/08 19:05:06 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/12 12:49:06 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_process		*create_process(int address, int id, t_process *origin_process)
 {
-	static t_uint	pid = 0;
+	static t_uint	pid = 1;
 	t_process		*new_process;
 	int				i;
 	char			*tmp;

@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:02:07 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/11 17:25:12 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/12 18:09:29 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 # define S_SHORT sizeof(short)
 
 #if 0
-# define SPAM(a) printf a
+# define SPAM(a) ft_printf a
 # define SPAM2(a) ft_print_mem a
 # define SPAM3(a) getchar a
 #else
@@ -36,7 +36,7 @@
 typedef unsigned char	t_uchar;
 typedef unsigned int	t_uint;
 
-# define VALID_OPT "v"
+# define VALID_OPT "vcopl"
 # define VALID_OPT_WITH_VAL "d"
 
 typedef struct			s_option
@@ -114,6 +114,10 @@ int						run_arena(t_arena *arena);
 t_op					*read_op(t_arena *arena, t_process *process);
 int						exec_op(t_process *process, t_arena *arena);
 void					print_arena(t_uchar *mem, size_t index, size_t length);
+void					verbose(t_arena *arena, t_process *process, int step, int dump);
+void					show_cycle(t_arena *arena, t_process *process, int step, int dump);
+void					show_operation(t_arena *arena, t_process *process, int arg[3], char *msg);
+void					show_pc_mouvement(t_arena *arena, t_process *process, int step, int dump);
 
 int						get_address(int address);
 t_uint					mem2int(t_uchar *mem, int index, int size);

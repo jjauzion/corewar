@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/04 14:05:19 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/11 11:09:28 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/12 10:35:45 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ void				*usage(char *prog_name)
 	ft_printf("Usage : %s [-d N -v]\n", prog_name);
 	ft_printf("\t -d N\t: Dumps memory after N cycles then exits\n", prog_name);
 	ft_printf("\t -v  \t: Verbose mode\n", prog_name);
+	ft_printf("\t -c  \t: Show cycles\n", prog_name);
+	ft_printf("\t -o  \t: Show operations\n", prog_name);
+	ft_printf("\t -p  \t: Show pc movement (except for jumps)\n", prog_name);
+	ft_printf("\t -l  \t: Show lives\n", prog_name);
 	return (NULL);
 }
 

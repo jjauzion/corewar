@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:30:29 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/11 11:23:48 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/12 12:02:16 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int		main(int argc, char **argv)
 	t_arena		*arena;
 	t_champion	**champions;
 	int			i;
+	uintmax_t	last_live;
+	int			winner;
 
 	(void)argv;
 	if (!(arena = (t_arena*)ft_memalloc(sizeof(t_arena))))
@@ -35,6 +37,18 @@ int		main(int argc, char **argv)
 				arena->champions[i]->header.prog_name,
 				arena->champions[i]->header.comment);
 	run_arena(arena);
+	winner = 0;
+	last_live = 0;
+	i = -1;
+	while (++i< arena->nb_champion)
+	{
+		if (arena->champions[i]->last_live_cycle > last_live)
+		{
+			winner = i;
+			last_live = arena->champions[i]->last_live_cycle;
+		}
+	}
+	ft_printf("Contestant %d, \"%s\", has won !\n", winner + 1, arena->champions[winner]->header.prog_name);
 	free(arena->mem);
 	while (arena->nb_champion)
 	{
