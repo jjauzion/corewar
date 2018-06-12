@@ -47,4 +47,6 @@ int		main (int ac, char **av)
 	get_label(&params); //Function to initate the stuct label (name and pos)
 	lexer(&params); //Function to clear file of labels, to reach an easier parsing
 	get_instr(&params); //Function to get every instruction, their arguments, name etc
+	while (1) // We got leaks on every arg in every check_file
+		;
 }
