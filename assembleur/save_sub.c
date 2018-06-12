@@ -26,7 +26,7 @@ void	save_sub(t_params *params, int id, char *line)
 	get_params(tmp, line);
 	fill_arg_types(params, tmp);
 	calc_ocp(tmp);
-	ft_printf("\n1: [%s], 2: [%s] 3: [%s]\n\n", tmp->arg[0], tmp->arg[1], tmp->arg[2]);
-	ft_printf("\n1: [%d], 2: [%d] 3: [%d]\n\n", tmp->arg_type[0], tmp->arg_type[1], tmp->arg_type[2]);
-	ft_printf("OCP: %d\n\n", tmp->ocp);
+	// ft_printf("\n1: [%s], 2: [%s] 3: [%s]\n\n", tmp->arg[0], tmp->arg[1], tmp->arg[2]);
+	// ft_printf("\n1: [%d], 2: [%d] 3: [%d]\n\n", tmp->arg_type[0], tmp->arg_type[1], tmp->arg_type[2]);
+	// ft_printf("OCP: %d\n\n", tmp->ocp);
 }

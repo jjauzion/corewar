@@ -18,7 +18,7 @@ void	get_params(t_instr *tmp, char *line)
 	int		index;
 
 	split = ft_strsplit(line, SEPARATOR_CHAR);
-	if (!(tmp->arg = (char **)ft_memalloc(sizeof(char *) * tmp->nbr_arg + 1)))
+	if (!(tmp->arg = (char **)ft_memalloc(sizeof(char *) * (tmp->nbr_arg + 1))))
 		return ;
 	tmp->arg[tmp->nbr_arg] = NULL;
 	index = -1;

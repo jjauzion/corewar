@@ -27,9 +27,9 @@ void	get_instr(t_params *params)
 		file = file->next;
 		index ++;
 	}
-	while (params->instr)
-	{
-		ft_printf("OPCODE : [%d], OCP : [%d]\n", params->instr->opcode, params->instr->ocp);
-		params->instr = params->instr->next;
-	}
+	// while (params->instr)
+	// {
+	// 	ft_printf("OPCODE : [%d], OCP : [%d]\n", params->instr->opcode, params->instr->ocp);
+	// 	params->instr = params->instr->next;
+	// }
 }
