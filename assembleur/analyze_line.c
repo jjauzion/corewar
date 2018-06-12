@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/07 13:24:32 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/11 19:14:57 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/12 13:38:22 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,7 @@ void	analyze_line(t_params *params, char *line, int index_line)
 
 	split = ft_split_whitespaces(line);
 	ft_printf("first word: %s\n", split[0]);
-	// ft_printf("secon word: %s\n", split[1]);
-
 	(void)params;
-
 	if (ft_strncmp("add", split[0], 3) == 0 && check_add_par(params, line + 3, index_line))
 		save_add(params, index_line, line + 3);
 	else if (ft_strncmp("sub", split[0], 3) == 0 && check_sub_par(params, line + 3, index_line))
@@ -40,7 +37,7 @@ void	analyze_line(t_params *params, char *line, int index_line)
 	else if (ft_strncmp("sti", split[0], 3) == 0 && check_sti_par(params, line + 3, index_line))
 		save_sti(params, index_line, line + 3);
 	else if (ft_strncmp("fork", split[0], 4) == 0 && check_fork_par(params, line + 4, index_line))
-		save_fork(params, index_line, line +4);
+		save_fork(params, index_line, line + 4);
 	else if (ft_strncmp("lldi", split[0], 4) == 0 && check_lldi_par(params, line + 4, index_line))
 		save_lldi(params, index_line, line + 4);
 	else if (ft_strncmp("lld", split[0], 3) == 0 && check_lld_par(params, line + 3, index_line))

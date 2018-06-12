@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 13:03:39 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/11 14:12:18 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/12 15:42:55 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,9 @@ int			check_xor_par(t_params *params, char *line, int index_line)
 		ft_printf("Error : Wrong type of arg3 on instr %d\n", index_line);
 		exit(0);
 	}
-	ft_printf("first: [%s]\n", arg1);
-	ft_printf("second: [%s]\n", arg2);
-	ft_printf("third:: [%s]\n", arg3);
-	ft_printf("arg_type 1: %d\n", check_type(params, arg1));
-	ft_printf("arg_type 2: %d\n", check_type(params, arg2));
-	ft_printf("arg_type 3: %d\n", check_type(params, arg3));
 	(void)index_line;
+	ft_strdel(&arg1);
+	ft_strdel(&arg2);
+	ft_strdel(&arg3);
 	return (1);
 }

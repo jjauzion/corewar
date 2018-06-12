@@ -6,13 +6,13 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 16:17:50 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/11 18:26:38 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/12 13:25:47 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "asm.h"
 
-t_instr *new_instr(void)
+t_instr	*new_instr(void)
 {
 	t_instr *new_instr;
 

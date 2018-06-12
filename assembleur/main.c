@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/06/12 13:23:09 by spliesei          #+#    #+#             */
+/*   Updated: 2018/06/12 13:23:14 by spliesei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "asm.h"
 #include "libft.h"
 
@@ -30,9 +42,10 @@ int		main (int ac, char **av)
 	lseek(fd, 0, SEEK_SET);
 	params.lexer = NULL;
 	params.label = NULL;
-	if (!(params.file = (char **)ft_memalloc(sizeof(char *) * index + 1)))
+	if (!(params.file = (char **)ft_memalloc(sizeof(char *) * (index + 1))))
 		return (0);
-	params.file[index] = NULL;
+	params.file[index] = 0;
+	params.instr = NULL;
 	index2 = -1;
 	while (get_next_line(fd, &line) == 1)
 	{
@@ -47,6 +60,5 @@ int		main (int ac, char **av)
 	get_label(&params); //Function to initate the stuct label (name and pos)
 	lexer(&params); //Function to clear file of labels, to reach an easier parsing
 	get_instr(&params); //Function to get every instruction, their arguments, name etc
-	while (1) // We got leaks on every arg in every check_file
-		;
+	return (0);
 }

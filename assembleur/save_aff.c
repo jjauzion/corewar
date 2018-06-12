@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 19:02:48 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/11 19:15:41 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/12 15:45:09 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ void	save_aff(t_params *params, int id, char *line)
 	get_params(tmp, line);
 	fill_arg_types(params, tmp);
 	calc_ocp(tmp);
-	ft_printf("\n1: [%s]\n\n", tmp->arg[0]);
-	ft_printf("\n1: [%d]\n\n", tmp->arg_type[0]);
-	ft_printf("OCP: %d\n\n", tmp->ocp);
+	calc_bytes(tmp);
+	ft_printf("1: [%s]\n", tmp->arg[0]);
+	ft_printf("1: [%d]\n", tmp->arg_type[0]);
+	ft_printf("OCP: %d\n", tmp->ocp);
+ft_printf("Bytes: %d\n\n", tmp->nbr_bytes);
 }

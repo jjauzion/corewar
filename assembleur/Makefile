@@ -6,7 +6,7 @@
 #    By: jjauzion <jjauzion@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 11:25:23 by jjauzion          #+#    #+#              #
-#    Updated: 2018/06/11 19:07:29 by spliesei         ###   ########.fr        #
+#    Updated: 2018/06/12 15:12:14 by spliesei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,6 @@ SRC_NAME1 =	main.c \
 		analyze_line.c \
 		utility.c \
 		utils.c \
-		save.c \
 		error.c \
 		check_live.c \
 		check_ld.c \

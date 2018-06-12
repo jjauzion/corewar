@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 12:59:00 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/11 13:28:36 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/12 15:42:55 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,8 @@ int			check_st_par(t_params *params, char *line, int index_line)
 		ft_printf("Error : Wrong type of arg2\n");
 		exit(0);
 	}
-	ft_printf("first: [%s]\n", arg1);
-	ft_printf("second: [%s]\n", arg2);
-	ft_printf("arg_type 1: %d\n", check_type(params, arg1));
-	ft_printf("arg_type 2: %d\n", check_type(params, arg2));
 	(void)index_line;
+	ft_strdel(&arg1);
+	ft_strdel(&arg2);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: smortier <smortier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 13:06:00 by smortier          #+#    #+#             */
-/*   Updated: 2018/06/11 19:28:45 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/12 15:31:27 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void 	check_label_name(t_params *params, char *name);
 void	get_params(t_instr *tmp, char *line);
 void 	calc_ocp(t_instr *tmp);
 void	fill_arg_types(t_params *params, t_instr *tmp);
-
+void	calc_bytes(t_instr *tmp);
 
 
 void	save_live(t_params *params, int id, char *line);

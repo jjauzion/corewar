@@ -12,39 +12,6 @@
 
 #include "asm.h"
 
-// int	check_comment(char *line)
-// {
-// 	if (line[0] == COMMENT_CHAR)
-// 		return (1);
-// 	return (0);
-// }
-//
-// int	check_label_chars(char *line, int i)
-// {
-// 	while (--i >= 0)
-// 	{
-// 		if (ft_strchr(LABEL_CHARS, line[i]) == NULL)
-// 			return (0);
-// 	}
-// 	return (1);
-// }
-//
-// int	check_label(char *line)
-// {
-// 	int	i;
-//
-// 	i = 0;
-// 	while (line[i] && line[i] != LABEL_CHAR)
-// 		i++;
-// 	if (line[i])
-// 	{
-// 		if (check_label_chars(line, i))
-// 			return (1);
-// 	}
-// 	return (0);
-// }
-
-
 void check_label_name(t_params *params, char *name)
 {
 	int		ok;
@@ -68,59 +35,38 @@ void check_label_name(t_params *params, char *name)
 	}
 }
 
-// trim label name
-
-int	check_int(t_params *params, char *line)
+static	void check_nbr_arg_live(char **split)
 {
-	int		tmp;
+	int		i;
 
-	tmp = ft_atoi(line);
-	if (*line == LABEL_CHAR)
-		check_label_name(params, line + 1);
-	else if (ft_strncmp(ft_itoa(tmp), line, ft_str_ws_len(line)))
-	{
-		ft_printf("Error: %s : is probably an overflow\n", line);
-		exit(0);
-	}
-	return (1);
-}
-
-int	check_live_plus(t_params *params, char *line, int index_line)
-{
-	int		index;
-
-	index = -1;
-	while (line[++index] && ((line[index] >= '0' &&
-		line[index] <= '9') || line[index] == '-'))
+	i = -1;
+	while (split[++i])
 		;
-	if (line[index] == LABEL_CHAR)
-		check_label_name(params, line + index + 1);
-	else if (index != ft_str_ws_len(line))
+	if (i != 1)
 	{
-		ft_printf("Error: Unexpected token in instruction %d :\e[31m%s\e[0m\n", index_line, line + index);
-		exit(0);
+		ft_printf("Error:\n");
+		exit (0);
 	}
-	return (1);
 }
 
 int	check_live_par(t_params *params, char *line, int index_line)
 {
-	int	i;
+	char	**split;
+	char	*arg1;
+	int		index;
 
-	i = 0;
-	while (line[i] == ' ' || line[i] == '\t')
-		i++;
-	if (line[i] == DIRECT_CHAR)
+	split = ft_strsplit(line, SEPARATOR_CHAR);
+	check_nbr_arg_live(split);
+	arg1 = ft_strtrim(split[0]);
+	index = -1;
+	while (split[++index])
+		ft_strdel(&split[index]);
+	ft_memdel((void *)&split);
+	if (check_type(params, arg1) != DIR_CODE)
 	{
-		if (check_live_plus(params, line + i + 1, index_line)
-			&& check_int(params, line + i + 1)) // Checks if the Number in the string is an int.
-			return (1);
-		else
-		{
-			ft_printf("Error with : %s\n", line);
-			exit (0);
-		}
+		ft_printf("Error : Wrong type of arg1 on instr %d (live)\n", index_line);
+		exit(0);
 	}
-	ft_printf("Error: Wrong usage of live: (live (DIRECT))\n");
-	exit (0);
+	ft_strdel(&arg1);
+	return (1);
 }
