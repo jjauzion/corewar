@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 13:04:22 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/11 14:12:53 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/12 15:42:55 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ int			check_zjmp_par(t_params *params, char *line, int index_line)
 		ft_printf("Error : Wrong type of arg1 on instr %d\n", index_line);
 		exit(0);
 	}
-	ft_printf("first: [%s]\n", arg1);
-	ft_printf("arg_type 1: %d\n", check_type(params, arg1));
 	(void)index_line;
 	ft_strdel(&arg1);
 	return (1);
