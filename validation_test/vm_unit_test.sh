@@ -1,16 +1,28 @@
 #!/bin/sh
 
 MY_EXE="../corewar"
-DEMO_EXE="../resource/corewar"
 
 #MY_PATH=$0
 #TEST= `$MY_PATH | sed "s%checker.sh%%"`
 #echo $TEST
 
-if [ -z "${1}" ]; then
+if [ -z "${2}" ]; then
 	OPT="-lcpo"
 else
-	OPT=$1
+	OPT=$2
+fi
+
+if ! [ -z "${1}" ]; then
+	demo="`dirname $1`/demo_`basename $1 | cut -f1 -d'.'`"
+	output="`dirname $1`/vm_`basename $1 | cut -f1 -d'.'`"
+	diff="`dirname $1`/diff_`basename $1 | cut -f1 -d'.'`"
+	$MY_EXE $OPT $1 > $output
+	rm $diff 2>/dev/null
+	result="`diff -u $demo $output`"
+	if ! [ -z "${result}" ]; then
+		echo "$result" > $diff
+	fi
+	exit
 fi
 
 for file in test_champ/demo_*;

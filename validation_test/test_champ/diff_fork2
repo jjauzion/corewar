@@ -1,5 +1,5 @@
 --- test_champ/demo_fork2	2018-06-13 18:42:34.000000000 +0200
-+++ test_champ/vm_fork2	2018-06-13 18:46:18.000000000 +0200
++++ test_champ/vm_fork2	2018-06-13 19:30:09.000000000 +0200
 @@ -1000,8 +1000,7 @@
  It is now cycle 998
  It is now cycle 999
