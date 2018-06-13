@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/06 13:29:32 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/13 15:02:08 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/13 17:21:13 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int			exec_op(t_process *process, t_arena *arena)
 		{}
 		if (g_op_fct_tab[i].op_code == 0)
 		{
-			process->pc += process->op_size;
+			process->pc = get_address(process->pc + process->op_size);
 			//error_ptr(process->op, "op code not found in g_op_fct_tab\n"); 
 			ft_printf("op code %d not found in g_op_fct_tab\n", process->op->op_code); 
 			process->op = read_op(arena, process);
@@ -36,7 +36,7 @@ int			exec_op(t_process *process, t_arena *arena)
 	else
 		verbose(arena, process, 50, 0);
 	show_pc_mouvement(arena, process, 51, 0);
-	process->pc += process->op_size;
+	process->pc = get_address(process->pc + process->op_size);
 	free(process->op);
 	process->op_size = 0;
 	process->op = read_op(arena, process);

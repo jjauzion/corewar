@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/05 15:38:10 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/12 12:49:06 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/13 18:41:19 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ t_process		*create_process(int address, int id, t_process *origin_process)
 		while (++i < REG_NUMBER)
 			ft_memcpy(new_process->reg[i], origin_process->reg[i], REG_SIZE);
 		new_process->carry = origin_process->carry;
+		new_process->last_live_cycle = origin_process->last_live_cycle;
 	}
 	new_process->next = NULL;
 	return (new_process);

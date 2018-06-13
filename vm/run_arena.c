@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/05 15:12:10 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/13 15:51:37 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/13 18:46:01 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int					run_arena(t_arena *arena)
 		verbose(arena, current_process, 10, 0);
 		show_cycle(arena, current_process, 10, 0);
 		current_process = arena->process;
+		last_process = NULL;
 		while (current_process)
 		{
 			verbose(arena, current_process, 40, 0);
@@ -52,22 +53,7 @@ int					run_arena(t_arena *arena)
 				exec_op(current_process, arena);
 			else
 				verbose(arena, current_process, 70, 0);
-			current_process = current_process->next;
-		}
-		if (arena->cycle == arena->cycle2die || arena->cycle2die <= 0)
-		{
-			arena->nb_check++;
-			arena->last_check += arena->cycle;
-			arena->cycle = 0;
-			current_process = arena->process;
-			last_process = NULL;
-			i = -1;
-			while (++i < arena->nb_champion)
-			{
-				verbose(arena, current_process, 20, i);
-				arena->champions[i]->nb_live = 0;
-			}
-			while (current_process)
+			if (arena->cycle == arena->cycle2die || arena->cycle2die <= 0)
 			{
 				if (current_process->last_live_cycle == 0)
 				{
@@ -81,6 +67,21 @@ int					run_arena(t_arena *arena)
 					last_process = current_process;
 					current_process = current_process->next;
 				}
+			}
+			else
+				current_process = current_process->next;
+		}
+		if (arena->cycle == arena->cycle2die || arena->cycle2die <= 0)
+		{
+			arena->nb_check++;
+			arena->last_check += arena->cycle;
+			arena->cycle = 0;
+			current_process = arena->process;
+			i = -1;
+			while (++i < arena->nb_champion)
+			{
+				verbose(arena, current_process, 20, i);
+				arena->champions[i]->nb_live = 0;
 			}
 			if (arena->nb_live >= NBR_LIVE || arena->nb_check >= MAX_CHECKS)
 			{

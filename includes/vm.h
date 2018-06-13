@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:02:07 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/13 15:43:40 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/13 17:13:10 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,5 +137,8 @@ int						zjmp(t_process *process, t_arena *arena);
 int						and(t_process *process, t_arena *arena);
 int						add(t_process *process, t_arena *arena);
 int						sub(t_process *process, t_arena *arena);
+int						or(t_process *process, t_arena *arena);
+int						xor(t_process *process, t_arena *arena);
+int						fork_op(t_process *process, t_arena *arena);
 
 #endif

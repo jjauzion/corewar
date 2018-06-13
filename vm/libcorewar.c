@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/06 14:16:45 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/13 15:29:35 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/13 17:26:01 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,5 +130,7 @@ int		get_arg_val(t_process *process, int arg_id, t_uchar *mem, int arg_index)
 		reg = mem[get_address(arg_index)];
 		value = reg2int(process, reg);
 	}
+	else
+		ft_printf("arg type unknown in get_arg_val fct\n");
 	return (value);
 }

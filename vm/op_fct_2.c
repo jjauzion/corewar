@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/09 12:01:46 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/13 15:10:58 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/13 17:36:53 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ int		live(t_process *process, t_arena *arena)
 	int		i;
 	int		arg[3];
 
-	process->op->arg_type[0] = T_DIR;
 	arg[0] = get_arg_val(process, 0, arena->mem, process->pc + 1);
 	process->last_live_cycle = arena->cycle;
 	arena->nb_live++;

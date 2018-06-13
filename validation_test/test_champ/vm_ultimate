@@ -43,7 +43,8 @@ It is now cycle 32
 It is now cycle 33
 It is now cycle 34
 It is now cycle 35
-op code 4 not found in g_op_fct_tab
+P    1 | add r1 r2 r3
+ADV 5 (0x0018 -> 0x001d) 04 54 01 02 03 
 It is now cycle 36
 It is now cycle 37
 It is now cycle 38
@@ -54,7 +55,8 @@ It is now cycle 42
 It is now cycle 43
 It is now cycle 44
 It is now cycle 45
-op code 5 not found in g_op_fct_tab
+P    1 | sub r1 r2 r3
+ADV 5 (0x001d -> 0x0022) 05 54 01 02 03 
 It is now cycle 46
 It is now cycle 47
 It is now cycle 48
@@ -133,126 +135,144 @@ It is now cycle 102
 It is now cycle 103
 It is now cycle 104
 It is now cycle 105
-op code 7 not found in g_op_fct_tab
+P    1 | or -1 0 r3
+ADV 5 (0x0067 -> 0x006c) 07 54 01 02 03 
 It is now cycle 106
 It is now cycle 107
 It is now cycle 108
 It is now cycle 109
 It is now cycle 110
 It is now cycle 111
-op code 7 not found in g_op_fct_tab
+P    1 | or -1 10 r3
+ADV 8 (0x006c -> 0x0074) 07 64 01 00 00 00 0a 03 
 It is now cycle 112
 It is now cycle 113
 It is now cycle 114
 It is now cycle 115
 It is now cycle 116
 It is now cycle 117
-op code 7 not found in g_op_fct_tab
+P    1 | or -1 655875 r3
+ADV 6 (0x0074 -> 0x007a) 07 74 01 00 0a 03 
 It is now cycle 118
 It is now cycle 119
 It is now cycle 120
 It is now cycle 121
 It is now cycle 122
 It is now cycle 123
-op code 7 not found in g_op_fct_tab
+P    1 | or 10 0 r3
+ADV 8 (0x007a -> 0x0082) 07 94 00 00 00 0a 02 03 
 It is now cycle 124
 It is now cycle 125
 It is now cycle 126
 It is now cycle 127
 It is now cycle 128
 It is now cycle 129
-op code 7 not found in g_op_fct_tab
+P    1 | or 10 -1275068416 r3
+ADV 9 (0x0082 -> 0x008b) 07 b4 00 00 00 0a 00 01 03 
 It is now cycle 130
 It is now cycle 131
 It is now cycle 132
 It is now cycle 133
 It is now cycle 134
 It is now cycle 135
-op code 7 not found in g_op_fct_tab
+P    1 | or 10 1 r3
+ADV 11 (0x008b -> 0x0096) 07 a4 00 00 00 0a 00 00 00 01 03 
 It is now cycle 136
 It is now cycle 137
 It is now cycle 138
 It is now cycle 139
 It is now cycle 140
 It is now cycle 141
-op code 7 not found in g_op_fct_tab
+P    1 | or 10 0 r3
+ADV 6 (0x0096 -> 0x009c) 07 d4 00 0a 02 03 
 It is now cycle 142
 It is now cycle 143
 It is now cycle 144
 It is now cycle 145
 It is now cycle 146
 It is now cycle 147
-op code 7 not found in g_op_fct_tab
+P    1 | or -201324032 10 r3
+ADV 9 (0x009c -> 0x00a5) 07 e4 00 0a 00 00 00 0a 03 
 It is now cycle 148
 It is now cycle 149
 It is now cycle 150
 It is now cycle 151
 It is now cycle 152
 It is now cycle 153
-op code 7 not found in g_op_fct_tab
+P    1 | or 33753188 -201324032 r3
+ADV 7 (0x00a5 -> 0x00ac) 07 f4 00 0a 00 01 03 
 It is now cycle 154
 It is now cycle 155
 It is now cycle 156
 It is now cycle 157
 It is now cycle 158
 It is now cycle 159
-op code 8 not found in g_op_fct_tab
+P    1 | xor -1 0 r3
+ADV 5 (0x00ac -> 0x00b1) 08 54 01 02 03 
 It is now cycle 160
 It is now cycle 161
 It is now cycle 162
 It is now cycle 163
 It is now cycle 164
 It is now cycle 165
-op code 8 not found in g_op_fct_tab
+P    1 | xor -1 10 r3
+ADV 8 (0x00b1 -> 0x00b9) 08 64 01 00 00 00 0a 03 
 It is now cycle 166
 It is now cycle 167
 It is now cycle 168
 It is now cycle 169
 It is now cycle 170
 It is now cycle 171
-op code 8 not found in g_op_fct_tab
+P    1 | xor -1 655875 r3
+ADV 6 (0x00b9 -> 0x00bf) 08 74 01 00 0a 03 
 It is now cycle 172
 It is now cycle 173
 It is now cycle 174
 It is now cycle 175
 It is now cycle 176
 It is now cycle 177
-op code 8 not found in g_op_fct_tab
+P    1 | xor 10 0 r3
+ADV 8 (0x00bf -> 0x00c7) 08 94 00 00 00 0a 02 03 
 It is now cycle 178
 It is now cycle 179
 It is now cycle 180
 It is now cycle 181
 It is now cycle 182
 It is now cycle 183
-op code 8 not found in g_op_fct_tab
+P    1 | xor 10 -1275068416 r3
+ADV 9 (0x00c7 -> 0x00d0) 08 b4 00 00 00 0a 00 01 03 
 It is now cycle 184
 It is now cycle 185
 It is now cycle 186
 It is now cycle 187
 It is now cycle 188
 It is now cycle 189
-op code 8 not found in g_op_fct_tab
+P    1 | xor 10 1 r3
+ADV 11 (0x00d0 -> 0x00db) 08 a4 00 00 00 0a 00 00 00 01 03 
 It is now cycle 190
 It is now cycle 191
 It is now cycle 192
 It is now cycle 193
 It is now cycle 194
 It is now cycle 195
-op code 8 not found in g_op_fct_tab
+P    1 | xor 10 0 r3
+ADV 6 (0x00db -> 0x00e1) 08 d4 00 0a 02 03 
 It is now cycle 196
 It is now cycle 197
 It is now cycle 198
 It is now cycle 199
 It is now cycle 200
 It is now cycle 201
-op code 8 not found in g_op_fct_tab
+P    1 | xor -201324032 10 r3
+ADV 9 (0x00e1 -> 0x00ea) 08 e4 00 0a 00 00 00 0a 03 
 It is now cycle 202
 It is now cycle 203
 It is now cycle 204
 It is now cycle 205
 It is now cycle 206
 It is now cycle 207
-op code 8 not found in g_op_fct_tab
+P    1 | xor 173277442 -201324032 r3
+ADV 7 (0x00ea -> 0x00f1) 08 f4 00 0a 00 01 03 
 It is now cycle 208
 It is now cycle 209
 It is now cycle 210
@@ -1243,7 +1263,8 @@ It is now cycle 1174
 It is now cycle 1175
 It is now cycle 1176
 It is now cycle 1177
-op code 12 not found in g_op_fct_tab
+P    1 | fork 1000 (769)
+ADV 3 (0x0119 -> 0x011c) 0c 03 e8 
 It is now cycle 1178
 It is now cycle 1179
 It is now cycle 1180

@@ -1,0 +1,12 @@
+--- test_champ/demo_fork2	2018-06-13 18:42:34.000000000 +0200
++++ test_champ/vm_fork2	2018-06-13 18:46:18.000000000 +0200
+@@ -1000,8 +1000,7 @@
+ It is now cycle 998
+ It is now cycle 999
+ It is now cycle 1000
+-P    1 | lfork 18 (18)
+-ADV 3 (0x0000 -> 0x0003) 0f 00 12 
++op code 15 not found in g_op_fct_tab
+ It is now cycle 1001
+ It is now cycle 1002
+ It is now cycle 1003
