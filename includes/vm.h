@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:02:07 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/13 15:38:36 by tmerli           ###   ########.fr       */
+/*   Updated: 2018/06/13 15:40:24 by tmerli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,7 @@ void					show_cycle(t_arena *arena, t_process *process, int step, int dump);
 void					show_operation(t_arena *arena, t_process *process, int arg[3], char *msg);
 void					show_pc_mouvement(t_arena *arena, t_process *process, int step, int dump);
 
+void					change_carry(t_process *process, int value);
 int						get_address(int address);
 t_uint					mem2int(t_uchar *mem, int index, int size);
 void					int2mem(t_uchar *mem, int index, int value);

@@ -6,11 +6,19 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/06 14:16:45 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/13 12:11:30 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/13 15:29:35 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vm.h"
+
+void		change_carry(t_process *process, int value)
+{
+	if (value == 0)
+		process->carry = 1;
+	else
+		process->carry = 0;
+}
 
 int		get_address(int address)
 {
