@@ -6,12 +6,35 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 13:23:09 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/12 13:23:14 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/13 18:05:27 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "asm.h"
 #include "libft.h"
+
+void	print(t_params *params)
+{
+	t_instr	*tmp;
+	int 	index;
+
+	tmp = params->instr;
+	while (tmp)
+	{
+		index = -1;
+		ft_printf("Opcode : [%d]\n", tmp->opcode);
+		ft_printf("Adress : [%d]\n", tmp->address);
+		ft_printf("Bytes  : [%d]\n", tmp->nbr_bytes);
+		ft_printf("OCP    : [%d]\n", tmp->ocp);
+		while (++index < tmp->nbr_arg)
+		{
+			ft_printf("arg[%d] : %s\n", index, tmp->arg[index]);
+			ft_printf("val[%d] : %d\n", index, tmp->arg_value[index]);
+		}
+		ft_printf("\n");
+		tmp = tmp->next;
+	}
+}
 
 int		main (int ac, char **av)
 {
@@ -60,5 +83,8 @@ int		main (int ac, char **av)
 	get_label(&params); //Function to initate the stuct label (name and pos)
 	lexer(&params); //Function to clear file of labels, to reach an easier parsing
 	get_instr(&params); //Function to get every instruction, their arguments, name etc
+	print(&params);
+	while(1)
+		;
 	return (0);
 }

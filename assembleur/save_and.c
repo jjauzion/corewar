@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 18:28:15 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/12 15:44:51 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/13 15:46:52 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	save_and(t_params *params, int id, char *line)
 	tmp->id = id;
 	tmp->opcode = 6;
 	tmp->nbr_arg = 3;
+	tmp->d2 = 0;
 	get_params(tmp, line);
 	fill_arg_types(params, tmp);
 	calc_ocp(tmp);

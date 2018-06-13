@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 13:23:51 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/12 13:32:19 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/13 14:49:55 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,26 @@ void	check_name_label(char *str)
 	}
 }
 
-t_label	*new_label(int pos, char *line)
+void	check_double_labels(t_params *params, char *name)
+{
+	t_label	*tmp;
+
+	tmp = params->label;
+	if (tmp)
+	{
+		while (tmp)
+		{
+			if (ft_strcmp(tmp->name, name) == 0)
+			{
+				ft_printf("Error: Label named \e[31m%s\e[0m already exists!\n", name);
+				exit (0);
+			}
+			tmp = tmp->next;
+		}
+	}
+}
+
+t_label	*new_label(t_params *params, int pos, char *line)
 {
 	t_label	*new_label;
 	int		index;
@@ -41,6 +60,7 @@ t_label	*new_label(int pos, char *line)
 	split = ft_strsplit(line, LABEL_CHAR);
 	new_label->name = ft_strsub(split[0], 0, ft_strlen(split[0]));
 	check_name_label(new_label->name);
+	check_double_labels(params, new_label->name);
 	index = -1;
 	while (split[++index])
 		ft_strdel(&split[index]);
@@ -56,7 +76,7 @@ t_label	*create_label(t_params *params, int pos, char *line)
 
 	if (params->label == NULL)
 	{
-		tmp = new_label(pos, line);
+		tmp = new_label(params, pos, line);
 		return (tmp);
 	}
 	else
@@ -65,7 +85,7 @@ t_label	*create_label(t_params *params, int pos, char *line)
 		save = tmp;
 		while (tmp->next)
 			tmp = tmp->next;
-		tmp->next = new_label(pos, line);
+		tmp->next = new_label(params, pos, line);
 		return (save);
 	}
 }

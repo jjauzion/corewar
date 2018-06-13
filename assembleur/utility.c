@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/07 18:52:59 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/12 13:34:01 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/13 17:45:12 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	check_reg(char *arg)
 {
 	if (arg[0] == 'r')
 	{
-		if (0 < ft_atoi(arg + 1) && ft_atoi(arg + 1) <= REG_NUMBER)
+		if (0 <= ft_atoi(arg + 1) && ft_atoi(arg + 1) <= REG_NUMBER)
 		{
 			if ((int)ft_strlen(arg) - 1 == ft_nbrlen(ft_atoi(arg + 1), 10))
 				return (REG_CODE);
