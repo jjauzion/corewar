@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 12:59:00 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/12 15:42:55 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/13 13:12:05 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int			check_st_par(t_params *params, char *line, int index_line)
 	while (split[++index])
 		ft_strdel(&split[index]);
 	ft_memdel((void *)&split);
+	ft_printf("arg1: [%s]\n", arg1);
 	if (check_type(params, arg1) != REG_CODE)
 	{
 		ft_printf("Error : Wrong type of arg1 on instr %d\n", index_line);

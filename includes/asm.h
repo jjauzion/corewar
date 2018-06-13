@@ -6,7 +6,7 @@
 /*   By: smortier <smortier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 13:06:00 by smortier          #+#    #+#             */
-/*   Updated: 2018/06/12 15:31:27 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/13 17:08:47 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,14 @@
 #include "libft.h"
 #include "op.h"
 
+# define REG_BYTES				1
+# define IND_BYTES				2
+# define DIR_BYTES				4
+
 typedef struct		s_label
 {
 	int					pos; // means the line in the file
+	int					instr;
 	int					value;
 	char				*name;
 	struct s_label		*next;
@@ -27,11 +32,13 @@ typedef struct		s_label
 typedef	struct		s_instr
 {
 	int					id; // supposed to his place in the memory
+	int					d2;
 	int					opcode;
+	int 				address;
 	int					nbr_arg;
 	char				**arg; //just the args withouts parsings
 	int					*arg_type; //type of the arg like : 1 for label, 2 for direct etc
-	int					arg_value[3]; //final parsing to get the value of each arg
+	int					*arg_value; //final parsing to get the value of each arg
 	int					ocp; //the ocp finded thx to arg_type
 	int 				nbr_bytes;
 	struct s_instr		*next;
@@ -60,7 +67,8 @@ int		str_is_empty(char *str);
 void	get_instr(t_params *params);
 void	analyze_line(t_params *params, char *line, int index_line);
 void	init_instr(t_params *params);
-
+void 	get_label_instr(t_params *params);
+void	fill_arg_values(t_params *params);
 
 /*
 **	check label

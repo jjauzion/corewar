@@ -6,7 +6,7 @@
 #    By: jjauzion <jjauzion@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 11:25:23 by jjauzion          #+#    #+#              #
-#    Updated: 2018/06/12 15:12:14 by spliesei         ###   ########.fr        #
+#    Updated: 2018/06/13 17:09:01 by spliesei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,9 @@ SRC_NAME1 =	main.c \
 		save_aff.c \
 		save_live.c \
 		save_ld.c \
-		save_st.c
+		save_st.c \
+		label_tools.c \
+		calc.c
 
 
 
