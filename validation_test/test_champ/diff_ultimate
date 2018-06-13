@@ -1,5 +1,5 @@
 --- test_champ/demo_ultimate	2018-06-13 11:13:34.000000000 +0200
-+++ test_champ/vm_ultimate	2018-06-13 15:11:38.000000000 +0200
++++ test_champ/vm_ultimate	2018-06-13 15:35:35.000000000 +0200
 @@ -43,8 +43,7 @@
  It is now cycle 33
  It is now cycle 34
@@ -10,7 +10,7 @@
  It is now cycle 36
  It is now cycle 37
  It is now cycle 38
-@@ -55,224 +54,196 @@
+@@ -55,8 +54,7 @@
  It is now cycle 43
  It is now cycle 44
  It is now cycle 45
@@ -20,87 +20,7 @@
  It is now cycle 46
  It is now cycle 47
  It is now cycle 48
- It is now cycle 49
- It is now cycle 50
- It is now cycle 51
--P    1 | and -1 0 r3
--ADV 5 (0x0022 -> 0x0027) 06 54 01 02 03 
-+op code 6 not found in g_op_fct_tab
- It is now cycle 52
- It is now cycle 53
- It is now cycle 54
- It is now cycle 55
- It is now cycle 56
- It is now cycle 57
--P    1 | and -1 10 r3
--ADV 8 (0x0027 -> 0x002f) 06 64 01 00 00 00 0a 03 
-+op code 6 not found in g_op_fct_tab
- It is now cycle 58
- It is now cycle 59
- It is now cycle 60
- It is now cycle 61
- It is now cycle 62
- It is now cycle 63
--P    1 | and -1 655875 r3
--ADV 6 (0x002f -> 0x0035) 06 74 01 00 0a 03 
-+op code 6 not found in g_op_fct_tab
- It is now cycle 64
- It is now cycle 65
- It is now cycle 66
- It is now cycle 67
- It is now cycle 68
- It is now cycle 69
--P    1 | and 10 0 r3
--ADV 8 (0x0035 -> 0x003d) 06 94 00 00 00 0a 02 03 
-+op code 6 not found in g_op_fct_tab
- It is now cycle 70
- It is now cycle 71
- It is now cycle 72
- It is now cycle 73
- It is now cycle 74
- It is now cycle 75
--P    1 | and 10 -1275068416 r3
--ADV 9 (0x003d -> 0x0046) 06 b4 00 00 00 0a 00 01 03 
-+op code 6 not found in g_op_fct_tab
- It is now cycle 76
- It is now cycle 77
- It is now cycle 78
- It is now cycle 79
- It is now cycle 80
- It is now cycle 81
--P    1 | and 10 1 r3
--ADV 11 (0x0046 -> 0x0051) 06 a4 00 00 00 0a 00 00 00 01 03 
-+op code 6 not found in g_op_fct_tab
- It is now cycle 82
- It is now cycle 83
- It is now cycle 84
- It is now cycle 85
- It is now cycle 86
- It is now cycle 87
--P    1 | and 10 0 r3
--ADV 6 (0x0051 -> 0x0057) 06 d4 00 0a 02 03 
-+op code 6 not found in g_op_fct_tab
- It is now cycle 88
- It is now cycle 89
- It is now cycle 90
- It is now cycle 91
- It is now cycle 92
- It is now cycle 93
--P    1 | and -201324032 10 r3
--ADV 9 (0x0057 -> 0x0060) 06 e4 00 0a 00 00 00 0a 03 
-+op code 6 not found in g_op_fct_tab
- It is now cycle 94
- It is now cycle 95
- It is now cycle 96
- It is now cycle 97
- It is now cycle 98
- It is now cycle 99
--P    1 | and 33752932 -201324032 r3
--ADV 7 (0x0060 -> 0x0067) 06 f4 00 0a 00 01 03 
-+op code 6 not found in g_op_fct_tab
- It is now cycle 100
- It is now cycle 101
- It is now cycle 102
+@@ -135,144 +133,126 @@
  It is now cycle 103
  It is now cycle 104
  It is now cycle 105
@@ -263,7 +183,7 @@
  It is now cycle 208
  It is now cycle 209
  It is now cycle 210
-@@ -1263,8 +1234,7 @@
+@@ -1263,8 +1243,7 @@
  It is now cycle 1175
  It is now cycle 1176
  It is now cycle 1177
@@ -273,7 +193,7 @@
  It is now cycle 1178
  It is now cycle 1179
  It is now cycle 1180
-@@ -1275,8 +1245,7 @@
+@@ -1275,8 +1254,7 @@
  It is now cycle 1185
  It is now cycle 1186
  It is now cycle 1187
@@ -283,7 +203,7 @@
  It is now cycle 1188
  It is now cycle 1189
  It is now cycle 1190
-@@ -1287,8 +1256,7 @@
+@@ -1287,8 +1265,7 @@
  It is now cycle 1195
  It is now cycle 1196
  It is now cycle 1197
@@ -293,7 +213,7 @@
  It is now cycle 1198
  It is now cycle 1199
  It is now cycle 1200
-@@ -1339,9 +1307,7 @@
+@@ -1339,9 +1316,7 @@
  It is now cycle 1245
  It is now cycle 1246
  It is now cycle 1247
@@ -304,7 +224,7 @@
  It is now cycle 1248
  It is now cycle 1249
  It is now cycle 1250
-@@ -1392,9 +1358,7 @@
+@@ -1392,9 +1367,7 @@
  It is now cycle 1295
  It is now cycle 1296
  It is now cycle 1297
@@ -315,7 +235,7 @@
  It is now cycle 1298
  It is now cycle 1299
  It is now cycle 1300
-@@ -1445,9 +1409,7 @@
+@@ -1445,9 +1418,7 @@
  It is now cycle 1345
  It is now cycle 1346
  It is now cycle 1347
@@ -326,7 +246,7 @@
  It is now cycle 1348
  It is now cycle 1349
  It is now cycle 1350
-@@ -1498,9 +1460,7 @@
+@@ -1498,9 +1469,7 @@
  It is now cycle 1395
  It is now cycle 1396
  It is now cycle 1397
@@ -337,7 +257,7 @@
  It is now cycle 1398
  It is now cycle 1399
  It is now cycle 1400
-@@ -1551,9 +1511,7 @@
+@@ -1551,9 +1520,7 @@
  It is now cycle 1445
  It is now cycle 1446
  It is now cycle 1447
@@ -348,7 +268,7 @@
  It is now cycle 1448
  It is now cycle 1449
  It is now cycle 1450
-@@ -1604,9 +1562,7 @@
+@@ -1604,9 +1571,7 @@
  It is now cycle 1495
  It is now cycle 1496
  It is now cycle 1497
@@ -359,7 +279,7 @@
  It is now cycle 1498
  It is now cycle 1499
  It is now cycle 1500
-@@ -2607,8 +2563,7 @@
+@@ -2607,8 +2572,7 @@
  It is now cycle 2495
  It is now cycle 2496
  It is now cycle 2497
@@ -369,7 +289,7 @@
  It is now cycle 2498
  It is now cycle 2499
  It is now cycle 2500
-@@ -2623,7 +2578,7 @@
+@@ -2623,7 +2587,7 @@
  ADV 5 (0x0150 -> 0x0155) 01 00 00 00 03 
  It is now cycle 2508
  It is now cycle 2509
@@ -378,7 +298,7 @@
  It is now cycle 2510
  It is now cycle 2511
  It is now cycle 2512
-@@ -2689,8 +2644,8 @@
+@@ -2689,8 +2653,8 @@
  It is now cycle 2567
  It is now cycle 2568
  It is now cycle 2569
@@ -389,7 +309,7 @@
  ADV 5 (0x0166 -> 0x016b) 0b 54 02 01 03 
  It is now cycle 2570
  It is now cycle 2571
-@@ -2717,9 +2672,9 @@
+@@ -2717,9 +2681,9 @@
  It is now cycle 2592
  It is now cycle 2593
  It is now cycle 2594
@@ -402,27 +322,18 @@
  It is now cycle 2595
  It is now cycle 2596
  It is now cycle 2597
-@@ -2754,8 +2709,7 @@
+@@ -2754,8 +2718,8 @@
  It is now cycle 2623
  It is now cycle 2624
  It is now cycle 2625
 -P    1 | and 0 10 r2
 -ADV 11 (0x0178 -> 0x0183) 06 a4 00 00 00 00 00 00 00 0a 02 
-+op code 6 not found in g_op_fct_tab
++P    1 | and 0 0 r2
++ADV 11 (0x0178 -> 0x0183) 06 a4 00 00 00 00 00 00 00 00 02 
  It is now cycle 2626
  It is now cycle 2627
  It is now cycle 2628
-@@ -2776,7 +2730,8 @@
- It is now cycle 2643
- It is now cycle 2644
- It is now cycle 2645
--P    1 | zjmp 3 OK
-+P    1 | zjmp 3 FAILED
-+ADV 3 (0x0183 -> 0x0186) 09 00 03 
- It is now cycle 2646
- It is now cycle 2647
- It is now cycle 2648
-@@ -2802,8 +2757,8 @@
+@@ -2802,8 +2766,8 @@
  It is now cycle 2668
  It is now cycle 2669
  It is now cycle 2670
@@ -433,7 +344,7 @@
  ADV 6 (0x0186 -> 0x018c) 0b 58 02 06 ff 9c 
  It is now cycle 2671
  It is now cycle 2672
-@@ -2858,9 +2813,9 @@
+@@ -2858,9 +2822,9 @@
  It is now cycle 2718
  It is now cycle 2719
  It is now cycle 2720
@@ -446,7 +357,7 @@
  It is now cycle 2721
  It is now cycle 2722
  It is now cycle 2723
-@@ -3349,7 +3304,6 @@
+@@ -3349,7 +3313,6 @@
  It is now cycle 3206
  It is now cycle 3207
  It is now cycle 3208

@@ -6,7 +6,7 @@
 #    By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 11:25:23 by jjauzion          #+#    #+#              #
-#    Updated: 2018/06/12 10:59:04 by jjauzion         ###   ########.fr        #
+#    Updated: 2018/06/13 15:35:11 by jjauzion         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRC_NAME1 = main.c \
 			print_arena.c \
 			op_fct_1.c \
 			op_fct_2.c \
+			op_fct_4.c \
 			verbose.c
 
 SRC_NAME2 = 

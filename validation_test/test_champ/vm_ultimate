@@ -61,63 +61,72 @@ It is now cycle 48
 It is now cycle 49
 It is now cycle 50
 It is now cycle 51
-op code 6 not found in g_op_fct_tab
+P    1 | and -1 0 r3
+ADV 5 (0x0022 -> 0x0027) 06 54 01 02 03 
 It is now cycle 52
 It is now cycle 53
 It is now cycle 54
 It is now cycle 55
 It is now cycle 56
 It is now cycle 57
-op code 6 not found in g_op_fct_tab
+P    1 | and -1 10 r3
+ADV 8 (0x0027 -> 0x002f) 06 64 01 00 00 00 0a 03 
 It is now cycle 58
 It is now cycle 59
 It is now cycle 60
 It is now cycle 61
 It is now cycle 62
 It is now cycle 63
-op code 6 not found in g_op_fct_tab
+P    1 | and -1 655875 r3
+ADV 6 (0x002f -> 0x0035) 06 74 01 00 0a 03 
 It is now cycle 64
 It is now cycle 65
 It is now cycle 66
 It is now cycle 67
 It is now cycle 68
 It is now cycle 69
-op code 6 not found in g_op_fct_tab
+P    1 | and 10 0 r3
+ADV 8 (0x0035 -> 0x003d) 06 94 00 00 00 0a 02 03 
 It is now cycle 70
 It is now cycle 71
 It is now cycle 72
 It is now cycle 73
 It is now cycle 74
 It is now cycle 75
-op code 6 not found in g_op_fct_tab
+P    1 | and 10 -1275068416 r3
+ADV 9 (0x003d -> 0x0046) 06 b4 00 00 00 0a 00 01 03 
 It is now cycle 76
 It is now cycle 77
 It is now cycle 78
 It is now cycle 79
 It is now cycle 80
 It is now cycle 81
-op code 6 not found in g_op_fct_tab
+P    1 | and 10 1 r3
+ADV 11 (0x0046 -> 0x0051) 06 a4 00 00 00 0a 00 00 00 01 03 
 It is now cycle 82
 It is now cycle 83
 It is now cycle 84
 It is now cycle 85
 It is now cycle 86
 It is now cycle 87
-op code 6 not found in g_op_fct_tab
+P    1 | and 10 0 r3
+ADV 6 (0x0051 -> 0x0057) 06 d4 00 0a 02 03 
 It is now cycle 88
 It is now cycle 89
 It is now cycle 90
 It is now cycle 91
 It is now cycle 92
 It is now cycle 93
-op code 6 not found in g_op_fct_tab
+P    1 | and -201324032 10 r3
+ADV 9 (0x0057 -> 0x0060) 06 e4 00 0a 00 00 00 0a 03 
 It is now cycle 94
 It is now cycle 95
 It is now cycle 96
 It is now cycle 97
 It is now cycle 98
 It is now cycle 99
-op code 6 not found in g_op_fct_tab
+P    1 | and 33752932 -201324032 r3
+ADV 7 (0x0060 -> 0x0067) 06 f4 00 0a 00 01 03 
 It is now cycle 100
 It is now cycle 101
 It is now cycle 102
@@ -2709,7 +2718,8 @@ It is now cycle 2622
 It is now cycle 2623
 It is now cycle 2624
 It is now cycle 2625
-op code 6 not found in g_op_fct_tab
+P    1 | and 0 0 r2
+ADV 11 (0x0178 -> 0x0183) 06 a4 00 00 00 00 00 00 00 00 02 
 It is now cycle 2626
 It is now cycle 2627
 It is now cycle 2628
@@ -2730,8 +2740,7 @@ It is now cycle 2642
 It is now cycle 2643
 It is now cycle 2644
 It is now cycle 2645
-P    1 | zjmp 3 FAILED
-ADV 3 (0x0183 -> 0x0186) 09 00 03 
+P    1 | zjmp 3 OK
 It is now cycle 2646
 It is now cycle 2647
 It is now cycle 2648
