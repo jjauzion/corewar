@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/06 14:16:45 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/12 18:21:45 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/13 12:11:30 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ int		get_arg_val(t_process *process, int arg_id, t_uchar *mem, int arg_index)
 	value = -1;
 	if (process->op->arg_type[arg_id] == T_IND)
 	{
-		address = (unsigned short)mem2int(mem, arg_index, (int)S_SHORT) % IDX_MOD;
+		address = (short)mem2int(mem, arg_index, (int)S_SHORT) % IDX_MOD;
 		value = mem2int(mem, process->pc + address, REG_SIZE); //REG_SIZE tjr?
 	}
 	else if (process->op->arg_type[arg_id] == T_DIR && process->op->dir_size == 2)

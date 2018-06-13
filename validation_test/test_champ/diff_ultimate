@@ -1,0 +1,456 @@
+--- test_champ/demo_ultimate	2018-06-13 11:13:34.000000000 +0200
++++ test_champ/vm_ultimate	2018-06-13 15:11:38.000000000 +0200
+@@ -43,8 +43,7 @@
+ It is now cycle 33
+ It is now cycle 34
+ It is now cycle 35
+-P    1 | add r1 r2 r3
+-ADV 5 (0x0018 -> 0x001d) 04 54 01 02 03 
++op code 4 not found in g_op_fct_tab
+ It is now cycle 36
+ It is now cycle 37
+ It is now cycle 38
+@@ -55,224 +54,196 @@
+ It is now cycle 43
+ It is now cycle 44
+ It is now cycle 45
+-P    1 | sub r1 r2 r3
+-ADV 5 (0x001d -> 0x0022) 05 54 01 02 03 
++op code 5 not found in g_op_fct_tab
+ It is now cycle 46
+ It is now cycle 47
+ It is now cycle 48
+ It is now cycle 49
+ It is now cycle 50
+ It is now cycle 51
+-P    1 | and -1 0 r3
+-ADV 5 (0x0022 -> 0x0027) 06 54 01 02 03 
++op code 6 not found in g_op_fct_tab
+ It is now cycle 52
+ It is now cycle 53
+ It is now cycle 54
+ It is now cycle 55
+ It is now cycle 56
+ It is now cycle 57
+-P    1 | and -1 10 r3
+-ADV 8 (0x0027 -> 0x002f) 06 64 01 00 00 00 0a 03 
++op code 6 not found in g_op_fct_tab
+ It is now cycle 58
+ It is now cycle 59
+ It is now cycle 60
+ It is now cycle 61
+ It is now cycle 62
+ It is now cycle 63
+-P    1 | and -1 655875 r3
+-ADV 6 (0x002f -> 0x0035) 06 74 01 00 0a 03 
++op code 6 not found in g_op_fct_tab
+ It is now cycle 64
+ It is now cycle 65
+ It is now cycle 66
+ It is now cycle 67
+ It is now cycle 68
+ It is now cycle 69
+-P    1 | and 10 0 r3
+-ADV 8 (0x0035 -> 0x003d) 06 94 00 00 00 0a 02 03 
++op code 6 not found in g_op_fct_tab
+ It is now cycle 70
+ It is now cycle 71
+ It is now cycle 72
+ It is now cycle 73
+ It is now cycle 74
+ It is now cycle 75
+-P    1 | and 10 -1275068416 r3
+-ADV 9 (0x003d -> 0x0046) 06 b4 00 00 00 0a 00 01 03 
++op code 6 not found in g_op_fct_tab
+ It is now cycle 76
+ It is now cycle 77
+ It is now cycle 78
+ It is now cycle 79
+ It is now cycle 80
+ It is now cycle 81
+-P    1 | and 10 1 r3
+-ADV 11 (0x0046 -> 0x0051) 06 a4 00 00 00 0a 00 00 00 01 03 
++op code 6 not found in g_op_fct_tab
+ It is now cycle 82
+ It is now cycle 83
+ It is now cycle 84
+ It is now cycle 85
+ It is now cycle 86
+ It is now cycle 87
+-P    1 | and 10 0 r3
+-ADV 6 (0x0051 -> 0x0057) 06 d4 00 0a 02 03 
++op code 6 not found in g_op_fct_tab
+ It is now cycle 88
+ It is now cycle 89
+ It is now cycle 90
+ It is now cycle 91
+ It is now cycle 92
+ It is now cycle 93
+-P    1 | and -201324032 10 r3
+-ADV 9 (0x0057 -> 0x0060) 06 e4 00 0a 00 00 00 0a 03 
++op code 6 not found in g_op_fct_tab
+ It is now cycle 94
+ It is now cycle 95
+ It is now cycle 96
+ It is now cycle 97
+ It is now cycle 98
+ It is now cycle 99
+-P    1 | and 33752932 -201324032 r3
+-ADV 7 (0x0060 -> 0x0067) 06 f4 00 0a 00 01 03 
++op code 6 not found in g_op_fct_tab
+ It is now cycle 100
+ It is now cycle 101
+ It is now cycle 102
+ It is now cycle 103
+ It is now cycle 104
+ It is now cycle 105
+-P    1 | or -1 0 r3
+-ADV 5 (0x0067 -> 0x006c) 07 54 01 02 03 
++op code 7 not found in g_op_fct_tab
+ It is now cycle 106
+ It is now cycle 107
+ It is now cycle 108
+ It is now cycle 109
+ It is now cycle 110
+ It is now cycle 111
+-P    1 | or -1 10 r3
+-ADV 8 (0x006c -> 0x0074) 07 64 01 00 00 00 0a 03 
++op code 7 not found in g_op_fct_tab
+ It is now cycle 112
+ It is now cycle 113
+ It is now cycle 114
+ It is now cycle 115
+ It is now cycle 116
+ It is now cycle 117
+-P    1 | or -1 655875 r3
+-ADV 6 (0x0074 -> 0x007a) 07 74 01 00 0a 03 
++op code 7 not found in g_op_fct_tab
+ It is now cycle 118
+ It is now cycle 119
+ It is now cycle 120
+ It is now cycle 121
+ It is now cycle 122
+ It is now cycle 123
+-P    1 | or 10 0 r3
+-ADV 8 (0x007a -> 0x0082) 07 94 00 00 00 0a 02 03 
++op code 7 not found in g_op_fct_tab
+ It is now cycle 124
+ It is now cycle 125
+ It is now cycle 126
+ It is now cycle 127
+ It is now cycle 128
+ It is now cycle 129
+-P    1 | or 10 -1275068416 r3
+-ADV 9 (0x0082 -> 0x008b) 07 b4 00 00 00 0a 00 01 03 
++op code 7 not found in g_op_fct_tab
+ It is now cycle 130
+ It is now cycle 131
+ It is now cycle 132
+ It is now cycle 133
+ It is now cycle 134
+ It is now cycle 135
+-P    1 | or 10 1 r3
+-ADV 11 (0x008b -> 0x0096) 07 a4 00 00 00 0a 00 00 00 01 03 
++op code 7 not found in g_op_fct_tab
+ It is now cycle 136
+ It is now cycle 137
+ It is now cycle 138
+ It is now cycle 139
+ It is now cycle 140
+ It is now cycle 141
+-P    1 | or 10 0 r3
+-ADV 6 (0x0096 -> 0x009c) 07 d4 00 0a 02 03 
++op code 7 not found in g_op_fct_tab
+ It is now cycle 142
+ It is now cycle 143
+ It is now cycle 144
+ It is now cycle 145
+ It is now cycle 146
+ It is now cycle 147
+-P    1 | or -201324032 10 r3
+-ADV 9 (0x009c -> 0x00a5) 07 e4 00 0a 00 00 00 0a 03 
++op code 7 not found in g_op_fct_tab
+ It is now cycle 148
+ It is now cycle 149
+ It is now cycle 150
+ It is now cycle 151
+ It is now cycle 152
+ It is now cycle 153
+-P    1 | or 33753188 -201324032 r3
+-ADV 7 (0x00a5 -> 0x00ac) 07 f4 00 0a 00 01 03 
++op code 7 not found in g_op_fct_tab
+ It is now cycle 154
+ It is now cycle 155
+ It is now cycle 156
+ It is now cycle 157
+ It is now cycle 158
+ It is now cycle 159
+-P    1 | xor -1 0 r3
+-ADV 5 (0x00ac -> 0x00b1) 08 54 01 02 03 
++op code 8 not found in g_op_fct_tab
+ It is now cycle 160
+ It is now cycle 161
+ It is now cycle 162
+ It is now cycle 163
+ It is now cycle 164
+ It is now cycle 165
+-P    1 | xor -1 10 r3
+-ADV 8 (0x00b1 -> 0x00b9) 08 64 01 00 00 00 0a 03 
++op code 8 not found in g_op_fct_tab
+ It is now cycle 166
+ It is now cycle 167
+ It is now cycle 168
+ It is now cycle 169
+ It is now cycle 170
+ It is now cycle 171
+-P    1 | xor -1 655875 r3
+-ADV 6 (0x00b9 -> 0x00bf) 08 74 01 00 0a 03 
++op code 8 not found in g_op_fct_tab
+ It is now cycle 172
+ It is now cycle 173
+ It is now cycle 174
+ It is now cycle 175
+ It is now cycle 176
+ It is now cycle 177
+-P    1 | xor 10 0 r3
+-ADV 8 (0x00bf -> 0x00c7) 08 94 00 00 00 0a 02 03 
++op code 8 not found in g_op_fct_tab
+ It is now cycle 178
+ It is now cycle 179
+ It is now cycle 180
+ It is now cycle 181
+ It is now cycle 182
+ It is now cycle 183
+-P    1 | xor 10 -1275068416 r3
+-ADV 9 (0x00c7 -> 0x00d0) 08 b4 00 00 00 0a 00 01 03 
++op code 8 not found in g_op_fct_tab
+ It is now cycle 184
+ It is now cycle 185
+ It is now cycle 186
+ It is now cycle 187
+ It is now cycle 188
+ It is now cycle 189
+-P    1 | xor 10 1 r3
+-ADV 11 (0x00d0 -> 0x00db) 08 a4 00 00 00 0a 00 00 00 01 03 
++op code 8 not found in g_op_fct_tab
+ It is now cycle 190
+ It is now cycle 191
+ It is now cycle 192
+ It is now cycle 193
+ It is now cycle 194
+ It is now cycle 195
+-P    1 | xor 10 0 r3
+-ADV 6 (0x00db -> 0x00e1) 08 d4 00 0a 02 03 
++op code 8 not found in g_op_fct_tab
+ It is now cycle 196
+ It is now cycle 197
+ It is now cycle 198
+ It is now cycle 199
+ It is now cycle 200
+ It is now cycle 201
+-P    1 | xor -201324032 10 r3
+-ADV 9 (0x00e1 -> 0x00ea) 08 e4 00 0a 00 00 00 0a 03 
++op code 8 not found in g_op_fct_tab
+ It is now cycle 202
+ It is now cycle 203
+ It is now cycle 204
+ It is now cycle 205
+ It is now cycle 206
+ It is now cycle 207
+-P    1 | xor 173277442 -201324032 r3
+-ADV 7 (0x00ea -> 0x00f1) 08 f4 00 0a 00 01 03 
++op code 8 not found in g_op_fct_tab
+ It is now cycle 208
+ It is now cycle 209
+ It is now cycle 210
+@@ -1263,8 +1234,7 @@
+ It is now cycle 1175
+ It is now cycle 1176
+ It is now cycle 1177
+-P    1 | fork 1000 (769)
+-ADV 3 (0x0119 -> 0x011c) 0c 03 e8 
++op code 12 not found in g_op_fct_tab
+ It is now cycle 1178
+ It is now cycle 1179
+ It is now cycle 1180
+@@ -1275,8 +1245,7 @@
+ It is now cycle 1185
+ It is now cycle 1186
+ It is now cycle 1187
+-P    1 | lld 2562 r2
+-ADV 5 (0x011c -> 0x0121) 0d d0 00 0a 02 
++op code 13 not found in g_op_fct_tab
+ It is now cycle 1188
+ It is now cycle 1189
+ It is now cycle 1190
+@@ -1287,8 +1256,7 @@
+ It is now cycle 1195
+ It is now cycle 1196
+ It is now cycle 1197
+-P    1 | lld 10 r2
+-ADV 7 (0x0121 -> 0x0128) 0d 90 00 00 00 0a 02 
++op code 13 not found in g_op_fct_tab
+ It is now cycle 1198
+ It is now cycle 1199
+ It is now cycle 1200
+@@ -1339,9 +1307,7 @@
+ It is now cycle 1245
+ It is now cycle 1246
+ It is now cycle 1247
+-P    1 | lldi -1 10 r3
+-       | -> load from -1 + 10 = 9 (with pc 305)
+-ADV 5 (0x0128 -> 0x012d) 0e 54 01 02 03 
++op code 14 not found in g_op_fct_tab
+ It is now cycle 1248
+ It is now cycle 1249
+ It is now cycle 1250
+@@ -1392,9 +1358,7 @@
+ It is now cycle 1295
+ It is now cycle 1296
+ It is now cycle 1297
+-P    1 | lldi -1 10 r3
+-       | -> load from -1 + 10 = 9 (with pc 310)
+-ADV 6 (0x012d -> 0x0133) 0e 64 01 00 0a 03 
++op code 14 not found in g_op_fct_tab
+ It is now cycle 1298
+ It is now cycle 1299
+ It is now cycle 1300
+@@ -1445,9 +1409,7 @@
+ It is now cycle 1345
+ It is now cycle 1346
+ It is now cycle 1347
+-P    1 | lldi 10 10 r3
+-       | -> load from 10 + 10 = 20 (with pc 327)
+-ADV 6 (0x0133 -> 0x0139) 0e 94 00 0a 02 03 
++op code 14 not found in g_op_fct_tab
+ It is now cycle 1348
+ It is now cycle 1349
+ It is now cycle 1350
+@@ -1498,9 +1460,7 @@
+ It is now cycle 1395
+ It is now cycle 1396
+ It is now cycle 1397
+-P    1 | lldi 10 1 r3
+-       | -> load from 10 + 1 = 11 (with pc 324)
+-ADV 7 (0x0139 -> 0x0140) 0e a4 00 0a 00 01 03 
++op code 14 not found in g_op_fct_tab
+ It is now cycle 1398
+ It is now cycle 1399
+ It is now cycle 1400
+@@ -1551,9 +1511,7 @@
+ It is now cycle 1445
+ It is now cycle 1446
+ It is now cycle 1447
+-P    1 | lldi 656143 10 r3
+-       | -> load from 656143 + 10 = 656153 (with pc 656473)
+-ADV 6 (0x0140 -> 0x0146) 0e d4 00 0a 02 03 
++op code 14 not found in g_op_fct_tab
+ It is now cycle 1448
+ It is now cycle 1449
+ It is now cycle 1450
+@@ -1604,9 +1562,7 @@
+ It is now cycle 1495
+ It is now cycle 1496
+ It is now cycle 1497
+-P    1 | lldi 16777216 10 r3
+-       | -> load from 16777216 + 10 = 16777226 (with pc 16777552)
+-ADV 7 (0x0146 -> 0x014d) 0e e4 00 0a 00 0a 03 
++op code 14 not found in g_op_fct_tab
+ It is now cycle 1498
+ It is now cycle 1499
+ It is now cycle 1500
+@@ -2607,8 +2563,7 @@
+ It is now cycle 2495
+ It is now cycle 2496
+ It is now cycle 2497
+-P    1 | lfork 1000 (1333)
+-ADV 3 (0x014d -> 0x0150) 0f 03 e8 
++op code 15 not found in g_op_fct_tab
+ It is now cycle 2498
+ It is now cycle 2499
+ It is now cycle 2500
+@@ -2623,7 +2578,7 @@
+ ADV 5 (0x0150 -> 0x0155) 01 00 00 00 03 
+ It is now cycle 2508
+ It is now cycle 2509
+-ADV 3 (0x0155 -> 0x0158) 10 40 01 
++op code 16 not found in g_op_fct_tab
+ It is now cycle 2510
+ It is now cycle 2511
+ It is now cycle 2512
+@@ -2689,8 +2644,8 @@
+ It is now cycle 2567
+ It is now cycle 2568
+ It is now cycle 2569
+-P    1 | sti r2 -1 16777216
+-       | -> store to -1 + 16777216 = 16777215 (with pc and mod 869)
++P    1 | sti r2 -1 167906900
++       | -> store to -1 + 167906900 = 167906899 (with pc and mod 441)
+ ADV 5 (0x0166 -> 0x016b) 0b 54 02 01 03 
+ It is now cycle 2570
+ It is now cycle 2571
+@@ -2717,9 +2672,9 @@
+ It is now cycle 2592
+ It is now cycle 2593
+ It is now cycle 2594
+-P    1 | sti r2 1 16777216
+-       | -> store to 1 + 16777216 = 16777217 (with pc and mod 364)
+-ADV 6 (0x016b -> 0x0171) 0b 00 00 00 0a 03 
++P    1 | sti r2 1 167906900
++       | -> store to 1 + 167906900 = 167906901 (with pc and mod 448)
++ADV 6 (0x016b -> 0x0171) 0b 64 02 00 01 03 
+ It is now cycle 2595
+ It is now cycle 2596
+ It is now cycle 2597
+@@ -2754,8 +2709,7 @@
+ It is now cycle 2623
+ It is now cycle 2624
+ It is now cycle 2625
+-P    1 | and 0 10 r2
+-ADV 11 (0x0178 -> 0x0183) 06 a4 00 00 00 00 00 00 00 0a 02 
++op code 6 not found in g_op_fct_tab
+ It is now cycle 2626
+ It is now cycle 2627
+ It is now cycle 2628
+@@ -2776,7 +2730,8 @@
+ It is now cycle 2643
+ It is now cycle 2644
+ It is now cycle 2645
+-P    1 | zjmp 3 OK
++P    1 | zjmp 3 FAILED
++ADV 3 (0x0183 -> 0x0186) 09 00 03 
+ It is now cycle 2646
+ It is now cycle 2647
+ It is now cycle 2648
+@@ -2802,8 +2757,8 @@
+ It is now cycle 2668
+ It is now cycle 2669
+ It is now cycle 2670
+-P    1 | sti r2 10 -100
+-       | -> store to 10 + -100 = -90 (with pc and mod 300)
++P    1 | sti r2 0 -100
++       | -> store to 0 + -100 = -100 (with pc and mod 290)
+ ADV 6 (0x0186 -> 0x018c) 0b 58 02 06 ff 9c 
+ It is now cycle 2671
+ It is now cycle 2672
+@@ -2858,9 +2813,9 @@
+ It is now cycle 2718
+ It is now cycle 2719
+ It is now cycle 2720
+-P    1 | sti r2 0 10
+-       | -> store to 0 + 10 = 10 (with pc and mod 413)
+-ADV 6 (0x0193 -> 0x0199) 0b 74 02 01 f4 06 
++P    1 | sti r2 0 0
++       | -> store to 0 + 0 = 0 (with pc and mod 403)
++ADV 6 (0x0193 -> 0x0199) 00 00 00 00 f4 06 
+ It is now cycle 2721
+ It is now cycle 2722
+ It is now cycle 2723
+@@ -3349,7 +3304,6 @@
+ It is now cycle 3206
+ It is now cycle 3207
+ It is now cycle 3208
+-ADV 2 (0x0368 -> 0x036a) 0a 00 
+ It is now cycle 3209
+ It is now cycle 3210
+ It is now cycle 3211

@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/09 12:01:46 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/12 19:09:45 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/13 15:10:58 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,17 @@
 int		st(t_process *process, t_arena *arena)
 {
 	int				arg[3];
+	int				tmp;
 
 	arg[0] = get_arg_val(process, 0, arena->mem, process->pc + 2);
 	arg[1] = get_arg_id(process, 1, arena->mem, process->pc + 3);
+	tmp = get_arg_id(process, 0, arena->mem, process->pc + 2);
 	if (process->op->arg_type[1] == T_REG)
 		int2reg(process, arg[1], arg[0]);
 	else
 		int2mem(arena->mem, (arg[1] % IDX_MOD) + process->pc, arg[0]);
 	//	show_operation(arena, process, arg, NULL);
-	arg[0] = get_arg_id(process, 0, arena->mem, process->pc + 2);
+	arg[0] = tmp;
 	if (opt_is_set(arena->option->option, 'o'))
 		ft_printf("P% 5d | %s r%d %d\n", process->pid, process->op->name,
 				arg[0], arg[1]);
@@ -34,6 +36,7 @@ int		sti(t_process *process, t_arena *arena)
 {
 	int arg[3];
 	int position;
+	int	tmp;
 
 	arg[0]  = get_arg_val(process, 0, arena->mem, process->pc + 2);
 	arg[1] = get_arg_val(process, 1, arena->mem, process->pc + 3);
@@ -41,9 +44,10 @@ int		sti(t_process *process, t_arena *arena)
 	if (process->op->arg_type[1] != T_REG)
 		position++;
 	arg[2] = get_arg_val(process, 2, arena->mem, process->pc + 3 + position);
+	tmp = get_arg_id(process, 0, arena->mem, process->pc + 2);
 	int2mem(arena->mem, ((arg[1] + arg[2]) % IDX_MOD) + process->pc, arg[0]);
 	//	show_operation(arena, process, arg, NULL);
-	arg[0] = get_arg_id(process, 0, arena->mem, process->pc + 2);
+	arg[0] = tmp;
 	if (opt_is_set(arena->option->option, 'o'))
 	{
 		ft_printf("P% 5d | %s r%d %d %d\n",
@@ -65,6 +69,7 @@ int		live(t_process *process, t_arena *arena)
 	arg[0] = get_arg_val(process, 0, arena->mem, process->pc + 1);
 	process->last_live_cycle = arena->cycle;
 	arena->nb_live++;
+	show_operation(arena, process, arg, NULL);
 	i = -1;
 	while (++i < arena->nb_champion)
 	{
@@ -76,7 +81,6 @@ int		live(t_process *process, t_arena *arena)
 			arena->champions[i]->nb_live++;
 		}
 	}
-	show_operation(arena, process, arg, NULL);
 	return (SUCCESS);
 }
 

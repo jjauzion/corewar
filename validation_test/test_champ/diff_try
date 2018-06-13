@@ -1,0 +1,945 @@
+--- test_champ/demo_try	2018-06-13 11:13:33.000000000 +0200
++++ test_champ/vm_try	2018-06-13 15:11:38.000000000 +0200
+@@ -41,8 +41,7 @@
+ It is now cycle 34
+ It is now cycle 35
+ It is now cycle 36
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
++op code 6 not found in g_op_fct_tab
+ It is now cycle 37
+ It is now cycle 38
+ It is now cycle 39
+@@ -63,7 +62,8 @@
+ It is now cycle 54
+ It is now cycle 55
+ It is now cycle 56
+-P    1 | zjmp -23 OK
++P    1 | zjmp -23 FAILED
++ADV 3 (0x0017 -> 0x001a) 09 ff e9 
+ It is now cycle 57
+ It is now cycle 58
+ It is now cycle 59
+@@ -74,7 +74,6 @@
+ It is now cycle 64
+ It is now cycle 65
+ It is now cycle 66
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 67
+ It is now cycle 68
+ It is now cycle 69
+@@ -85,8 +84,6 @@
+ It is now cycle 74
+ It is now cycle 75
+ It is now cycle 76
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 77
+ It is now cycle 78
+ It is now cycle 79
+@@ -107,7 +104,6 @@
+ It is now cycle 94
+ It is now cycle 95
+ It is now cycle 96
+-P    1 | zjmp -23 OK
+ It is now cycle 97
+ It is now cycle 98
+ It is now cycle 99
+@@ -118,7 +114,6 @@
+ It is now cycle 104
+ It is now cycle 105
+ It is now cycle 106
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 107
+ It is now cycle 108
+ It is now cycle 109
+@@ -129,8 +124,6 @@
+ It is now cycle 114
+ It is now cycle 115
+ It is now cycle 116
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 117
+ It is now cycle 118
+ It is now cycle 119
+@@ -151,7 +144,6 @@
+ It is now cycle 134
+ It is now cycle 135
+ It is now cycle 136
+-P    1 | zjmp -23 OK
+ It is now cycle 137
+ It is now cycle 138
+ It is now cycle 139
+@@ -162,7 +154,6 @@
+ It is now cycle 144
+ It is now cycle 145
+ It is now cycle 146
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 147
+ It is now cycle 148
+ It is now cycle 149
+@@ -173,8 +164,6 @@
+ It is now cycle 154
+ It is now cycle 155
+ It is now cycle 156
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 157
+ It is now cycle 158
+ It is now cycle 159
+@@ -195,7 +184,6 @@
+ It is now cycle 174
+ It is now cycle 175
+ It is now cycle 176
+-P    1 | zjmp -23 OK
+ It is now cycle 177
+ It is now cycle 178
+ It is now cycle 179
+@@ -206,7 +194,6 @@
+ It is now cycle 184
+ It is now cycle 185
+ It is now cycle 186
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 187
+ It is now cycle 188
+ It is now cycle 189
+@@ -217,8 +204,6 @@
+ It is now cycle 194
+ It is now cycle 195
+ It is now cycle 196
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 197
+ It is now cycle 198
+ It is now cycle 199
+@@ -239,7 +224,6 @@
+ It is now cycle 214
+ It is now cycle 215
+ It is now cycle 216
+-P    1 | zjmp -23 OK
+ It is now cycle 217
+ It is now cycle 218
+ It is now cycle 219
+@@ -250,7 +234,6 @@
+ It is now cycle 224
+ It is now cycle 225
+ It is now cycle 226
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 227
+ It is now cycle 228
+ It is now cycle 229
+@@ -261,8 +244,6 @@
+ It is now cycle 234
+ It is now cycle 235
+ It is now cycle 236
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 237
+ It is now cycle 238
+ It is now cycle 239
+@@ -283,7 +264,6 @@
+ It is now cycle 254
+ It is now cycle 255
+ It is now cycle 256
+-P    1 | zjmp -23 OK
+ It is now cycle 257
+ It is now cycle 258
+ It is now cycle 259
+@@ -294,7 +274,6 @@
+ It is now cycle 264
+ It is now cycle 265
+ It is now cycle 266
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 267
+ It is now cycle 268
+ It is now cycle 269
+@@ -305,8 +284,6 @@
+ It is now cycle 274
+ It is now cycle 275
+ It is now cycle 276
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 277
+ It is now cycle 278
+ It is now cycle 279
+@@ -327,7 +304,6 @@
+ It is now cycle 294
+ It is now cycle 295
+ It is now cycle 296
+-P    1 | zjmp -23 OK
+ It is now cycle 297
+ It is now cycle 298
+ It is now cycle 299
+@@ -338,7 +314,6 @@
+ It is now cycle 304
+ It is now cycle 305
+ It is now cycle 306
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 307
+ It is now cycle 308
+ It is now cycle 309
+@@ -349,8 +324,6 @@
+ It is now cycle 314
+ It is now cycle 315
+ It is now cycle 316
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 317
+ It is now cycle 318
+ It is now cycle 319
+@@ -371,7 +344,6 @@
+ It is now cycle 334
+ It is now cycle 335
+ It is now cycle 336
+-P    1 | zjmp -23 OK
+ It is now cycle 337
+ It is now cycle 338
+ It is now cycle 339
+@@ -382,7 +354,6 @@
+ It is now cycle 344
+ It is now cycle 345
+ It is now cycle 346
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 347
+ It is now cycle 348
+ It is now cycle 349
+@@ -393,8 +364,6 @@
+ It is now cycle 354
+ It is now cycle 355
+ It is now cycle 356
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 357
+ It is now cycle 358
+ It is now cycle 359
+@@ -415,7 +384,6 @@
+ It is now cycle 374
+ It is now cycle 375
+ It is now cycle 376
+-P    1 | zjmp -23 OK
+ It is now cycle 377
+ It is now cycle 378
+ It is now cycle 379
+@@ -426,7 +394,6 @@
+ It is now cycle 384
+ It is now cycle 385
+ It is now cycle 386
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 387
+ It is now cycle 388
+ It is now cycle 389
+@@ -437,8 +404,6 @@
+ It is now cycle 394
+ It is now cycle 395
+ It is now cycle 396
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 397
+ It is now cycle 398
+ It is now cycle 399
+@@ -459,7 +424,6 @@
+ It is now cycle 414
+ It is now cycle 415
+ It is now cycle 416
+-P    1 | zjmp -23 OK
+ It is now cycle 417
+ It is now cycle 418
+ It is now cycle 419
+@@ -470,7 +434,6 @@
+ It is now cycle 424
+ It is now cycle 425
+ It is now cycle 426
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 427
+ It is now cycle 428
+ It is now cycle 429
+@@ -481,8 +444,6 @@
+ It is now cycle 434
+ It is now cycle 435
+ It is now cycle 436
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 437
+ It is now cycle 438
+ It is now cycle 439
+@@ -503,7 +464,6 @@
+ It is now cycle 454
+ It is now cycle 455
+ It is now cycle 456
+-P    1 | zjmp -23 OK
+ It is now cycle 457
+ It is now cycle 458
+ It is now cycle 459
+@@ -514,7 +474,6 @@
+ It is now cycle 464
+ It is now cycle 465
+ It is now cycle 466
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 467
+ It is now cycle 468
+ It is now cycle 469
+@@ -525,8 +484,6 @@
+ It is now cycle 474
+ It is now cycle 475
+ It is now cycle 476
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 477
+ It is now cycle 478
+ It is now cycle 479
+@@ -547,7 +504,6 @@
+ It is now cycle 494
+ It is now cycle 495
+ It is now cycle 496
+-P    1 | zjmp -23 OK
+ It is now cycle 497
+ It is now cycle 498
+ It is now cycle 499
+@@ -558,7 +514,6 @@
+ It is now cycle 504
+ It is now cycle 505
+ It is now cycle 506
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 507
+ It is now cycle 508
+ It is now cycle 509
+@@ -569,8 +524,6 @@
+ It is now cycle 514
+ It is now cycle 515
+ It is now cycle 516
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 517
+ It is now cycle 518
+ It is now cycle 519
+@@ -591,7 +544,6 @@
+ It is now cycle 534
+ It is now cycle 535
+ It is now cycle 536
+-P    1 | zjmp -23 OK
+ It is now cycle 537
+ It is now cycle 538
+ It is now cycle 539
+@@ -602,7 +554,6 @@
+ It is now cycle 544
+ It is now cycle 545
+ It is now cycle 546
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 547
+ It is now cycle 548
+ It is now cycle 549
+@@ -613,8 +564,6 @@
+ It is now cycle 554
+ It is now cycle 555
+ It is now cycle 556
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 557
+ It is now cycle 558
+ It is now cycle 559
+@@ -635,7 +584,6 @@
+ It is now cycle 574
+ It is now cycle 575
+ It is now cycle 576
+-P    1 | zjmp -23 OK
+ It is now cycle 577
+ It is now cycle 578
+ It is now cycle 579
+@@ -646,7 +594,6 @@
+ It is now cycle 584
+ It is now cycle 585
+ It is now cycle 586
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 587
+ It is now cycle 588
+ It is now cycle 589
+@@ -657,8 +604,6 @@
+ It is now cycle 594
+ It is now cycle 595
+ It is now cycle 596
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 597
+ It is now cycle 598
+ It is now cycle 599
+@@ -679,7 +624,6 @@
+ It is now cycle 614
+ It is now cycle 615
+ It is now cycle 616
+-P    1 | zjmp -23 OK
+ It is now cycle 617
+ It is now cycle 618
+ It is now cycle 619
+@@ -690,7 +634,6 @@
+ It is now cycle 624
+ It is now cycle 625
+ It is now cycle 626
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 627
+ It is now cycle 628
+ It is now cycle 629
+@@ -701,8 +644,6 @@
+ It is now cycle 634
+ It is now cycle 635
+ It is now cycle 636
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 637
+ It is now cycle 638
+ It is now cycle 639
+@@ -723,7 +664,6 @@
+ It is now cycle 654
+ It is now cycle 655
+ It is now cycle 656
+-P    1 | zjmp -23 OK
+ It is now cycle 657
+ It is now cycle 658
+ It is now cycle 659
+@@ -734,7 +674,6 @@
+ It is now cycle 664
+ It is now cycle 665
+ It is now cycle 666
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 667
+ It is now cycle 668
+ It is now cycle 669
+@@ -745,8 +684,6 @@
+ It is now cycle 674
+ It is now cycle 675
+ It is now cycle 676
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 677
+ It is now cycle 678
+ It is now cycle 679
+@@ -767,7 +704,6 @@
+ It is now cycle 694
+ It is now cycle 695
+ It is now cycle 696
+-P    1 | zjmp -23 OK
+ It is now cycle 697
+ It is now cycle 698
+ It is now cycle 699
+@@ -778,7 +714,6 @@
+ It is now cycle 704
+ It is now cycle 705
+ It is now cycle 706
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 707
+ It is now cycle 708
+ It is now cycle 709
+@@ -789,8 +724,6 @@
+ It is now cycle 714
+ It is now cycle 715
+ It is now cycle 716
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 717
+ It is now cycle 718
+ It is now cycle 719
+@@ -811,7 +744,6 @@
+ It is now cycle 734
+ It is now cycle 735
+ It is now cycle 736
+-P    1 | zjmp -23 OK
+ It is now cycle 737
+ It is now cycle 738
+ It is now cycle 739
+@@ -822,7 +754,6 @@
+ It is now cycle 744
+ It is now cycle 745
+ It is now cycle 746
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 747
+ It is now cycle 748
+ It is now cycle 749
+@@ -833,8 +764,6 @@
+ It is now cycle 754
+ It is now cycle 755
+ It is now cycle 756
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 757
+ It is now cycle 758
+ It is now cycle 759
+@@ -855,7 +784,6 @@
+ It is now cycle 774
+ It is now cycle 775
+ It is now cycle 776
+-P    1 | zjmp -23 OK
+ It is now cycle 777
+ It is now cycle 778
+ It is now cycle 779
+@@ -866,7 +794,6 @@
+ It is now cycle 784
+ It is now cycle 785
+ It is now cycle 786
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 787
+ It is now cycle 788
+ It is now cycle 789
+@@ -877,8 +804,6 @@
+ It is now cycle 794
+ It is now cycle 795
+ It is now cycle 796
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 797
+ It is now cycle 798
+ It is now cycle 799
+@@ -899,7 +824,6 @@
+ It is now cycle 814
+ It is now cycle 815
+ It is now cycle 816
+-P    1 | zjmp -23 OK
+ It is now cycle 817
+ It is now cycle 818
+ It is now cycle 819
+@@ -910,7 +834,6 @@
+ It is now cycle 824
+ It is now cycle 825
+ It is now cycle 826
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 827
+ It is now cycle 828
+ It is now cycle 829
+@@ -921,8 +844,6 @@
+ It is now cycle 834
+ It is now cycle 835
+ It is now cycle 836
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 837
+ It is now cycle 838
+ It is now cycle 839
+@@ -943,7 +864,6 @@
+ It is now cycle 854
+ It is now cycle 855
+ It is now cycle 856
+-P    1 | zjmp -23 OK
+ It is now cycle 857
+ It is now cycle 858
+ It is now cycle 859
+@@ -954,7 +874,6 @@
+ It is now cycle 864
+ It is now cycle 865
+ It is now cycle 866
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 867
+ It is now cycle 868
+ It is now cycle 869
+@@ -965,8 +884,6 @@
+ It is now cycle 874
+ It is now cycle 875
+ It is now cycle 876
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 877
+ It is now cycle 878
+ It is now cycle 879
+@@ -987,7 +904,6 @@
+ It is now cycle 894
+ It is now cycle 895
+ It is now cycle 896
+-P    1 | zjmp -23 OK
+ It is now cycle 897
+ It is now cycle 898
+ It is now cycle 899
+@@ -998,7 +914,6 @@
+ It is now cycle 904
+ It is now cycle 905
+ It is now cycle 906
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 907
+ It is now cycle 908
+ It is now cycle 909
+@@ -1009,8 +924,6 @@
+ It is now cycle 914
+ It is now cycle 915
+ It is now cycle 916
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 917
+ It is now cycle 918
+ It is now cycle 919
+@@ -1031,7 +944,6 @@
+ It is now cycle 934
+ It is now cycle 935
+ It is now cycle 936
+-P    1 | zjmp -23 OK
+ It is now cycle 937
+ It is now cycle 938
+ It is now cycle 939
+@@ -1042,7 +954,6 @@
+ It is now cycle 944
+ It is now cycle 945
+ It is now cycle 946
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 947
+ It is now cycle 948
+ It is now cycle 949
+@@ -1053,8 +964,6 @@
+ It is now cycle 954
+ It is now cycle 955
+ It is now cycle 956
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 957
+ It is now cycle 958
+ It is now cycle 959
+@@ -1075,7 +984,6 @@
+ It is now cycle 974
+ It is now cycle 975
+ It is now cycle 976
+-P    1 | zjmp -23 OK
+ It is now cycle 977
+ It is now cycle 978
+ It is now cycle 979
+@@ -1086,7 +994,6 @@
+ It is now cycle 984
+ It is now cycle 985
+ It is now cycle 986
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 987
+ It is now cycle 988
+ It is now cycle 989
+@@ -1097,8 +1004,6 @@
+ It is now cycle 994
+ It is now cycle 995
+ It is now cycle 996
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 997
+ It is now cycle 998
+ It is now cycle 999
+@@ -1119,7 +1024,6 @@
+ It is now cycle 1014
+ It is now cycle 1015
+ It is now cycle 1016
+-P    1 | zjmp -23 OK
+ It is now cycle 1017
+ It is now cycle 1018
+ It is now cycle 1019
+@@ -1130,7 +1034,6 @@
+ It is now cycle 1024
+ It is now cycle 1025
+ It is now cycle 1026
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 1027
+ It is now cycle 1028
+ It is now cycle 1029
+@@ -1141,8 +1044,6 @@
+ It is now cycle 1034
+ It is now cycle 1035
+ It is now cycle 1036
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 1037
+ It is now cycle 1038
+ It is now cycle 1039
+@@ -1163,7 +1064,6 @@
+ It is now cycle 1054
+ It is now cycle 1055
+ It is now cycle 1056
+-P    1 | zjmp -23 OK
+ It is now cycle 1057
+ It is now cycle 1058
+ It is now cycle 1059
+@@ -1174,7 +1074,6 @@
+ It is now cycle 1064
+ It is now cycle 1065
+ It is now cycle 1066
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 1067
+ It is now cycle 1068
+ It is now cycle 1069
+@@ -1185,8 +1084,6 @@
+ It is now cycle 1074
+ It is now cycle 1075
+ It is now cycle 1076
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 1077
+ It is now cycle 1078
+ It is now cycle 1079
+@@ -1207,7 +1104,6 @@
+ It is now cycle 1094
+ It is now cycle 1095
+ It is now cycle 1096
+-P    1 | zjmp -23 OK
+ It is now cycle 1097
+ It is now cycle 1098
+ It is now cycle 1099
+@@ -1218,7 +1114,6 @@
+ It is now cycle 1104
+ It is now cycle 1105
+ It is now cycle 1106
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 1107
+ It is now cycle 1108
+ It is now cycle 1109
+@@ -1229,8 +1124,6 @@
+ It is now cycle 1114
+ It is now cycle 1115
+ It is now cycle 1116
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 1117
+ It is now cycle 1118
+ It is now cycle 1119
+@@ -1251,7 +1144,6 @@
+ It is now cycle 1134
+ It is now cycle 1135
+ It is now cycle 1136
+-P    1 | zjmp -23 OK
+ It is now cycle 1137
+ It is now cycle 1138
+ It is now cycle 1139
+@@ -1262,7 +1154,6 @@
+ It is now cycle 1144
+ It is now cycle 1145
+ It is now cycle 1146
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 1147
+ It is now cycle 1148
+ It is now cycle 1149
+@@ -1273,8 +1164,6 @@
+ It is now cycle 1154
+ It is now cycle 1155
+ It is now cycle 1156
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 1157
+ It is now cycle 1158
+ It is now cycle 1159
+@@ -1295,7 +1184,6 @@
+ It is now cycle 1174
+ It is now cycle 1175
+ It is now cycle 1176
+-P    1 | zjmp -23 OK
+ It is now cycle 1177
+ It is now cycle 1178
+ It is now cycle 1179
+@@ -1306,7 +1194,6 @@
+ It is now cycle 1184
+ It is now cycle 1185
+ It is now cycle 1186
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 1187
+ It is now cycle 1188
+ It is now cycle 1189
+@@ -1317,8 +1204,6 @@
+ It is now cycle 1194
+ It is now cycle 1195
+ It is now cycle 1196
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 1197
+ It is now cycle 1198
+ It is now cycle 1199
+@@ -1339,7 +1224,6 @@
+ It is now cycle 1214
+ It is now cycle 1215
+ It is now cycle 1216
+-P    1 | zjmp -23 OK
+ It is now cycle 1217
+ It is now cycle 1218
+ It is now cycle 1219
+@@ -1350,7 +1234,6 @@
+ It is now cycle 1224
+ It is now cycle 1225
+ It is now cycle 1226
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 1227
+ It is now cycle 1228
+ It is now cycle 1229
+@@ -1361,8 +1244,6 @@
+ It is now cycle 1234
+ It is now cycle 1235
+ It is now cycle 1236
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 1237
+ It is now cycle 1238
+ It is now cycle 1239
+@@ -1383,7 +1264,6 @@
+ It is now cycle 1254
+ It is now cycle 1255
+ It is now cycle 1256
+-P    1 | zjmp -23 OK
+ It is now cycle 1257
+ It is now cycle 1258
+ It is now cycle 1259
+@@ -1394,7 +1274,6 @@
+ It is now cycle 1264
+ It is now cycle 1265
+ It is now cycle 1266
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 1267
+ It is now cycle 1268
+ It is now cycle 1269
+@@ -1405,8 +1284,6 @@
+ It is now cycle 1274
+ It is now cycle 1275
+ It is now cycle 1276
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 1277
+ It is now cycle 1278
+ It is now cycle 1279
+@@ -1427,7 +1304,6 @@
+ It is now cycle 1294
+ It is now cycle 1295
+ It is now cycle 1296
+-P    1 | zjmp -23 OK
+ It is now cycle 1297
+ It is now cycle 1298
+ It is now cycle 1299
+@@ -1438,7 +1314,6 @@
+ It is now cycle 1304
+ It is now cycle 1305
+ It is now cycle 1306
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 1307
+ It is now cycle 1308
+ It is now cycle 1309
+@@ -1449,8 +1324,6 @@
+ It is now cycle 1314
+ It is now cycle 1315
+ It is now cycle 1316
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 1317
+ It is now cycle 1318
+ It is now cycle 1319
+@@ -1471,7 +1344,6 @@
+ It is now cycle 1334
+ It is now cycle 1335
+ It is now cycle 1336
+-P    1 | zjmp -23 OK
+ It is now cycle 1337
+ It is now cycle 1338
+ It is now cycle 1339
+@@ -1482,7 +1354,6 @@
+ It is now cycle 1344
+ It is now cycle 1345
+ It is now cycle 1346
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 1347
+ It is now cycle 1348
+ It is now cycle 1349
+@@ -1493,8 +1364,6 @@
+ It is now cycle 1354
+ It is now cycle 1355
+ It is now cycle 1356
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 1357
+ It is now cycle 1358
+ It is now cycle 1359
+@@ -1515,7 +1384,6 @@
+ It is now cycle 1374
+ It is now cycle 1375
+ It is now cycle 1376
+-P    1 | zjmp -23 OK
+ It is now cycle 1377
+ It is now cycle 1378
+ It is now cycle 1379
+@@ -1526,7 +1394,6 @@
+ It is now cycle 1384
+ It is now cycle 1385
+ It is now cycle 1386
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 1387
+ It is now cycle 1388
+ It is now cycle 1389
+@@ -1537,8 +1404,6 @@
+ It is now cycle 1394
+ It is now cycle 1395
+ It is now cycle 1396
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 1397
+ It is now cycle 1398
+ It is now cycle 1399
+@@ -1559,7 +1424,6 @@
+ It is now cycle 1414
+ It is now cycle 1415
+ It is now cycle 1416
+-P    1 | zjmp -23 OK
+ It is now cycle 1417
+ It is now cycle 1418
+ It is now cycle 1419
+@@ -1570,7 +1434,6 @@
+ It is now cycle 1424
+ It is now cycle 1425
+ It is now cycle 1426
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 1427
+ It is now cycle 1428
+ It is now cycle 1429
+@@ -1581,8 +1444,6 @@
+ It is now cycle 1434
+ It is now cycle 1435
+ It is now cycle 1436
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 1437
+ It is now cycle 1438
+ It is now cycle 1439
+@@ -1603,7 +1464,6 @@
+ It is now cycle 1454
+ It is now cycle 1455
+ It is now cycle 1456
+-P    1 | zjmp -23 OK
+ It is now cycle 1457
+ It is now cycle 1458
+ It is now cycle 1459
+@@ -1614,7 +1474,6 @@
+ It is now cycle 1464
+ It is now cycle 1465
+ It is now cycle 1466
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 1467
+ It is now cycle 1468
+ It is now cycle 1469
+@@ -1625,8 +1484,6 @@
+ It is now cycle 1474
+ It is now cycle 1475
+ It is now cycle 1476
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 1477
+ It is now cycle 1478
+ It is now cycle 1479
+@@ -1647,7 +1504,6 @@
+ It is now cycle 1494
+ It is now cycle 1495
+ It is now cycle 1496
+-P    1 | zjmp -23 OK
+ It is now cycle 1497
+ It is now cycle 1498
+ It is now cycle 1499
+@@ -1658,7 +1514,6 @@
+ It is now cycle 1504
+ It is now cycle 1505
+ It is now cycle 1506
+-ADV 8 (0x0000 -> 0x0008) 05 ff fb 00 05 0b 68 05 
+ It is now cycle 1507
+ It is now cycle 1508
+ It is now cycle 1509
+@@ -1669,8 +1524,6 @@
+ It is now cycle 1514
+ It is now cycle 1515
+ It is now cycle 1516
+-P    1 | and 1 0 r3
+-ADV 11 (0x000c -> 0x0017) 06 a4 00 00 00 01 00 00 00 00 03 
+ It is now cycle 1517
+ It is now cycle 1518
+ It is now cycle 1519
+@@ -1691,5 +1544,4 @@
+ It is now cycle 1534
+ It is now cycle 1535
+ It is now cycle 1536
+-P    1 | zjmp -23 OK
+ Contestant 1, "blip", has won !

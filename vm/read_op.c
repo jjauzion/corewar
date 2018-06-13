@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/06 13:43:43 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/12 18:34:19 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/13 14:59:55 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,10 @@ t_op			*read_op(t_arena *arena, t_process *process)
 	while (op_tab[++i].op_code != op->op_code && op_tab[i].name)
 	{}
 	if (op_tab[i].name == NULL)
+	{
+		process->pc++;
 		return (error_ptr(op, ""));
+	}
 	op->ocp = arena->mem[get_address(process->pc + 1)];
 	op->name = ft_strdup(op_tab[i].name);
 	op->dir_size = (op_tab[i].dir_size == 1) ? DIR_SIZE - 2 : DIR_SIZE;
@@ -106,7 +109,7 @@ t_op			*read_op(t_arena *arena, t_process *process)
 		process->op_size = get_op_size(op_tab[i].arg_type, i);
 	op->nb_arg = op_tab[i].nb_arg;
 	op->nb_cycle = op_tab[i].nb_cycle;
-	process->exe_cycle = arena->last_check +arena->last_check +  arena->cycle + op->nb_cycle;
+	process->exe_cycle = arena->last_check + arena->cycle + op->nb_cycle;
 	if (check_arg(op, arena->mem, process->pc + 1 + op_tab[i].ocp) == ERROR)
 		process->exe_op = 0;
 	return (op);

@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 10:25:44 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/12 19:08:36 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/13 14:11:05 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,12 @@ void		verbose(t_arena *arena, t_process *current_process, int step, int dump)
 	}
 	else if (step == 50 && opt_is_set(arena->option->option, 'v'))
 	{
-		ft_printf("op_code = %d executed\n", current_process->op->op_code);
+		ft_printf("op_code = %d not executed\n", current_process->op->op_code);
 		print_arena(arena->mem, current_process->pc, current_process->op_size);
 	}
 	else if (step == 60 && opt_is_set(arena->option->option, 'v'))
 	{
-		ft_printf("op_code = %d not executed\n", current_process->op->op_code);
+		ft_printf("op_code = %d executed\n", current_process->op->op_code);
 		print_arena(arena->mem, current_process->pc, current_process->op_size);
 	}
 	else if (step == 70 && opt_is_set(arena->option->option, 'v'))
@@ -61,12 +61,17 @@ void		verbose(t_arena *arena, t_process *current_process, int step, int dump)
 
 void		show_cycle(t_arena *arena, t_process *current_process, int step, int dump)
 {
+	static int	last_cycle2die = CYCLE_TO_DIE;
+
 	(void)current_process;
 	(void)dump;
-	if (step == 10 && opt_is_set(arena->option->option, 'c'))
+	if (step == 10 && opt_is_set(arena->option->option, 'c') && arena->cycle + arena->last_check != 0)
 		ft_printf("It is now cycle %d\n", arena->cycle + arena->last_check);
-	if (step == 35 && opt_is_set(arena->option->option, 'c'))
+	if (step == 85 && opt_is_set(arena->option->option, 'c') && arena->cycle2die != last_cycle2die)
+	{
+		last_cycle2die = arena->cycle2die;
 		ft_printf("Cycle to die is now %d\n", arena->cycle2die);
+	}
 }
 
 void		show_pc_mouvement(t_arena *arena, t_process *current_process, int step, int dump)
