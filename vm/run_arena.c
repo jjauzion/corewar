@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/05 15:12:10 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/13 15:01:59 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/13 15:51:37 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,21 @@ int					run_arena(t_arena *arena)
 	{
 		verbose(arena, current_process, 10, 0);
 		show_cycle(arena, current_process, 10, 0);
+		current_process = arena->process;
+		while (current_process)
+		{
+			verbose(arena, current_process, 40, 0);
+			if (current_process->op == NULL)
+			{
+				verbose(arena, current_process, 45, 0);
+				current_process->op = read_op(arena, current_process);
+			}
+			else if (arena->cycle + arena->last_check == current_process->exe_cycle)
+				exec_op(current_process, arena);
+			else
+				verbose(arena, current_process, 70, 0);
+			current_process = current_process->next;
+		}
 		if (arena->cycle == arena->cycle2die || arena->cycle2die <= 0)
 		{
 			arena->nb_check++;
@@ -73,21 +88,6 @@ int					run_arena(t_arena *arena)
 				arena->nb_check = 0;
 			}
 			arena->nb_live = 0;
-		}
-		current_process = arena->process;
-		while (current_process)
-		{
-			verbose(arena, current_process, 40, 0);
-			if (current_process->op == NULL)
-			{
-				verbose(arena, current_process, 45, 0);
-				current_process->op = read_op(arena, current_process);
-			}
-			else if (arena->cycle + arena->last_check == current_process->exe_cycle)
-				exec_op(current_process, arena);
-			else
-				verbose(arena, current_process, 70, 0);
-			current_process = current_process->next;
 		}
 		verbose(arena, current_process, 80, 0);
 		if (opt_is_set(arena->option->option, 'd')

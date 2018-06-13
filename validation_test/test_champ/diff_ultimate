@@ -1,5 +1,5 @@
 --- test_champ/demo_ultimate	2018-06-13 11:13:34.000000000 +0200
-+++ test_champ/vm_ultimate	2018-06-13 15:35:35.000000000 +0200
++++ test_champ/vm_ultimate	2018-06-13 15:52:08.000000000 +0200
 @@ -43,8 +43,7 @@
  It is now cycle 33
  It is now cycle 34

@@ -1,5 +1,5 @@
 --- test_champ/demo_op_code_unknown	2018-06-13 11:13:33.000000000 +0200
-+++ test_champ/vm_op_code_unknown	2018-06-13 15:35:34.000000000 +0200
++++ test_champ/vm_op_code_unknown	2018-06-13 15:52:07.000000000 +0200
 @@ -108,6 +108,8 @@
  It is now cycle 94
  It is now cycle 95

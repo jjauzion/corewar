@@ -1,8 +1,0 @@
---- test_champ/demo_try	2018-06-13 11:13:33.000000000 +0200
-+++ test_champ/vm_try	2018-06-13 15:35:35.000000000 +0200
-@@ -1691,5 +1691,4 @@
- It is now cycle 1534
- It is now cycle 1535
- It is now cycle 1536
--P    1 | zjmp -23 OK
- Contestant 1, "blip", has won !
