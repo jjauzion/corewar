@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/09 12:01:46 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/13 17:36:53 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/14 11:58:57 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int		sti(t_process *process, t_arena *arena)
 				process->pid, process->op->name, arg[0], arg[1], arg[2]);
 		ft_printf("       | -> store to %d + %d = %d (with pc and mod %d)\n",
 				arg[1], arg[2], arg[1] + arg[2],
-				get_address((arg[1] + arg[2]) % IDX_MOD + process->pc));
+				(arg[1] + arg[2]) % IDX_MOD + process->pc);
 	}
 	return (SUCCESS);
 }

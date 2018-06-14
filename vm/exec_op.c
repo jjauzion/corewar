@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/06 13:29:32 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/13 17:21:13 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/14 18:18:36 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int			exec_op(t_process *process, t_arena *arena)
 {
 	int		i;
 
+	read_op(arena, process);
 	if (process->exe_op == 1)
 	{
 		i = -1;
@@ -25,9 +26,8 @@ int			exec_op(t_process *process, t_arena *arena)
 		if (g_op_fct_tab[i].op_code == 0)
 		{
 			process->pc = get_address(process->pc + process->op_size);
-			//error_ptr(process->op, "op code not found in g_op_fct_tab\n"); 
 			ft_printf("op code %d not found in g_op_fct_tab\n", process->op->op_code); 
-			process->op = read_op(arena, process);
+			process->op = read_op_code(arena, process);
 			return(ERROR); 
 		}
 		g_op_fct_tab[i].fct(process, arena);
@@ -39,6 +39,6 @@ int			exec_op(t_process *process, t_arena *arena)
 	process->pc = get_address(process->pc + process->op_size);
 	free(process->op);
 	process->op_size = 0;
-	process->op = read_op(arena, process);
+	process->op = read_op_code(arena, process);
 	return (SUCCESS);
 }

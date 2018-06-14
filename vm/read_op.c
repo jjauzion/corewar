@@ -6,12 +6,11 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/06 13:43:43 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/13 17:36:38 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/14 18:17:50 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vm.h"
-#include "op.c"
 
 static int			get_op_size(int arg_type[3], int op_index)
 {
@@ -32,7 +31,7 @@ static int			get_op_size(int arg_type[3], int op_index)
 	}
 	return (op_size);
 }
-	
+
 
 static int		read_ocp(t_op *op, int op_index, t_process *process)
 {
@@ -53,7 +52,7 @@ static int		read_ocp(t_op *op, int op_index, t_process *process)
 			op->arg_type[i] = T_DIR;
 		if (op->arg_type[i] == IND_CODE)
 			op->arg_type[i] = T_IND;
-		if (((op->arg_type[i] | op_tab[op_index].arg_type[i]) != op_tab[op_index].arg_type[i]) || (op->ocp < 4))
+		if (op->arg_type[i] == 0 || ((op->arg_type[i] | op_tab[op_index].arg_type[i]) != op_tab[op_index].arg_type[i]) || (op->ocp < 4))
 			ret = ERROR;
 		i++;
 	}
@@ -82,7 +81,7 @@ static int		check_arg(t_op *op, t_uchar *mem, int index_arg1)
 	return (SUCCESS);
 }
 
-void			set_arg_type(t_op *op, int op_id)
+static void		set_arg_type(t_op *op, int op_id)
 {
 	int		i;
 
@@ -91,38 +90,23 @@ void			set_arg_type(t_op *op, int op_id)
 		op->arg_type[i] = op_tab[op_id].arg_type[i];
 }
 
-t_op			*read_op(t_arena *arena, t_process *process)
+void			read_op(t_arena *arena, t_process *process)
 {
 	int		i;
-	t_op	*op;
 
-	if (!(op = (t_op*)ft_memalloc(sizeof(t_op))))
-		return (error_ptr(NULL, "error op malloc\n"));
-	op->ocp = 0;
 	process->exe_op = 1;
-	op->op_code = (int)arena->mem[get_address(process->pc)];
+	process->op->ocp = arena->mem[get_address(process->pc + 1)];
 	i = -1;
-	while (op_tab[++i].op_code != op->op_code && op_tab[i].name)
+	while (op_tab[++i].op_code != process->op->op_code && op_tab[i].name)
 	{}
-	if (op_tab[i].name == NULL)
-	{
-		process->pc = get_address(process->pc + 1);
-		return (error_ptr(op, ""));
-	}
-	op->ocp = arena->mem[get_address(process->pc + 1)];
-	op->name = ft_strdup(op_tab[i].name);
-	op->dir_size = (op_tab[i].dir_size == 1) ? DIR_SIZE - 2 : DIR_SIZE;
-	op->nb_arg = op_tab[i].nb_arg;
-	if (op_tab[i].ocp == 1 && (read_ocp(op, i, process) == ERROR))
+	process->op->dir_size = (op_tab[i].dir_size == 1) ? DIR_SIZE - 2 : DIR_SIZE;
+	if (op_tab[i].ocp == 1 && (read_ocp(process->op, i, process) == ERROR))
 		process->exe_op = 0;
 	else if (op_tab[i].ocp == 0)
 	{
-		set_arg_type(op, i);
+		set_arg_type(process->op, i);
 		process->op_size = get_op_size(op_tab[i].arg_type, i);
 	}
-	op->nb_cycle = op_tab[i].nb_cycle;
-	process->exe_cycle = arena->last_check + arena->cycle + op->nb_cycle;
-	if (check_arg(op, arena->mem, process->pc + 1 + op_tab[i].ocp) == ERROR)
+	if (check_arg(process->op, arena->mem, process->pc + 1 + op_tab[i].ocp) == ERROR)
 		process->exe_op = 0;
-	return (op);
 }

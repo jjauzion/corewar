@@ -1,11 +1,11 @@
 .name "fork2"
 .comment "fork2"
 
-lfork %:la
-ld %0,r3
-live %1
-zjmp %:fin 
+fork %65530
+live %2
+fork %:la
 la:
-fork %10
-aff r1
-fin:
+sti r1,500,%500
+sti r1,500,%500
+live %2
+fork %:la

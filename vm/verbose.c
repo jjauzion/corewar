@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 10:25:44 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/13 14:11:05 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/14 14:25:44 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,17 @@ void		show_cycle(t_arena *arena, t_process *current_process, int step, int dump)
 		last_cycle2die = arena->cycle2die;
 		ft_printf("Cycle to die is now %d\n", arena->cycle2die);
 	}
+}
+
+int			print_dump_mem(t_arena *arena)
+{
+	if (opt_is_set(arena->option->option, 'd') &&
+			arena->cycle + arena->last_check == arena->option->d_cycle)
+	{
+		print_arena(arena->mem, 0, MEM_SIZE);
+		return (1);
+	}
+	return (0);
 }
 
 void		show_pc_mouvement(t_arena *arena, t_process *current_process, int step, int dump)

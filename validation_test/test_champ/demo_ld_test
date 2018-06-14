@@ -1,5 +1,5 @@
 Introducing contestants...
-* Player 1, weighing 55 bytes, "blip" ("blop") !
+* Player 1, weighing 109 bytes, "lld" ("lld") !
 It is now cycle 1
 It is now cycle 2
 It is now cycle 3
@@ -12,54 +12,46 @@ It is now cycle 7
 It is now cycle 8
 It is now cycle 9
 It is now cycle 10
-P    1 | ld -805306107 r5
-ADV 5 (0x0007 -> 0x000c) 02 d0 00 01 05 
 It is now cycle 11
 It is now cycle 12
 It is now cycle 13
 It is now cycle 14
 It is now cycle 15
-P    1 | ld -12 r5
-ADV 7 (0x000c -> 0x0013) 02 90 ff ff ff f4 05 
 It is now cycle 16
 It is now cycle 17
 It is now cycle 18
 It is now cycle 19
 It is now cycle 20
-P    1 | ld 47186432 r3
-ADV 5 (0x0013 -> 0x0018) 02 d0 02 00 03 
 It is now cycle 21
 It is now cycle 22
 It is now cycle 23
 It is now cycle 24
 It is now cycle 25
-P    1 | ld 0 r3
-ADV 5 (0x0018 -> 0x001d) 02 d0 03 e8 03 
 It is now cycle 26
 It is now cycle 27
 It is now cycle 28
 It is now cycle 29
 It is now cycle 30
-P    1 | ld 50515971 r3
-ADV 5 (0x001d -> 0x0022) 02 d0 ff fa 03 
+P    1 | sti r5 -510 1
+       | -> store to -510 + 1 = -509 (with pc and mod -502)
+ADV 7 (0x0007 -> 0x000e) 0b 68 05 fe 02 00 01 
 It is now cycle 31
 It is now cycle 32
 It is now cycle 33
 It is now cycle 34
 It is now cycle 35
-ADV 7 (0x0022 -> 0x0029) 02 90 00 00 00 00 00 
+P    1 | ld -805306107 r5
+ADV 5 (0x000e -> 0x0013) 02 d0 00 01 05 
 It is now cycle 36
 It is now cycle 37
 It is now cycle 38
 It is now cycle 39
 It is now cycle 40
-ADV 7 (0x0029 -> 0x0030) 02 90 00 00 00 01 15 
 It is now cycle 41
 It is now cycle 42
 It is now cycle 43
 It is now cycle 44
 It is now cycle 45
-ADV 7 (0x0030 -> 0x0037) 02 90 00 00 00 01 32 
 It is now cycle 46
 It is now cycle 47
 It is now cycle 48
@@ -75,11 +67,16 @@ It is now cycle 57
 It is now cycle 58
 It is now cycle 59
 It is now cycle 60
+P    1 | sti r5 -510 1
+       | -> store to -510 + 1 = -509 (with pc and mod -490)
+ADV 7 (0x0013 -> 0x001a) 0b 68 05 fe 02 00 01 
 It is now cycle 61
 It is now cycle 62
 It is now cycle 63
 It is now cycle 64
 It is now cycle 65
+P    1 | ld -26 r5
+ADV 7 (0x001a -> 0x0021) 02 90 ff ff ff e6 05 
 It is now cycle 66
 It is now cycle 67
 It is now cycle 68
@@ -105,11 +102,16 @@ It is now cycle 87
 It is now cycle 88
 It is now cycle 89
 It is now cycle 90
+P    1 | sti r5 -510 1
+       | -> store to -510 + 1 = -509 (with pc and mod -476)
+ADV 7 (0x0021 -> 0x0028) 0b 68 05 fe 02 00 01 
 It is now cycle 91
 It is now cycle 92
 It is now cycle 93
 It is now cycle 94
 It is now cycle 95
+P    1 | ld 47186432 r3
+ADV 5 (0x0028 -> 0x002d) 02 d0 02 00 03 
 It is now cycle 96
 It is now cycle 97
 It is now cycle 98
@@ -135,11 +137,16 @@ It is now cycle 117
 It is now cycle 118
 It is now cycle 119
 It is now cycle 120
+P    1 | sti r3 510 1
+       | -> store to 510 + 1 = 511 (with pc and mod 556)
+ADV 7 (0x002d -> 0x0034) 0b 68 03 01 fe 00 01 
 It is now cycle 121
 It is now cycle 122
 It is now cycle 123
 It is now cycle 124
 It is now cycle 125
+P    1 | ld 0 r3
+ADV 5 (0x0034 -> 0x0039) 02 d0 03 e8 03 
 It is now cycle 126
 It is now cycle 127
 It is now cycle 128
@@ -165,11 +172,16 @@ It is now cycle 147
 It is now cycle 148
 It is now cycle 149
 It is now cycle 150
+P    1 | sti r3 510 1
+       | -> store to 510 + 1 = 511 (with pc and mod 568)
+ADV 7 (0x0039 -> 0x0040) 0b 68 03 01 fe 00 01 
 It is now cycle 151
 It is now cycle 152
 It is now cycle 153
 It is now cycle 154
 It is now cycle 155
+P    1 | ld 0 r3
+ADV 5 (0x0040 -> 0x0045) 02 d0 03 e8 03 
 It is now cycle 156
 It is now cycle 157
 It is now cycle 158
@@ -195,11 +207,16 @@ It is now cycle 177
 It is now cycle 178
 It is now cycle 179
 It is now cycle 180
+P    1 | sti r3 510 1
+       | -> store to 510 + 1 = 511 (with pc and mod 580)
+ADV 7 (0x0045 -> 0x004c) 0b 68 03 01 fe 00 01 
 It is now cycle 181
 It is now cycle 182
 It is now cycle 183
 It is now cycle 184
 It is now cycle 185
+P    1 | ld 1745027582 r3
+ADV 5 (0x004c -> 0x0051) 02 d0 ff fa 03 
 It is now cycle 186
 It is now cycle 187
 It is now cycle 188
@@ -225,21 +242,27 @@ It is now cycle 207
 It is now cycle 208
 It is now cycle 209
 It is now cycle 210
+P    1 | sti r3 510 1
+       | -> store to 510 + 1 = 511 (with pc and mod 592)
+ADV 7 (0x0051 -> 0x0058) 0b 68 03 01 fe 00 01 
 It is now cycle 211
 It is now cycle 212
 It is now cycle 213
 It is now cycle 214
 It is now cycle 215
+ADV 7 (0x0058 -> 0x005f) 02 90 00 00 00 00 00 
 It is now cycle 216
 It is now cycle 217
 It is now cycle 218
 It is now cycle 219
 It is now cycle 220
+ADV 7 (0x005f -> 0x0066) 02 90 00 00 00 01 15 
 It is now cycle 221
 It is now cycle 222
 It is now cycle 223
 It is now cycle 224
 It is now cycle 225
+ADV 7 (0x0066 -> 0x006d) 02 90 00 00 00 01 32 
 It is now cycle 226
 It is now cycle 227
 It is now cycle 228
@@ -692,6 +715,7 @@ It is now cycle 674
 It is now cycle 675
 It is now cycle 676
 It is now cycle 677
+ADV 5 (0x022c -> 0x0231) 02 d0 02 00 00 
 It is now cycle 678
 It is now cycle 679
 It is now cycle 680
@@ -729,6 +753,7 @@ It is now cycle 711
 It is now cycle 712
 It is now cycle 713
 It is now cycle 714
+ADV 2 (0x0251 -> 0x0253) 03 01 
 It is now cycle 715
 It is now cycle 716
 It is now cycle 717
@@ -1551,4 +1576,4 @@ It is now cycle 1533
 It is now cycle 1534
 It is now cycle 1535
 It is now cycle 1536
-Contestant 1, "blip", has won !
+Contestant 1, "lld", has won !

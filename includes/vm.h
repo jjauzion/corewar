@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:02:07 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/13 17:13:10 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/14 18:18:11 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@
 typedef unsigned char	t_uchar;
 typedef unsigned int	t_uint;
 
-# define VALID_OPT "vcopl"
+# define VALID_OPT "avcopl"
 # define VALID_OPT_WITH_VAL "d"
 
 typedef struct			s_option
@@ -66,6 +66,7 @@ typedef struct			s_process
 	int					exe_cycle;
 	t_op				*op;
 	int					op_size;
+	char				op_idx_mod;
 	int					exe_op;
 	uintmax_t			last_live_cycle;
 	struct s_process	*next;
@@ -101,6 +102,8 @@ typedef struct			s_op_fct
 	int		(*fct)(t_process *process, t_arena *arena);
 }						t_op_fct;
 
+extern t_op				op_tab[17];
+
 void					*error_ptr(void *ptr, char *msg);
 int						error_int(char *msg);
 t_champion				*read_champ(char *file);
@@ -111,13 +114,15 @@ int						opt_is_set(int option, char test_opt);
 int						init_arena(t_arena *arena, t_champion **champions);
 t_process				*create_process(int address, int id, t_process *origin_process);
 int						run_arena(t_arena *arena);
-t_op					*read_op(t_arena *arena, t_process *process);
+t_op					*read_op_code(t_arena *arena, t_process *process);
+void					read_op(t_arena *arena, t_process *process);
 int						exec_op(t_process *process, t_arena *arena);
 void					print_arena(t_uchar *mem, size_t index, size_t length);
 void					verbose(t_arena *arena, t_process *process, int step, int dump);
 void					show_cycle(t_arena *arena, t_process *process, int step, int dump);
 void					show_operation(t_arena *arena, t_process *process, int arg[3], char *msg);
 void					show_pc_mouvement(t_arena *arena, t_process *process, int step, int dump);
+int						print_dump_mem(t_arena *arena);
 
 void					change_carry(t_process *process, int value);
 int						get_address(int address);
@@ -129,7 +134,9 @@ int						get_arg_val(t_process *process, int arg_id, t_uchar *mem, int arg_index
 int						get_arg_id(t_process *process, int arg_id, t_uchar *mem, int arg_index);
 
 int						ld(t_process *process, t_arena *arena);
+int						lld(t_process *process, t_arena *arena);
 int						ldi(t_process *process, t_arena *arena);
+int						lldi(t_process *process, t_arena *arena);
 int						st(t_process *process, t_arena *arena);
 int						sti(t_process *process, t_arena *arena);
 int						live(t_process *process, t_arena *arena);
@@ -140,5 +147,7 @@ int						sub(t_process *process, t_arena *arena);
 int						or(t_process *process, t_arena *arena);
 int						xor(t_process *process, t_arena *arena);
 int						fork_op(t_process *process, t_arena *arena);
+int						lfork_op(t_process *process, t_arena *arena);
+int						aff(t_process *process, t_arena *arena);
 
 #endif

@@ -1,10 +1,11 @@
 #!/bin/sh
 
 EXE="../resource/corewar"
+TEST_DIR="test_champ"
 
-#echo $0
-#DIR= `dirname "$0"`
-#echo $DIR
+DIR="`dirname "${0}"`"
+TEST_DIR=""$DIR"/"$TEST_DIR""
+EXE=""$DIR"/"$EXE""
 
 if [ -z "${1}" ]; then
 	OPT="-v 23"
@@ -18,7 +19,7 @@ if ! [ -z "${2}" ]; then
 	exit
 fi
 
-for file in test_champ/*.cor;
+for file in "$TEST_DIR"/*.cor;
 do
 	output="`dirname $file`/demo_`basename $file | cut -f1 -d'.'`";
 	$EXE $OPT $file > $output

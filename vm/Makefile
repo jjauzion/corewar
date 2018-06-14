@@ -6,13 +6,14 @@
 #    By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 11:25:23 by jjauzion          #+#    #+#              #
-#    Updated: 2018/06/13 17:11:50 by jjauzion         ###   ########.fr        #
+#    Updated: 2018/06/14 18:16:47 by jjauzion         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: all, clean, fclean, re, LIB
 
 SRC_NAME1 = main.c \
+			op.c \
 			error.c \
 			read_champ.c \
 			option.c \
@@ -29,7 +30,8 @@ SRC_NAME1 = main.c \
 			op_fct_3.c \
 			op_fct_4.c \
 			op_fct_5.c \
-			verbose.c
+			verbose.c \
+			read_op_code.c
 
 SRC_NAME2 = 
 
@@ -53,7 +55,6 @@ INC_NAME1 = libft.h
 
 INC_NAME2 = vm.h \
 			op.h \
-			op.c \
 			fct_op.c
 
 NAME = ../corewar

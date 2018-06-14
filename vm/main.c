@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:30:29 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/12 12:02:16 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/14 18:40:54 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,19 +36,21 @@ int		main(int argc, char **argv)
 				i + 1, arena->champions[i]->header.prog_size,
 				arena->champions[i]->header.prog_name,
 				arena->champions[i]->header.comment);
-	run_arena(arena);
-	winner = 0;
-	last_live = 0;
-	i = -1;
-	while (++i< arena->nb_champion)
+	if (run_arena(arena) != ERROR)
 	{
-		if (arena->champions[i]->last_live_cycle > last_live)
+		winner = arena->nb_champion - 1;
+		last_live = 0;
+		i = -1;
+		while (++i< arena->nb_champion)
 		{
-			winner = i;
-			last_live = arena->champions[i]->last_live_cycle;
+			if (arena->champions[i]->last_live_cycle > last_live)
+			{
+				winner = i;
+				last_live = arena->champions[i]->last_live_cycle;
+			}
 		}
+		ft_printf("Contestant %d, \"%s\", has won !\n", winner + 1, arena->champions[winner]->header.prog_name);
 	}
-	ft_printf("Contestant %d, \"%s\", has won !\n", winner + 1, arena->champions[winner]->header.prog_name);
 	free(arena->mem);
 	while (arena->nb_champion)
 	{

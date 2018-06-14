@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/06 14:16:45 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/13 17:26:01 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/14 16:05:40 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,11 +114,13 @@ int		get_arg_val(t_process *process, int arg_id, t_uchar *mem, int arg_index)
 	t_uint		reg;
 	int			value;
 
-
 	value = -1;
 	if (process->op->arg_type[arg_id] == T_IND)
 	{
-		address = (short)mem2int(mem, arg_index, (int)S_SHORT) % IDX_MOD;
+		if (process->op_idx_mod == 0) 
+			address = (short)mem2int(mem, arg_index, (int)S_SHORT);
+		else
+			address = (short)mem2int(mem, arg_index, (int)S_SHORT) % IDX_MOD;
 		value = mem2int(mem, process->pc + address, REG_SIZE); //REG_SIZE tjr?
 	}
 	else if (process->op->arg_type[arg_id] == T_DIR && process->op->dir_size == 2)
@@ -130,7 +132,5 @@ int		get_arg_val(t_process *process, int arg_id, t_uchar *mem, int arg_index)
 		reg = mem[get_address(arg_index)];
 		value = reg2int(process, reg);
 	}
-	else
-		ft_printf("arg type unknown in get_arg_val fct\n");
 	return (value);
 }

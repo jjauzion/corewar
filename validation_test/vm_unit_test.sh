@@ -1,10 +1,11 @@
 #!/bin/sh
 
 MY_EXE="../corewar"
+TEST_DIR="test_champ"
 
-#MY_PATH=$0
-#TEST= `$MY_PATH | sed "s%checker.sh%%"`
-#echo $TEST
+DIR="`dirname "${0}"`"
+TEST_DIR=""$DIR"/"$TEST_DIR""
+MY_EXE=""$DIR"/"$MY_EXE""
 
 if [ -z "${2}" ]; then
 	OPT="-lcpo"
@@ -25,7 +26,7 @@ if ! [ -z "${1}" ]; then
 	exit
 fi
 
-for file in test_champ/demo_*;
+for file in "${TEST_DIR}"/demo_*;
 do
 	test_file="`dirname $file`/`basename $file | cut -f2- -d'_'`.cor";
 	output="`dirname $test_file`/vm_`basename $test_file | cut -f1 -d'.'`"
