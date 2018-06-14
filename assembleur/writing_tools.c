@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/13 18:12:51 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/14 20:31:35 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/14 21:00:41 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,12 @@ void	write_bytecode(t_params *params)
 	t_instr *tmp;
 	int index;
 	unsigned char to_print;
+	char			*name;
 
+	name = ft_strjoin(params->file_name, ".cor");
 	tmp = params->instr;
-	file = open("test.cor", O_WRONLY | O_CREAT | O_TRUNC | S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+	file = open(name, O_WRONLY | O_CREAT | O_TRUNC | S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+	ft_strdel(&name);
 	print_header(file, params);
 	while (tmp)
 	{
