@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 13:23:09 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/13 18:05:27 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/14 20:07:58 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ int		main (int ac, char **av)
 	lseek(fd, 0, SEEK_SET);
 	params.lexer = NULL;
 	params.label = NULL;
+	// params.file_name = ft_strsub(av[1], 0, ft_strclen(av[1], '.'));
 	if (!(params.file = (char **)ft_memalloc(sizeof(char *) * (index + 1))))
 		return (0);
 	params.file[index] = 0;
@@ -84,7 +85,6 @@ int		main (int ac, char **av)
 	lexer(&params); //Function to clear file of labels, to reach an easier parsing
 	get_instr(&params); //Function to get every instruction, their arguments, name etc
 	print(&params);
-	while(1)
-		;
+	write_bytecode(&params);
 	return (0);
 }

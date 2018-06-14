@@ -9,7 +9,7 @@ sti r3, r4, %:ici
 add r1, r2, r3  #comment
 sub r1, r2, r3
 sti r3, r4, %:ici
-and %5, 16, r7
+and %5345677, 16, r7
 or 5, 9, r12
 xor %19, 3, r8
 zjmp %4

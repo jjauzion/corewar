@@ -6,7 +6,7 @@
 /*   By: smortier <smortier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 13:06:00 by smortier          #+#    #+#             */
-/*   Updated: 2018/06/13 17:08:47 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/14 19:56:09 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include "libft.h"
 #include "op.h"
+#include <limits.h>
 
 # define REG_BYTES				1
 # define IND_BYTES				2
@@ -53,6 +54,8 @@ typedef struct		s_lexer //actually just the file cleared from labels
 typedef struct		s_params // The main struct, the one we put in each functions of main
 {
 	char		**file;
+	char		*file_name;
+	header_t	header;
 	t_lexer		*lexer;
 	t_label		*label;
 	t_instr		*instr;
@@ -69,6 +72,9 @@ void	analyze_line(t_params *params, char *line, int index_line);
 void	init_instr(t_params *params);
 void 	get_label_instr(t_params *params);
 void	fill_arg_values(t_params *params);
+void	write_bytecode(t_params *params);
+int		get_program_size(t_params *params);
+
 
 /*
 **	check label
@@ -87,6 +93,9 @@ void	get_params(t_instr *tmp, char *line);
 void 	calc_ocp(t_instr *tmp);
 void	fill_arg_types(t_params *params, t_instr *tmp);
 void	calc_bytes(t_instr *tmp);
+void	print_header(int file, t_params *params);
+void	printbits_int(unsigned int v, int fd);
+
 
 
 void	save_live(t_params *params, int id, char *line);
