@@ -50,12 +50,12 @@ int		check_sti_par(t_params *params, char *line, int index_line)
 	}
 	if (!check_type(params, arg2))
 	{
-		ft_printf("Error : Wrong type of arg2 on instr %d (fork)\n", index_line);
+		ft_printf("Error : Wrong type of arg2 on instr %d (sti)\n", index_line);
 		exit(0);
 	}
-	if (check_type(params, arg3) != DIR_CODE && check_type(params, arg3) != IND_CODE)
+	if (check_type(params, arg3) != DIR_CODE && check_type(params, arg3) != REG_CODE)
 	{
-		ft_printf("Error : Wrong type of arg3 on instr %d (fork)\n", index_line);
+		ft_printf("Error : Wrong type of arg3 on instr %d (sti)\n", index_line);
 		exit(0);
 	}
 	ft_strdel(&arg1);

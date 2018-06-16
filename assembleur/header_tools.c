@@ -74,6 +74,12 @@ int		get_program_size(t_params *params)
 	tmp = params->instr;
 	while (tmp->next)
 		tmp = tmp->next;
+	if (tmp->address + tmp->nbr_bytes > CHAMP_MAX_SIZE)
+	{
+		ft_printf("Error: the champion size is too big\n");
+		ft_printf("Max_size   = \e[32m%d\e[0m\n", CHAMP_MAX_SIZE);
+		ft_printf("Champ_size = \e[31m%d\e[0m\n", tmp->address + tmp->nbr_bytes);
+	}
 	return (tmp->address + tmp->nbr_bytes);
 }
 

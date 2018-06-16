@@ -35,8 +35,10 @@ int	check_integer(char *arg)
 				return (IND_CODE);
 		}
 	}
-	else if (0 <= ft_atoi(arg) && ft_atoi(arg) <= 2147483647)
+	else if (0 <= ft_atoi(arg) && ft_atoim(arg) <= 2147483648)
 	{
+		if (ft_atoim(arg) == 0)
+			return (IND_CODE);
 		if ((int)ft_strlen(arg) == ft_nbrlen(ft_atoi(arg), 10))
 			return (IND_CODE);
 	}
@@ -54,8 +56,6 @@ int	check_dir(t_params *params, char *arg)
 		return (DIR_CODE);
 	return (0);
 }
-
-// check_integer negative!!!!!!
 
 int	check_type(t_params *params, char *arg)
 {
