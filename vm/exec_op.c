@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/06 13:29:32 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/14 18:18:36 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/16 18:59:15 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int			exec_op(t_process *process, t_arena *arena)
 	process->pc = get_address(process->pc + process->op_size);
 	free(process->op);
 	process->op_size = 0;
-	process->op = read_op_code(arena, process);
+	process->op = NULL;
+	//process->op = read_op_code(arena, process);
 	return (SUCCESS);
 }

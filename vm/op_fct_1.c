@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/07 16:40:39 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/14 15:29:10 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/16 15:57:22 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@ int		ld(t_process *process, t_arena *arena)
 	arg[1] = get_arg_id(process, 1, arena->mem, process->pc + 2 + arg_size);
 	int2reg(process, (t_uint)arg[1], arg[0]);
 	show_operation(arena, process, arg, NULL);
-	if (arg[0] == 0)
-		process->carry = 1;
-	else
-		process->carry = 0;
+	change_carry(process, arg[0]);
 	return (SUCCESS);
 }
 
@@ -42,10 +39,7 @@ int		lld(t_process *process, t_arena *arena)
 	arg[1] = get_arg_id(process, 1, arena->mem, process->pc + 2 + arg_size);
 	int2reg(process, (t_uint)arg[1], arg[0]);
 	show_operation(arena, process, arg, NULL);
-	if (arg[0] == 0)
-		process->carry = 1;
-	else
-		process->carry = 0;
+	change_carry(process, arg[0]);
 	return (SUCCESS);
 }
 
@@ -72,10 +66,7 @@ int		lldi(t_process *process, t_arena *arena)
 		ft_printf("       | -> load from %d + %d = %d (with pc %d)\n",
 				arg[0], arg[1], arg[0] + arg[1], address + process->pc);
 	}
-	if (value == 0)
-		process->carry = 1;
-	else
-		process->carry = 0;
+	change_carry(process, address); //address a tester
 	return (SUCCESS);
 }
 
@@ -102,9 +93,5 @@ int		ldi(t_process *process, t_arena *arena)
 		ft_printf("       | -> load from %d + %d = %d (with pc and mod %d)\n",
 				arg[0], arg[1], arg[0] + arg[1], get_address(address + process->pc));
 	}
-	if (value == 0)
-		process->carry = 1;
-	else
-		process->carry = 0;
 	return (SUCCESS);
 }

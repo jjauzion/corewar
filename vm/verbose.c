@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 10:25:44 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/14 14:25:44 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/16 16:48:34 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void		verbose(t_arena *arena, t_process *current_process, int step, int dump)
 	else if (step == 40 && opt_is_set(arena->option->option, 'v'))
 	{
 		ft_printf("--------------\nprocess %d:\n", current_process->pid);
-		ft_printf("reg[0] = %d ; pc = %d ; carry = %d\n",
-				reg2int(current_process, 1), current_process->pc, current_process->carry);
+		ft_printf("last_live = %d ; pc = 0x%04x ; carry = %d\n",
+				current_process->last_live_cycle + arena->last_check, current_process->pc, current_process->carry);
 	}
 	else if (step == 45 && opt_is_set(arena->option->option, 'v'))
 	{

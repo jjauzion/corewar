@@ -29,6 +29,8 @@ and 518,%10,r5
 ldi r5, %0, r8
 and 518,20,r5
 ldi r5, %0, r8
+and r16,r16,r16
+ldi r16, %0, r8
 or r2,r2,r5
 ldi r5, %0, r8
 or r2,%10,r5

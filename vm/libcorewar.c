@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/06 14:16:45 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/14 16:05:40 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/16 11:35:29 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int		reg2int(t_process *process, t_uint reg)
 	char	*ptr;
 	int		i;
 
-	if (reg <= 0 || reg >= REG_NUMBER)
+	if (reg <= 0 || reg > REG_NUMBER)
 		return (ERROR);
 	value = 0;
 	ptr = (char*)&value;
@@ -78,7 +78,7 @@ int		int2reg(t_process *process, t_uint reg, int value)
 	int		i;
 	char	*ptr;
 
-	if (reg <= 0 || reg >= REG_NUMBER)
+	if (reg <= 0 || reg > REG_NUMBER)
 		return (ERROR);
 	ptr = (char*)&value;
 	i = (REG_SIZE > 4) ? 3 : REG_SIZE - 1;

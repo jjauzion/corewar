@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/09 12:01:46 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/14 11:58:57 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/16 15:07:32 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,11 +92,11 @@ int		zjmp(t_process *process, t_arena *arena)
 	if (process->carry == 1)
 	{
 		if (opt_is_set(arena->option->option, 'o'))
-			ft_printf("P% 5d | zjmp %d OK\n", process->pid, (value % IDX_MOD));
+			ft_printf("P% 5d | zjmp %d OK\n", process->pid, value);
 		process->op_size = 0;
 		process->pc = get_address(process->pc + (value % IDX_MOD));
 	}
 	else if (opt_is_set(arena->option->option, 'o'))
-			ft_printf("P% 5d | zjmp %d FAILED\n", process->pid, (value % IDX_MOD));
+			ft_printf("P% 5d | zjmp %d FAILED\n", process->pid, value);
 	return (SUCCESS);
 }
