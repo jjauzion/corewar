@@ -35,8 +35,14 @@ int	check_integer(char *arg)
 				return (IND_CODE);
 		}
 	}
-	else if (0 <= ft_atoi(arg) && ft_atoi(arg) <= 2147483647)
+	else if (0 <= ft_atoi(arg) && ft_atoim(arg) <= 2147483648)
 	{
+		printf("ON ENTRE avec : (%ld)\n", (long)ft_atoim(arg));
+		if (ft_atoim(arg) == 0)
+		{
+			printf("ON ENTRE avec : (%s)\n", arg);
+			return (IND_CODE);
+		}
 		if ((int)ft_strlen(arg) == ft_nbrlen(ft_atoi(arg), 10))
 			return (IND_CODE);
 	}
