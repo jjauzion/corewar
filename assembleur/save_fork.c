@@ -21,11 +21,11 @@ void	save_fork(t_params *params, int id, char *line)
 	while (tmp->next)
 		tmp = tmp->next;
 	tmp->id = id;
-	tmp->opcode = 13;
+	tmp->opcode = 12;
 	tmp->nbr_arg = 1;
+	tmp->ocp = 0;
 	get_params(tmp, line);
 	fill_arg_types(params, tmp);
-	calc_ocp(tmp);
 	calc_bytes(tmp);
 	tmp->d2 = 1;
 	tmp->nbr_bytes -= 2;
