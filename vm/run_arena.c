@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/05 15:12:10 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/16 19:25:29 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/17 19:12:31 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,16 +47,8 @@ int					run_arena(t_arena *arena)
 			verbose(arena, current_process, 40, 0);
 			if (current_process->op != NULL)
 				verbose(arena, current_process, 70, 0);
-/*			if (current_process->op == NULL)
-			{
-				verbose(arena, current_process, 45, 0);
-				current_process->op = read_op_code(arena, current_process);
-			}
-			else if (arena->cycle + arena->last_check == current_process->exe_cycle) */
 			if (arena->cycle + arena->last_check == current_process->exe_cycle && current_process->op != NULL)
 				exec_op(current_process, arena);
-/*			else
-				verbose(arena, current_process, 70, 0);*/
 			if (arena->cycle == arena->cycle2die || arena->cycle2die <= 0)
 			{
 				if (current_process->last_live_cycle == 0)
@@ -78,10 +70,7 @@ int					run_arena(t_arena *arena)
 		while (current_process)
 		{
 			if (current_process->op == NULL)
-			{
-				verbose(arena, current_process, 45, 0);
 				current_process->op = read_op_code(arena, current_process);
-			}
 			current_process = current_process->next;
 		}
 		if (arena->cycle == arena->cycle2die || arena->cycle2die <= 0)
