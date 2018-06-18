@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:30:29 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/14 18:40:54 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/18 18:27:26 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int		main(int argc, char **argv)
 	if ((champions = check_input(argc, argv, arena)) == NULL)
 		return (ERROR);
 	if (!(arena->mem = (t_uchar*)ft_memalloc(MEM_SIZE)))
+		return (error_int("main"));
+	if (!(arena->schedule = (t_process**)ft_memalloc(CYCLE_TO_DIE * sizeof(t_process*))))
 		return (error_int("main"));
 	init_arena(arena, champions);
 	ft_printf("Introducing contestants...\n");

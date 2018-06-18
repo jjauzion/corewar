@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 10:25:44 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/16 16:48:34 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/18 18:00:13 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ void		verbose(t_arena *arena, t_process *current_process, int step, int dump)
 	}
 	else if (step == 70 && opt_is_set(arena->option->option, 'v'))
 	{
-		ft_printf("op_code = %d ; exe cycle = %d\n", current_process->op->op_code, current_process->exe_cycle);
+		//ft_printf("op_code = %d ; exe cycle = %d\n", current_process->op->op_code, current_process->exe_cycle);
+		ft_printf("op_code = %d\n", current_process->op->op_code);
 		print_arena(arena->mem, current_process->pc, current_process->op_size);
 	}
 	else if (step == 80 && opt_is_set(arena->option->option, 'v'))

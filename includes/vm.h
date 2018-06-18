@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:02:07 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/14 18:18:11 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/18 17:58:46 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,8 @@ typedef struct			s_process
 	t_uint				pid;
 	int					pc;
 	t_uchar				carry;
-	int					exe_cycle;
+	int					nb_turn;
+//	int					exe_cycle;
 	t_op				*op;
 	int					op_size;
 	char				op_idx_mod;
@@ -92,7 +93,8 @@ typedef struct			s_arena
 	int				nb_process;
 	t_champion		**champions;
 	int				nb_champion;
-	t_process		*process;
+//	t_process		*process;
+	t_process		**schedule;
 	int				nb_live;
 }						t_arena;
 
@@ -123,7 +125,11 @@ void					show_cycle(t_arena *arena, t_process *process, int step, int dump);
 void					show_operation(t_arena *arena, t_process *process, int arg[3], char *msg);
 void					show_pc_mouvement(t_arena *arena, t_process *process, int step, int dump);
 int						print_dump_mem(t_arena *arena);
+int						add2schedule(t_arena *arena, t_process *process2add, int cycle);
+int						remove_from_schedule(t_arena *arena, t_uint pid, int cycle);
 
+void					free_process(t_process *process);
+int						get_op_index(int op_code);
 void					change_carry(t_process *process, int value);
 int						get_address(int address);
 t_uint					mem2int(t_uchar *mem, int index, int size);

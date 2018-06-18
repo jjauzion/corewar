@@ -6,7 +6,7 @@
 #    By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 11:25:23 by jjauzion          #+#    #+#              #
-#    Updated: 2018/06/14 18:16:47 by jjauzion         ###   ########.fr        #
+#    Updated: 2018/06/18 15:36:26 by jjauzion         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,8 @@ SRC_NAME1 = main.c \
 			op_fct_4.c \
 			op_fct_5.c \
 			verbose.c \
-			read_op_code.c
+			read_op_code.c \
+			schedule.c
 
 SRC_NAME2 = 
 

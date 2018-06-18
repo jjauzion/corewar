@@ -6,11 +6,31 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/06 14:16:45 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/16 11:35:29 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/18 19:50:26 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vm.h"
+
+void		free_process(t_process *process)
+{
+	if (process->op)
+		free(process->op);
+	free(process);
+}
+
+int			get_op_index(int op_code)
+{
+	int		index;
+
+	index = -1;
+	while (op_tab[++index].op_code != 0)
+	{
+		if (op_tab[index].op_code == op_code)
+			return (index);
+	}
+	return (ERROR);
+}
 
 void		change_carry(t_process *process, int value)
 {

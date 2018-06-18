@@ -6,50 +6,54 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/05 15:12:10 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/17 19:12:31 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/18 19:26:37 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vm.h"
 
-static t_process	*kill_process(t_arena *arena, t_process *last_process, t_process *tokill)
+static t_process	*kill_process(t_arena *arena, int cycle, t_process *last_process, t_process *tokill)
 {
 	verbose(arena, tokill, 30, 0);
-	if (arena->process == tokill)
+	if (last_process == NULL)
 	{
-		arena->process = tokill->next;
-		free(tokill); //free_process() ???
-		return (arena->process);
+		arena->schedule[cycle] = tokill->next;
+		free_process(tokill);
+		arena->nb_process--;
+		return (arena->schedule[cycle]);
 	}
 	last_process->next = tokill->next;
-	free(tokill);
+	free_process(tokill);
+	arena->nb_process--;
 	return (last_process->next);
 }
 
 int					run_arena(t_arena *arena)
 {
 	t_process	*current_process;
-	t_process	*last_process;
+	t_process	*tmp;
 	int			i;
 
-	current_process = arena->process;
 	arena->cycle = 0;
 	arena->cycle2die = CYCLE_TO_DIE;
 	arena->last_check = 0;
-	while (arena->process)
+	while (arena->nb_process && arena->cycle2die > 0)
 	{
 		verbose(arena, current_process, 10, 0);
 		show_cycle(arena, current_process, 10, 0);
-		current_process = arena->process;
-		last_process = NULL;
+		current_process = arena->schedule[(arena->last_check + arena->cycle) % CYCLE_TO_DIE];
 		while (current_process)
 		{
+			tmp = current_process->next;
 			verbose(arena, current_process, 40, 0);
 			if (current_process->op != NULL)
+			{
 				verbose(arena, current_process, 70, 0);
-			if (arena->cycle + arena->last_check == current_process->exe_cycle && current_process->op != NULL)
 				exec_op(current_process, arena);
-			if (arena->cycle == arena->cycle2die || arena->cycle2die <= 0)
+			}
+			else
+				current_process->op = read_op_code(arena, current_process);
+/*			if (arena->cycle == arena->cycle2die || arena->cycle2die <= 0)
 			{
 				if (current_process->last_live_cycle == 0)
 				{
@@ -63,28 +67,37 @@ int					run_arena(t_arena *arena)
 					current_process = current_process->next;
 				}
 			}
-			else
-				current_process = current_process->next;
-		}
-		current_process = arena->process;
-		while (current_process)
-		{
-			if (current_process->op == NULL)
-				current_process->op = read_op_code(arena, current_process);
-			current_process = current_process->next;
+			else*/
+			current_process = tmp;
 		}
 		if (arena->cycle == arena->cycle2die || arena->cycle2die <= 0)
 		{
 			arena->nb_check++;
 			arena->last_check += arena->cycle;
 			arena->cycle = 0;
-			current_process = arena->process;
+			i = -1;
+			while (++i < CYCLE_TO_DIE)
+			{
+				current_process = arena->schedule[i];
+				tmp = NULL;
+				while (current_process)
+				{
+					if (current_process->last_live_cycle == 0)
+					{
+						remove_from_schedule(arena, current_process->pid, i);
+						current_process = kill_process(arena, i, tmp, current_process);
+					}
+					else
+					{
+						current_process->last_live_cycle = 0;
+						tmp = current_process;
+						current_process = current_process->next;
+					}
+				}
+			}
 			i = -1;
 			while (++i < arena->nb_champion)
-			{
-				verbose(arena, current_process, 20, i);
 				arena->champions[i]->nb_live = 0;
-			}
 			if (arena->nb_live >= NBR_LIVE || arena->nb_check >= MAX_CHECKS)
 			{
 				arena->cycle2die -= CYCLE_DELTA;
@@ -98,6 +111,7 @@ int					run_arena(t_arena *arena)
 		arena->cycle++;
 		show_cycle(arena, current_process, 85, 0);
 	}
+	//free arena...
 	verbose(arena, current_process, 90, 0);
 	return (SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/13 16:43:49 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/17 11:16:51 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/18 19:24:32 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ int		fork_op(t_process *process, t_arena *arena)
 	if (!(new_process = create_process(get_address(process->pc + (arg % IDX_MOD)), reg1, process)))
 		return (ERROR);
 	arena->nb_process++;
-	new_process->next = arena->process;
-	arena->process = new_process;
+	add2schedule(arena, new_process, arena->last_check + arena->cycle + 1);
 	if (opt_is_set(arena->option->option, 'o'))
 		ft_printf("P% 5d | %s %d (%d)\n",
 				process->pid, process->op->name, arg, process->pc + (arg % IDX_MOD));
@@ -41,10 +40,8 @@ int		lfork_op(t_process *process, t_arena *arena)
 	reg1 = reg2int(process, 1);
 	if (!(new_process = create_process(get_address(process->pc + arg), reg1, process)))
 		return (ERROR);
-	new_process->op = read_op_code(arena, new_process);
 	arena->nb_process++;
-	new_process->next = arena->process;
-	arena->process = new_process;
+	add2schedule(arena, new_process, arena->last_check + arena->cycle + 1);
 	if (opt_is_set(arena->option->option, 'o'))
 		ft_printf("P% 5d | %s %d (%d)\n",
 				process->pid, process->op->name, arg, process->pc + arg);
