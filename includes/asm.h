@@ -6,7 +6,7 @@
 /*   By: smortier <smortier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 13:06:00 by smortier          #+#    #+#             */
-/*   Updated: 2018/06/14 19:56:09 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/18 16:59:06 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ typedef struct		s_lexer //actually just the file cleared from labels
 typedef struct		s_params // The main struct, the one we put in each functions of main
 {
 	char		**file;
+	int			file_len;
 	char		*file_name;
 	header_t	header;
 	t_lexer		*lexer;

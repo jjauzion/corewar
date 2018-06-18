@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lexer.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smortier <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: smortier <smortier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 16:41:31 by smortier          #+#    #+#             */
-/*   Updated: 2018/06/10 13:03:33 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/18 20:02:58 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ char		*parse_line(char *line)
 		index = -1;
 		while (line[++index] && line[index] != LABEL_CHAR)
 			;
+		if (index && line[index - 1] && line[index - 1] == ' ') //WE MIGHT CHANGE THIS with tabs and spaces
+			return (line);
 		tmp = ft_strchr(line, LABEL_CHAR);
 		if (!str_is_empty(tmp + 1) && line[index - 1] != DIRECT_CHAR)
 		{

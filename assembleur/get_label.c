@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 13:23:51 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/15 20:11:52 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/18 17:12:02 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,8 +99,13 @@ void	get_label(t_params *params)
 	position = 0;
 	index_file = 0;
 	tmp = NULL;
-	while (params->file[index_file][0] == NAME_CMD_STRING[0])
+	while (params->file[index_file] && params->file[index_file][0] == '.')
 		index_file++;
+	if (params->file_len == index_file)
+	{
+		ft_printf("Error: Invalid file\n");
+		exit(0);
+	}
 	index_file--;
 	while (params->file[++index_file])
 	{

@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/07 13:24:32 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/13 13:14:10 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/18 19:57:16 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	analyze_line(t_params *params, char *line, int index_line)
 	char	**split;
 	int		index;
 
+	ft_printf("LINE: \e[35m%s\e[0m\n", line);
 	split = ft_split_whitespaces(line);
-	ft_printf("Instruction: %s\n", split[0]);
 	index = 0;
 	while (line[index] && (line[index] == ' ' || line[index] == '\t'))
 		index += 1;
@@ -54,6 +54,15 @@ void	analyze_line(t_params *params, char *line, int index_line)
 		save_ld(params, index_line, line + 2 + index);
 	else if (ft_strncmp("st", split[0], 2) == 0 && check_st_par(params, line + 2 + index, index_line))
 		save_st(params, index_line, line + 2 + index);
+	else
+	{
+		ft_printf("Error: \e[31m%s\e[0m is not a valid instruction\n", split[0]);
+		index = -1;
+		while (split[++index])
+			ft_strdel(&split[index]);
+		ft_memdel((void **)&split);
+		exit(0);
+	}
 	index = -1;
 	while (split[++index])
 		ft_strdel(&split[index]);

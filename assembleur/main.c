@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 13:23:09 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/18 14:01:08 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/18 20:05:32 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,15 +70,16 @@ int		main (int ac, char **av)
 	lseek(fd, 0, SEEK_SET);
 	params.lexer = NULL;
 	params.label = NULL;
-	params.file_name = ft_strsub(av[1], 0, ft_strclen(av[1], '.'));
+	params.file_name = ft_strsub(av[1], 0, ft_strlen(av[1]) - 2);
 	if (!(params.file = (char **)ft_memalloc(sizeof(char *) * (index + 1))))
 		return (0);
 	params.file[index] = 0;
+	params.file_len = index;
 	params.instr = NULL;
 	index2 = -1;
 	while (get_next_line(fd, &line) == 1)
 	{
-		if (line[0] && line[0] != '#' && !str_is_empty(line))
+		if (line[0] && line[0] != COMMENT_CHAR && !str_is_empty(line))
 			params.file[++index2] = line;
 		else
 			ft_memdel((void **)&line);

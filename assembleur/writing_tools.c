@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/13 18:12:51 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/14 21:00:41 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/18 19:04:49 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,8 @@ void	write_bytecode(t_params *params)
 		{
 			to_print = (unsigned char)tmp->arg_value[index];
 			tmp->arg_type[index] == REG_CODE ? write(file, &to_print, REG_BYTES) : 0;
-			tmp->arg_type[index] == IND_CODE ? printbits_short(tmp->arg_value[index], file) : 0;
+			tmp->arg_type[index] == IND_CODE ?
+				printbits_short((short)tmp->arg_value[index], file) : 0;
 			if (tmp->arg_type[index] == DIR_CODE)
 			{
 				if (tmp->d2 == 1)

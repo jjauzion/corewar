@@ -6,7 +6,7 @@
 /*   By: jjauzion <jjauzion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 21:09:27 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/14 14:31:13 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/18 19:01:01 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,7 +137,7 @@ int					ft_nbcwords(char const *s, char c);
 int					ft_strclen(char const *s, char c);
 char				**ft_split_whitespaces(char *str);
 int					ft_str_ws_len(char *str);
-int					ft_nbrlen(unsigned long long num, int base);
+int					ft_nbrlen(int num, int base);
 char				*ft_convert_base(char *nbr, char *base_from, char *base_to);
 
 #endif

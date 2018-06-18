@@ -6,13 +6,13 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/09 13:33:19 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/10 18:02:45 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/18 19:02:21 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_nbrlen(unsigned long long num, int base)
+int		ft_nbrlen(int num, int base)
 {
 	int len;
 
