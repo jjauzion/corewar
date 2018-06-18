@@ -22,7 +22,7 @@ static	void check_nbr_arg_xor(char **split)
 	if (i != 3)
 	{
 		ft_printf("Error:\n");
-		exit (0);
+		exit(0);
 	}
 }
 

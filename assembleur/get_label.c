@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 13:23:51 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/14 20:45:29 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/15 20:11:52 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	check_double_labels(t_params *params, char *name)
 			if (ft_strcmp(tmp->name, name) == 0)
 			{
 				ft_printf("Error: Label named \e[31m%s\e[0m already exists!\n", name);
-				exit (0);
+				exit(0);
 			}
 			tmp = tmp->next;
 		}

@@ -6,13 +6,13 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 13:04:58 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/11 15:37:14 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/15 20:20:48 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "asm.h"
 
-static	void check_nbr_arg_ldi(char **split)
+static void	check_nbr_arg_ldi(char **split)
 {
 	int		i;
 
@@ -22,7 +22,7 @@ static	void check_nbr_arg_ldi(char **split)
 	if (i != 3)
 	{
 		ft_printf("Error:\n");
-		exit (0);
+		exit(0);
 	}
 }
 

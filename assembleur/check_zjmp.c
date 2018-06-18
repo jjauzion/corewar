@@ -22,7 +22,7 @@ static	void check_nbr_arg_zjmp(char **split)
 	if (i != 1)
 	{
 		ft_printf("Error:\n");
-		exit (0);
+		exit(0);
 	}
 }
 

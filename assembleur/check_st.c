@@ -22,7 +22,7 @@ static	void check_nbr_arg_st(char **split)
 	if (i != 2)
 	{
 		ft_printf("Error:\n");
-		exit (0);
+		exit(0);
 	}
 }
 

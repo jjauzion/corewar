@@ -6,13 +6,13 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/10 16:23:57 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/13 17:20:56 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/15 20:20:22 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "asm.h"
 
-void check_nbr_arg_ld(char **split)
+void	check_nbr_arg_ld(char **split)
 {
 	int		i;
 
@@ -22,11 +22,11 @@ void check_nbr_arg_ld(char **split)
 	if (i != 2)
 	{
 		ft_printf("Error:\n");
-		exit (0);
+		exit(0);
 	}
 }
 
-int	check_ld_par(t_params *params, char *line, int index_line)
+int		check_ld_par(t_params *params, char *line, int index_line)
 {
 	char	**split;
 	char	*arg1;
@@ -52,7 +52,6 @@ int	check_ld_par(t_params *params, char *line, int index_line)
 		ft_printf("Error: Wrong type of arg2\n");
 		exit(0);
 	}
-	(void)index_line;
 	ft_strdel(&arg1);
 	ft_strdel(&arg2);
 	return (1);
