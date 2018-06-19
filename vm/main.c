@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:30:29 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/14 18:40:54 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/19 17:53:56 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,7 @@ int		main(int argc, char **argv)
 		arena->nb_champion--;
 	}
 	free(arena->champions);
+	free(arena->option);
+	free(arena);
 	return (SUCCESS);
 }

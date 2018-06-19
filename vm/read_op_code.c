@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 17:50:53 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/19 16:00:24 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/19 17:23:10 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_op			*read_op_code(t_arena *arena, t_process *process)
 	op->op_code = op_code;
 	op->nb_cycle = op_tab[i].nb_cycle;
 	process->exe_cycle = arena->last_check + arena->cycle + op->nb_cycle - 1;
-	op->name = ft_strdup(op_tab[i].name);
+	op->name = op_tab[i].name;
 	op->nb_arg = op_tab[i].nb_arg;
 	return (op);
 }

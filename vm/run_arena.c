@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/05 15:12:10 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/19 16:54:02 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/19 17:29:28 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,12 @@ static t_process	*kill_process(t_arena *arena, t_process *last_process, t_proces
 	if (arena->process == tokill)
 	{
 		arena->process = tokill->next;
+		free(tokill->op);
 		free(tokill); //free_process() ???
 		return (arena->process);
 	}
 	last_process->next = tokill->next;
+	free(tokill->op);
 	free(tokill);
 	return (last_process->next);
 }
