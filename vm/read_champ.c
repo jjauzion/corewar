@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 17:25:23 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/16 12:13:59 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/19 17:01:27 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ t_champion		*read_champ(char *file)
 	if ((fd = open(file, O_RDONLY)) == -1)
 		return (error_ptr(NULL, "File not found\n"));
 	ret = read(fd, (void*)buff, 2 * nb_byte + CHAMP_MAX_SIZE + PROG_NAME_LENGTH + COMMENT_LENGTH + 8);
+	if (ret < (2 * nb_byte + PROG_NAME_LENGTH + COMMENT_LENGTH + 8))
+		return (error_ptr(champion, "File is too small to be a champion\n"));
 	close(fd);
 //	ft_print_mem((void*)buff, ret);
 	champion->header.magic = mem2int(buff, 0, S_UINT);

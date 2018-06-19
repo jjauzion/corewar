@@ -814,8 +814,8 @@ It is now cycle 807
 It is now cycle 808
 It is now cycle 809
 It is now cycle 810
-P    2 | st r2 500
-ADV 5 (0x0011 -> 0x0016) 03 70 02 01 f4 
+P    2 | st r2 17
+ADV 5 (0x0011 -> 0x0016) 03 70 02 00 11 
 It is now cycle 811
 It is now cycle 812
 It is now cycle 813
@@ -847,8 +847,8 @@ It is now cycle 833
 It is now cycle 834
 It is now cycle 835
 ADV 2 (0x0019 -> 0x001b) 03 01 
-P    1 | st r2 500
-ADV 5 (0x0011 -> 0x0016) 03 70 02 01 f4 
+P    1 | st r2 17
+ADV 5 (0x0011 -> 0x0016) 03 70 02 00 11 
 It is now cycle 836
 It is now cycle 837
 It is now cycle 838
@@ -865,6 +865,7 @@ It is now cycle 847
 It is now cycle 848
 It is now cycle 849
 It is now cycle 850
+ADV 2 (0x0022 -> 0x0024) 03 01 
 It is now cycle 851
 It is now cycle 852
 It is now cycle 853
@@ -894,6 +895,7 @@ It is now cycle 872
 It is now cycle 873
 It is now cycle 874
 It is now cycle 875
+ADV 2 (0x0022 -> 0x0024) 03 01 
 It is now cycle 876
 It is now cycle 877
 It is now cycle 878
@@ -1352,7 +1354,6 @@ It is now cycle 1330
 It is now cycle 1331
 It is now cycle 1332
 It is now cycle 1333
-ADV 2 (0x0205 -> 0x0207) 03 01 
 It is now cycle 1334
 It is now cycle 1335
 It is now cycle 1336
@@ -1378,7 +1379,6 @@ It is now cycle 1355
 It is now cycle 1356
 It is now cycle 1357
 It is now cycle 1358
-ADV 2 (0x0205 -> 0x0207) 03 01 
 It is now cycle 1359
 It is now cycle 1360
 It is now cycle 1361

@@ -933,8 +933,8 @@ It is now cycle 902
 It is now cycle 903
 It is now cycle 904
 It is now cycle 905
-ADV 2 (0x0043 -> 0x0045) 70 03 
 It is now cycle 906
+ADV 2 (0x0044 -> 0x0046) 03 01 
 It is now cycle 907
 It is now cycle 908
 It is now cycle 909
@@ -944,9 +944,9 @@ It is now cycle 912
 It is now cycle 913
 It is now cycle 914
 It is now cycle 915
-P    1 | live 16780043
-ADV 5 (0x0045 -> 0x004a) 01 01 00 0b 0b 
 It is now cycle 916
+P    1 | live 723712
+ADV 5 (0x0046 -> 0x004b) 01 00 0b 0b 00 
 It is now cycle 917
 It is now cycle 918
 It is now cycle 919
