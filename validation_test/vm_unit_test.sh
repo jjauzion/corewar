@@ -7,6 +7,10 @@ DIR="`dirname "${0}"`"
 TEST_DIR=""$DIR"/"$TEST_DIR""
 MY_EXE=""$DIR"/"$MY_EXE""
 
+RED="\033[0;31m"
+GREEN="\033[0;32m"
+NC="\033[0m"
+
 if [ -z "${2}" ]; then
 	OPT="-lcpo"
 else
@@ -22,6 +26,10 @@ if ! [ -z "${1}" ]; then
 	result="`diff -u $demo $output`"
 	if ! [ -z "${result}" ]; then
 		echo "$result" > $diff
+		printf "%-30s\t${RED}[KO]${NC}\n" `basename ${1}`
+		printf "\t--> See diff file : ${diff}\n"
+	else
+		printf "%-30s\t${GREEN}[OK]${NC}\n" `basename ${1}`
 	fi
 	exit
 fi
@@ -36,5 +44,9 @@ do
 	result="`diff -u $file $output`"
 	if ! [ -z "${result}" ]; then
 		echo "$result" > $diff
+		printf "%-30s\t${RED}[KO]${NC}\n" `basename ${test_file}`
+		printf "\t--> See diff file : ${diff}\n"
+	else
+		printf "%-30s\t${GREEN}[OK]${NC}\n" `basename ${test_file}`
 	fi
 done

@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/13 16:43:49 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/17 11:16:51 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/19 10:58:17 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int		fork_op(t_process *process, t_arena *arena)
 	reg1 = reg2int(process, 1);
 	if (!(new_process = create_process(get_address(process->pc + (arg % IDX_MOD)), reg1, process)))
 		return (ERROR);
+//	new_process->op = read_op_code(arena, new_process);
+	new_process->op = NULL;
 	arena->nb_process++;
 	new_process->next = arena->process;
 	arena->process = new_process;
@@ -41,7 +43,8 @@ int		lfork_op(t_process *process, t_arena *arena)
 	reg1 = reg2int(process, 1);
 	if (!(new_process = create_process(get_address(process->pc + arg), reg1, process)))
 		return (ERROR);
-	new_process->op = read_op_code(arena, new_process);
+//	new_process->op = read_op_code(arena, new_process);
+	new_process->op = NULL;
 	arena->nb_process++;
 	new_process->next = arena->process;
 	arena->process = new_process;
