@@ -60,16 +60,25 @@ void	fill_value_label(t_params *params)
 void	get_label_instr(t_params *params)
 {
 	t_lexer *tmp;
+	t_lexer *tmp2;
 	int		index;
+	int		index2;
 
 	tmp = params->lexer;
 	index = 0;
 	while (tmp)
 	{
+		index2 = 0;
+		tmp2 = tmp;
 		if (get_label_by_pos(params, index))
 		{
+			while (tmp2 && str_is_empty(tmp2->line))
+			{
+				index2 += 1;
+				tmp2 = tmp2->next;
+			}
 			if (str_is_empty(tmp->line))
-				get_label_by_pos(params, index)->instr = index + 1;
+				get_label_by_pos(params, index)->instr = index + index2;
 			else
 				get_label_by_pos(params, index)->instr = index;
 		}

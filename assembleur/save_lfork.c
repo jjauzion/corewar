@@ -23,9 +23,9 @@ void	save_lfork(t_params *params, int id, char *line)
 	tmp->id = id;
 	tmp->opcode = 15;
 	tmp->nbr_arg = 1;
+	tmp->ocp = 0;
 	get_params(tmp, line);
 	fill_arg_types(params, tmp);
-	calc_ocp(tmp);
 	calc_bytes(tmp);
 	tmp->nbr_bytes -= 2;
 	tmp->d2 = 1;

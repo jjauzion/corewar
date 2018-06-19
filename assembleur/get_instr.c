@@ -52,7 +52,6 @@ void	get_instr(t_params *params)
 	while (file)
 	{
 		clear_comments(&(file->line));
-		// ft_printf("-- %s\n", file->line);
 		if (!str_is_empty(file->line))
 			analyze_line(params, file->line, index);
 		file = file->next;

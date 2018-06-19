@@ -57,10 +57,9 @@ SRC_NAME1 =	main.c \
 		label_tools.c \
 		calc.c \
 		writing_tools.c \
-		header_tools.c
-
-
-
+		header_tools.c \
+		check_name_and_comment.c \
+		parsing_tools.c \
 
 
 SRC_NAME2 =

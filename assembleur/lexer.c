@@ -28,6 +28,7 @@ t_lexer		*create_lexer(t_params *params, char *line)
 	t_lexer		*tmp;
 	t_lexer		*save;
 
+	ft_printf("LINE :[%s]\n", line);
 	if (params->lexer == NULL)
 	{
 		tmp = new_lexer(line);
@@ -57,7 +58,7 @@ char		*parse_line(char *line)
 		index = -1;
 		while (line[++index] && line[index] != LABEL_CHAR)
 			;
-		if (index && line[index - 1] && line[index - 1] == ' ') //WE MIGHT CHANGE THIS with tabs and spaces
+		if (index && line[index - 1] && (line[index - 1] == ' ' || line[index - 1] == '\t')) //WE MIGHT CHANGE THIS with tabs and spaces
 			return (line);
 		tmp = ft_strchr(line, LABEL_CHAR);
 		if (!str_is_empty(tmp + 1) && line[index - 1] != DIRECT_CHAR)
@@ -75,9 +76,9 @@ void		lexer(t_params *params)
 	int		index;
 
 	index = 0;
-	while (params->file[index][0] == '.')
+	while (pass_ws(params->file[index])[0] == '.')
 		index += 1;
-	index--;
+	index -= 1;
 	while (params->file[++index])
 		params->lexer = create_lexer(params, parse_line(params->file[index]));
 }

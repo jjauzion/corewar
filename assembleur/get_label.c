@@ -99,7 +99,8 @@ void	get_label(t_params *params)
 	position = 0;
 	index_file = 0;
 	tmp = NULL;
-	while (params->file[index_file] && params->file[index_file][0] == '.')
+	while (params->file[index_file] &&
+		pass_ws(params->file[index_file])[0] == '.')
 		index_file++;
 	if (params->file_len == index_file)
 	{
