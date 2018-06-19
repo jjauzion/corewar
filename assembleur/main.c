@@ -26,13 +26,13 @@ void	print(t_params *params)
 	while (tmp)
 	{
 		index = -1;
-		ft_printf("\e[30;48;5;82mOpcode : [%d]\e[0m\n", tmp->opcode);
-		ft_printf("Address : [%d]\n", tmp->address);
-		ft_printf("Bytes  : [%d]\n", tmp->nbr_bytes);
-		ft_printf("OCP    : [%d]\n", tmp->ocp);
+		ft_printf("\e[30;48;5;82mOpcode : [%d]\e[0m\t", tmp->opcode);
+		ft_printf("Address(%d)\t", tmp->address);
+		ft_printf("Bytes(%d)\n", tmp->nbr_bytes);
+		ft_printf("\t\tOCP(%d)\n", tmp->ocp);
 		while (++index < tmp->nbr_arg)
 		{
-			ft_printf("arg[%d] : %s\n", index, tmp->arg[index]);
+			ft_printf("arg[%d] : %s --->\t", index, tmp->arg[index]);
 			ft_printf("val[%d] : %d\n", index, tmp->arg_value[index]);
 		}
 		ft_printf("\n");
@@ -79,13 +79,27 @@ int		main (int ac, char **av)
 	index2 = -1;
 	while (get_next_line(fd, &line) == 1)
 	{
-		if (line[0] && line[0] != COMMENT_CHAR && !str_is_empty(line))
-			params.file[++index2] = line;
+		if (line[0] && pass_ws(line)[0] != COMMENT_CHAR && !str_is_empty(line))
+		{
+			if (ft_strstr(line, COMMENT_CMD_STRING))
+			{
+				if (ft_strchr(ft_strchr(line, '"') + 1, '"'))
+			        params.file[++index2] = line;
+				else
+				{
+					params.file[++index2] = get_all_comment_line(fd, line);
+					ft_memdel((void **)&line);
+				}
+			}
+			else
+				params.file[++index2] = line;
+		}
 		else
 			ft_memdel((void **)&line);
 	}
 	ft_memdel((void **)&line);
 	close(fd);
+	check_name_and_comment(&params);
 	//From here we got the entire file (line by line) in params.file;
 	get_label(&params); //Function to initate the stuct label (name and pos)
 	lexer(&params); //Function to clear file of labels, to reach an easier parsing

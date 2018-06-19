@@ -75,6 +75,9 @@ void 	get_label_instr(t_params *params);
 void	fill_arg_values(t_params *params);
 void	write_bytecode(t_params *params);
 int		get_program_size(t_params *params);
+void    check_name_and_comment(t_params *params);
+char    *get_all_comment_line(int fd, char *line);
+char    *pass_ws(char *str);
 
 
 /*

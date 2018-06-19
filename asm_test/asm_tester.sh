@@ -4,6 +4,9 @@ OUR_PATH=~/corewar/asm_test/our_asm
 THEIR_PATH=~/corewar/asm_test/their_asm
 CHAMPS_PATH=~/corewar/asm_test/champs
 
+rm $THEIR_PATH/*.cor
+rm $OUR_PATH/*.cor
+
 CHAMPS=$CHAMPS_PATH/*.s
 for f in $CHAMPS
 do

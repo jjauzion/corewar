@@ -17,7 +17,7 @@ void	analyze_line(t_params *params, char *line, int index_line)
 	char	**split;
 	int		index;
 
-	ft_printf("LINE: \e[35m%s\e[0m\n", line);
+	ft_printf("LINE: \e[35m[%s]\e[0m\n", line);
 	split = ft_split_whitespaces(line);
 	index = 0;
 	while (line[index] && (line[index] == ' ' || line[index] == '\t'))
