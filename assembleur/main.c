@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 13:23:09 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/18 20:05:32 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/19 17:53:58 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 void	print(t_params *params)
 {
 	t_instr	*tmp;
-	int 	index;
+	int		index;
 
-	ft_printf("\n\e[30;48;5;1mDumping annotated program on standard output\n");
+	ft_printf("\n\e[100mDumping annotated program on standard output\n");
 	ft_printf("Program size : %d bytes\n", params->header.prog_size);
 	ft_printf("Name : '%s'\n", params->header.prog_name);
 	ft_printf("Comment : '%s'\e[0m\n\n", params->header.comment);
@@ -26,21 +26,21 @@ void	print(t_params *params)
 	while (tmp)
 	{
 		index = -1;
-		ft_printf("\e[30;48;5;82mOpcode : [%d]\e[0m\t", tmp->opcode);
+		ft_printf("\e[44mOpcode : [%d]\e[0m\t", tmp->opcode);
 		ft_printf("Address(%d)\t", tmp->address);
-		ft_printf("Bytes(%d)\n", tmp->nbr_bytes);
-		ft_printf("\t\tOCP(%d)\n", tmp->ocp);
+		ft_printf("\e[41mBytes(%d)\e[0m\n", tmp->nbr_bytes);
+		ft_printf("\e[44m\t\e[0m\tOCP(%d)\n", tmp->ocp);
 		while (++index < tmp->nbr_arg)
 		{
-			ft_printf("arg[%d] : %s --->\t", index, tmp->arg[index]);
-			ft_printf("val[%d] : %d\n", index, tmp->arg_value[index]);
+			ft_printf("\e[44marg[%d] : %s \e[0m--->\t", index, tmp->arg[index]);
+			ft_printf("val[%d] :\e[41m%d\e[0m\n", index, tmp->arg_value[index]);
 		}
 		ft_printf("\n");
 		tmp = tmp->next;
 	}
 }
 
-int		main (int ac, char **av)
+int		main(int ac, char **av)
 {
 	int			fd;
 	char		*line;
@@ -84,7 +84,7 @@ int		main (int ac, char **av)
 			if (ft_strstr(line, COMMENT_CMD_STRING))
 			{
 				if (ft_strchr(ft_strchr(line, '"') + 1, '"'))
-			        params.file[++index2] = line;
+					params.file[++index2] = line;
 				else
 				{
 					params.file[++index2] = get_all_comment_line(fd, line);

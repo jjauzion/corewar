@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/07 18:52:59 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/18 19:51:50 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/19 17:33:40 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int	check_type(t_params *params, char *arg)
 		return (check_reg(arg));
 	else if (check_dir(params, arg))
 	{
-		ft_printf("ARG: \e[33m[%s]\e[0m TYPE_CODE: \e[36m[%d]\e[0m\n", arg, check_dir(params, arg));
+		// ft_printf("ARG: \e[33m[%s]\e[0m TYPE_CODE: \e[36m[%d]\e[0m\n", arg, check_dir(params, arg));
 		return (check_dir(params, arg));
 	}
 	else if (check_ind(params, arg))

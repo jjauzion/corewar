@@ -6,7 +6,7 @@
 /*   By: smortier <smortier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 16:41:31 by smortier          #+#    #+#             */
-/*   Updated: 2018/06/18 20:02:58 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/19 17:58:36 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_lexer		*create_lexer(t_params *params, char *line)
 	t_lexer		*tmp;
 	t_lexer		*save;
 
-	ft_printf("LINE :[%s]\n", line);
+	// ft_printf("LINE :[%s]\n", line);
 	if (params->lexer == NULL)
 	{
 		tmp = new_lexer(line);
@@ -52,13 +52,14 @@ char		*parse_line(char *line)
 	int		index;
 
 	parsed = line;
-	ft_printf("%s\n", line);
+	// ft_printf("%s\n", line);
 	if (ft_strchr(line, LABEL_CHAR))
 	{
 		index = -1;
 		while (line[++index] && line[index] != LABEL_CHAR)
 			;
-		if (index && line[index - 1] && (line[index - 1] == ' ' || line[index - 1] == '\t')) //WE MIGHT CHANGE THIS with tabs and spaces
+		if (index && line[index - 1] && (line[index - 1] == ' ' ||
+			line[index - 1] == '\t'))
 			return (line);
 		tmp = ft_strchr(line, LABEL_CHAR);
 		if (!str_is_empty(tmp + 1) && line[index - 1] != DIRECT_CHAR)

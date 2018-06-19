@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/10 16:23:57 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/15 20:20:22 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/19 17:55:39 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int		check_ld_par(t_params *params, char *line, int index_line)
 	check_nbr_arg_ld(split);
 	arg1 = ft_strtrim(split[0]);
 	arg2 = ft_strtrim(split[1]);
-	ft_printf("LINE: [%s] | ARG1: [%s] | ARG2: [%s]\n", line, arg1, arg2);
+	// ft_printf("LINE: [%s] | ARG1: [%s] | ARG2: [%s]\n", line, arg1, arg2);
 	index = -1;
 	while (split[++index])
 		ft_strdel(&split[index]);

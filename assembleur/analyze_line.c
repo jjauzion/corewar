@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/07 13:24:32 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/18 19:57:16 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/19 17:34:07 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	analyze_line(t_params *params, char *line, int index_line)
 	char	**split;
 	int		index;
 
-	ft_printf("LINE: \e[35m[%s]\e[0m\n", line);
+	// ft_printf("LINE: \e[35m[%s]\e[0m\n", line);
 	split = ft_split_whitespaces(line);
 	index = 0;
 	while (line[index] && (line[index] == ' ' || line[index] == '\t'))
