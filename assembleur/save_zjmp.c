@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 18:45:02 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/18 15:59:57 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/19 17:07:56 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	save_zjmp(t_params *params, int id, char *line)
 {
-	t_instr *tmp;
+	t_instr	*tmp;
 
 	init_instr(params);
 	tmp = params->instr;

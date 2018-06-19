@@ -6,16 +6,16 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/13 18:12:51 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/18 19:04:49 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/19 17:26:27 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "asm.h"
 
-void printbits_int(unsigned int v, int fd)
+void	printbits_int(unsigned int v, int fd)
 {
-	int tmp[4];
-	unsigned char to_print;
+	int				tmp[4];
+	unsigned char	to_print;
 
 	tmp[0] = v >> 24;
 	tmp[1] = v >> 16 & 0xFF;
@@ -32,10 +32,10 @@ void printbits_int(unsigned int v, int fd)
 	// ft_printf("%d %d %d %d\n", tmp[0], tmp[1], tmp[2], tmp[3]);
 }
 
-void printbits_short(unsigned int v, int fd)
+void	printbits_short(unsigned int v, int fd)
 {
-	int tmp[4];
-	unsigned char to_print;
+	int				tmp[4];
+	unsigned char	to_print;
 
 	tmp[0] = v >> 24;
 	tmp[1] = v >> 16 & 0xFF;
@@ -50,10 +50,10 @@ void printbits_short(unsigned int v, int fd)
 
 void	write_bytecode(t_params *params)
 {
-	int	file;
-	t_instr *tmp;
-	int index;
-	unsigned char to_print;
+	int				file;
+	t_instr			*tmp;
+	int				index;
+	unsigned char	to_print;
 	char			*name;
 
 	name = ft_strjoin(params->file_name, ".cor");
@@ -63,7 +63,7 @@ void	write_bytecode(t_params *params)
 	print_header(file, params);
 	while (tmp)
 	{
-		index  = 0;
+		index = 0;
 		to_print = tmp->opcode;
 		write(file, &to_print, 1);
 		if (tmp->ocp)
@@ -90,8 +90,3 @@ void	write_bytecode(t_params *params)
 	}
 	close(file);
 }
-//
-// void 	ft_putchar(char c)
-// {
-// 	write(1, &c, 1);
-// }

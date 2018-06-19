@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 13:07:00 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/15 20:24:16 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/19 17:01:39 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	check_nbr_arg_lld(char **split)
 
 	i = -1;
 	while (split[++i])
-    	;
+		;
 	if (i != 2)
 	{
 		ft_printf("Error:\n");
@@ -49,9 +49,9 @@ int		check_lld_par(t_params *params, char *line, int index_line)
 	if (check_type(params, arg2) != REG_CODE)
 	{
 		ft_printf("Error: Wrong type of arg2 on instr %d (lldi)\n", index_line);
-    	exit(0);
+		exit(0);
 	}
- 	ft_strdel(&arg1);
- 	ft_strdel(&arg2);
+	ft_strdel(&arg1);
+	ft_strdel(&arg2);
 	return (1);
 }

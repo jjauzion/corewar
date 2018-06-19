@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 18:24:35 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/13 15:19:12 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/19 17:23:32 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,15 @@ void	get_params(t_instr *tmp, char *line)
 
 void	calc_bytes(t_instr *tmp)
 {
-	int 	index;
+	int	index;
 
 	tmp->nbr_bytes = 1;
 	index = -1;
 	while (++index < tmp->nbr_arg)
 	{
-			tmp->arg_type[index] == REG_CODE ? tmp->nbr_bytes += REG_BYTES : 0;
-			tmp->arg_type[index] == DIR_CODE ? tmp->nbr_bytes += DIR_BYTES : 0;
-			tmp->arg_type[index] == IND_CODE ? tmp->nbr_bytes += IND_BYTES : 0;
+		tmp->arg_type[index] == REG_CODE ? tmp->nbr_bytes += REG_BYTES : 0;
+		tmp->arg_type[index] == DIR_CODE ? tmp->nbr_bytes += DIR_BYTES : 0;
+		tmp->arg_type[index] == IND_CODE ? tmp->nbr_bytes += IND_BYTES : 0;
 	}
 	if (tmp->ocp != 0)
 		tmp->nbr_bytes += 1;
@@ -48,7 +48,7 @@ void	calc_bytes(t_instr *tmp)
 
 void	calc_ocp(t_instr *tmp)
 {
-	int 	index;
+	int	index;
 
 	tmp->ocp = 0;
 	index = -1;

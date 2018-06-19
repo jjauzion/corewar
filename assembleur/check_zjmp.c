@@ -6,13 +6,13 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 13:04:22 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/12 15:42:55 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/19 17:08:37 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "asm.h"
 
-static	void check_nbr_arg_zjmp(char **split)
+static void	check_nbr_arg_zjmp(char **split)
 {
 	int		i;
 

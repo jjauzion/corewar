@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 13:06:20 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/15 20:19:18 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/19 16:27:59 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	check_nbr_arg_fork(char **split)
 
 	i = -1;
 	while (split[++i])
-    	;
+		;
 	if (i != 1)
 	{
 		ft_printf("Error:\n");
