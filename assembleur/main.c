@@ -26,13 +26,13 @@ void	print(t_params *params)
 	while (tmp)
 	{
 		index = -1;
-		ft_printf("\e[30;48;5;82mOpcode : [%d]\e[0m\n", tmp->opcode);
-		ft_printf("Address : [%d]\n", tmp->address);
-		ft_printf("Bytes  : [%d]\n", tmp->nbr_bytes);
-		ft_printf("OCP    : [%d]\n", tmp->ocp);
+		ft_printf("\e[30;48;5;82mOpcode : [%d]\e[0m\t", tmp->opcode);
+		ft_printf("Address(%d)\t", tmp->address);
+		ft_printf("Bytes(%d)\n", tmp->nbr_bytes);
+		ft_printf("\t\tOCP(%d)\n", tmp->ocp);
 		while (++index < tmp->nbr_arg)
 		{
-			ft_printf("arg[%d] : %s\n", index, tmp->arg[index]);
+			ft_printf("arg[%d] : %s --->\t", index, tmp->arg[index]);
 			ft_printf("val[%d] : %d\n", index, tmp->arg_value[index]);
 		}
 		ft_printf("\n");
