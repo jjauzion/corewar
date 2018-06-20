@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/07 18:52:59 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/19 17:33:40 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/20 17:46:19 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,21 @@
 
 int	check_reg(char *arg)
 {
+	int	index;
+
+	index = 0;
 	if (arg[0] == 'r')
 	{
-		if (0 <= ft_atoi(arg + 1) && ft_atoi(arg + 1) <= REG_NUMBER)
+		if (arg[1] == '0')
 		{
-			if ((int)ft_strlen(arg) - 1 == ft_nbrlen(ft_atoi(arg + 1), 10))
+			index = 1;
+			while (arg[index] == '0')
+				index += 1;
+			index -= 1;
+		}
+		if (0 < ft_atoi(arg + 1) && ft_atoi(arg + 1) <= REG_NUMBER)
+		{
+			if ((int)ft_strlen(arg) - index - 1 == ft_nbrlen(ft_atoi(arg + 1), 10))
 				return (REG_CODE);
 		}
 	}

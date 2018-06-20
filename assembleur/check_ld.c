@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/10 16:23:57 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/19 17:55:39 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/20 17:35:29 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	check_nbr_arg_ld(char **split)
 		;
 	if (i != 2)
 	{
-		ft_printf("Error:\n");
+		ft_printf("Error: Wrong number of arguments!\n");
 		exit(0);
 	}
 }
@@ -44,12 +44,12 @@ int		check_ld_par(t_params *params, char *line, int index_line)
 	ft_memdel((void *)&split);
 	if (check_type(params, arg1) != DIR_CODE && check_type(params, arg1) != IND_CODE)
 	{
-		ft_printf("Error: Wrong type of arg1 on instr %d\n", index_line);
+		ft_printf("Error: Wrong type of arg1 (ld) on instr %d\n", index_line);
 		exit(0);
 	}
 	if (check_type(params, arg2) != REG_CODE)
 	{
-		ft_printf("Error: Wrong type of arg2\n");
+		ft_printf("Error: Wrong type of arg2 (ld) on instr %d\n", index_line);
 		exit(0);
 	}
 	ft_strdel(&arg1);

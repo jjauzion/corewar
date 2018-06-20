@@ -44,7 +44,7 @@ static void	check_nbr_arg_live(char **split)
 		;
 	if (i != 1)
 	{
-		ft_printf("Error:\n");
+		ft_printf("Error: Wrong number of arguments!\n");
 		exit(0);
 	}
 }

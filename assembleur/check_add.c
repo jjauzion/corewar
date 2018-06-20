@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 13:00:35 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/15 20:11:52 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/20 17:24:41 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	check_nbr_arg_add(char **split)
 		;
 	if (i != 3)
 	{
-		ft_printf("Error:\n");
+		ft_printf("Error: Wrong number of arguments!\n");
 		exit(0);
 	}
 }

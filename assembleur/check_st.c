@@ -21,7 +21,7 @@ static void	check_nbr_arg_st(char **split)
 		;
 	if (i != 2)
 	{
-		ft_printf("Error:\n");
+		ft_printf("Error: Wrong number of arguments!\n");
 		exit(0);
 	}
 }

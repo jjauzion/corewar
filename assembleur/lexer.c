@@ -6,7 +6,7 @@
 /*   By: smortier <smortier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 16:41:31 by smortier          #+#    #+#             */
-/*   Updated: 2018/06/19 17:58:36 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/20 17:32:02 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,13 @@ void		lexer(t_params *params)
 		index += 1;
 	index -= 1;
 	while (params->file[++index])
+	{
+		if (params->file[index][ft_strlen(params->file[index]) - 1]
+			== SEPARATOR_CHAR)
+		{
+			ft_printf("Error: Line %d ends with a '%c'!\n", index + 1, SEPARATOR_CHAR);
+			exit(0);
+		}
 		params->lexer = create_lexer(params, parse_line(params->file[index]));
+	}
 }

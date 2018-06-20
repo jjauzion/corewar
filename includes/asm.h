@@ -6,7 +6,7 @@
 /*   By: smortier <smortier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 13:06:00 by smortier          #+#    #+#             */
-/*   Updated: 2018/06/18 16:59:06 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/20 16:46:26 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # define REG_BYTES				1
 # define IND_BYTES				2
 # define DIR_BYTES				4
+
+# define COMMENT_CHAR_TWO		';'
 
 typedef struct		s_label
 {
