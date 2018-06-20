@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 17:50:53 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/19 17:23:10 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/20 16:21:17 by tmerli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_op			*read_op_code(t_arena *arena, t_process *process)
 	op_code = (int)arena->mem[get_address(process->pc)];
 	i = -1;
 	while (g_op_tab[++i].op_code != op_code && g_op_tab[i].name)
-	{}
+		;
 	if (g_op_tab[i].name == NULL)
 	{
 		process->pc = get_address(process->pc + 1);
