@@ -1543,6 +1543,7 @@ It is now cycle 1533
 It is now cycle 1534
 It is now cycle 1535
 It is now cycle 1536
+Process 2 hasn't lived for 1536 cycles (CTD 1536)
 It is now cycle 1537
 It is now cycle 1538
 It is now cycle 1539
@@ -3079,4 +3080,5 @@ It is now cycle 3069
 It is now cycle 3070
 It is now cycle 3071
 It is now cycle 3072
+Process 1 hasn't lived for 2256 cycles (CTD 1536)
 Contestant 1, "exe order 2", has won !

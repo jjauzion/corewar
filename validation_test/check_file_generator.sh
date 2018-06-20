@@ -8,7 +8,7 @@ DIR="`dirname "${0}"`"
 TEST_DIR=""$DIR"/"$TEST_DIR""
 EXE=""$DIR"/"$EXE""
 
-OPT="-v 23 "
+OPT="-v 31 "
 for file in "$TEST_DIR"/*.cor;
 do
 	output="`dirname $file`/demo_`basename $file | cut -f1 -d'.'`";

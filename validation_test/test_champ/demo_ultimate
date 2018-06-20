@@ -3213,6 +3213,8 @@ It is now cycle 3069
 It is now cycle 3070
 It is now cycle 3071
 It is now cycle 3072
+Process 3 hasn't lived for 3062 cycles (CTD 1536)
+Process 2 hasn't lived for 3062 cycles (CTD 1536)
 It is now cycle 3073
 It is now cycle 3074
 It is now cycle 3075
@@ -4750,4 +4752,5 @@ It is now cycle 4605
 It is now cycle 4606
 It is now cycle 4607
 It is now cycle 4608
+Process 1 hasn't lived for 2101 cycles (CTD 1536)
 Contestant 1, "utlimate", has won !

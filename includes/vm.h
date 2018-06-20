@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:02:07 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/20 15:55:36 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/20 18:09:41 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@
 typedef unsigned char	t_uchar;
 typedef unsigned int	t_uint;
 
-# define VALID_OPT "copl"
+# define VALID_OPT "kcopl"
 # define VALID_OPT_WITH_VAL "d"
 
 typedef struct			s_option
@@ -68,7 +68,7 @@ typedef struct			s_process
 	int					op_size;
 	char				op_idx_mod;
 	int					exe_op;
-	uintmax_t			last_live_cycle;
+	int					last_live_cycle;
 	struct s_process	*next;
 }						t_process;
 
@@ -120,6 +120,7 @@ void					read_op(t_arena *arena, t_process *process);
 int						exec_op(t_process *process, t_arena *arena);
 void					print_arena(t_uchar *mem, size_t index, size_t length);
 void					show_cycle(t_arena *arena, t_process *process, int step, int dump);
+void					show_death(t_arena *arena, t_process *process);
 void					show_operation(t_arena *arena, t_process *process, int arg[3], char *msg);
 void					show_pc_mouvement(t_arena *arena, t_process *process, int step, int dump);
 int						print_dump_mem(t_arena *arena);

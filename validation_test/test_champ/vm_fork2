@@ -1540,6 +1540,7 @@ It is now cycle 1533
 It is now cycle 1534
 It is now cycle 1535
 It is now cycle 1536
+Process 2 hasn't lived for 1536 cycles (CTD 1536)
 It is now cycle 1537
 It is now cycle 1538
 It is now cycle 1539
@@ -4690,6 +4691,10 @@ It is now cycle 4605
 It is now cycle 4606
 It is now cycle 4607
 It is now cycle 4608
+Process 5 hasn't lived for 2078 cycles (CTD 1536)
+Process 4 hasn't lived for 2078 cycles (CTD 1536)
+Process 3 hasn't lived for 2938 cycles (CTD 1536)
+Process 1 hasn't lived for 2938 cycles (CTD 1536)
 It is now cycle 4609
 It is now cycle 4610
 It is now cycle 4611
@@ -6266,6 +6271,10 @@ It is now cycle 6141
 It is now cycle 6142
 It is now cycle 6143
 It is now cycle 6144
+Process 9 hasn't lived for 1894 cycles (CTD 1536)
+Process 8 hasn't lived for 1894 cycles (CTD 1536)
+Process 7 hasn't lived for 2754 cycles (CTD 1536)
+Process 6 hasn't lived for 2754 cycles (CTD 1536)
 It is now cycle 6145
 It is now cycle 6146
 It is now cycle 6147
@@ -7838,6 +7847,10 @@ ADV 7 (0x0012 -> 0x0019) 0b 78 01 01 f4 01 f4
 P   16 | sti r1 -1 500
        | -> store to -1 + 500 = 499 (with pc and mod 517)
 ADV 7 (0x0012 -> 0x0019) 0b 78 01 01 f4 01 f4 
+Process 13 hasn't lived for 1710 cycles (CTD 1536)
+Process 12 hasn't lived for 1710 cycles (CTD 1536)
+Process 11 hasn't lived for 2570 cycles (CTD 1536)
+Process 10 hasn't lived for 2570 cycles (CTD 1536)
 It is now cycle 7681
 It is now cycle 7682
 It is now cycle 7683
@@ -9398,6 +9411,8 @@ It is now cycle 9213
 It is now cycle 9214
 It is now cycle 9215
 It is now cycle 9216
+Process 15 hasn't lived for 2386 cycles (CTD 1536)
+Process 14 hasn't lived for 2386 cycles (CTD 1536)
 It is now cycle 9217
 It is now cycle 9218
 It is now cycle 9219
@@ -10974,6 +10989,10 @@ It is now cycle 10749
 It is now cycle 10750
 It is now cycle 10751
 It is now cycle 10752
+Process 19 hasn't lived for 2202 cycles (CTD 1536)
+Process 18 hasn't lived for 2202 cycles (CTD 1536)
+Process 17 hasn't lived for 3062 cycles (CTD 1536)
+Process 16 hasn't lived for 3062 cycles (CTD 1536)
 It is now cycle 10753
 It is now cycle 10754
 It is now cycle 10755
@@ -12550,6 +12569,10 @@ It is now cycle 12285
 It is now cycle 12286
 It is now cycle 12287
 It is now cycle 12288
+Process 23 hasn't lived for 2018 cycles (CTD 1536)
+Process 22 hasn't lived for 2018 cycles (CTD 1536)
+Process 21 hasn't lived for 2878 cycles (CTD 1536)
+Process 20 hasn't lived for 2878 cycles (CTD 1536)
 It is now cycle 12289
 It is now cycle 12290
 It is now cycle 12291
@@ -14126,6 +14149,10 @@ It is now cycle 13821
 It is now cycle 13822
 It is now cycle 13823
 It is now cycle 13824
+Process 27 hasn't lived for 1834 cycles (CTD 1536)
+Process 26 hasn't lived for 1834 cycles (CTD 1536)
+Process 25 hasn't lived for 2694 cycles (CTD 1536)
+Process 24 hasn't lived for 2694 cycles (CTD 1536)
 It is now cycle 13825
 It is now cycle 13826
 It is now cycle 13827
@@ -15682,6 +15709,10 @@ It is now cycle 15357
 It is now cycle 15358
 It is now cycle 15359
 It is now cycle 15360
+Process 31 hasn't lived for 1650 cycles (CTD 1536)
+Process 30 hasn't lived for 1650 cycles (CTD 1536)
+Process 29 hasn't lived for 2510 cycles (CTD 1536)
+Process 28 hasn't lived for 2510 cycles (CTD 1536)
 Cycle to die is now 1486
 It is now cycle 15361
 It is now cycle 15362
@@ -17209,6 +17240,8 @@ It is now cycle 16843
 It is now cycle 16844
 It is now cycle 16845
 It is now cycle 16846
+Process 33 hasn't lived for 2276 cycles (CTD 1486)
+Process 32 hasn't lived for 2276 cycles (CTD 1486)
 It is now cycle 16847
 It is now cycle 16848
 It is now cycle 16849
@@ -18735,6 +18768,10 @@ It is now cycle 18329
 It is now cycle 18330
 It is now cycle 18331
 It is now cycle 18332
+Process 37 hasn't lived for 2042 cycles (CTD 1486)
+Process 36 hasn't lived for 2042 cycles (CTD 1486)
+Process 35 hasn't lived for 2902 cycles (CTD 1486)
+Process 34 hasn't lived for 2902 cycles (CTD 1486)
 It is now cycle 18333
 It is now cycle 18334
 It is now cycle 18335
@@ -20261,6 +20298,10 @@ It is now cycle 19815
 It is now cycle 19816
 It is now cycle 19817
 It is now cycle 19818
+Process 41 hasn't lived for 1808 cycles (CTD 1486)
+Process 40 hasn't lived for 1808 cycles (CTD 1486)
+Process 39 hasn't lived for 2668 cycles (CTD 1486)
+Process 38 hasn't lived for 2668 cycles (CTD 1486)
 It is now cycle 19819
 It is now cycle 19820
 It is now cycle 19821
@@ -21767,6 +21808,10 @@ It is now cycle 21301
 It is now cycle 21302
 It is now cycle 21303
 It is now cycle 21304
+Process 45 hasn't lived for 1574 cycles (CTD 1486)
+Process 44 hasn't lived for 1574 cycles (CTD 1486)
+Process 43 hasn't lived for 2434 cycles (CTD 1486)
+Process 42 hasn't lived for 2434 cycles (CTD 1486)
 It is now cycle 21305
 It is now cycle 21306
 It is now cycle 21307
@@ -23293,6 +23338,8 @@ It is now cycle 22787
 It is now cycle 22788
 It is now cycle 22789
 It is now cycle 22790
+Process 47 hasn't lived for 2200 cycles (CTD 1486)
+Process 46 hasn't lived for 2200 cycles (CTD 1486)
 It is now cycle 22791
 It is now cycle 22792
 It is now cycle 22793
@@ -24819,6 +24866,10 @@ It is now cycle 24273
 It is now cycle 24274
 It is now cycle 24275
 It is now cycle 24276
+Process 51 hasn't lived for 1966 cycles (CTD 1486)
+Process 50 hasn't lived for 1966 cycles (CTD 1486)
+Process 49 hasn't lived for 2826 cycles (CTD 1486)
+Process 48 hasn't lived for 2826 cycles (CTD 1486)
 It is now cycle 24277
 It is now cycle 24278
 It is now cycle 24279
@@ -26345,6 +26396,10 @@ It is now cycle 25759
 It is now cycle 25760
 It is now cycle 25761
 It is now cycle 25762
+Process 55 hasn't lived for 1732 cycles (CTD 1486)
+Process 54 hasn't lived for 1732 cycles (CTD 1486)
+Process 53 hasn't lived for 2592 cycles (CTD 1486)
+Process 52 hasn't lived for 2592 cycles (CTD 1486)
 It is now cycle 25763
 It is now cycle 25764
 It is now cycle 25765
@@ -27851,6 +27906,10 @@ It is now cycle 27245
 It is now cycle 27246
 It is now cycle 27247
 It is now cycle 27248
+Process 59 hasn't lived for 1498 cycles (CTD 1486)
+Process 58 hasn't lived for 1498 cycles (CTD 1486)
+Process 57 hasn't lived for 2358 cycles (CTD 1486)
+Process 56 hasn't lived for 2358 cycles (CTD 1486)
 It is now cycle 27249
 It is now cycle 27250
 It is now cycle 27251
@@ -29377,6 +29436,8 @@ It is now cycle 28731
 It is now cycle 28732
 It is now cycle 28733
 It is now cycle 28734
+Process 61 hasn't lived for 2124 cycles (CTD 1486)
+Process 60 hasn't lived for 2124 cycles (CTD 1486)
 It is now cycle 28735
 It is now cycle 28736
 It is now cycle 28737
@@ -30903,6 +30964,10 @@ It is now cycle 30217
 It is now cycle 30218
 It is now cycle 30219
 It is now cycle 30220
+Process 65 hasn't lived for 1890 cycles (CTD 1486)
+Process 64 hasn't lived for 1890 cycles (CTD 1486)
+Process 63 hasn't lived for 2750 cycles (CTD 1486)
+Process 62 hasn't lived for 2750 cycles (CTD 1486)
 Cycle to die is now 1436
 It is now cycle 30221
 It is now cycle 30222
@@ -32360,6 +32425,10 @@ It is now cycle 31653
 It is now cycle 31654
 It is now cycle 31655
 It is now cycle 31656
+Process 69 hasn't lived for 1606 cycles (CTD 1436)
+Process 68 hasn't lived for 1606 cycles (CTD 1436)
+Process 67 hasn't lived for 2466 cycles (CTD 1436)
+Process 66 hasn't lived for 2466 cycles (CTD 1436)
 It is now cycle 31657
 It is now cycle 31658
 It is now cycle 31659
@@ -33836,6 +33905,8 @@ It is now cycle 33089
 It is now cycle 33090
 It is now cycle 33091
 It is now cycle 33092
+Process 71 hasn't lived for 2182 cycles (CTD 1436)
+Process 70 hasn't lived for 2182 cycles (CTD 1436)
 It is now cycle 33093
 It is now cycle 33094
 It is now cycle 33095
@@ -35312,6 +35383,10 @@ It is now cycle 34525
 It is now cycle 34526
 It is now cycle 34527
 It is now cycle 34528
+Process 75 hasn't lived for 1898 cycles (CTD 1436)
+Process 74 hasn't lived for 1898 cycles (CTD 1436)
+Process 73 hasn't lived for 2758 cycles (CTD 1436)
+Process 72 hasn't lived for 2758 cycles (CTD 1436)
 It is now cycle 34529
 It is now cycle 34530
 It is now cycle 34531
@@ -36768,6 +36843,10 @@ It is now cycle 35961
 It is now cycle 35962
 It is now cycle 35963
 It is now cycle 35964
+Process 79 hasn't lived for 1614 cycles (CTD 1436)
+Process 78 hasn't lived for 1614 cycles (CTD 1436)
+Process 77 hasn't lived for 2474 cycles (CTD 1436)
+Process 76 hasn't lived for 2474 cycles (CTD 1436)
 It is now cycle 35965
 It is now cycle 35966
 It is now cycle 35967
@@ -38244,6 +38323,8 @@ It is now cycle 37397
 It is now cycle 37398
 It is now cycle 37399
 It is now cycle 37400
+Process 81 hasn't lived for 2190 cycles (CTD 1436)
+Process 80 hasn't lived for 2190 cycles (CTD 1436)
 It is now cycle 37401
 It is now cycle 37402
 It is now cycle 37403
@@ -39720,6 +39801,10 @@ It is now cycle 38833
 It is now cycle 38834
 It is now cycle 38835
 It is now cycle 38836
+Process 85 hasn't lived for 1906 cycles (CTD 1436)
+Process 84 hasn't lived for 1906 cycles (CTD 1436)
+Process 83 hasn't lived for 2766 cycles (CTD 1436)
+Process 82 hasn't lived for 2766 cycles (CTD 1436)
 It is now cycle 38837
 It is now cycle 38838
 It is now cycle 38839
@@ -41176,6 +41261,10 @@ It is now cycle 40269
 It is now cycle 40270
 It is now cycle 40271
 It is now cycle 40272
+Process 89 hasn't lived for 1622 cycles (CTD 1436)
+Process 88 hasn't lived for 1622 cycles (CTD 1436)
+Process 87 hasn't lived for 2482 cycles (CTD 1436)
+Process 86 hasn't lived for 2482 cycles (CTD 1436)
 It is now cycle 40273
 It is now cycle 40274
 It is now cycle 40275
@@ -42652,6 +42741,8 @@ It is now cycle 41705
 It is now cycle 41706
 It is now cycle 41707
 It is now cycle 41708
+Process 91 hasn't lived for 2198 cycles (CTD 1436)
+Process 90 hasn't lived for 2198 cycles (CTD 1436)
 It is now cycle 41709
 It is now cycle 41710
 It is now cycle 41711
@@ -44128,6 +44219,10 @@ It is now cycle 43141
 It is now cycle 43142
 It is now cycle 43143
 It is now cycle 43144
+Process 95 hasn't lived for 1914 cycles (CTD 1436)
+Process 94 hasn't lived for 1914 cycles (CTD 1436)
+Process 93 hasn't lived for 2774 cycles (CTD 1436)
+Process 92 hasn't lived for 2774 cycles (CTD 1436)
 It is now cycle 43145
 It is now cycle 43146
 It is now cycle 43147
@@ -45584,6 +45679,10 @@ It is now cycle 44577
 It is now cycle 44578
 It is now cycle 44579
 It is now cycle 44580
+Process 99 hasn't lived for 1630 cycles (CTD 1436)
+Process 98 hasn't lived for 1630 cycles (CTD 1436)
+Process 97 hasn't lived for 2490 cycles (CTD 1436)
+Process 96 hasn't lived for 2490 cycles (CTD 1436)
 Cycle to die is now 1386
 It is now cycle 44581
 It is now cycle 44582
@@ -47011,6 +47110,8 @@ It is now cycle 45963
 It is now cycle 45964
 It is now cycle 45965
 It is now cycle 45966
+Process 101 hasn't lived for 2156 cycles (CTD 1386)
+Process 100 hasn't lived for 2156 cycles (CTD 1386)
 It is now cycle 45967
 It is now cycle 45968
 It is now cycle 45969
@@ -48437,6 +48538,10 @@ It is now cycle 47349
 It is now cycle 47350
 It is now cycle 47351
 It is now cycle 47352
+Process 105 hasn't lived for 1822 cycles (CTD 1386)
+Process 104 hasn't lived for 1822 cycles (CTD 1386)
+Process 103 hasn't lived for 2682 cycles (CTD 1386)
+Process 102 hasn't lived for 2682 cycles (CTD 1386)
 It is now cycle 47353
 It is now cycle 47354
 It is now cycle 47355
@@ -49843,6 +49948,10 @@ It is now cycle 48735
 It is now cycle 48736
 It is now cycle 48737
 It is now cycle 48738
+Process 109 hasn't lived for 1488 cycles (CTD 1386)
+Process 108 hasn't lived for 1488 cycles (CTD 1386)
+Process 107 hasn't lived for 2348 cycles (CTD 1386)
+Process 106 hasn't lived for 2348 cycles (CTD 1386)
 It is now cycle 48739
 It is now cycle 48740
 It is now cycle 48741
@@ -51269,6 +51378,8 @@ It is now cycle 50121
 It is now cycle 50122
 It is now cycle 50123
 It is now cycle 50124
+Process 111 hasn't lived for 2014 cycles (CTD 1386)
+Process 110 hasn't lived for 2014 cycles (CTD 1386)
 It is now cycle 50125
 It is now cycle 50126
 It is now cycle 50127
@@ -52679,6 +52790,10 @@ It is now cycle 51507
 It is now cycle 51508
 It is now cycle 51509
 It is now cycle 51510
+Process 115 hasn't lived for 1680 cycles (CTD 1386)
+Process 114 hasn't lived for 1680 cycles (CTD 1386)
+Process 113 hasn't lived for 2540 cycles (CTD 1386)
+Process 112 hasn't lived for 2540 cycles (CTD 1386)
 It is now cycle 51511
 It is now cycle 51512
 It is now cycle 51513
@@ -54101,6 +54216,8 @@ It is now cycle 52893
 It is now cycle 52894
 It is now cycle 52895
 It is now cycle 52896
+Process 117 hasn't lived for 2206 cycles (CTD 1386)
+Process 116 hasn't lived for 2206 cycles (CTD 1386)
 It is now cycle 52897
 It is now cycle 52898
 It is now cycle 52899
@@ -55527,6 +55644,10 @@ It is now cycle 54279
 It is now cycle 54280
 It is now cycle 54281
 It is now cycle 54282
+Process 121 hasn't lived for 1872 cycles (CTD 1386)
+Process 120 hasn't lived for 1872 cycles (CTD 1386)
+Process 119 hasn't lived for 2732 cycles (CTD 1386)
+Process 118 hasn't lived for 2732 cycles (CTD 1386)
 It is now cycle 54283
 It is now cycle 54284
 It is now cycle 54285
@@ -56933,6 +57054,10 @@ It is now cycle 55665
 It is now cycle 55666
 It is now cycle 55667
 It is now cycle 55668
+Process 125 hasn't lived for 1538 cycles (CTD 1386)
+Process 124 hasn't lived for 1538 cycles (CTD 1386)
+Process 123 hasn't lived for 2398 cycles (CTD 1386)
+Process 122 hasn't lived for 2398 cycles (CTD 1386)
 It is now cycle 55669
 It is now cycle 55670
 It is now cycle 55671
@@ -58359,6 +58484,8 @@ It is now cycle 57051
 It is now cycle 57052
 It is now cycle 57053
 It is now cycle 57054
+Process 127 hasn't lived for 2064 cycles (CTD 1386)
+Process 126 hasn't lived for 2064 cycles (CTD 1386)
 It is now cycle 57055
 It is now cycle 57056
 It is now cycle 57057
@@ -59785,6 +59912,10 @@ It is now cycle 58437
 It is now cycle 58438
 It is now cycle 58439
 It is now cycle 58440
+Process 131 hasn't lived for 1730 cycles (CTD 1386)
+Process 130 hasn't lived for 1730 cycles (CTD 1386)
+Process 129 hasn't lived for 2590 cycles (CTD 1386)
+Process 128 hasn't lived for 2590 cycles (CTD 1386)
 Cycle to die is now 1336
 It is now cycle 58441
 It is now cycle 58442
@@ -61142,6 +61273,10 @@ It is now cycle 59773
 It is now cycle 59774
 It is now cycle 59775
 It is now cycle 59776
+Process 135 hasn't lived for 1346 cycles (CTD 1336)
+Process 134 hasn't lived for 1346 cycles (CTD 1336)
+Process 133 hasn't lived for 2206 cycles (CTD 1336)
+Process 132 hasn't lived for 2206 cycles (CTD 1336)
 It is now cycle 59777
 It is now cycle 59778
 It is now cycle 59779
@@ -62518,6 +62653,8 @@ It is now cycle 61109
 It is now cycle 61110
 It is now cycle 61111
 It is now cycle 61112
+Process 137 hasn't lived for 1822 cycles (CTD 1336)
+Process 136 hasn't lived for 1822 cycles (CTD 1336)
 It is now cycle 61113
 It is now cycle 61114
 It is now cycle 61115
@@ -63874,6 +64011,10 @@ It is now cycle 62445
 It is now cycle 62446
 It is now cycle 62447
 It is now cycle 62448
+Process 141 hasn't lived for 1438 cycles (CTD 1336)
+Process 140 hasn't lived for 1438 cycles (CTD 1336)
+Process 139 hasn't lived for 2298 cycles (CTD 1336)
+Process 138 hasn't lived for 2298 cycles (CTD 1336)
 It is now cycle 62449
 It is now cycle 62450
 It is now cycle 62451
@@ -65250,6 +65391,8 @@ It is now cycle 63781
 It is now cycle 63782
 It is now cycle 63783
 It is now cycle 63784
+Process 143 hasn't lived for 1914 cycles (CTD 1336)
+Process 142 hasn't lived for 1914 cycles (CTD 1336)
 It is now cycle 63785
 It is now cycle 63786
 It is now cycle 63787
@@ -66606,6 +66749,10 @@ It is now cycle 65117
 It is now cycle 65118
 It is now cycle 65119
 It is now cycle 65120
+Process 147 hasn't lived for 1530 cycles (CTD 1336)
+Process 146 hasn't lived for 1530 cycles (CTD 1336)
+Process 145 hasn't lived for 2390 cycles (CTD 1336)
+Process 144 hasn't lived for 2390 cycles (CTD 1336)
 It is now cycle 65121
 It is now cycle 65122
 It is now cycle 65123
@@ -67982,6 +68129,8 @@ It is now cycle 66453
 It is now cycle 66454
 It is now cycle 66455
 It is now cycle 66456
+Process 149 hasn't lived for 2006 cycles (CTD 1336)
+Process 148 hasn't lived for 2006 cycles (CTD 1336)
 It is now cycle 66457
 It is now cycle 66458
 It is now cycle 66459
@@ -69338,6 +69487,10 @@ It is now cycle 67789
 It is now cycle 67790
 It is now cycle 67791
 It is now cycle 67792
+Process 153 hasn't lived for 1622 cycles (CTD 1336)
+Process 152 hasn't lived for 1622 cycles (CTD 1336)
+Process 151 hasn't lived for 2482 cycles (CTD 1336)
+Process 150 hasn't lived for 2482 cycles (CTD 1336)
 It is now cycle 67793
 It is now cycle 67794
 It is now cycle 67795
@@ -70714,6 +70867,8 @@ It is now cycle 69125
 It is now cycle 69126
 It is now cycle 69127
 It is now cycle 69128
+Process 155 hasn't lived for 2098 cycles (CTD 1336)
+Process 154 hasn't lived for 2098 cycles (CTD 1336)
 It is now cycle 69129
 It is now cycle 69130
 It is now cycle 69131
@@ -72086,6 +72241,10 @@ It is now cycle 70461
 It is now cycle 70462
 It is now cycle 70463
 It is now cycle 70464
+Process 159 hasn't lived for 1714 cycles (CTD 1336)
+Process 158 hasn't lived for 1714 cycles (CTD 1336)
+Process 157 hasn't lived for 2574 cycles (CTD 1336)
+Process 156 hasn't lived for 2574 cycles (CTD 1336)
 It is now cycle 70465
 It is now cycle 70466
 It is now cycle 70467
@@ -73446,6 +73605,8 @@ It is now cycle 71797
 It is now cycle 71798
 It is now cycle 71799
 It is now cycle 71800
+Process 161 hasn't lived for 2190 cycles (CTD 1336)
+Process 160 hasn't lived for 2190 cycles (CTD 1336)
 Cycle to die is now 1286
 It is now cycle 71801
 It is now cycle 71802
@@ -74773,6 +74934,10 @@ It is now cycle 73083
 It is now cycle 73084
 It is now cycle 73085
 It is now cycle 73086
+Process 165 hasn't lived for 1756 cycles (CTD 1286)
+Process 164 hasn't lived for 1756 cycles (CTD 1286)
+Process 163 hasn't lived for 2616 cycles (CTD 1286)
+Process 162 hasn't lived for 2616 cycles (CTD 1286)
 It is now cycle 73087
 It is now cycle 73088
 It is now cycle 73089
@@ -76079,6 +76244,10 @@ It is now cycle 74369
 It is now cycle 74370
 It is now cycle 74371
 It is now cycle 74372
+Process 169 hasn't lived for 1322 cycles (CTD 1286)
+Process 168 hasn't lived for 1322 cycles (CTD 1286)
+Process 167 hasn't lived for 2182 cycles (CTD 1286)
+Process 166 hasn't lived for 2182 cycles (CTD 1286)
 It is now cycle 74373
 It is now cycle 74374
 It is now cycle 74375
@@ -77405,6 +77574,8 @@ It is now cycle 75655
 It is now cycle 75656
 It is now cycle 75657
 It is now cycle 75658
+Process 171 hasn't lived for 1748 cycles (CTD 1286)
+Process 170 hasn't lived for 1748 cycles (CTD 1286)
 It is now cycle 75659
 It is now cycle 75660
 It is now cycle 75661
@@ -78711,6 +78882,10 @@ It is now cycle 76941
 It is now cycle 76942
 It is now cycle 76943
 It is now cycle 76944
+Process 175 hasn't lived for 1314 cycles (CTD 1286)
+Process 174 hasn't lived for 1314 cycles (CTD 1286)
+Process 173 hasn't lived for 2174 cycles (CTD 1286)
+Process 172 hasn't lived for 2174 cycles (CTD 1286)
 It is now cycle 76945
 It is now cycle 76946
 It is now cycle 76947
@@ -80037,6 +80212,8 @@ It is now cycle 78227
 It is now cycle 78228
 It is now cycle 78229
 It is now cycle 78230
+Process 177 hasn't lived for 1740 cycles (CTD 1286)
+Process 176 hasn't lived for 1740 cycles (CTD 1286)
 It is now cycle 78231
 It is now cycle 78232
 It is now cycle 78233
@@ -81343,6 +81520,10 @@ It is now cycle 79513
 It is now cycle 79514
 It is now cycle 79515
 It is now cycle 79516
+Process 181 hasn't lived for 1306 cycles (CTD 1286)
+Process 180 hasn't lived for 1306 cycles (CTD 1286)
+Process 179 hasn't lived for 2166 cycles (CTD 1286)
+Process 178 hasn't lived for 2166 cycles (CTD 1286)
 It is now cycle 79517
 It is now cycle 79518
 It is now cycle 79519
@@ -82669,6 +82850,8 @@ It is now cycle 80799
 It is now cycle 80800
 It is now cycle 80801
 It is now cycle 80802
+Process 183 hasn't lived for 1732 cycles (CTD 1286)
+Process 182 hasn't lived for 1732 cycles (CTD 1286)
 It is now cycle 80803
 It is now cycle 80804
 It is now cycle 80805
@@ -83975,6 +84158,10 @@ It is now cycle 82085
 It is now cycle 82086
 It is now cycle 82087
 It is now cycle 82088
+Process 187 hasn't lived for 1298 cycles (CTD 1286)
+Process 186 hasn't lived for 1298 cycles (CTD 1286)
+Process 185 hasn't lived for 2158 cycles (CTD 1286)
+Process 184 hasn't lived for 2158 cycles (CTD 1286)
 It is now cycle 82089
 It is now cycle 82090
 It is now cycle 82091
@@ -85301,6 +85488,8 @@ It is now cycle 83371
 It is now cycle 83372
 It is now cycle 83373
 It is now cycle 83374
+Process 189 hasn't lived for 1724 cycles (CTD 1286)
+Process 188 hasn't lived for 1724 cycles (CTD 1286)
 It is now cycle 83375
 It is now cycle 83376
 It is now cycle 83377
@@ -86607,6 +86796,10 @@ It is now cycle 84657
 It is now cycle 84658
 It is now cycle 84659
 It is now cycle 84660
+Process 193 hasn't lived for 1290 cycles (CTD 1286)
+Process 192 hasn't lived for 1290 cycles (CTD 1286)
+Process 191 hasn't lived for 2150 cycles (CTD 1286)
+Process 190 hasn't lived for 2150 cycles (CTD 1286)
 Cycle to die is now 1236
 It is now cycle 84661
 It is now cycle 84662
@@ -87868,6 +88061,8 @@ It is now cycle 85893
 It is now cycle 85894
 It is now cycle 85895
 It is now cycle 85896
+Process 195 hasn't lived for 1666 cycles (CTD 1236)
+Process 194 hasn't lived for 1666 cycles (CTD 1236)
 It is now cycle 85897
 It is now cycle 85898
 It is now cycle 85899
@@ -89140,6 +89335,8 @@ It is now cycle 87129
 It is now cycle 87130
 It is now cycle 87131
 It is now cycle 87132
+Process 197 hasn't lived for 2042 cycles (CTD 1236)
+Process 196 hasn't lived for 2042 cycles (CTD 1236)
 It is now cycle 87133
 It is now cycle 87134
 It is now cycle 87135
@@ -90396,6 +90593,10 @@ It is now cycle 88365
 It is now cycle 88366
 It is now cycle 88367
 It is now cycle 88368
+Process 201 hasn't lived for 1558 cycles (CTD 1236)
+Process 200 hasn't lived for 1558 cycles (CTD 1236)
+Process 199 hasn't lived for 2418 cycles (CTD 1236)
+Process 198 hasn't lived for 2418 cycles (CTD 1236)
 It is now cycle 88369
 It is now cycle 88370
 It is now cycle 88371
@@ -91672,6 +91873,8 @@ It is now cycle 89601
 It is now cycle 89602
 It is now cycle 89603
 It is now cycle 89604
+Process 203 hasn't lived for 1934 cycles (CTD 1236)
+Process 202 hasn't lived for 1934 cycles (CTD 1236)
 It is now cycle 89605
 It is now cycle 89606
 It is now cycle 89607
@@ -92928,6 +93131,10 @@ It is now cycle 90837
 It is now cycle 90838
 It is now cycle 90839
 It is now cycle 90840
+Process 207 hasn't lived for 1450 cycles (CTD 1236)
+Process 206 hasn't lived for 1450 cycles (CTD 1236)
+Process 205 hasn't lived for 2310 cycles (CTD 1236)
+Process 204 hasn't lived for 2310 cycles (CTD 1236)
 It is now cycle 90841
 It is now cycle 90842
 It is now cycle 90843
@@ -94204,6 +94411,8 @@ It is now cycle 92073
 It is now cycle 92074
 It is now cycle 92075
 It is now cycle 92076
+Process 209 hasn't lived for 1826 cycles (CTD 1236)
+Process 208 hasn't lived for 1826 cycles (CTD 1236)
 It is now cycle 92077
 It is now cycle 92078
 It is now cycle 92079
@@ -95460,6 +95669,10 @@ It is now cycle 93309
 It is now cycle 93310
 It is now cycle 93311
 It is now cycle 93312
+Process 213 hasn't lived for 1342 cycles (CTD 1236)
+Process 212 hasn't lived for 1342 cycles (CTD 1236)
+Process 211 hasn't lived for 2202 cycles (CTD 1236)
+Process 210 hasn't lived for 2202 cycles (CTD 1236)
 It is now cycle 93313
 It is now cycle 93314
 It is now cycle 93315
@@ -96732,6 +96945,8 @@ It is now cycle 94545
 It is now cycle 94546
 It is now cycle 94547
 It is now cycle 94548
+Process 215 hasn't lived for 1718 cycles (CTD 1236)
+Process 214 hasn't lived for 1718 cycles (CTD 1236)
 It is now cycle 94549
 It is now cycle 94550
 P  219 | live 2
@@ -97992,6 +98207,8 @@ It is now cycle 95781
 It is now cycle 95782
 It is now cycle 95783
 It is now cycle 95784
+Process 217 hasn't lived for 2094 cycles (CTD 1236)
+Process 216 hasn't lived for 2094 cycles (CTD 1236)
 It is now cycle 95785
 It is now cycle 95786
 It is now cycle 95787
@@ -99248,6 +99465,10 @@ It is now cycle 97017
 It is now cycle 97018
 It is now cycle 97019
 It is now cycle 97020
+Process 221 hasn't lived for 1610 cycles (CTD 1236)
+Process 220 hasn't lived for 1610 cycles (CTD 1236)
+Process 219 hasn't lived for 2470 cycles (CTD 1236)
+Process 218 hasn't lived for 2470 cycles (CTD 1236)
 Cycle to die is now 1186
 It is now cycle 97021
 It is now cycle 97022
@@ -100475,6 +100696,8 @@ It is now cycle 98203
 It is now cycle 98204
 It is now cycle 98205
 It is now cycle 98206
+Process 223 hasn't lived for 1936 cycles (CTD 1186)
+Process 222 hasn't lived for 1936 cycles (CTD 1186)
 It is now cycle 98207
 It is now cycle 98208
 It is now cycle 98209
@@ -101681,6 +101904,10 @@ It is now cycle 99389
 It is now cycle 99390
 It is now cycle 99391
 It is now cycle 99392
+Process 227 hasn't lived for 1402 cycles (CTD 1186)
+Process 226 hasn't lived for 1402 cycles (CTD 1186)
+Process 225 hasn't lived for 2262 cycles (CTD 1186)
+Process 224 hasn't lived for 2262 cycles (CTD 1186)
 It is now cycle 99393
 It is now cycle 99394
 It is now cycle 99395
@@ -102907,6 +103134,8 @@ It is now cycle 100575
 It is now cycle 100576
 It is now cycle 100577
 It is now cycle 100578
+Process 229 hasn't lived for 1728 cycles (CTD 1186)
+Process 228 hasn't lived for 1728 cycles (CTD 1186)
 It is now cycle 100579
 It is now cycle 100580
 It is now cycle 100581
@@ -104113,6 +104342,10 @@ It is now cycle 101761
 It is now cycle 101762
 It is now cycle 101763
 It is now cycle 101764
+Process 233 hasn't lived for 1194 cycles (CTD 1186)
+Process 232 hasn't lived for 1194 cycles (CTD 1186)
+Process 231 hasn't lived for 2054 cycles (CTD 1186)
+Process 230 hasn't lived for 2054 cycles (CTD 1186)
 It is now cycle 101765
 It is now cycle 101766
 It is now cycle 101767
@@ -105319,6 +105552,8 @@ It is now cycle 102947
 It is now cycle 102948
 It is now cycle 102949
 It is now cycle 102950
+Process 235 hasn't lived for 1520 cycles (CTD 1186)
+Process 234 hasn't lived for 1520 cycles (CTD 1186)
 It is now cycle 102951
 It is now cycle 102952
 It is now cycle 102953
@@ -106545,6 +106780,8 @@ It is now cycle 104133
 It is now cycle 104134
 It is now cycle 104135
 It is now cycle 104136
+Process 237 hasn't lived for 1846 cycles (CTD 1186)
+Process 236 hasn't lived for 1846 cycles (CTD 1186)
 It is now cycle 104137
 It is now cycle 104138
 It is now cycle 104139
@@ -107751,6 +107988,10 @@ It is now cycle 105319
 It is now cycle 105320
 It is now cycle 105321
 It is now cycle 105322
+Process 241 hasn't lived for 1312 cycles (CTD 1186)
+Process 240 hasn't lived for 1312 cycles (CTD 1186)
+Process 239 hasn't lived for 2172 cycles (CTD 1186)
+Process 238 hasn't lived for 2172 cycles (CTD 1186)
 It is now cycle 105323
 It is now cycle 105324
 It is now cycle 105325
@@ -108957,6 +109198,8 @@ It is now cycle 106505
 It is now cycle 106506
 It is now cycle 106507
 It is now cycle 106508
+Process 243 hasn't lived for 1638 cycles (CTD 1186)
+Process 242 hasn't lived for 1638 cycles (CTD 1186)
 It is now cycle 106509
 It is now cycle 106510
 It is now cycle 106511
@@ -110183,6 +110426,8 @@ It is now cycle 107691
 It is now cycle 107692
 It is now cycle 107693
 It is now cycle 107694
+Process 245 hasn't lived for 1964 cycles (CTD 1186)
+Process 244 hasn't lived for 1964 cycles (CTD 1186)
 It is now cycle 107695
 It is now cycle 107696
 It is now cycle 107697
@@ -111389,6 +111634,10 @@ It is now cycle 108877
 It is now cycle 108878
 It is now cycle 108879
 It is now cycle 108880
+Process 249 hasn't lived for 1430 cycles (CTD 1186)
+Process 248 hasn't lived for 1430 cycles (CTD 1186)
+Process 247 hasn't lived for 2290 cycles (CTD 1186)
+Process 246 hasn't lived for 2290 cycles (CTD 1186)
 Cycle to die is now 1136
 It is now cycle 108881
 It is now cycle 108882
@@ -112556,6 +112805,8 @@ It is now cycle 110013
 It is now cycle 110014
 It is now cycle 110015
 It is now cycle 110016
+Process 251 hasn't lived for 1706 cycles (CTD 1136)
+Process 250 hasn't lived for 1706 cycles (CTD 1136)
 It is now cycle 110017
 It is now cycle 110018
 It is now cycle 110019
@@ -113722,6 +113973,8 @@ It is now cycle 111149
 It is now cycle 111150
 It is now cycle 111151
 It is now cycle 111152
+Process 253 hasn't lived for 1982 cycles (CTD 1136)
+Process 252 hasn't lived for 1982 cycles (CTD 1136)
 It is now cycle 111153
 It is now cycle 111154
 It is now cycle 111155
@@ -114878,6 +115131,10 @@ It is now cycle 112285
 It is now cycle 112286
 It is now cycle 112287
 It is now cycle 112288
+Process 257 hasn't lived for 1398 cycles (CTD 1136)
+Process 256 hasn't lived for 1398 cycles (CTD 1136)
+Process 255 hasn't lived for 2258 cycles (CTD 1136)
+Process 254 hasn't lived for 2258 cycles (CTD 1136)
 It is now cycle 112289
 It is now cycle 112290
 It is now cycle 112291
@@ -116038,6 +116295,8 @@ It is now cycle 113421
 It is now cycle 113422
 It is now cycle 113423
 It is now cycle 113424
+Process 259 hasn't lived for 1674 cycles (CTD 1136)
+Process 258 hasn't lived for 1674 cycles (CTD 1136)
 It is now cycle 113425
 It is now cycle 113426
 It is now cycle 113427
@@ -117210,6 +117469,8 @@ It is now cycle 114557
 It is now cycle 114558
 It is now cycle 114559
 It is now cycle 114560
+Process 261 hasn't lived for 1950 cycles (CTD 1136)
+Process 260 hasn't lived for 1950 cycles (CTD 1136)
 It is now cycle 114561
 It is now cycle 114562
 It is now cycle 114563
@@ -118366,6 +118627,10 @@ It is now cycle 115693
 It is now cycle 115694
 It is now cycle 115695
 It is now cycle 115696
+Process 265 hasn't lived for 1366 cycles (CTD 1136)
+Process 264 hasn't lived for 1366 cycles (CTD 1136)
+Process 263 hasn't lived for 2226 cycles (CTD 1136)
+Process 262 hasn't lived for 2226 cycles (CTD 1136)
 It is now cycle 115697
 It is now cycle 115698
 It is now cycle 115699
@@ -119522,6 +119787,8 @@ It is now cycle 116829
 It is now cycle 116830
 It is now cycle 116831
 It is now cycle 116832
+Process 267 hasn't lived for 1642 cycles (CTD 1136)
+Process 266 hasn't lived for 1642 cycles (CTD 1136)
 It is now cycle 116833
 It is now cycle 116834
 It is now cycle 116835
@@ -120698,6 +120965,8 @@ It is now cycle 117965
 It is now cycle 117966
 It is now cycle 117967
 It is now cycle 117968
+Process 269 hasn't lived for 1918 cycles (CTD 1136)
+Process 268 hasn't lived for 1918 cycles (CTD 1136)
 It is now cycle 117969
 It is now cycle 117970
 It is now cycle 117971
@@ -121854,6 +122123,10 @@ It is now cycle 119101
 It is now cycle 119102
 It is now cycle 119103
 It is now cycle 119104
+Process 273 hasn't lived for 1334 cycles (CTD 1136)
+Process 272 hasn't lived for 1334 cycles (CTD 1136)
+Process 271 hasn't lived for 2194 cycles (CTD 1136)
+Process 270 hasn't lived for 2194 cycles (CTD 1136)
 It is now cycle 119105
 It is now cycle 119106
 It is now cycle 119107
@@ -123010,6 +123283,8 @@ It is now cycle 120237
 It is now cycle 120238
 It is now cycle 120239
 It is now cycle 120240
+Process 275 hasn't lived for 1610 cycles (CTD 1136)
+Process 274 hasn't lived for 1610 cycles (CTD 1136)
 Cycle to die is now 1086
 It is now cycle 120241
 It is now cycle 120242
@@ -124137,6 +124412,8 @@ It is now cycle 121323
 It is now cycle 121324
 It is now cycle 121325
 It is now cycle 121326
+Process 277 hasn't lived for 1836 cycles (CTD 1086)
+Process 276 hasn't lived for 1836 cycles (CTD 1086)
 It is now cycle 121327
 It is now cycle 121328
 It is now cycle 121329
@@ -125243,6 +125520,10 @@ It is now cycle 122409
 It is now cycle 122410
 It is now cycle 122411
 It is now cycle 122412
+Process 281 hasn't lived for 1202 cycles (CTD 1086)
+Process 280 hasn't lived for 1202 cycles (CTD 1086)
+Process 279 hasn't lived for 2062 cycles (CTD 1086)
+Process 278 hasn't lived for 2062 cycles (CTD 1086)
 It is now cycle 122413
 It is now cycle 122414
 It is now cycle 122415
@@ -126349,6 +126630,8 @@ It is now cycle 123495
 It is now cycle 123496
 It is now cycle 123497
 It is now cycle 123498
+Process 283 hasn't lived for 1428 cycles (CTD 1086)
+Process 282 hasn't lived for 1428 cycles (CTD 1086)
 It is now cycle 123499
 It is now cycle 123500
 It is now cycle 123501
@@ -127455,6 +127738,8 @@ It is now cycle 124581
 It is now cycle 124582
 It is now cycle 124583
 It is now cycle 124584
+Process 285 hasn't lived for 1654 cycles (CTD 1086)
+Process 284 hasn't lived for 1654 cycles (CTD 1086)
 It is now cycle 124585
 It is now cycle 124586
 It is now cycle 124587
@@ -128581,6 +128866,8 @@ It is now cycle 125667
 It is now cycle 125668
 It is now cycle 125669
 It is now cycle 125670
+Process 287 hasn't lived for 1880 cycles (CTD 1086)
+Process 286 hasn't lived for 1880 cycles (CTD 1086)
 It is now cycle 125671
 It is now cycle 125672
 It is now cycle 125673
@@ -129687,6 +129974,10 @@ It is now cycle 126753
 It is now cycle 126754
 It is now cycle 126755
 It is now cycle 126756
+Process 291 hasn't lived for 1246 cycles (CTD 1086)
+Process 290 hasn't lived for 1246 cycles (CTD 1086)
+Process 289 hasn't lived for 2106 cycles (CTD 1086)
+Process 288 hasn't lived for 2106 cycles (CTD 1086)
 It is now cycle 126757
 It is now cycle 126758
 It is now cycle 126759
@@ -130793,6 +131084,8 @@ It is now cycle 127839
 It is now cycle 127840
 It is now cycle 127841
 It is now cycle 127842
+Process 293 hasn't lived for 1472 cycles (CTD 1086)
+Process 292 hasn't lived for 1472 cycles (CTD 1086)
 It is now cycle 127843
 It is now cycle 127844
 It is now cycle 127845
@@ -131909,6 +132202,8 @@ It is now cycle 128925
 It is now cycle 128926
 It is now cycle 128927
 It is now cycle 128928
+Process 295 hasn't lived for 1698 cycles (CTD 1086)
+Process 294 hasn't lived for 1698 cycles (CTD 1086)
 It is now cycle 128929
 It is now cycle 128930
 It is now cycle 128931
@@ -133025,6 +133320,8 @@ It is now cycle 130011
 It is now cycle 130012
 It is now cycle 130013
 It is now cycle 130014
+Process 297 hasn't lived for 1924 cycles (CTD 1086)
+Process 296 hasn't lived for 1924 cycles (CTD 1086)
 It is now cycle 130015
 It is now cycle 130016
 It is now cycle 130017
@@ -134131,6 +134428,10 @@ It is now cycle 131097
 It is now cycle 131098
 It is now cycle 131099
 It is now cycle 131100
+Process 301 hasn't lived for 1290 cycles (CTD 1086)
+Process 300 hasn't lived for 1290 cycles (CTD 1086)
+Process 299 hasn't lived for 2150 cycles (CTD 1086)
+Process 298 hasn't lived for 2150 cycles (CTD 1086)
 Cycle to die is now 1036
 It is now cycle 131101
 It is now cycle 131102
@@ -135188,6 +135489,8 @@ It is now cycle 132133
 It is now cycle 132134
 It is now cycle 132135
 It is now cycle 132136
+Process 303 hasn't lived for 1466 cycles (CTD 1036)
+Process 302 hasn't lived for 1466 cycles (CTD 1036)
 It is now cycle 132137
 It is now cycle 132138
 It is now cycle 132139
@@ -136244,6 +136547,8 @@ It is now cycle 133169
 It is now cycle 133170
 It is now cycle 133171
 It is now cycle 133172
+Process 305 hasn't lived for 1642 cycles (CTD 1036)
+Process 304 hasn't lived for 1642 cycles (CTD 1036)
 It is now cycle 133173
 It is now cycle 133174
 It is now cycle 133175
@@ -137320,6 +137625,8 @@ It is now cycle 134205
 It is now cycle 134206
 It is now cycle 134207
 It is now cycle 134208
+Process 307 hasn't lived for 1818 cycles (CTD 1036)
+Process 306 hasn't lived for 1818 cycles (CTD 1036)
 It is now cycle 134209
 It is now cycle 134210
 It is now cycle 134211
@@ -138376,6 +138683,10 @@ It is now cycle 135241
 It is now cycle 135242
 It is now cycle 135243
 It is now cycle 135244
+Process 311 hasn't lived for 1134 cycles (CTD 1036)
+Process 310 hasn't lived for 1134 cycles (CTD 1036)
+Process 309 hasn't lived for 1994 cycles (CTD 1036)
+Process 308 hasn't lived for 1994 cycles (CTD 1036)
 It is now cycle 135245
 It is now cycle 135246
 It is now cycle 135247
@@ -139432,6 +139743,8 @@ It is now cycle 136277
 It is now cycle 136278
 It is now cycle 136279
 It is now cycle 136280
+Process 313 hasn't lived for 1310 cycles (CTD 1036)
+Process 312 hasn't lived for 1310 cycles (CTD 1036)
 It is now cycle 136281
 It is now cycle 136282
 It is now cycle 136283
@@ -140488,6 +140801,8 @@ It is now cycle 137313
 It is now cycle 137314
 It is now cycle 137315
 It is now cycle 137316
+Process 315 hasn't lived for 1486 cycles (CTD 1036)
+Process 314 hasn't lived for 1486 cycles (CTD 1036)
 It is now cycle 137317
 It is now cycle 137318
 It is now cycle 137319
@@ -141548,6 +141863,8 @@ P  318 | fork -19 (11)
 ADV 3 (0x001e -> 0x0021) 0c ff ed 
 It is now cycle 138351
 It is now cycle 138352
+Process 317 hasn't lived for 1662 cycles (CTD 1036)
+Process 316 hasn't lived for 1662 cycles (CTD 1036)
 It is now cycle 138353
 It is now cycle 138354
 It is now cycle 138355
@@ -142620,6 +142937,8 @@ It is now cycle 139385
 It is now cycle 139386
 It is now cycle 139387
 It is now cycle 139388
+Process 319 hasn't lived for 1838 cycles (CTD 1036)
+Process 318 hasn't lived for 1838 cycles (CTD 1036)
 It is now cycle 139389
 It is now cycle 139390
 It is now cycle 139391
@@ -143676,6 +143995,10 @@ It is now cycle 140421
 It is now cycle 140422
 It is now cycle 140423
 It is now cycle 140424
+Process 323 hasn't lived for 1154 cycles (CTD 1036)
+Process 322 hasn't lived for 1154 cycles (CTD 1036)
+Process 321 hasn't lived for 2014 cycles (CTD 1036)
+Process 320 hasn't lived for 2014 cycles (CTD 1036)
 It is now cycle 140425
 It is now cycle 140426
 It is now cycle 140427
@@ -144732,6 +145055,8 @@ It is now cycle 141457
 It is now cycle 141458
 It is now cycle 141459
 It is now cycle 141460
+Process 325 hasn't lived for 1330 cycles (CTD 1036)
+Process 324 hasn't lived for 1330 cycles (CTD 1036)
 Cycle to die is now 986
 It is now cycle 141461
 It is now cycle 141462
@@ -145739,6 +146064,8 @@ It is now cycle 142443
 It is now cycle 142444
 It is now cycle 142445
 It is now cycle 142446
+Process 327 hasn't lived for 1456 cycles (CTD 986)
+Process 326 hasn't lived for 1456 cycles (CTD 986)
 It is now cycle 142447
 It is now cycle 142448
 It is now cycle 142449
@@ -146745,6 +147072,8 @@ It is now cycle 143429
 It is now cycle 143430
 It is now cycle 143431
 It is now cycle 143432
+Process 329 hasn't lived for 1582 cycles (CTD 986)
+Process 328 hasn't lived for 1582 cycles (CTD 986)
 It is now cycle 143433
 It is now cycle 143434
 It is now cycle 143435
@@ -147761,6 +148090,8 @@ It is now cycle 144415
 It is now cycle 144416
 It is now cycle 144417
 It is now cycle 144418
+Process 331 hasn't lived for 1708 cycles (CTD 986)
+Process 330 hasn't lived for 1708 cycles (CTD 986)
 It is now cycle 144419
 It is now cycle 144420
 P  335 | sti r1 -1 500
@@ -148777,6 +149108,8 @@ It is now cycle 145401
 It is now cycle 145402
 It is now cycle 145403
 It is now cycle 145404
+Process 333 hasn't lived for 1834 cycles (CTD 986)
+Process 332 hasn't lived for 1834 cycles (CTD 986)
 It is now cycle 145405
 It is now cycle 145406
 It is now cycle 145407
@@ -149783,6 +150116,10 @@ It is now cycle 146387
 It is now cycle 146388
 It is now cycle 146389
 It is now cycle 146390
+Process 337 hasn't lived for 1100 cycles (CTD 986)
+Process 336 hasn't lived for 1100 cycles (CTD 986)
+Process 335 hasn't lived for 1960 cycles (CTD 986)
+Process 334 hasn't lived for 1960 cycles (CTD 986)
 It is now cycle 146391
 It is now cycle 146392
 It is now cycle 146393
@@ -150789,6 +151126,8 @@ It is now cycle 147373
 It is now cycle 147374
 It is now cycle 147375
 It is now cycle 147376
+Process 339 hasn't lived for 1226 cycles (CTD 986)
+Process 338 hasn't lived for 1226 cycles (CTD 986)
 It is now cycle 147377
 It is now cycle 147378
 It is now cycle 147379
@@ -151795,6 +152134,8 @@ It is now cycle 148359
 It is now cycle 148360
 It is now cycle 148361
 It is now cycle 148362
+Process 341 hasn't lived for 1352 cycles (CTD 986)
+Process 340 hasn't lived for 1352 cycles (CTD 986)
 It is now cycle 148363
 It is now cycle 148364
 It is now cycle 148365
@@ -152801,6 +153142,8 @@ It is now cycle 149345
 It is now cycle 149346
 It is now cycle 149347
 It is now cycle 149348
+Process 343 hasn't lived for 1478 cycles (CTD 986)
+Process 342 hasn't lived for 1478 cycles (CTD 986)
 It is now cycle 149349
 It is now cycle 149350
 It is now cycle 149351
@@ -153807,6 +154150,8 @@ It is now cycle 150331
 It is now cycle 150332
 It is now cycle 150333
 It is now cycle 150334
+Process 345 hasn't lived for 1604 cycles (CTD 986)
+Process 344 hasn't lived for 1604 cycles (CTD 986)
 It is now cycle 150335
 It is now cycle 150336
 It is now cycle 150337
@@ -154833,6 +155178,8 @@ It is now cycle 151317
 It is now cycle 151318
 It is now cycle 151319
 It is now cycle 151320
+Process 347 hasn't lived for 1730 cycles (CTD 986)
+Process 346 hasn't lived for 1730 cycles (CTD 986)
 Cycle to die is now 936
 It is now cycle 151321
 It is now cycle 151322
@@ -155790,6 +156137,10 @@ It is now cycle 152253
 It is now cycle 152254
 It is now cycle 152255
 It is now cycle 152256
+Process 351 hasn't lived for 946 cycles (CTD 936)
+Process 350 hasn't lived for 946 cycles (CTD 936)
+Process 349 hasn't lived for 1806 cycles (CTD 936)
+Process 348 hasn't lived for 1806 cycles (CTD 936)
 It is now cycle 152257
 It is now cycle 152258
 It is now cycle 152259
@@ -156746,6 +157097,8 @@ It is now cycle 153189
 It is now cycle 153190
 It is now cycle 153191
 It is now cycle 153192
+Process 353 hasn't lived for 1022 cycles (CTD 936)
+Process 352 hasn't lived for 1022 cycles (CTD 936)
 It is now cycle 153193
 It is now cycle 153194
 It is now cycle 153195
@@ -157702,6 +158055,8 @@ It is now cycle 154125
 It is now cycle 154126
 It is now cycle 154127
 It is now cycle 154128
+Process 355 hasn't lived for 1098 cycles (CTD 936)
+Process 354 hasn't lived for 1098 cycles (CTD 936)
 It is now cycle 154129
 It is now cycle 154130
 It is now cycle 154131
@@ -158658,6 +159013,8 @@ It is now cycle 155061
 It is now cycle 155062
 It is now cycle 155063
 It is now cycle 155064
+Process 357 hasn't lived for 1174 cycles (CTD 936)
+Process 356 hasn't lived for 1174 cycles (CTD 936)
 It is now cycle 155065
 It is now cycle 155066
 It is now cycle 155067
@@ -159614,6 +159971,8 @@ It is now cycle 155997
 It is now cycle 155998
 It is now cycle 155999
 It is now cycle 156000
+Process 359 hasn't lived for 1250 cycles (CTD 936)
+Process 358 hasn't lived for 1250 cycles (CTD 936)
 It is now cycle 156001
 It is now cycle 156002
 It is now cycle 156003
@@ -160570,6 +160929,8 @@ It is now cycle 156933
 It is now cycle 156934
 It is now cycle 156935
 It is now cycle 156936
+Process 361 hasn't lived for 1326 cycles (CTD 936)
+Process 360 hasn't lived for 1326 cycles (CTD 936)
 It is now cycle 156937
 It is now cycle 156938
 It is now cycle 156939
@@ -161526,6 +161887,8 @@ It is now cycle 157869
 It is now cycle 157870
 It is now cycle 157871
 It is now cycle 157872
+Process 363 hasn't lived for 1402 cycles (CTD 936)
+Process 362 hasn't lived for 1402 cycles (CTD 936)
 It is now cycle 157873
 It is now cycle 157874
 It is now cycle 157875
@@ -162482,6 +162845,8 @@ It is now cycle 158805
 It is now cycle 158806
 It is now cycle 158807
 It is now cycle 158808
+Process 365 hasn't lived for 1478 cycles (CTD 936)
+Process 364 hasn't lived for 1478 cycles (CTD 936)
 It is now cycle 158809
 It is now cycle 158810
 It is now cycle 158811
@@ -163438,6 +163803,8 @@ It is now cycle 159741
 It is now cycle 159742
 It is now cycle 159743
 It is now cycle 159744
+Process 367 hasn't lived for 1554 cycles (CTD 936)
+Process 366 hasn't lived for 1554 cycles (CTD 936)
 It is now cycle 159745
 It is now cycle 159746
 It is now cycle 159747
@@ -164394,6 +164761,8 @@ It is now cycle 160677
 It is now cycle 160678
 It is now cycle 160679
 It is now cycle 160680
+Process 369 hasn't lived for 1630 cycles (CTD 936)
+Process 368 hasn't lived for 1630 cycles (CTD 936)
 Cycle to die is now 886
 It is now cycle 160681
 It is now cycle 160682
@@ -165301,6 +165670,8 @@ It is now cycle 161563
 It is now cycle 161564
 It is now cycle 161565
 It is now cycle 161566
+Process 371 hasn't lived for 1656 cycles (CTD 886)
+Process 370 hasn't lived for 1656 cycles (CTD 886)
 It is now cycle 161567
 It is now cycle 161568
 It is now cycle 161569
@@ -166211,6 +166582,8 @@ It is now cycle 162449
 It is now cycle 162450
 It is now cycle 162451
 It is now cycle 162452
+Process 373 hasn't lived for 1682 cycles (CTD 886)
+Process 372 hasn't lived for 1682 cycles (CTD 886)
 It is now cycle 162453
 It is now cycle 162454
 It is now cycle 162455
@@ -167123,6 +167496,8 @@ It is now cycle 163335
 It is now cycle 163336
 It is now cycle 163337
 It is now cycle 163338
+Process 375 hasn't lived for 1708 cycles (CTD 886)
+Process 374 hasn't lived for 1708 cycles (CTD 886)
 It is now cycle 163339
 It is now cycle 163340
 P  379 | sti r1 -1 500
@@ -168039,6 +168414,8 @@ It is now cycle 164221
 It is now cycle 164222
 It is now cycle 164223
 It is now cycle 164224
+Process 377 hasn't lived for 1734 cycles (CTD 886)
+Process 376 hasn't lived for 1734 cycles (CTD 886)
 It is now cycle 164225
 It is now cycle 164226
 It is now cycle 164227
@@ -168945,6 +169322,10 @@ It is now cycle 165107
 It is now cycle 165108
 It is now cycle 165109
 It is now cycle 165110
+Process 381 hasn't lived for 900 cycles (CTD 886)
+Process 380 hasn't lived for 900 cycles (CTD 886)
+Process 379 hasn't lived for 1760 cycles (CTD 886)
+Process 378 hasn't lived for 1760 cycles (CTD 886)
 It is now cycle 165111
 It is now cycle 165112
 It is now cycle 165113
@@ -169851,6 +170232,8 @@ It is now cycle 165993
 It is now cycle 165994
 It is now cycle 165995
 It is now cycle 165996
+Process 383 hasn't lived for 926 cycles (CTD 886)
+Process 382 hasn't lived for 926 cycles (CTD 886)
 It is now cycle 165997
 It is now cycle 165998
 It is now cycle 165999
@@ -170757,6 +171140,8 @@ It is now cycle 166879
 It is now cycle 166880
 It is now cycle 166881
 It is now cycle 166882
+Process 385 hasn't lived for 952 cycles (CTD 886)
+Process 384 hasn't lived for 952 cycles (CTD 886)
 It is now cycle 166883
 It is now cycle 166884
 It is now cycle 166885
@@ -171663,6 +172048,8 @@ It is now cycle 167765
 It is now cycle 167766
 It is now cycle 167767
 It is now cycle 167768
+Process 387 hasn't lived for 978 cycles (CTD 886)
+Process 386 hasn't lived for 978 cycles (CTD 886)
 It is now cycle 167769
 It is now cycle 167770
 It is now cycle 167771
@@ -172569,6 +172956,8 @@ It is now cycle 168651
 It is now cycle 168652
 It is now cycle 168653
 It is now cycle 168654
+Process 389 hasn't lived for 1004 cycles (CTD 886)
+Process 388 hasn't lived for 1004 cycles (CTD 886)
 It is now cycle 168655
 It is now cycle 168656
 It is now cycle 168657
@@ -173475,6 +173864,8 @@ It is now cycle 169537
 It is now cycle 169538
 It is now cycle 169539
 It is now cycle 169540
+Process 391 hasn't lived for 1030 cycles (CTD 886)
+Process 390 hasn't lived for 1030 cycles (CTD 886)
 Cycle to die is now 836
 It is now cycle 169541
 It is now cycle 169542
@@ -174332,6 +174723,8 @@ It is now cycle 170373
 It is now cycle 170374
 It is now cycle 170375
 It is now cycle 170376
+Process 393 hasn't lived for 1006 cycles (CTD 836)
+Process 392 hasn't lived for 1006 cycles (CTD 836)
 It is now cycle 170377
 It is now cycle 170378
 It is now cycle 170379
@@ -175188,6 +175581,8 @@ It is now cycle 171209
 It is now cycle 171210
 It is now cycle 171211
 It is now cycle 171212
+Process 395 hasn't lived for 982 cycles (CTD 836)
+Process 394 hasn't lived for 982 cycles (CTD 836)
 It is now cycle 171213
 It is now cycle 171214
 It is now cycle 171215
@@ -176044,6 +176439,8 @@ It is now cycle 172045
 It is now cycle 172046
 It is now cycle 172047
 It is now cycle 172048
+Process 397 hasn't lived for 958 cycles (CTD 836)
+Process 396 hasn't lived for 958 cycles (CTD 836)
 It is now cycle 172049
 It is now cycle 172050
 It is now cycle 172051
@@ -176900,6 +177297,8 @@ It is now cycle 172881
 It is now cycle 172882
 It is now cycle 172883
 It is now cycle 172884
+Process 399 hasn't lived for 934 cycles (CTD 836)
+Process 398 hasn't lived for 934 cycles (CTD 836)
 It is now cycle 172885
 It is now cycle 172886
 It is now cycle 172887
@@ -177756,6 +178155,8 @@ It is now cycle 173717
 It is now cycle 173718
 It is now cycle 173719
 It is now cycle 173720
+Process 401 hasn't lived for 910 cycles (CTD 836)
+Process 400 hasn't lived for 910 cycles (CTD 836)
 It is now cycle 173721
 It is now cycle 173722
 It is now cycle 173723
@@ -178612,6 +179013,8 @@ It is now cycle 174553
 It is now cycle 174554
 It is now cycle 174555
 It is now cycle 174556
+Process 403 hasn't lived for 886 cycles (CTD 836)
+Process 402 hasn't lived for 886 cycles (CTD 836)
 It is now cycle 174557
 It is now cycle 174558
 It is now cycle 174559
@@ -179468,6 +179871,8 @@ P  406 | live 2
 ADV 5 (0x0019 -> 0x001e) 01 00 00 00 02 
 It is now cycle 175391
 It is now cycle 175392
+Process 405 hasn't lived for 862 cycles (CTD 836)
+Process 404 hasn't lived for 862 cycles (CTD 836)
 It is now cycle 175393
 It is now cycle 175394
 It is now cycle 175395
@@ -180314,4 +180719,8 @@ It is now cycle 176225
 It is now cycle 176226
 It is now cycle 176227
 It is now cycle 176228
+Process 409 hasn't lived for 838 cycles (CTD 836)
+Process 408 hasn't lived for 838 cycles (CTD 836)
+Process 407 hasn't lived for 838 cycles (CTD 836)
+Process 406 hasn't lived for 838 cycles (CTD 836)
 Contestant 1, "fork2", has won !
