@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 13:23:09 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/20 16:51:42 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/20 18:34:12 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ int		main(int ac, char **av)
 		ft_printf("usage : ./asm (-flag) file.s\nAllowed flag: -a\n");
 		return (0);
 	}
-	params.file_name = ft_strsub(av[1], 0, ft_strclen(av[1], '.'));
 	if ((ac != 2 && ac != 3) || !ft_strstr(av[1], ".s"))
 	{
 		ft_printf("usage : ./asm (-flag) file.s\nAllowed flag: -a\n");
