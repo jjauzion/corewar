@@ -20,9 +20,9 @@ t_op			*read_op_code(t_arena *arena, t_process *process)
 
 	op_code = (int)arena->mem[get_address(process->pc)];
 	i = -1;
-	while (op_tab[++i].op_code != op_code && op_tab[i].name)
+	while (g_op_tab[++i].op_code != op_code && g_op_tab[i].name)
 	{}
-	if (op_tab[i].name == NULL)
+	if (g_op_tab[i].name == NULL)
 	{
 		process->pc = get_address(process->pc + 1);
 		return (NULL);
@@ -30,9 +30,9 @@ t_op			*read_op_code(t_arena *arena, t_process *process)
 	if (!(op = (t_op*)ft_memalloc(sizeof(t_op))))
 		return (error_ptr(NULL, "error op malloc\n"));
 	op->op_code = op_code;
-	op->nb_cycle = op_tab[i].nb_cycle;
+	op->nb_cycle = g_op_tab[i].nb_cycle;
 	process->exe_cycle = arena->last_check + arena->cycle + op->nb_cycle - 1;
-	op->name = op_tab[i].name;
-	op->nb_arg = op_tab[i].nb_arg;
+	op->name = g_op_tab[i].name;
+	op->nb_arg = g_op_tab[i].nb_arg;
 	return (op);
 }

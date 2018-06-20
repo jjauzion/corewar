@@ -6,12 +6,11 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/06 13:29:32 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/19 16:08:10 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/20 15:17:47 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vm.h"
-#include "fct_op.c"
 
 int			exec_op(t_process *process, t_arena *arena)
 {

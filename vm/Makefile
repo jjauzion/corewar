@@ -6,7 +6,7 @@
 #    By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 11:25:23 by jjauzion          #+#    #+#              #
-#    Updated: 2018/06/20 12:38:41 by jjauzion         ###   ########.fr        #
+#    Updated: 2018/06/20 15:18:35 by jjauzion         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@
 
 SRC_NAME1 = main.c \
 			op.c \
+			fct_op.c \
 			error.c \
 			read_champ.c \
 			option.c \
@@ -54,8 +55,7 @@ INC_PATH2 = ../includes/
 INC_NAME1 = libft.h
 
 INC_NAME2 = vm.h \
-			op.h \
-			fct_op.c
+			op.h
 
 NAME = ../corewar
 
