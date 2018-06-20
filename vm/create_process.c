@@ -6,33 +6,33 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/05 15:38:10 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/14 11:46:23 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/20 16:42:50 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vm.h"
 
+static t_uint	get_pid(void)
+{
+	static t_uint	pid = 0;
+
+	if (pid >= PID_MAX)
+		pid = 1;
+	else
+		pid++;
+	return (pid);
+}
+
 t_process		*create_process(int address, int id, t_process *origin_process)
 {
-	static t_uint	pid = 1;
 	t_process		*new_process;
 	int				i;
-	char			*tmp;
 
 	if (!(new_process = (t_process*)ft_memalloc(sizeof(t_process))))
 		return (error_ptr(NULL, "new process malloc error"));
 	new_process->op_idx_mod = 1;
 	new_process->pc = address;
-	new_process->pid = pid;
-	pid = (pid > PID_MAX) ? 0 : pid + 1; //pour etre propre trouve un pid libre
-	i = (REG_SIZE > 4) ? 3 : REG_SIZE - 1;
-	tmp = (char*)&id;
-	while (i >= 0)
-	{ 
-		new_process->reg[0][i] = *tmp;
-		tmp++;
-		i--;
-	}
+	new_process->pid = get_pid();
 	if (origin_process != NULL)
 	{
 		i = -1;
@@ -41,6 +41,8 @@ t_process		*create_process(int address, int id, t_process *origin_process)
 		new_process->carry = origin_process->carry;
 		new_process->last_live_cycle = origin_process->last_live_cycle;
 	}
+	else
+		int2reg(new_process, 1, id);
 	new_process->next = NULL;
 	return (new_process);
 }
