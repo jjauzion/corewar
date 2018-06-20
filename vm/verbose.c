@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 10:25:44 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/16 16:48:34 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/20 13:06:04 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,4 @@ void		show_operation(t_arena *arena, t_process *current_process, int arg[3], cha
 			ft_printf(" ");
 	}
 	ft_printf("\n");
-/*	if (msg != NULL)
-		ft_printf("       | -> %s %d + %d = %d (with pc and mod %d)\n", msg,
-				arg[0], arg[1], arg[0] + arg[1], get_address(current_process->pc + (int)address));*/
 }
