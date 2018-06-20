@@ -58,17 +58,18 @@ do
 	test_file="`dirname $file`/`basename $file | cut -f2- -d'_'`.cor";
 	output="`dirname $test_file`/vm_`basename $test_file | cut -f1 -d'.'`"
 	diff="`dirname $test_file`/diff_`basename $test_file | cut -f1 -d'.'`"
+	rm $output 2>/dev/null
+	rm $diff 2>/dev/null
 	for i in 15000 20000 25000 30000;
 	do
 		$MY_EXE $OPT $i "$test_file" >> $output
-		rm $diff 2>/dev/null
-		result="`diff -u $file $output`"
-		if ! [ -z "${result}" ]; then
-			echo "$result" > $diff
-			printf "%-30s\t${RED}[KO]${NC}\n" `basename ${test_file}`
-			printf "\t--> See diff file : ${diff}\n"
-		else
-			printf "%-30s\t${GREEN}[OK]${NC}\n" `basename ${test_file}`
-		fi
 	done
+	result="`diff -u $file $output`"
+	if ! [ -z "${result}" ]; then
+		echo "$result" > $diff
+		printf "%-30s\t${RED}[KO]${NC}\n" `basename ${test_file}`
+		printf "\t--> See diff file : ${diff}\n"
+	else
+		printf "%-30s\t${GREEN}[OK]${NC}\n" `basename ${test_file}`
+	fi
 done

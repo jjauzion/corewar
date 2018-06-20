@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/07 16:40:39 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/16 15:57:22 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/20 15:50:31 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int		lldi(t_process *process, t_arena *arena)
 		ft_printf("       | -> load from %d + %d = %d (with pc %d)\n",
 				arg[0], arg[1], arg[0] + arg[1], address + process->pc);
 	}
-	change_carry(process, address); //address a tester
+	change_carry(process, address);
 	return (SUCCESS);
 }
 
@@ -91,7 +91,8 @@ int		ldi(t_process *process, t_arena *arena)
 		ft_printf("P% 5d | %s %d %d r%d\n",
 				process->pid, process->op->name, arg[0], arg[1], arg[2]);
 		ft_printf("       | -> load from %d + %d = %d (with pc and mod %d)\n",
-				arg[0], arg[1], arg[0] + arg[1], get_address(address + process->pc));
+				arg[0], arg[1], arg[0] + arg[1],
+				get_address(address + process->pc));
 	}
 	return (SUCCESS);
 }
