@@ -6,13 +6,13 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/06 13:43:43 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/14 18:17:50 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/20 15:39:20 by tmerli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vm.h"
 
-static int			get_op_size(int arg_type[3], int op_index)
+static	int		get_op_size(int arg_type[3], int op_index)
 {
 	int	i;
 	int	op_size;
@@ -22,9 +22,10 @@ static int			get_op_size(int arg_type[3], int op_index)
 	while (i < g_op_tab[op_index].nb_arg)
 	{
 		if (arg_type[i] == T_REG)
-			op_size += REG_LENGTH; //check si define existe dans op.h
+			op_size += REG_LENGTH;
 		if (arg_type[i] == T_DIR)
-			op_size += (g_op_tab[op_index].dir_size == 1) ? DIR_SIZE - 2 : DIR_SIZE;
+			op_size += (g_op_tab[op_index].dir_size == 1)
+				? DIR_SIZE - 2 : DIR_SIZE;
 		if (arg_type[i] == T_IND)
 			op_size += IND_SIZE;
 		i++;
@@ -32,8 +33,7 @@ static int			get_op_size(int arg_type[3], int op_index)
 	return (op_size);
 }
 
-
-static int		read_ocp(t_op *op, int op_index, t_process *process)
+static	int		read_ocp(t_op *op, int op_index, t_process *process)
 {
 	int		i;
 	int		ret;
@@ -52,7 +52,9 @@ static int		read_ocp(t_op *op, int op_index, t_process *process)
 			op->arg_type[i] = T_DIR;
 		if (op->arg_type[i] == IND_CODE)
 			op->arg_type[i] = T_IND;
-		if (op->arg_type[i] == 0 || ((op->arg_type[i] | g_op_tab[op_index].arg_type[i]) != g_op_tab[op_index].arg_type[i]) || (op->ocp < 4))
+		if (op->arg_type[i] == 0 || ((op->arg_type[i] |
+						g_op_tab[op_index].arg_type[i])
+					!= g_op_tab[op_index].arg_type[i]) || (op->ocp < 4))
 			ret = ERROR;
 		i++;
 	}
@@ -60,7 +62,7 @@ static int		read_ocp(t_op *op, int op_index, t_process *process)
 	return (ret);
 }
 
-static int		check_arg(t_op *op, t_uchar *mem, int index_arg1)
+static	int		check_arg(t_op *op, t_uchar *mem, int index_arg1)
 {
 	int		i;
 
@@ -69,7 +71,8 @@ static int		check_arg(t_op *op, t_uchar *mem, int index_arg1)
 	{
 		if (op->arg_type[i] == T_REG)
 		{
-			if (mem[get_address(index_arg1)] <= 0 || mem[get_address(index_arg1)] > REG_NUMBER)
+			if (mem[get_address(index_arg1)] <= 0 ||
+					mem[get_address(index_arg1)] > REG_NUMBER)
 				return (ERROR);
 			index_arg1 += REG_LENGTH;
 		}
@@ -81,7 +84,7 @@ static int		check_arg(t_op *op, t_uchar *mem, int index_arg1)
 	return (SUCCESS);
 }
 
-static void		set_arg_type(t_op *op, int op_id)
+static	void	set_arg_type(t_op *op, int op_id)
 {
 	int		i;
 
@@ -98,8 +101,9 @@ void			read_op(t_arena *arena, t_process *process)
 	process->op->ocp = arena->mem[get_address(process->pc + 1)];
 	i = -1;
 	while (g_op_tab[++i].op_code != process->op->op_code && g_op_tab[i].name)
-	{}
-	process->op->dir_size = (g_op_tab[i].dir_size == 1) ? DIR_SIZE - 2 : DIR_SIZE;
+		;
+	process->op->dir_size = (g_op_tab[i].dir_size == 1)
+		? DIR_SIZE - 2 : DIR_SIZE;
 	if (g_op_tab[i].ocp == 1 && (read_ocp(process->op, i, process) == ERROR))
 		process->exe_op = 0;
 	else if (g_op_tab[i].ocp == 0)
@@ -107,6 +111,7 @@ void			read_op(t_arena *arena, t_process *process)
 		set_arg_type(process->op, i);
 		process->op_size = get_op_size(g_op_tab[i].arg_type, i);
 	}
-	if (check_arg(process->op, arena->mem, process->pc + 1 + g_op_tab[i].ocp) == ERROR)
+	if (check_arg(process->op, arena->mem,
+				process->pc + 1 + g_op_tab[i].ocp) == ERROR)
 		process->exe_op = 0;
 }
