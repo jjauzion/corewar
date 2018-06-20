@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:02:07 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/19 16:09:32 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/20 15:17:03 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,8 @@ typedef struct			s_op_fct
 	int		(*fct)(t_process *process, t_arena *arena);
 }						t_op_fct;
 
-extern t_op				op_tab[17];
+extern t_op				g_op_tab[17];
+extern t_op_fct			g_op_fct_tab[];
 
 void					*error_ptr(void *ptr, char *msg);
 int						error_int(char *msg);
