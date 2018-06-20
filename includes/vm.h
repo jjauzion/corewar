@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:02:07 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/19 16:09:32 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/20 15:18:15 by tmerli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ t_champion				**check_input(int argc, char **argv, t_arena *arena);
 int						option(int *index, int argc, char **argv, t_option *option);
 void					print_option(int option);
 int						opt_is_set(int option, char test_opt);
-int						init_arena(t_arena *arena, t_champion **champions);
+int						init_arena(t_arena *arena);
 t_process				*create_process(int address, int id, t_process *origin_process);
 int						run_arena(t_arena *arena);
 t_op					*read_op_code(t_arena *arena, t_process *process);
