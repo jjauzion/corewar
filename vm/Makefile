@@ -6,7 +6,7 @@
 #    By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 11:25:23 by jjauzion          #+#    #+#              #
-#    Updated: 2018/06/19 17:46:17 by jjauzion         ###   ########.fr        #
+#    Updated: 2018/06/20 12:38:41 by jjauzion         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,7 @@ ifeq ($(FLAG), debug)
 	DBFLAGS = -g3 -fsanitize=address
 endif
 else
-	CFLAGS = -g -Wall -Wextra -Werror
+	CFLAGS = -Wall -Wextra -Werror
 	DBFLAGS =
 endif
 
