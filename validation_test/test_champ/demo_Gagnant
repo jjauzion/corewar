@@ -14466,6 +14466,11 @@ It is now cycle 7377
 It is now cycle 7378
 It is now cycle 7379
 It is now cycle 7380
+Process 19 hasn't lived for 1922 cycles (CTD 1386)
+Process 16 hasn't lived for 1811 cycles (CTD 1386)
+Process 15 hasn't lived for 1979 cycles (CTD 1386)
+Process 12 hasn't lived for 1884 cycles (CTD 1386)
+Process 8 hasn't lived for 1979 cycles (CTD 1386)
 Cycle to die is now 1336
 It is now cycle 7381
 It is now cycle 7382
@@ -37642,6 +37647,7 @@ P    1 | sti r15 0 -186
 ADV 6 (0x036c -> 0x0372) 0b 64 0f 00 00 0e 
 It is now cycle 15681
 It is now cycle 15682
+Process 21 hasn't lived for 1425 cycles (CTD 1036)
 Cycle to die is now 986
 It is now cycle 15683
 It is now cycle 15684
@@ -40383,6 +40389,7 @@ ADV 5 (0x0432 -> 0x0437) 01 ff ff ff ff
 P    4 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
 ADV 5 (0x0432 -> 0x0437) 01 ff ff ff ff 
+Process 22 hasn't lived for 1104 cycles (CTD 986)
 Cycle to die is now 936
 It is now cycle 16669
 It is now cycle 16670
@@ -48028,6 +48035,7 @@ P    9 | zjmp -200 OK
 P    7 | zjmp -200 OK
 P    2 | zjmp -200 OK
 It is now cycle 19326
+Process 17 hasn't lived for 1076 cycles (CTD 836)
 Cycle to die is now 786
 It is now cycle 19327
 It is now cycle 19328
@@ -57773,6 +57781,7 @@ ADV 6 (0x08a8 -> 0x08ae) 00 00 00 00 00 0e
 It is now cycle 22754
 It is now cycle 22755
 It is now cycle 22756
+Process 23 hasn't lived for 1068 cycles (CTD 586)
 Cycle to die is now 536
 It is now cycle 22757
 It is now cycle 22758
@@ -67016,6 +67025,10 @@ It is now cycle 25985
 It is now cycle 25986
 It is now cycle 25987
 It is now cycle 25988
+Process 10 hasn't lived for 53 cycles (CTD 36)
+Process 9 hasn't lived for 53 cycles (CTD 36)
+Process 7 hasn't lived for 53 cycles (CTD 36)
+Process 2 hasn't lived for 53 cycles (CTD 36)
 It is now cycle 25989
 It is now cycle 25990
 It is now cycle 25991
@@ -67091,4 +67104,15 @@ It is now cycle 26022
 It is now cycle 26023
 It is now cycle 26024
 P   18 | zjmp -200 OK
+Process 24 hasn't lived for 41 cycles (CTD 36)
+Process 20 hasn't lived for 50 cycles (CTD 36)
+Process 18 hasn't lived for 45 cycles (CTD 36)
+Process 14 hasn't lived for 40 cycles (CTD 36)
+Process 13 hasn't lived for 40 cycles (CTD 36)
+Process 11 hasn't lived for 40 cycles (CTD 36)
+Process 6 hasn't lived for 50 cycles (CTD 36)
+Process 5 hasn't lived for 50 cycles (CTD 36)
+Process 4 hasn't lived for 40 cycles (CTD 36)
+Process 3 hasn't lived for 50 cycles (CTD 36)
+Process 1 hasn't lived for 50 cycles (CTD 36)
 Contestant 1, "Celebration Funebre v0.99pl42", has won !

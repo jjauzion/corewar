@@ -18,7 +18,7 @@ else
 	BASIC=0
 fi
 
-OPT="-lcpo"
+OPT="-klcpo"
 for file in "${TEST_DIR}"/demo_*;
 do
 	test_file="`dirname $file`/`basename $file | cut -f2- -d'_'`.cor";

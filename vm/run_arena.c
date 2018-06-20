@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/05 15:12:10 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/20 13:09:21 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/20 18:22:28 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static t_process	*kill_process(t_arena *arena, t_process *last_process,
 		t_process *tokill)
 {
+	show_death(arena, tokill);
 	if (arena->process == tokill)
 	{
 		arena->process = tokill->next;
@@ -30,33 +31,42 @@ static t_process	*kill_process(t_arena *arena, t_process *last_process,
 	return (last_process->next);
 }
 
-static void			exe_process(t_arena *arena)
+static void			check_cycle2die(t_arena *arena)
 {
 	t_process	*process;
 	t_process	*last_process;
 
+	if (arena->cycle == arena->cycle2die || arena->cycle2die <= 0)
+	{
+		process = arena->process;
+		last_process = NULL;
+		while (process)
+		{
+			if (process->last_live_cycle <= arena->last_check)
+				process = kill_process(arena, last_process, process);
+			else
+			{
+				last_process = process;
+				process = process->next;
+			}
+		}
+	}
+}
+
+static void			exe_process(t_arena *arena)
+{
+	t_process	*process;
+
 	process = arena->process;
-	last_process = NULL;
 	while (process)
 	{
 		if (process->op == NULL)
 			process->op = read_op_code(arena, process);
 		else if (arena->cycle + arena->last_check == process->exe_cycle)
 			exec_op(process, arena);
-		if (arena->cycle == arena->cycle2die || arena->cycle2die <= 0)
-		{
-			if (process->last_live_cycle == 0)
-				process = kill_process(arena, last_process, process);
-			else
-			{
-				process->last_live_cycle = 0;
-				last_process = process;
-				process = process->next;
-			}
-		}
-		else
-			process = process->next;
+		process = process->next;
 	}
+	check_cycle2die(arena);
 }
 
 static void			update_arena(t_arena *arena)

@@ -6,11 +6,20 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 10:25:44 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/20 15:58:30 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/20 18:25:59 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vm.h"
+
+void	show_death(t_arena *arena, t_process *process)
+{
+	if (opt_is_set(arena->option->option, 'k'))
+		ft_printf("Process %d hasn't lived for %d cycles (CTD %d)\n",
+				process->pid,
+				arena->cycle + arena->last_check - process->last_live_cycle,
+				arena->cycle2die);
+}
 
 void	show_cycle(t_arena *arena, t_process *current_process, int step,
 		int dump)
