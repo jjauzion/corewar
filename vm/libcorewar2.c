@@ -1,57 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libcorewar.c                                       :+:      :+:    :+:   */
+/*   libcorewar2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/06 14:16:45 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/16 11:35:29 by jjauzion         ###   ########.fr       */
+/*   Created: 2018/06/20 16:00:27 by jjauzion          #+#    #+#             */
+/*   Updated: 2018/06/20 16:15:14 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vm.h"
-
-void		change_carry(t_process *process, int value)
-{
-	if (value == 0)
-		process->carry = 1;
-	else
-		process->carry = 0;
-}
-
-int		get_address(int address)
-{
-	address = address % MEM_SIZE;
-	if (address < 0)
-		address = MEM_SIZE + address;
-	return (address);
-}
-
-t_uint	mem2int(t_uchar *mem, int index, int size)
-{
-	int		i;
-	t_uint	value;
-	void	*ptr;
-
-	ptr = (void*)&value;
-	size = (size > 4) ? 4 : size;
-	i = -1;
-	while (++i < size)
-		ft_memset(&ptr[size - 1 - i], (int)mem[get_address(index + i)], 1);
-	return (value);
-}
-
-void	int2mem(t_uchar *mem, int index, int value)
-{
-	int		i;
-	char	*ptr;
-
-	ptr = (char*)&value;
-	i = -1;
-	while (++i < 4)
-		ft_memset(&mem[get_address(index + i)], (int)*(ptr + 3 - i), 1);
-}
 
 int		reg2int(t_process *process, t_uint reg)
 {
@@ -97,7 +56,8 @@ int		get_arg_id(t_process *process, int arg_id, t_uchar *mem, int arg_index)
 
 	if (process->op->arg_type[arg_id] == T_IND)
 		id = (short)mem2int(mem, arg_index, (int)S_SHORT);
-	else if (process->op->arg_type[arg_id] == T_DIR && process->op->dir_size == 2)
+	else if (process->op->arg_type[arg_id] == T_DIR &&
+			process->op->dir_size == 2)
 		id = (short)mem2int(mem, arg_index, process->op->dir_size);
 	else if (process->op->arg_type[arg_id] == T_DIR)
 		id = (int)mem2int(mem, arg_index, process->op->dir_size);
@@ -117,13 +77,14 @@ int		get_arg_val(t_process *process, int arg_id, t_uchar *mem, int arg_index)
 	value = -1;
 	if (process->op->arg_type[arg_id] == T_IND)
 	{
-		if (process->op_idx_mod == 0) 
+		if (process->op_idx_mod == 0)
 			address = (short)mem2int(mem, arg_index, (int)S_SHORT);
 		else
 			address = (short)mem2int(mem, arg_index, (int)S_SHORT) % IDX_MOD;
-		value = mem2int(mem, process->pc + address, REG_SIZE); //REG_SIZE tjr?
+		value = mem2int(mem, process->pc + address, REG_SIZE);
 	}
-	else if (process->op->arg_type[arg_id] == T_DIR && process->op->dir_size == 2)
+	else if (process->op->arg_type[arg_id] == T_DIR &&
+			process->op->dir_size == 2)
 		value = (short)mem2int(mem, arg_index, process->op->dir_size);
 	else if (process->op->arg_type[arg_id] == T_DIR)
 		value = (int)mem2int(mem, arg_index, process->op->dir_size);

@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/06 13:29:32 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/20 15:17:47 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/20 16:01:43 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,7 @@ int			exec_op(t_process *process, t_arena *arena)
 			return(ERROR); 
 		}
 		g_op_fct_tab[i].fct(process, arena);
-		verbose(arena, process, 60, 0);
 	}
-	else
-		verbose(arena, process, 50, 0);
 	show_pc_mouvement(arena, process, 51, 0);
 	process->pc = get_address(process->pc + process->op_size);
 	free(process->op);

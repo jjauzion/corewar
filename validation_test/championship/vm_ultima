@@ -1,0 +1,521 @@
+Introducing contestants...
+* Player 1, weighing 614 bytes, "Ultima" ("
+Je suis l'Alpha
+Je suis Le destructeur
+Je suis Omega
+Je suis La raison de ta peur
+
+Ta puissance est ma puissance
+Ton pouvoir est sans défence
+Ma seule crainte est ta faiblesse
+De mourrir d'une maladresse
+
+Les plus puissants combattants
+S'ront détruits d'un coup de dent
+Les plus vifs et combatifs
+S'ront finis d'un coup de griffe
+
+Je suis un puits sans fond
+Qui t'aspire dans ses tréfonds
+La plaie sanglante et cruelle
+Qui déchire tes organes frèles
+
+La haine pur qui se diffuse
+Sur ton code et le déturit
+Prétrifié comme la méduse
+Tu vivras son agonie
+
+un poison ronge ton âme
+L'obscurité noie tes flammes
+Une mort glacée se répends
+Le long d' tes veines et ton sang
+
+Mais déjà tu m'appartients
+Ton destin est dans mes mains
+Pleur de rage, pleur de douleur
+Noie tes larmes dans ton aigreur
+
+Que mes attaques te pénêtre
+A moi tu ne peux que te soumettre
+Qu' ma puissance abime ton etre
+Que j' te brise, petite soubrette
+
+Mon pouvoir aspire tes forces
+Aspire ton ame, et se renforce
+Ma présence est ta souffrance
+Ma raison d'etre ta défaite
+
+Imposer, gifler tes tactiques
+Abuser d' ton code heuristique
+Dénuder ton code d'ses méthodes
+Déchirer toutes tes ruses informes
+
+Contraindre ton code aux pires outrages
+Forcer, détruire tes stratégies
+Tromper, corrompre tes algorithmes
+Vicier, souiller tes procédés
+
+Jusqu'a mon souffle je suis letal
+Meme mon regard détruit ton âme
+T'emporte au vent comme une pétale
+Puis te consumme un vrai lance flammes
+
+Tu viens pour ton exécution
+Pas un combat une pendaison
+Pas un proces, une mise a mort
+Toi le taureau, moi l'matador
+
+A tout jamais le championnat
+Lesté de mon ADN, changera
+Inséminé dans l'corps de mes proies
+Etrange héritage sortira
+Nées du tréfond de tes abats
+
+Mais viens ici, entre mes griffes
+Entre mes cros, t'ecorcher vif
+Pour me repaitre de tes lambeaux
+Pour te détruire en quelques mots
+
+Abandonne tout idée osée,
+de m'échapper, de me défier
+car les roles sont deja figées.
+Je Suis le Prédateur, tu est Ma Proie") !
+0x0000 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x0040 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x0080 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x00c0 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x0100 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x0140 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x0180 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x01c0 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x0200 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x0240 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x0280 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x02c0 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x0300 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x0340 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x0380 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x03c0 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 09 09 
+0x0400 : 09 09 01 00 00 00 00 00 00 09 09 09 01 08 09 01 f4 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 
+0x0440 : 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 0b 54 05 09 09 09 01 f5 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 
+0x0480 : 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 
+0x04c0 : 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 
+0x0500 : 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 
+0x0540 : 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 
+0x0580 : 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 
+0x05c0 : 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 00 00 00 00 00 09 09 09 01 00 00 00 00 00 
+0x0600 : 00 00 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x0640 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x0680 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x06c0 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x0700 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x0740 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x0780 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x07c0 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x0800 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x0840 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x0880 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x08c0 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x0900 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x0940 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x0980 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x09c0 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x0a00 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x0a40 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x0a80 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x0ac0 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x0b00 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x0b40 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x0b80 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x0bc0 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x0c00 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x0c40 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x0c80 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x0cc0 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x0d00 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x0d40 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x0d80 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x0dc0 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x0e00 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x0e40 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x0e80 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x0ec0 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x0f00 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x0f40 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x0f80 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x0fc0 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+Introducing contestants...
+* Player 1, weighing 614 bytes, "Ultima" ("
+Je suis l'Alpha
+Je suis Le destructeur
+Je suis Omega
+Je suis La raison de ta peur
+
+Ta puissance est ma puissance
+Ton pouvoir est sans défence
+Ma seule crainte est ta faiblesse
+De mourrir d'une maladresse
+
+Les plus puissants combattants
+S'ront détruits d'un coup de dent
+Les plus vifs et combatifs
+S'ront finis d'un coup de griffe
+
+Je suis un puits sans fond
+Qui t'aspire dans ses tréfonds
+La plaie sanglante et cruelle
+Qui déchire tes organes frèles
+
+La haine pur qui se diffuse
+Sur ton code et le déturit
+Prétrifié comme la méduse
+Tu vivras son agonie
+
+un poison ronge ton âme
+L'obscurité noie tes flammes
+Une mort glacée se répends
+Le long d' tes veines et ton sang
+
+Mais déjà tu m'appartients
+Ton destin est dans mes mains
+Pleur de rage, pleur de douleur
+Noie tes larmes dans ton aigreur
+
+Que mes attaques te pénêtre
+A moi tu ne peux que te soumettre
+Qu' ma puissance abime ton etre
+Que j' te brise, petite soubrette
+
+Mon pouvoir aspire tes forces
+Aspire ton ame, et se renforce
+Ma présence est ta souffrance
+Ma raison d'etre ta défaite
+
+Imposer, gifler tes tactiques
+Abuser d' ton code heuristique
+Dénuder ton code d'ses méthodes
+Déchirer toutes tes ruses informes
+
+Contraindre ton code aux pires outrages
+Forcer, détruire tes stratégies
+Tromper, corrompre tes algorithmes
+Vicier, souiller tes procédés
+
+Jusqu'a mon souffle je suis letal
+Meme mon regard détruit ton âme
+T'emporte au vent comme une pétale
+Puis te consumme un vrai lance flammes
+
+Tu viens pour ton exécution
+Pas un combat une pendaison
+Pas un proces, une mise a mort
+Toi le taureau, moi l'matador
+
+A tout jamais le championnat
+Lesté de mon ADN, changera
+Inséminé dans l'corps de mes proies
+Etrange héritage sortira
+Nées du tréfond de tes abats
+
+Mais viens ici, entre mes griffes
+Entre mes cros, t'ecorcher vif
+Pour me repaitre de tes lambeaux
+Pour te détruire en quelques mots
+
+Abandonne tout idée osée,
+de m'échapper, de me défier
+car les roles sont deja figées.
+Je Suis le Prédateur, tu est Ma Proie") !
+0x0000 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x0040 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x0080 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x00c0 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x0100 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x0140 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x0180 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x01c0 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x0200 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x0240 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x0280 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x02c0 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x0300 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x0340 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x0380 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x03c0 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x0400 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x0440 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x0480 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x04c0 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x0500 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x0540 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x0580 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x05c0 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x0600 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x0640 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x0680 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x06c0 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x0700 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x0740 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x0780 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x07c0 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x0800 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x0840 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x0880 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x08c0 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x0900 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x0940 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x0980 : 0b 54 05 04 06 01 ff ff ff ff 06 09 05 04 06 01 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 
+0x09c0 : 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 
+0x0a00 : 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 
+0x0a40 : 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 
+0x0a80 : 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 
+0x0ac0 : 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 
+0x0b00 : 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 
+0x0b40 : 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 01 
+0x0b80 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x0bc0 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x0c00 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x0c40 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x0c80 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x0cc0 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x0d00 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x0d40 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x0d80 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x0dc0 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x0e00 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x0e40 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x0e80 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x0ec0 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x0f00 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x0f40 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x0f80 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x0fc0 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+Introducing contestants...
+* Player 1, weighing 614 bytes, "Ultima" ("
+Je suis l'Alpha
+Je suis Le destructeur
+Je suis Omega
+Je suis La raison de ta peur
+
+Ta puissance est ma puissance
+Ton pouvoir est sans défence
+Ma seule crainte est ta faiblesse
+De mourrir d'une maladresse
+
+Les plus puissants combattants
+S'ront détruits d'un coup de dent
+Les plus vifs et combatifs
+S'ront finis d'un coup de griffe
+
+Je suis un puits sans fond
+Qui t'aspire dans ses tréfonds
+La plaie sanglante et cruelle
+Qui déchire tes organes frèles
+
+La haine pur qui se diffuse
+Sur ton code et le déturit
+Prétrifié comme la méduse
+Tu vivras son agonie
+
+un poison ronge ton âme
+L'obscurité noie tes flammes
+Une mort glacée se répends
+Le long d' tes veines et ton sang
+
+Mais déjà tu m'appartients
+Ton destin est dans mes mains
+Pleur de rage, pleur de douleur
+Noie tes larmes dans ton aigreur
+
+Que mes attaques te pénêtre
+A moi tu ne peux que te soumettre
+Qu' ma puissance abime ton etre
+Que j' te brise, petite soubrette
+
+Mon pouvoir aspire tes forces
+Aspire ton ame, et se renforce
+Ma présence est ta souffrance
+Ma raison d'etre ta défaite
+
+Imposer, gifler tes tactiques
+Abuser d' ton code heuristique
+Dénuder ton code d'ses méthodes
+Déchirer toutes tes ruses informes
+
+Contraindre ton code aux pires outrages
+Forcer, détruire tes stratégies
+Tromper, corrompre tes algorithmes
+Vicier, souiller tes procédés
+
+Jusqu'a mon souffle je suis letal
+Meme mon regard détruit ton âme
+T'emporte au vent comme une pétale
+Puis te consumme un vrai lance flammes
+
+Tu viens pour ton exécution
+Pas un combat une pendaison
+Pas un proces, une mise a mort
+Toi le taureau, moi l'matador
+
+A tout jamais le championnat
+Lesté de mon ADN, changera
+Inséminé dans l'corps de mes proies
+Etrange héritage sortira
+Nées du tréfond de tes abats
+
+Mais viens ici, entre mes griffes
+Entre mes cros, t'ecorcher vif
+Pour me repaitre de tes lambeaux
+Pour te détruire en quelques mots
+
+Abandonne tout idée osée,
+de m'échapper, de me défier
+car les roles sont deja figées.
+Je Suis le Prédateur, tu est Ma Proie") !
+0x0000 : 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 
+0x0040 : 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 
+0x0080 : 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 
+0x00c0 : 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 
+0x0100 : 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x0140 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x0180 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x01c0 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x0200 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x0240 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x0280 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x02c0 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x0300 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x0340 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x0380 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x03c0 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x0400 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x0440 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x0480 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x04c0 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x0500 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x0540 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x0580 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x05c0 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x0600 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x0640 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x0680 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x06c0 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x0700 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x0740 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x0780 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x07c0 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x0800 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x0840 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x0880 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x08c0 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x0900 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x0940 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x0980 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x09c0 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x0a00 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x0a40 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x0a80 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x0ac0 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x0b00 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x0b40 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x0b80 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x0bc0 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x0c00 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x0c40 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x0c80 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x0cc0 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x0d00 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x0d40 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x0d80 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x0dc0 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 
+0x0e00 : 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 
+0x0e40 : ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 
+0x0e80 : 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 
+0x0ec0 : 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff 
+0x0f00 : ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 0b 54 05 04 06 01 ff ff ff ff 06 09 05 04 06 01 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 
+0x0f40 : 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 
+0x0f80 : 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 
+0x0fc0 : 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 01 ff 0b 54 05 04 06 09 09 09 
+Introducing contestants...
+* Player 1, weighing 614 bytes, "Ultima" ("
+Je suis l'Alpha
+Je suis Le destructeur
+Je suis Omega
+Je suis La raison de ta peur
+
+Ta puissance est ma puissance
+Ton pouvoir est sans défence
+Ma seule crainte est ta faiblesse
+De mourrir d'une maladresse
+
+Les plus puissants combattants
+S'ront détruits d'un coup de dent
+Les plus vifs et combatifs
+S'ront finis d'un coup de griffe
+
+Je suis un puits sans fond
+Qui t'aspire dans ses tréfonds
+La plaie sanglante et cruelle
+Qui déchire tes organes frèles
+
+La haine pur qui se diffuse
+Sur ton code et le déturit
+Prétrifié comme la méduse
+Tu vivras son agonie
+
+un poison ronge ton âme
+L'obscurité noie tes flammes
+Une mort glacée se répends
+Le long d' tes veines et ton sang
+
+Mais déjà tu m'appartients
+Ton destin est dans mes mains
+Pleur de rage, pleur de douleur
+Noie tes larmes dans ton aigreur
+
+Que mes attaques te pénêtre
+A moi tu ne peux que te soumettre
+Qu' ma puissance abime ton etre
+Que j' te brise, petite soubrette
+
+Mon pouvoir aspire tes forces
+Aspire ton ame, et se renforce
+Ma présence est ta souffrance
+Ma raison d'etre ta défaite
+
+Imposer, gifler tes tactiques
+Abuser d' ton code heuristique
+Dénuder ton code d'ses méthodes
+Déchirer toutes tes ruses informes
+
+Contraindre ton code aux pires outrages
+Forcer, détruire tes stratégies
+Tromper, corrompre tes algorithmes
+Vicier, souiller tes procédés
+
+Jusqu'a mon souffle je suis letal
+Meme mon regard détruit ton âme
+T'emporte au vent comme une pétale
+Puis te consumme un vrai lance flammes
+
+Tu viens pour ton exécution
+Pas un combat une pendaison
+Pas un proces, une mise a mort
+Toi le taureau, moi l'matador
+
+A tout jamais le championnat
+Lesté de mon ADN, changera
+Inséminé dans l'corps de mes proies
+Etrange héritage sortira
+Nées du tréfond de tes abats
+
+Mais viens ici, entre mes griffes
+Entre mes cros, t'ecorcher vif
+Pour me repaitre de tes lambeaux
+Pour te détruire en quelques mots
+
+Abandonne tout idée osée,
+de m'échapper, de me défier
+car les roles sont deja figées.
+Je Suis le Prédateur, tu est Ma Proie") !
+Contestant 1, "Ultima", has won !

@@ -1,0 +1,22 @@
+--- championship/demo_Kappa	2018-06-20 15:24:16.000000000 +0200
++++ championship/vm_Kappa	2018-06-20 15:39:35.000000000 +0200
+@@ -168,14 +168,14 @@
+ 0x0840 : 03 70 03 ff 09 ff df 03 ff ff 01 00 02 00 f9 03 70 03 ff 09 ff df 03 ff ff 01 00 02 00 f9 03 70 03 ff ff 01 00 70 03 ff 01 00 02 00 f9 03 70 03 ff 09 ff df 03 ff ff 01 00 02 00 f9 03 70 03 ff 
+ 0x0880 : 09 ff df 03 ff ff 01 00 02 00 f9 03 70 03 ff 09 ff df 03 ff ff 01 00 02 00 f9 03 70 03 ff 09 ff df 03 ff ff 01 00 02 00 f9 03 70 03 ff 09 ff df 03 ff ff 01 00 02 00 f9 03 70 03 ff 09 ff df 03 
+ 0x08c0 : ff ff 01 00 02 00 f9 03 70 03 ff 09 ff df 03 ff ff 01 00 02 00 f9 03 70 03 ff 09 ff df 03 ff ff 01 00 02 00 f9 03 70 03 ff 09 ff df 03 ff ff 01 00 02 00 f9 0f 03 70 03 09 ff df 03 ff ff 03 70 
+-0x0900 : 02 00 0f 03 70 03 ff ff 01 00 ff 0f 03 70 03 02 00 0f 03 70 03 ff ff 01 00 ff 0f 03 70 03 03 00 0f 03 70 03 ff ff 01 ff ff 0f 03 70 03 02 00 0f 03 70 03 ff ff 01 ff ff 0f 03 70 03 02 00 0f 03 
+-0x0940 : 70 03 ff ff 01 ff ff 0f 03 70 03 02 00 0f 03 70 03 ff ff 01 ff ff 0f 03 70 03 02 00 0f 03 70 03 ff ff 01 ff ff 0f 03 70 03 02 00 0f 03 70 03 ff ff 01 ff ff 0f 03 70 03 02 00 0f 03 70 03 ff ff 
+-0x0980 : 01 ff ff 0f 03 70 03 02 00 0f 03 70 03 ff ff 01 ff ff 0f 03 70 03 02 00 0f 03 70 03 ff ff 01 ff ff 13 03 70 03 03 00 0f 03 70 03 ff ff 01 ff ff 13 03 70 03 02 00 0f 03 70 03 ff ff 01 ff ff 0f 
+-0x09c0 : 03 70 03 03 00 0f 03 70 03 ff ff 01 00 ff 0f 03 70 03 02 00 0f 03 70 03 ff ff 01 00 ff f6 03 70 03 03 00 0f 03 70 03 ff ff 01 00 ff f6 03 70 03 70 03 0f 03 70 03 ff ff 01 00 ff ff ff 01 00 02 
++0x0900 : 02 00 0f 03 70 03 ff ff 01 00 ff fd 03 70 03 02 00 0f 03 70 03 ff ff 01 00 ff fd 03 70 03 03 00 0f 03 70 03 ff ff 01 ff ff fd 03 70 03 02 00 0f 03 70 03 ff ff 01 ff ff fd 03 70 03 02 00 0f 03 
++0x0940 : 70 03 ff ff 01 ff ff fd 03 70 03 02 00 0f 03 70 03 ff ff 01 ff ff fd 03 70 03 02 00 0f 03 70 03 ff ff 01 ff ff fd 03 70 03 02 00 0f 03 70 03 ff ff 01 ff ff fd 03 70 03 02 00 0f 03 70 03 ff ff 
++0x0980 : 01 ff ff 1a 03 70 03 02 00 0f 03 70 03 ff ff 01 ff ff 1a 03 70 03 02 00 0f 03 70 03 ff ff 01 ff ff 13 03 70 03 03 00 0f 03 70 03 ff ff 01 ff ff 13 03 70 03 02 00 0f 03 70 03 ff ff 01 ff ff 1a 
++0x09c0 : 03 70 03 03 00 0f 03 70 03 ff ff 01 00 ff 0f 03 70 03 02 00 0f 03 70 03 ff ff 01 00 ff f6 03 70 03 03 00 fd 03 70 03 ff ff 01 00 ff f6 03 70 03 70 03 0f 03 70 03 ff ff 01 00 ff ff ff 01 00 02 
+ 0x0a00 : 00 f9 03 70 03 ff 09 ff df 03 ff ff 01 00 02 00 f9 03 70 03 ff 09 ff df 03 ff ff 01 00 02 00 f9 03 70 03 ff 09 ff df 03 ff ff 01 00 02 00 f9 03 70 03 ff 09 ff df 03 ff ff 01 00 02 00 f9 03 70 
+ 0x0a40 : 03 ff 09 ff df 03 ff ff 01 00 02 00 f9 03 70 03 ff 09 ff df 03 ff ff 01 00 02 00 f9 03 70 03 ff 09 ff df 03 ff ff 01 00 02 00 f9 03 70 03 ff 09 ff df 03 ff ff 01 00 02 00 f9 03 70 03 ff 09 ff 
+ 0x0a80 : df 03 ff ff 01 00 02 00 f9 03 70 03 ff 09 ff df 03 ff ff 01 00 02 00 f9 03 70 03 ff 09 ff df 03 ff ff 01 00 02 00 f9 03 70 03 ff 09 ff df 03 ff ff 01 00 02 00 f9 03 70 03 ff 09 ff df 03 ff ff 
+-0x0ac0 : 0f 03 70 03 f9 03 70 03 ff 09 ff df 03 ff ff 01 00 02 00 f9 03 70 03 ff 09 ff df 03 ff ff 01 00 02 00 f9 03 70 03 ff 09 ff df 03 ff ff 03 70 02 00 0f 03 70 03 ff ff 01 00 ff ee 03 70 03 02 00 
++0x0ac0 : 0f 03 70 03 f9 03 70 03 ff 09 ff df 03 ff ff 01 00 02 00 f9 03 70 03 ff 09 ff df 03 ff ff 01 00 02 00 f9 03 70 03 ff 09 ff df 03 ff ff 03 70 02 00 0f fd 03 70 03 ff 01 00 ff ee fd 03 70 03 00 
+ 0x0b00 : 0f 03 70 03 ff ff 01 00 ff ff ff 03 70 02 00 0f 03 70 03 ff ff 01 ff ff ee 03 70 03 02 00 0f 03 70 03 ff ff 01 ff ff ff ff 03 70 02 00 0f 03 70 03 ff ff 01 00 ff f9 03 70 f9 03 70 03 03 70 03 
+ 0x0b40 : ff ff 01 ff ff ff ff 03 70 02 00 0f 03 70 03 ff ff 01 00 ff f9 03 70 03 02 00 0f 03 70 03 ff ff 01 ff ff ff ff 03 70 02 00 0f 03 70 03 ff ff 01 00 ff f9 03 70 03 03 00 0f 03 70 03 ff ff 01 ff 
+ 0x0b80 : ff ff ff 03 70 02 00 ee 03 70 13 03 70 03 00 ff 17 1a 03 70 03 00 0f 03 70 03 ff ff 01 00 ff ff ff ff ff 01 00 0f 03 70 03 1a 03 70 0f 03 70 03 ff ff 02 00 ee 03 70 03 ff ff 01 00 ff ff ff 03 
