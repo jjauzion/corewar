@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/10 16:23:57 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/19 17:55:39 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/21 15:57:52 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,22 @@ void	check_nbr_arg_ld(char **split)
 		;
 	if (i != 2)
 	{
-		ft_printf("Error:\n");
+		ft_printf("Error: Wrong number of arguments!\n");
+		exit(0);
+	}
+}
+
+void	check_ld_errors(t_params *params, char *arg1, char *arg2)
+{
+	if (check_type(params, arg1) != DIR_CODE &&
+			check_type(params, arg1) != IND_CODE)
+	{
+		ft_printf("Error: Wrong type of arg1 for (ld)\n");
+		exit(0);
+	}
+	if (check_type(params, arg2) != REG_CODE)
+	{
+		ft_printf("Error: Wrong type of arg2 for (ld)\n");
 		exit(0);
 	}
 }
@@ -33,25 +48,16 @@ int		check_ld_par(t_params *params, char *line, int index_line)
 	char	*arg2;
 	int		index;
 
+	(void)index_line;
 	split = ft_strsplit(line, SEPARATOR_CHAR);
 	check_nbr_arg_ld(split);
 	arg1 = ft_strtrim(split[0]);
 	arg2 = ft_strtrim(split[1]);
-	// ft_printf("LINE: [%s] | ARG1: [%s] | ARG2: [%s]\n", line, arg1, arg2);
 	index = -1;
 	while (split[++index])
 		ft_strdel(&split[index]);
 	ft_memdel((void *)&split);
-	if (check_type(params, arg1) != DIR_CODE && check_type(params, arg1) != IND_CODE)
-	{
-		ft_printf("Error: Wrong type of arg1 on instr %d\n", index_line);
-		exit(0);
-	}
-	if (check_type(params, arg2) != REG_CODE)
-	{
-		ft_printf("Error: Wrong type of arg2\n");
-		exit(0);
-	}
+	check_ld_errors(params, arg1, arg2);
 	ft_strdel(&arg1);
 	ft_strdel(&arg2);
 	return (1);

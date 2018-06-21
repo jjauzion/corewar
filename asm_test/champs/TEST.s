@@ -6,7 +6,10 @@ ici: st r3, r6
 live %4
 ic1:
 sti r3, r4, %:ici
-add r1, r2, r3  #comment
+add %1, r2, r3
+add r1, r2, r3
+add r1, r2, r3
+add r1, r2, r3
 sub r1, r2, r3
 sti r3, r4, %:ici
 and %5345677, 16, r7

@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/13 13:16:27 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/19 17:35:12 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/21 16:35:13 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,18 @@ void	fill_value_label(t_params *params)
 	while (tmp)
 	{
 		tmp->value = get_adress(params, tmp->instr);
-		// ft_printf("\e[38;5;46mname = [%s]\e[0m, ", tmp->name);
-		// ft_printf("\e[38;5;46mvalue = [%d]\e[0m\n", tmp->value);
 		tmp = tmp->next;
 	}
+}
+
+int		zip_newline(t_lexer *tmp2, int index2)
+{
+	while (tmp2 && str_is_empty(tmp2->line))
+	{
+		index2 += 1;
+		tmp2 = tmp2->next;
+	}
+	return (index2);
 }
 
 void	get_label_instr(t_params *params)
@@ -72,17 +80,12 @@ void	get_label_instr(t_params *params)
 		tmp2 = tmp;
 		if (get_label_by_pos(params, index))
 		{
-			while (tmp2 && str_is_empty(tmp2->line))
-			{
-				index2 += 1;
-				tmp2 = tmp2->next;
-			}
+			index2 = zip_newline(tmp2, index2);
 			if (str_is_empty(tmp->line))
 				get_label_by_pos(params, index)->instr = index + index2;
 			else
 				get_label_by_pos(params, index)->instr = index;
 		}
-		// ft_printf("\e[38;5;154m FILE = [%s]\e[0m\n", tmp->line);
 		tmp = tmp->next;
 		index++;
 	}

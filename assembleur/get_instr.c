@@ -6,24 +6,11 @@
 /*   By: smortier <smortier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/05 12:38:35 by smortier          #+#    #+#             */
-/*   Updated: 2018/06/19 17:57:14 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/21 16:26:54 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "asm.h"
-
-void	clear_comments(char **line)
-{
-	int		index;
-
-	index = 0;
-	if (ft_strchr(*line, COMMENT_CHAR))
-	{
-		while ((*line)[index] && (*line)[index] != COMMENT_CHAR)
-			index += 1;
-		(*line)[index] = '\0';
-	}
-}
 
 void	fill_address(t_params *params)
 {
@@ -47,10 +34,8 @@ void	get_instr(t_params *params)
 
 	index = 0;
 	file = params->lexer;
-	// ft_printf("\n");
 	while (file)
 	{
-		clear_comments(&(file->line));
 		if (!str_is_empty(file->line))
 			analyze_line(params, file->line, index);
 		file = file->next;

@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 17:42:20 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/19 17:16:16 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/21 14:20:36 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,14 +72,6 @@ int		get_program_size(t_params *params)
 	tmp = params->instr;
 	while (tmp->next)
 		tmp = tmp->next;
-	// // if (tmp->address + tmp->nbr_bytes > CHAMP_MAX_SIZE)
-	// // {
-	// // 	ft_printf("Error: the champion size is too big\n");
-	// // 	ft_printf("Max_size   = \e[32m%d\e[0m\n", CHAMP_MAX_SIZE);
-	// // 	ft_printf("Champ_size = \e[31m%d\e[0m\n", tmp->address + tmp->nbr_bytes);
-	// // 	exit(0);
-	// // }
-	// printf("prog_size : (%d)\n", tmp->address + tmp->nbr_bytes);
 	params->header.prog_size = tmp->address + tmp->nbr_bytes;
 	return (params->header.prog_size);
 }
