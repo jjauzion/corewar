@@ -6,6 +6,7 @@ CHAMPIONSHIP="championship"
 
 DIR="`dirname "${0}"`"
 TEST_DIR=""$DIR"/"$TEST_DIR""
+CHAMPIONSHIP=""$DIR"/"$CHAMPIONSHIP""
 MY_EXE=""$DIR"/"$MY_EXE""
 
 RED="\033[0;31m"
@@ -17,7 +18,6 @@ if [ "${1}" == "basic" ]; then
 else
 	BASIC=0
 fi
-
 OPT="-klcpo"
 for file in "${TEST_DIR}"/demo_*;
 do
@@ -50,7 +50,7 @@ do
 	rm $diff 2>/dev/null
 	for i in 15000 20000 25000 30000;
 	do
-		$MY_EXE $OPT $i "$test_file" >> $output
+		$MY_EXE $OPT $i $test_file >> $output
 	done
 	result="`diff -u $file $output`"
 	if ! [ -z "${result}" ]; then

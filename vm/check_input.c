@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/04 14:05:19 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/20 16:40:32 by tmerli           ###   ########.fr       */
+/*   Updated: 2018/06/21 14:40:27 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,20 @@
 
 void				*usage(char *prog_name)
 {
-	ft_printf("Usage : %s [-d N -v]\n", prog_name);
+	ft_printf("Usage : %s [-d N -dcoplk] <champion1.cor> <...>\n", prog_name);
 	ft_printf("\t -d N\t: Dumps memory after N cycles then exits\n", prog_name);
-	ft_printf("\t -v  \t: Verbose mode\n", prog_name);
 	ft_printf("\t -c  \t: Show cycles\n", prog_name);
 	ft_printf("\t -o  \t: Show operations\n", prog_name);
 	ft_printf("\t -p  \t: Show pc movement (except for jumps)\n", prog_name);
 	ft_printf("\t -l  \t: Show lives\n", prog_name);
+	ft_printf("\t -k  \t: Show deaths\n", prog_name);
 	return (NULL);
 }
 
 static t_champion	**add_champ(t_champion **champions, t_arena *arena, char *c)
 {
+	if (arena->nb_champion >= MAX_PLAYERS)
+		return (error_ptr(NULL, "Error: too many champions\n"));
 	if (!(champions = realloc(champions,
 					sizeof(t_champion*) * (arena->nb_champion + 1))))
 		return (error_ptr(NULL, "error realloc at champion creation"));
