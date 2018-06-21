@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/13 18:12:51 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/19 17:26:27 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/21 14:18:52 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	printbits_int(unsigned int v, int fd)
 	write(fd, &to_print, 1);
 	to_print = tmp[3];
 	write(fd, &to_print, 1);
-	// ft_printf("%d %d %d %d\n", tmp[0], tmp[1], tmp[2], tmp[3]);
 }
 
 void	printbits_short(unsigned int v, int fd)
@@ -45,7 +44,6 @@ void	printbits_short(unsigned int v, int fd)
 	write(fd, &to_print, 1);
 	to_print = tmp[3];
 	write(fd, &to_print, 1);
-	// ft_printf("%d %d\n", tmp[3], tmp[2]);
 }
 
 void	write_bytecode(t_params *params)

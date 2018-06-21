@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/07 18:52:59 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/20 17:46:19 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/21 15:31:07 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,6 @@ int	check_ind(t_params *params, char *arg)
 
 int	check_type(t_params *params, char *arg)
 {
-	(void)params;
 	if (check_reg(arg))
 		return (check_reg(arg));
 	else if (check_dir(params, arg))

@@ -6,29 +6,11 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 13:23:51 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/18 17:12:02 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/21 16:40:38 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "asm.h"
-
-void	check_name_label(char *str)
-{
-	int	index;
-
-	index = -1;
-	while (str[++index])
-	{
-		if (!ft_strchr(LABEL_CHARS, str[index]))
-		{
-			ft_putendl("Error");
-			ft_printf("\e[31m%s\e[0m is a wrong name for label!\n", str);
-			ft_printf("If you may only use those letters: ");
-			ft_printf("\e[32m%s\e[0m it would be great thanks!\n", LABEL_CHARS);
-			exit(1);
-		}
-	}
-}
 
 void	check_double_labels(t_params *params, char *name)
 {
@@ -41,7 +23,8 @@ void	check_double_labels(t_params *params, char *name)
 		{
 			if (ft_strcmp(tmp->name, name) == 0)
 			{
-				ft_printf("Error: Label named \e[31m%s\e[0m already exists!\n", name);
+				ft_printf("Error: Label named \e[31m%s\e[0m ", name);
+				ft_printf("already exists!\n");
 				exit(0);
 			}
 			tmp = tmp->next;
@@ -90,6 +73,24 @@ t_label	*create_label(t_params *params, int pos, char *line)
 	}
 }
 
+void	get_label_2(t_params *params, char *tmp, int index_file, int position)
+{
+	while (params->file[++index_file])
+	{
+		if (ft_strchr(params->file[index_file], LABEL_CHAR))
+		{
+			tmp = ft_strchr(params->file[index_file], LABEL_CHAR);
+			if ((tmp[1] == '\t' || tmp[1] == ' '
+			|| tmp[1] == '\n' || tmp[1] == '\0'))
+			{
+				params->label = create_label(params, position,
+					params->file[index_file]);
+			}
+		}
+		position += 1;
+	}
+}
+
 void	get_label(t_params *params)
 {
 	int		position;
@@ -108,18 +109,5 @@ void	get_label(t_params *params)
 		exit(0);
 	}
 	index_file--;
-	while (params->file[++index_file])
-	{
-		if (ft_strchr(params->file[index_file], LABEL_CHAR))
-		{
-			tmp = ft_strchr(params->file[index_file], LABEL_CHAR);
-			if ((tmp[1] == '\t' || tmp[1] == ' '
-			|| tmp[1] == '\n' || tmp[1] == '\0'))
-			{
-				params->label = create_label(params, position,
-					params->file[index_file]);
-			}
-		}
-		position += 1;
-	}
+	get_label_2(params, tmp, index_file, position);
 }

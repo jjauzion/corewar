@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/19 17:01:57 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/20 15:57:23 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/21 16:25:42 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	clear_comments(char **line)
 	int		index;
 
 	index = 0;
-	if (ft_strchr(*line, COMMENT_CHAR) || ft_strchr(*line,COMMENT_CHAR_TWO))
+	if (ft_strchr(*line, COMMENT_CHAR) || ft_strchr(*line, COMMENT_CHAR_TWO))
 	{
 		while ((*line)[index] && ((*line)[index] != COMMENT_CHAR &&
 				(*line)[index] != COMMENT_CHAR_TWO))
@@ -37,10 +37,8 @@ void	check_name_and_comment(t_params *params)
 	index = -1;
 	while (params->file[++index])
 	{
-		if (ft_strstr(params->file[index], NAME_CMD_STRING))
-			name = 1;
-		if (ft_strstr(params->file[index], COMMENT_CMD_STRING))
-			comment = 1;
+		ft_strstr(params->file[index], NAME_CMD_STRING) ? name = 1 : 0;
+		ft_strstr(params->file[index], COMMENT_CMD_STRING) ? comment = 1 : 0;
 	}
 	if (!comment)
 	{

@@ -6,7 +6,7 @@
 /*   By: smortier <smortier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 16:41:31 by smortier          #+#    #+#             */
-/*   Updated: 2018/06/20 17:32:02 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/21 16:36:06 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ t_lexer		*create_lexer(t_params *params, char *line)
 	t_lexer		*tmp;
 	t_lexer		*save;
 
-	// ft_printf("LINE :[%s]\n", line);
 	if (params->lexer == NULL)
 	{
 		tmp = new_lexer(line);
@@ -52,7 +51,6 @@ char		*parse_line(char *line)
 	int		index;
 
 	parsed = line;
-	// ft_printf("%s\n", line);
 	if (ft_strchr(line, LABEL_CHAR))
 	{
 		index = -1;
@@ -85,7 +83,8 @@ void		lexer(t_params *params)
 		if (params->file[index][ft_strlen(params->file[index]) - 1]
 			== SEPARATOR_CHAR)
 		{
-			ft_printf("Error: Line %d ends with a '%c'!\n", index + 1, SEPARATOR_CHAR);
+			ft_printf("Error: Line %d ends with a ", index + 1);
+			ft_printf("'%c'!\n", SEPARATOR_CHAR);
 			exit(0);
 		}
 		params->lexer = create_lexer(params, parse_line(params->file[index]));

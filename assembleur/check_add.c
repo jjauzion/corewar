@@ -6,13 +6,13 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 13:00:35 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/20 17:24:41 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/21 15:48:18 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "asm.h"
 
-static void	check_nbr_arg_add(char **split)
+void	check_nbr_arg_add(char **split)
 {
 	int		i;
 
@@ -21,12 +21,31 @@ static void	check_nbr_arg_add(char **split)
 		;
 	if (i != 3)
 	{
-		ft_printf("Error: Wrong number of arguments!\n");
+		ft_printf("Error: Wrong number of arguments for (add)!\n");
 		exit(0);
 	}
 }
 
-int			check_add_par(t_params *params, char *line, int index_line)
+void	check_add_errors(t_params *params, char *arg1, char *arg2, char *arg3)
+{
+	if (check_type(params, arg1) != REG_CODE)
+	{
+		ft_printf("Error: Wrong type of arg1 for (add)!\n");
+		exit(0);
+	}
+	if (check_type(params, arg2) != REG_CODE)
+	{
+		ft_printf("Error: Wrong type of arg2 for (add)!\n");
+		exit(0);
+	}
+	if (check_type(params, arg3) != REG_CODE)
+	{
+		ft_printf("Error: Wrong type of arg3 for (add)!\n");
+		exit(0);
+	}
+}
+
+int		check_add_par(t_params *params, char *line, int index_line)
 {
 	char	**split;
 	char	*arg1;
@@ -34,6 +53,7 @@ int			check_add_par(t_params *params, char *line, int index_line)
 	char	*arg3;
 	int		index;
 
+	(void)index_line;
 	split = ft_strsplit(line, SEPARATOR_CHAR);
 	check_nbr_arg_add(split);
 	arg1 = ft_strtrim(split[0]);
@@ -43,24 +63,9 @@ int			check_add_par(t_params *params, char *line, int index_line)
 	while (split[++index])
 		ft_strdel(&split[index]);
 	ft_memdel((void *)&split);
-	if (check_type(params, arg1) != REG_CODE)
-	{
-		ft_printf("Error : Wrong type of arg1 on instr %d\n", index_line);
-		exit(0);
-	}
-	if (check_type(params, arg2) != REG_CODE)
-	{
-		ft_printf("Error : Wrong type of arg2 on instr %d\n", index_line);
-		exit(0);
-	}
-	if (check_type(params, arg3) != REG_CODE)
-	{
-		ft_printf("Error : Wrong type of arg3 on instr %d\n", index_line);
-		exit(0);
-	}
+	check_add_errors(params, arg1, arg2, arg3);
 	ft_strdel(&arg1);
 	ft_strdel(&arg2);
 	ft_strdel(&arg3);
-	(void)index_line;
 	return (1);
 }

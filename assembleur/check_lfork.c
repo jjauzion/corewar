@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 13:08:18 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/15 20:16:43 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/21 16:02:42 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ int		check_lfork_par(t_params *params, char *line, int index_line)
 	ft_memdel((void *)&split);
 	if (check_type(params, arg1) != DIR_CODE)
 	{
-		ft_printf("Error : Wrong type of arg1 on instr %d (lfork)\n", index_line);
+		ft_printf("Error: Wrong type of arg1 on instr ");
+		ft_printf("%d (lfork)\n", index_line);
 		exit(0);
 	}
 	ft_strdel(&arg1);
