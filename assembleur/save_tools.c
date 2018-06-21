@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 18:24:35 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/19 17:23:32 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/21 16:42:55 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,22 @@ void	fill_arg_types(t_params *params, t_instr *tmp)
 		return ;
 	while (tmp->arg[++index])
 		tmp->arg_type[index] = check_type(params, tmp->arg[index]);
+}
+
+void	check_name_label(char *str)
+{
+	int	index;
+
+	index = -1;
+	while (str[++index])
+	{
+		if (!ft_strchr(LABEL_CHARS, str[index]))
+		{
+			ft_putendl("Error");
+			ft_printf("\e[31m%s\e[0m is a wrong name for label!\n", str);
+			ft_printf("If you may only use those letters: ");
+			ft_printf("\e[32m%s\e[0m it would be great thanks!\n", LABEL_CHARS);
+			exit(1);
+		}
+	}
 }

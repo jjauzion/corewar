@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/07 18:52:59 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/21 15:31:07 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/21 16:47:58 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ int	check_reg(char *arg)
 		}
 		if (0 < ft_atoi(arg + 1) && ft_atoi(arg + 1) <= REG_NUMBER)
 		{
-			if ((int)ft_strlen(arg) - index - 1 == ft_nbrlen(ft_atoi(arg + 1), 10))
+			if ((int)ft_strlen(arg) - index - 1 ==
+				ft_nbrlen(ft_atoi(arg + 1), 10))
 				return (REG_CODE);
 		}
 	}
@@ -89,10 +90,7 @@ int	check_type(t_params *params, char *arg)
 	if (check_reg(arg))
 		return (check_reg(arg));
 	else if (check_dir(params, arg))
-	{
-		// ft_printf("ARG: \e[33m[%s]\e[0m TYPE_CODE: \e[36m[%d]\e[0m\n", arg, check_dir(params, arg));
 		return (check_dir(params, arg));
-	}
 	else if (check_ind(params, arg))
 		return (check_ind(params, arg));
 	else

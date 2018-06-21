@@ -6,4 +6,4 @@ f3_b:
 	ldi     %0, %54, r8
 	add     r3, r3, r3
 	zjmp	%65
-	add		r17, r1, r2
+	add		r1, r1, r2
