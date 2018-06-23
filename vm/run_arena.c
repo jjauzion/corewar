@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/05 15:12:10 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/20 18:22:28 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/23 11:49:16 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ static void			exe_process(t_arena *arena)
 			process->op = read_op_code(arena, process);
 		else if (arena->cycle + arena->last_check == process->exe_cycle)
 			exec_op(process, arena);
+		display(arena, process, 0);
 		process = process->next;
 	}
 	check_cycle2die(arena);
@@ -99,6 +100,7 @@ int					run_arena(t_arena *arena)
 		show_cycle(arena, NULL, 10, 0);
 		exe_process(arena);
 		update_arena(arena);
+		display(arena, NULL, 100);
 		if (print_dump_mem(arena))
 			return (ERROR);
 		arena->cycle++;

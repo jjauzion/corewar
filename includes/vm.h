@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:02:07 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/21 14:29:25 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/23 11:48:02 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 typedef unsigned char	t_uchar;
 typedef unsigned int	t_uint;
 
-# define VALID_OPT "kcopl"
+# define VALID_OPT "kcoplv"
 # define VALID_OPT_WITH_VAL "d"
 
 typedef struct			s_option
@@ -119,6 +119,7 @@ void					show_operation(
 void					show_pc_mouvement(
 		t_arena *arena, t_process *process, int step, int dump);
 int						print_dump_mem(t_arena *arena);
+void					display(t_arena *arena, t_process *process, int step);
 
 void					change_carry(t_process *process, int value);
 int						get_address(int address);

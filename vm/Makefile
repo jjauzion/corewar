@@ -6,7 +6,7 @@
 #    By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 11:25:23 by jjauzion          #+#    #+#              #
-#    Updated: 2018/06/20 15:59:48 by jjauzion         ###   ########.fr        #
+#    Updated: 2018/06/23 11:48:35 by jjauzion         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ SRC_NAME1 = main.c \
 			op_fct_4.c \
 			op_fct_5.c \
 			verbose.c \
+			display.c \
 			read_op_code.c
 
 SRC_NAME2 = 
