@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 10:25:44 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/23 11:45:12 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/23 15:05:34 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int		print_dump_mem(t_arena *arena)
 	if (opt_is_set(arena->option->option, 'd') &&
 			arena->cycle + arena->last_check == arena->option->d_cycle)
 	{
-		print_arena(arena->mem, 0, MEM_SIZE);
+		print_arena(arena, 0, MEM_SIZE);
 		return (1);
 	}
 	return (0);

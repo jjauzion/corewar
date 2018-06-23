@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:30:29 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/20 15:29:53 by tmerli           ###   ########.fr       */
+/*   Updated: 2018/06/23 14:45:19 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ static	void	print_champions(t_arena *arena)
 {
 	int i;
 
+	if (display(arena, NULL, 0))
+		return ;
 	i = -1;
 	ft_printf("Introducing contestants...\n");
 	while (++i < arena->nb_champion)

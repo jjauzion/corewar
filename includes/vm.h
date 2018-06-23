@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:02:07 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/23 11:48:02 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/23 15:05:09 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ int						run_arena(t_arena *arena);
 t_op					*read_op_code(t_arena *arena, t_process *process);
 void					read_op(t_arena *arena, t_process *process);
 int						exec_op(t_process *process, t_arena *arena);
-void					print_arena(t_uchar *mem, size_t index, size_t length);
+void					print_arena(t_arena *arena, size_t index, size_t length);
 void					show_cycle(
 		t_arena *arena, t_process *process, int step, int dump);
 void					show_death(t_arena *arena, t_process *process);
@@ -119,7 +119,7 @@ void					show_operation(
 void					show_pc_mouvement(
 		t_arena *arena, t_process *process, int step, int dump);
 int						print_dump_mem(t_arena *arena);
-void					display(t_arena *arena, t_process *process, int step);
+int						display(t_arena *arena, t_process *process, int step);
 
 void					change_carry(t_process *process, int value);
 int						get_address(int address);
