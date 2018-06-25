@@ -6,7 +6,7 @@
 /*   By: smortier <smortier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 13:06:00 by smortier          #+#    #+#             */
-/*   Updated: 2018/06/21 16:40:36 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/25 18:25:35 by tmerli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "libft.h"
 #include "op.h"
 #include <limits.h>
+#include <fcntl.h>
 
 # define REG_BYTES				1
 # define IND_BYTES				2
