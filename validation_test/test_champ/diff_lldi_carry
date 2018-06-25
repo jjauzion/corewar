@@ -1,0 +1,564 @@
+--- ./test_champ/demo_lldi_carry	2018-06-25 16:44:25.000000000 +0200
++++ ./test_champ/vm_lldi_carry	2018-06-25 16:49:03.000000000 +0200
+@@ -80,7 +80,8 @@
+ It is now cycle 73
+ It is now cycle 74
+ It is now cycle 75
+-P    1 | zjmp -1 OK
++P    1 | zjmp -1 FAILED
++ADV 3 (0x000c -> 0x000f) 09 ff ff 
+ It is now cycle 76
+ It is now cycle 77
+ It is now cycle 78
+@@ -102,7 +103,6 @@
+ It is now cycle 94
+ It is now cycle 95
+ It is now cycle 96
+-P    1 | zjmp -1 OK
+ It is now cycle 97
+ It is now cycle 98
+ It is now cycle 99
+@@ -124,7 +124,6 @@
+ It is now cycle 115
+ It is now cycle 116
+ It is now cycle 117
+-P    1 | zjmp -1 OK
+ It is now cycle 118
+ It is now cycle 119
+ It is now cycle 120
+@@ -146,7 +145,6 @@
+ It is now cycle 136
+ It is now cycle 137
+ It is now cycle 138
+-P    1 | zjmp -1 OK
+ It is now cycle 139
+ It is now cycle 140
+ It is now cycle 141
+@@ -168,7 +166,6 @@
+ It is now cycle 157
+ It is now cycle 158
+ It is now cycle 159
+-P    1 | zjmp -1 OK
+ It is now cycle 160
+ It is now cycle 161
+ It is now cycle 162
+@@ -190,7 +187,6 @@
+ It is now cycle 178
+ It is now cycle 179
+ It is now cycle 180
+-P    1 | zjmp -1 OK
+ It is now cycle 181
+ It is now cycle 182
+ It is now cycle 183
+@@ -212,7 +208,6 @@
+ It is now cycle 199
+ It is now cycle 200
+ It is now cycle 201
+-P    1 | zjmp -1 OK
+ It is now cycle 202
+ It is now cycle 203
+ It is now cycle 204
+@@ -234,7 +229,6 @@
+ It is now cycle 220
+ It is now cycle 221
+ It is now cycle 222
+-P    1 | zjmp -1 OK
+ It is now cycle 223
+ It is now cycle 224
+ It is now cycle 225
+@@ -256,7 +250,6 @@
+ It is now cycle 241
+ It is now cycle 242
+ It is now cycle 243
+-P    1 | zjmp -1 OK
+ It is now cycle 244
+ It is now cycle 245
+ It is now cycle 246
+@@ -278,7 +271,6 @@
+ It is now cycle 262
+ It is now cycle 263
+ It is now cycle 264
+-P    1 | zjmp -1 OK
+ It is now cycle 265
+ It is now cycle 266
+ It is now cycle 267
+@@ -300,7 +292,6 @@
+ It is now cycle 283
+ It is now cycle 284
+ It is now cycle 285
+-P    1 | zjmp -1 OK
+ It is now cycle 286
+ It is now cycle 287
+ It is now cycle 288
+@@ -322,7 +313,6 @@
+ It is now cycle 304
+ It is now cycle 305
+ It is now cycle 306
+-P    1 | zjmp -1 OK
+ It is now cycle 307
+ It is now cycle 308
+ It is now cycle 309
+@@ -344,7 +334,6 @@
+ It is now cycle 325
+ It is now cycle 326
+ It is now cycle 327
+-P    1 | zjmp -1 OK
+ It is now cycle 328
+ It is now cycle 329
+ It is now cycle 330
+@@ -366,7 +355,6 @@
+ It is now cycle 346
+ It is now cycle 347
+ It is now cycle 348
+-P    1 | zjmp -1 OK
+ It is now cycle 349
+ It is now cycle 350
+ It is now cycle 351
+@@ -388,7 +376,6 @@
+ It is now cycle 367
+ It is now cycle 368
+ It is now cycle 369
+-P    1 | zjmp -1 OK
+ It is now cycle 370
+ It is now cycle 371
+ It is now cycle 372
+@@ -410,7 +397,6 @@
+ It is now cycle 388
+ It is now cycle 389
+ It is now cycle 390
+-P    1 | zjmp -1 OK
+ It is now cycle 391
+ It is now cycle 392
+ It is now cycle 393
+@@ -432,7 +418,6 @@
+ It is now cycle 409
+ It is now cycle 410
+ It is now cycle 411
+-P    1 | zjmp -1 OK
+ It is now cycle 412
+ It is now cycle 413
+ It is now cycle 414
+@@ -454,7 +439,6 @@
+ It is now cycle 430
+ It is now cycle 431
+ It is now cycle 432
+-P    1 | zjmp -1 OK
+ It is now cycle 433
+ It is now cycle 434
+ It is now cycle 435
+@@ -476,7 +460,6 @@
+ It is now cycle 451
+ It is now cycle 452
+ It is now cycle 453
+-P    1 | zjmp -1 OK
+ It is now cycle 454
+ It is now cycle 455
+ It is now cycle 456
+@@ -498,7 +481,6 @@
+ It is now cycle 472
+ It is now cycle 473
+ It is now cycle 474
+-P    1 | zjmp -1 OK
+ It is now cycle 475
+ It is now cycle 476
+ It is now cycle 477
+@@ -520,7 +502,6 @@
+ It is now cycle 493
+ It is now cycle 494
+ It is now cycle 495
+-P    1 | zjmp -1 OK
+ It is now cycle 496
+ It is now cycle 497
+ It is now cycle 498
+@@ -542,7 +523,6 @@
+ It is now cycle 514
+ It is now cycle 515
+ It is now cycle 516
+-P    1 | zjmp -1 OK
+ It is now cycle 517
+ It is now cycle 518
+ It is now cycle 519
+@@ -564,7 +544,6 @@
+ It is now cycle 535
+ It is now cycle 536
+ It is now cycle 537
+-P    1 | zjmp -1 OK
+ It is now cycle 538
+ It is now cycle 539
+ It is now cycle 540
+@@ -586,7 +565,6 @@
+ It is now cycle 556
+ It is now cycle 557
+ It is now cycle 558
+-P    1 | zjmp -1 OK
+ It is now cycle 559
+ It is now cycle 560
+ It is now cycle 561
+@@ -608,7 +586,6 @@
+ It is now cycle 577
+ It is now cycle 578
+ It is now cycle 579
+-P    1 | zjmp -1 OK
+ It is now cycle 580
+ It is now cycle 581
+ It is now cycle 582
+@@ -630,7 +607,6 @@
+ It is now cycle 598
+ It is now cycle 599
+ It is now cycle 600
+-P    1 | zjmp -1 OK
+ It is now cycle 601
+ It is now cycle 602
+ It is now cycle 603
+@@ -652,7 +628,6 @@
+ It is now cycle 619
+ It is now cycle 620
+ It is now cycle 621
+-P    1 | zjmp -1 OK
+ It is now cycle 622
+ It is now cycle 623
+ It is now cycle 624
+@@ -674,7 +649,6 @@
+ It is now cycle 640
+ It is now cycle 641
+ It is now cycle 642
+-P    1 | zjmp -1 OK
+ It is now cycle 643
+ It is now cycle 644
+ It is now cycle 645
+@@ -696,7 +670,6 @@
+ It is now cycle 661
+ It is now cycle 662
+ It is now cycle 663
+-P    1 | zjmp -1 OK
+ It is now cycle 664
+ It is now cycle 665
+ It is now cycle 666
+@@ -718,7 +691,6 @@
+ It is now cycle 682
+ It is now cycle 683
+ It is now cycle 684
+-P    1 | zjmp -1 OK
+ It is now cycle 685
+ It is now cycle 686
+ It is now cycle 687
+@@ -740,7 +712,6 @@
+ It is now cycle 703
+ It is now cycle 704
+ It is now cycle 705
+-P    1 | zjmp -1 OK
+ It is now cycle 706
+ It is now cycle 707
+ It is now cycle 708
+@@ -762,7 +733,6 @@
+ It is now cycle 724
+ It is now cycle 725
+ It is now cycle 726
+-P    1 | zjmp -1 OK
+ It is now cycle 727
+ It is now cycle 728
+ It is now cycle 729
+@@ -784,7 +754,6 @@
+ It is now cycle 745
+ It is now cycle 746
+ It is now cycle 747
+-P    1 | zjmp -1 OK
+ It is now cycle 748
+ It is now cycle 749
+ It is now cycle 750
+@@ -806,7 +775,6 @@
+ It is now cycle 766
+ It is now cycle 767
+ It is now cycle 768
+-P    1 | zjmp -1 OK
+ It is now cycle 769
+ It is now cycle 770
+ It is now cycle 771
+@@ -828,7 +796,6 @@
+ It is now cycle 787
+ It is now cycle 788
+ It is now cycle 789
+-P    1 | zjmp -1 OK
+ It is now cycle 790
+ It is now cycle 791
+ It is now cycle 792
+@@ -850,7 +817,6 @@
+ It is now cycle 808
+ It is now cycle 809
+ It is now cycle 810
+-P    1 | zjmp -1 OK
+ It is now cycle 811
+ It is now cycle 812
+ It is now cycle 813
+@@ -872,7 +838,6 @@
+ It is now cycle 829
+ It is now cycle 830
+ It is now cycle 831
+-P    1 | zjmp -1 OK
+ It is now cycle 832
+ It is now cycle 833
+ It is now cycle 834
+@@ -894,7 +859,6 @@
+ It is now cycle 850
+ It is now cycle 851
+ It is now cycle 852
+-P    1 | zjmp -1 OK
+ It is now cycle 853
+ It is now cycle 854
+ It is now cycle 855
+@@ -916,7 +880,6 @@
+ It is now cycle 871
+ It is now cycle 872
+ It is now cycle 873
+-P    1 | zjmp -1 OK
+ It is now cycle 874
+ It is now cycle 875
+ It is now cycle 876
+@@ -938,7 +901,6 @@
+ It is now cycle 892
+ It is now cycle 893
+ It is now cycle 894
+-P    1 | zjmp -1 OK
+ It is now cycle 895
+ It is now cycle 896
+ It is now cycle 897
+@@ -960,7 +922,6 @@
+ It is now cycle 913
+ It is now cycle 914
+ It is now cycle 915
+-P    1 | zjmp -1 OK
+ It is now cycle 916
+ It is now cycle 917
+ It is now cycle 918
+@@ -982,7 +943,6 @@
+ It is now cycle 934
+ It is now cycle 935
+ It is now cycle 936
+-P    1 | zjmp -1 OK
+ It is now cycle 937
+ It is now cycle 938
+ It is now cycle 939
+@@ -1004,7 +964,6 @@
+ It is now cycle 955
+ It is now cycle 956
+ It is now cycle 957
+-P    1 | zjmp -1 OK
+ It is now cycle 958
+ It is now cycle 959
+ It is now cycle 960
+@@ -1026,7 +985,6 @@
+ It is now cycle 976
+ It is now cycle 977
+ It is now cycle 978
+-P    1 | zjmp -1 OK
+ It is now cycle 979
+ It is now cycle 980
+ It is now cycle 981
+@@ -1048,7 +1006,6 @@
+ It is now cycle 997
+ It is now cycle 998
+ It is now cycle 999
+-P    1 | zjmp -1 OK
+ It is now cycle 1000
+ It is now cycle 1001
+ It is now cycle 1002
+@@ -1070,7 +1027,6 @@
+ It is now cycle 1018
+ It is now cycle 1019
+ It is now cycle 1020
+-P    1 | zjmp -1 OK
+ It is now cycle 1021
+ It is now cycle 1022
+ It is now cycle 1023
+@@ -1092,7 +1048,6 @@
+ It is now cycle 1039
+ It is now cycle 1040
+ It is now cycle 1041
+-P    1 | zjmp -1 OK
+ It is now cycle 1042
+ It is now cycle 1043
+ It is now cycle 1044
+@@ -1114,7 +1069,6 @@
+ It is now cycle 1060
+ It is now cycle 1061
+ It is now cycle 1062
+-P    1 | zjmp -1 OK
+ It is now cycle 1063
+ It is now cycle 1064
+ It is now cycle 1065
+@@ -1136,7 +1090,6 @@
+ It is now cycle 1081
+ It is now cycle 1082
+ It is now cycle 1083
+-P    1 | zjmp -1 OK
+ It is now cycle 1084
+ It is now cycle 1085
+ It is now cycle 1086
+@@ -1158,7 +1111,6 @@
+ It is now cycle 1102
+ It is now cycle 1103
+ It is now cycle 1104
+-P    1 | zjmp -1 OK
+ It is now cycle 1105
+ It is now cycle 1106
+ It is now cycle 1107
+@@ -1180,7 +1132,6 @@
+ It is now cycle 1123
+ It is now cycle 1124
+ It is now cycle 1125
+-P    1 | zjmp -1 OK
+ It is now cycle 1126
+ It is now cycle 1127
+ It is now cycle 1128
+@@ -1202,7 +1153,6 @@
+ It is now cycle 1144
+ It is now cycle 1145
+ It is now cycle 1146
+-P    1 | zjmp -1 OK
+ It is now cycle 1147
+ It is now cycle 1148
+ It is now cycle 1149
+@@ -1224,7 +1174,6 @@
+ It is now cycle 1165
+ It is now cycle 1166
+ It is now cycle 1167
+-P    1 | zjmp -1 OK
+ It is now cycle 1168
+ It is now cycle 1169
+ It is now cycle 1170
+@@ -1246,7 +1195,6 @@
+ It is now cycle 1186
+ It is now cycle 1187
+ It is now cycle 1188
+-P    1 | zjmp -1 OK
+ It is now cycle 1189
+ It is now cycle 1190
+ It is now cycle 1191
+@@ -1268,7 +1216,6 @@
+ It is now cycle 1207
+ It is now cycle 1208
+ It is now cycle 1209
+-P    1 | zjmp -1 OK
+ It is now cycle 1210
+ It is now cycle 1211
+ It is now cycle 1212
+@@ -1290,7 +1237,6 @@
+ It is now cycle 1228
+ It is now cycle 1229
+ It is now cycle 1230
+-P    1 | zjmp -1 OK
+ It is now cycle 1231
+ It is now cycle 1232
+ It is now cycle 1233
+@@ -1312,7 +1258,6 @@
+ It is now cycle 1249
+ It is now cycle 1250
+ It is now cycle 1251
+-P    1 | zjmp -1 OK
+ It is now cycle 1252
+ It is now cycle 1253
+ It is now cycle 1254
+@@ -1334,7 +1279,6 @@
+ It is now cycle 1270
+ It is now cycle 1271
+ It is now cycle 1272
+-P    1 | zjmp -1 OK
+ It is now cycle 1273
+ It is now cycle 1274
+ It is now cycle 1275
+@@ -1356,7 +1300,6 @@
+ It is now cycle 1291
+ It is now cycle 1292
+ It is now cycle 1293
+-P    1 | zjmp -1 OK
+ It is now cycle 1294
+ It is now cycle 1295
+ It is now cycle 1296
+@@ -1378,7 +1321,6 @@
+ It is now cycle 1312
+ It is now cycle 1313
+ It is now cycle 1314
+-P    1 | zjmp -1 OK
+ It is now cycle 1315
+ It is now cycle 1316
+ It is now cycle 1317
+@@ -1400,7 +1342,6 @@
+ It is now cycle 1333
+ It is now cycle 1334
+ It is now cycle 1335
+-P    1 | zjmp -1 OK
+ It is now cycle 1336
+ It is now cycle 1337
+ It is now cycle 1338
+@@ -1422,7 +1363,6 @@
+ It is now cycle 1354
+ It is now cycle 1355
+ It is now cycle 1356
+-P    1 | zjmp -1 OK
+ It is now cycle 1357
+ It is now cycle 1358
+ It is now cycle 1359
+@@ -1444,7 +1384,6 @@
+ It is now cycle 1375
+ It is now cycle 1376
+ It is now cycle 1377
+-P    1 | zjmp -1 OK
+ It is now cycle 1378
+ It is now cycle 1379
+ It is now cycle 1380
+@@ -1466,7 +1405,6 @@
+ It is now cycle 1396
+ It is now cycle 1397
+ It is now cycle 1398
+-P    1 | zjmp -1 OK
+ It is now cycle 1399
+ It is now cycle 1400
+ It is now cycle 1401
+@@ -1488,7 +1426,6 @@
+ It is now cycle 1417
+ It is now cycle 1418
+ It is now cycle 1419
+-P    1 | zjmp -1 OK
+ It is now cycle 1420
+ It is now cycle 1421
+ It is now cycle 1422
+@@ -1510,7 +1447,6 @@
+ It is now cycle 1438
+ It is now cycle 1439
+ It is now cycle 1440
+-P    1 | zjmp -1 OK
+ It is now cycle 1441
+ It is now cycle 1442
+ It is now cycle 1443
+@@ -1532,7 +1468,6 @@
+ It is now cycle 1459
+ It is now cycle 1460
+ It is now cycle 1461
+-P    1 | zjmp -1 OK
+ It is now cycle 1462
+ It is now cycle 1463
+ It is now cycle 1464
+@@ -1554,7 +1489,6 @@
+ It is now cycle 1480
+ It is now cycle 1481
+ It is now cycle 1482
+-P    1 | zjmp -1 OK
+ It is now cycle 1483
+ It is now cycle 1484
+ It is now cycle 1485
+@@ -1576,7 +1510,6 @@
+ It is now cycle 1501
+ It is now cycle 1502
+ It is now cycle 1503
+-P    1 | zjmp -1 OK
+ It is now cycle 1504
+ It is now cycle 1505
+ It is now cycle 1506
+@@ -1598,7 +1531,6 @@
+ It is now cycle 1522
+ It is now cycle 1523
+ It is now cycle 1524
+-P    1 | zjmp -1 OK
+ It is now cycle 1525
+ It is now cycle 1526
+ It is now cycle 1527

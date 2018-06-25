@@ -1,0 +1,28 @@
+--- ./test_champ/demo_test_limit	2018-06-25 16:44:26.000000000 +0200
++++ ./test_champ/vm_test_limit	2018-06-25 16:49:35.000000000 +0200
+@@ -1031,7 +1031,8 @@
+ It is now cycle 996
+ It is now cycle 997
+ It is now cycle 998
+-P    1 | zjmp 257 OK
++P    1 | zjmp 257 FAILED
++ADV 3 (0x0051 -> 0x0054) 09 01 01 
+ It is now cycle 999
+ It is now cycle 1000
+ It is now cycle 1001
+@@ -1055,6 +1056,8 @@
+ It is now cycle 1019
+ It is now cycle 1020
+ It is now cycle 1021
++P    1 | live 16777216
++ADV 5 (0x0061 -> 0x0066) 01 01 00 00 00 
+ It is now cycle 1022
+ It is now cycle 1023
+ It is now cycle 1024
+@@ -3107,5 +3110,5 @@
+ It is now cycle 3071
+ It is now cycle 3072
+ Process 2 hasn't lived for 3062 cycles (CTD 1536)
+-Process 1 hasn't lived for 3062 cycles (CTD 1536)
++Process 1 hasn't lived for 2051 cycles (CTD 1536)
+ Contestant 1, "tester", has won !
