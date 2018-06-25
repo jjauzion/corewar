@@ -38,6 +38,7 @@ int		display(t_arena *arena, t_process *process, int step)
 		while (++i < arena->nb_champion)
 			ft_printf("champion %d has lived %d since last check\n",
 					i, arena->champions[i]->nb_live);
+		ft_printf("Arena_memory :\n");
 		print_arena(arena, 0, MEM_SIZE);
 		ft_printf("--------------------------------------------------------\n");
 	}
