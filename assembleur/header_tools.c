@@ -25,7 +25,7 @@ void	store_name(t_params *params, char *line)
 	{
 		params->header.prog_name[++index_name] = line[index_line];
 	}
-	while (++index_name < COMMENT_LENGTH)
+	while (++index_name <= PROG_NAME_LENGTH)
 		params->header.prog_name[index_name] = 0;
 }
 
@@ -40,7 +40,7 @@ void	store_comment(t_params *params, char *line)
 		;
 	while (line[++index_line] && line[index_line] != '"')
 		params->header.comment[++index_comment] = line[index_line];
-	while (++index_comment < COMMENT_LENGTH)
+	while (++index_comment <= COMMENT_LENGTH)
 		params->header.comment[index_comment] = 0;
 }
 
@@ -80,7 +80,9 @@ void	print_header(int file, t_params *params)
 {
 	get_header(params);
 	printbits_int(COREWAR_EXEC_MAGIC, file);
-	write(file, params->header.prog_name, PROG_NAME_LENGTH + 4);
+	write(file, params->header.prog_name, PROG_NAME_LENGTH);
+	write(file, "\0\0\0\0", 4);
 	printbits_int(get_program_size(params), file);
-	write(file, params->header.comment, COMMENT_LENGTH + 4);
+	write(file, params->header.comment, COMMENT_LENGTH);
+	write(file, "\0\0\0\0", 4);
 }

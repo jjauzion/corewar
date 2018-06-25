@@ -114,5 +114,5 @@ int		main(int ac, char **av)
 	get_file(&params, fd, -1);
 	close(fd);
 	assembler(&params, ac);
-	return (0);
+	exit(0);
 }

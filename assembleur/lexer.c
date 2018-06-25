@@ -19,7 +19,7 @@ t_lexer		*new_lexer(char *line)
 
 	if (!(new_lexer = (t_lexer *)ft_memalloc(sizeof(t_lexer))))
 		return (NULL);
-	new_lexer->line = line;
+	new_lexer->line = ft_strdup(line);
 	return (new_lexer);
 }
 
