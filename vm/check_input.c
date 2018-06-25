@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/04 14:05:19 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/21 14:40:27 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/25 18:01:08 by tmerli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,10 @@ static t_champion	**add_champ(t_champion **champions, t_arena *arena, char *c)
 		return (error_ptr(NULL, "error realloc at champion creation"));
 	if (!(champions[arena->nb_champion] = read_champ(c)))
 	{
-		while (arena->nb_champion >= 0)
+		while (arena->nb_champion > 0)
 		{
-			free(champions[arena->nb_champion]);
+			free(champions[arena->nb_champion - 1]->code);
+			free(champions[arena->nb_champion - 1]);
 			(arena->nb_champion)--;
 		}
 		free(champions);
