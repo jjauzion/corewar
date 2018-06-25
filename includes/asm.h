@@ -58,7 +58,7 @@ typedef struct		s_params // The main struct, the one we put in each functions of
 	char		**file;
 	int			file_len;
 	char		*file_name;
-	header_t	header;
+	t_header	header;
 	t_lexer		*lexer;
 	t_label		*label;
 	t_instr		*instr;

@@ -70,25 +70,27 @@ end
 
 function        refresh_arena()
     love.graphics.setCanvas(canvas_arena)
+    love.graphics.clear()
     -- love.graphics.setColor(0, 1, 0.5, 0.4)
     love.graphics.setColor(0, 1, 1, 1)
     love.graphics.rectangle('line', 0, 0, canvas_arena:getWidth(), canvas_arena:getHeight())
-    -- love.graphics.setColor(0, 1, 1, 1)
-    -- for y=1, canvas_arena:getHeight() do
-        -- for x=1, canvas_arena:getWidth() do
-            -- love.graphics.rectangle("line", y * h_box, x * w_box, h_box, w_box)
-        -- end
-    -- end
+    love.graphics.setColor(0, 1, 1, 0.7)
+    for y=1, canvas_arena:getHeight(), h_box + 1 do
+        for x=1, canvas_arena:getWidth(), w_box + 1 do
+            -- io.write("y = " .. y .. " && x = " .. x .. '\n')
+            love.graphics.rectangle("line", x, y, w_box, h_box)
+        end
+    end
     love.graphics.setCanvas()
 end
 
 function        draw_arena()
-    love.graphics.draw(canvas_arena, 30, w_height / 2 - 300)
+    love.graphics.draw(canvas_arena, 30, w_height / 6)
 end
 
 function init_canvas()
     canvas_all_players = love.graphics.newCanvas(w_widht - 10, w_height / 7 - 10) --uselss pour le moment
-    canvas_arena = love.graphics.newCanvas(w_widht - 60 - 30, w_height  - (w_height / 3) - 50)
+    canvas_arena = love.graphics.newCanvas(w_widht - 60 - 30, round(w_height  - (w_height / 3), 0))
     for index=0, nbr_champs do
         canvas_player[index] = love.graphics.newCanvas(canvas_all_players:getWidth() / nbr_champs,
                                                         canvas_all_players:getHeight())
@@ -106,15 +108,19 @@ end
 
 function get_box_size()
     local arena_h = (canvas_arena:getHeight())
-    local box_surface = (arena_h / 64)
-    return box_surface, box_surface
+    local arena_w = (canvas_arena:getWidth())
+    local box_h = (arena_h / 64)
+    local box_w = (arena_w / 64)
+    return round(box_w, 0), round(box_h, 0)
 end
 
 -------MAIN
 
 function        love.load()
-    love.window.setFullscreen(true)
+    love.window.setMode(2560, 1440, {resizable=false, vsync=false, minwidth=400, minheight=300})
+    success = love.window.setFullscreen(true)
     w_widht, w_height = love.graphics.getDimensions()
+    io.write(w_widht .. '\n' .. w_height .. '\n')
     player_name = {}
     player_com = {}
     canvas_player = {}
@@ -130,8 +136,7 @@ function        love.load()
 end
 
 function        love.update()
-    refresh_arena()
-    refresh_players()
+
 end
 
 function        love.draw()
@@ -142,6 +147,8 @@ function        love.draw()
     -- love.graphics.print(round(love.timer.getTime() - start_time, 0), 10, 70)
     --DRAW LES DEUX RECTANGLES
     love.graphics.setColor(1, 1, 1)
+    refresh_arena()
+    refresh_players()
     draw_arena()
     draw_player()
     -- love.graphics.line(w_widht / 2 , w_height / 2, w_widht / 2, w_height)
