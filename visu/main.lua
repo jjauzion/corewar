@@ -32,11 +32,12 @@ end
 
 function print_title()
     love.graphics.setFont(font_title)
-    love.graphics.print("COREWAR", w_widht / 2, 30)
+	local lag_title_w = font_title:getWidth("COREWAR")
+    love.graphics.print("COREWAR", 10, 0)
     local lag_title = font_title:getHeight("COREWAR")
     love.graphics.setFont(font_info)
     love.graphics.setColor(1, 0.5, 0.5, 0.7)
-    love.graphics.print("By smortier, jjauzion, theo, simon", w_widht / 2, 30 + lag_title)
+    love.graphics.print("By smortier, jjauzion, theo, simon", 10, lag_title)
     love.graphics.setColor(255, 255, 255)
 end
 
@@ -74,23 +75,31 @@ function        refresh_arena()
     -- love.graphics.setColor(0, 1, 0.5, 0.4)
     love.graphics.setColor(0, 1, 1, 1)
     love.graphics.rectangle('line', 0, 0, canvas_arena:getWidth(), canvas_arena:getHeight())
-    love.graphics.setColor(0, 1, 1, 0.7)
-    for y=1, canvas_arena:getHeight(), h_box + 1 do
-        for x=1, canvas_arena:getWidth(), w_box + 1 do
+    love.graphics.setColor(0, 1, 0, 1)
+	local index = 1
+    for y=1, 64 * h_box, h_box do
+        for x=1, 64 * w_box, w_box do
             -- io.write("y = " .. y .. " && x = " .. x .. '\n')
-            love.graphics.rectangle("line", x, y, w_box, h_box)
+			love.graphics.setFont(font_normal)
+			if (data[index] ~= "00 ") then
+				love.graphics.print(data[index], x + w_box / 2 - 3, y - 3)
+			end
+			-- io.write(index .. '\n')
+			index = index + 1
+			-- love.graphics.setColor(0, 1, 1, 0.5)
+            -- love.graphics.rectangle('line', x, y, w_box, h_box)
         end
     end
     love.graphics.setCanvas()
 end
 
 function        draw_arena()
-    love.graphics.draw(canvas_arena, 30, w_height / 6)
+    love.graphics.draw(canvas_arena, 30, w_height / 6 - 100)
 end
 
 function init_canvas()
     canvas_all_players = love.graphics.newCanvas(w_widht - 10, w_height / 7 - 10) --uselss pour le moment
-    canvas_arena = love.graphics.newCanvas(w_widht - 60 - 30, round(w_height  - (w_height / 3), 0))
+    canvas_arena = love.graphics.newCanvas(w_widht - 60 - 30, round(w_height  - (w_height / 3) + 100, 0))
     for index=0, nbr_champs do
         canvas_player[index] = love.graphics.newCanvas(canvas_all_players:getWidth() / nbr_champs,
                                                         canvas_all_players:getHeight())
@@ -98,6 +107,7 @@ function init_canvas()
 end
 
 function init_fonts()
+	font_normal = love.graphics.newFont()
     font_title = love.graphics.newFont("font2.ttf", 60)
     font_info = love.graphics.newFont("font2.ttf", 20)
     --Player canvas font
@@ -111,7 +121,7 @@ function get_box_size()
     local arena_w = (canvas_arena:getWidth())
     local box_h = (arena_h / 64)
     local box_w = (arena_w / 64)
-    return round(box_w, 0), round(box_h, 0)
+    return box_w, box_h
 end
 
 -------MAIN
@@ -127,6 +137,7 @@ function        love.load()
     init_fonts()
     get_init_values()
     init_canvas()
+	data = {}
     w_box, h_box = get_box_size()
     io.write(arena_s, '\n', w_box,'\n', h_box, '\n')
     start_time = love.timer.getTime()
@@ -136,14 +147,34 @@ function        love.load()
 end
 
 function        love.update()
-
+	line = io.read("*line")
+	while (line ~= "Arena_memory :") do
+		line = io.read("*line")
+		if (string.sub(line, 1, 3) == "cyc") then
+			io.write(line .. '\n')
+		end
+	end
+	local index = 1
+	while (index <= 4096) do
+		line = io.read("*line")
+		for i = 1, (64 * 3) - 1, 3 do
+			data[index] = string.sub(line, i, i + 2)
+			-- io.write("data[" .. index .. "] = " .. data[index] .. '\n')
+			-- io.write(line)
+			index = index + 1
+		end
+		-- io.write(line .. '\n')
+	end
+	-- io.write(line .. '\n')
 end
 
 function        love.draw()
     print_title()
-    love.graphics.print('Press Escape to Leave', 10, 10)
-    love.graphics.print("Current FPS: "..tostring(love.timer.getFPS( )), 10, 30)
-    love.graphics.print("Time since begin : " .. round(love.timer.getTime() - start_time, 0) .. " seconds", 10, 70)
+    love.graphics.print('Press Escape to Leave', w_widht - font_info:getWidth("Press Escape to Leave") - 10, 10)
+    love.graphics.print("Current FPS: "..tostring(love.timer.getFPS( )), w_widht - font_info:getWidth("Current FPS: "..tostring(love.timer.getFPS( ))) - 10, 30)
+    love.graphics.print("Time since begin : " .. round(love.timer.getTime() - start_time, 0) .. " seconds", w_widht - font_info:getWidth("Time since begin : " .. round(love.timer.getTime() - start_time, 0) .. " seconds") - 10, 70)
+	love.graphics.setFont(font_title)
+	love.graphics.print("25 BONUS POINTS", w_widht / 2 - (font_title:getWidth("25 BONUS POINTS") / 2), 10)
     -- love.graphics.print(round(love.timer.getTime() - start_time, 0), 10, 70)
     --DRAW LES DEUX RECTANGLES
     love.graphics.setColor(1, 1, 1)
