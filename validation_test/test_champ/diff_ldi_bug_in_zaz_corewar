@@ -1,5 +1,5 @@
---- ./test_champ/demo_ldi_bug_in_zaz_corewar	2018-06-25 16:44:24.000000000 +0200
-+++ ./test_champ/vm_ldi_bug_in_zaz_corewar	2018-06-25 16:48:52.000000000 +0200
+--- ./test_champ/demo_ldi_bug_in_zaz_corewar	2018-06-26 13:53:41.000000000 +0200
++++ ./test_champ/vm_ldi_bug_in_zaz_corewar	2018-06-26 14:17:44.000000000 +0200
 @@ -26,7 +26,7 @@
  It is now cycle 24
  It is now cycle 25

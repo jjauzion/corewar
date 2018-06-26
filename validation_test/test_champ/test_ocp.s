@@ -1,9 +1,8 @@
-.name "test ocp"
-.comment ""
+.name "tester"
+.comment "test st"
 
-live %0
-ld %104, r2
-fork %:la
-st r2, 3
-la:
-sti r1, %0, %50
+ld %105906177, r2
+; ld %25862, r3
+
+; st r3, 66
+st r2, 58

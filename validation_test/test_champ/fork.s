@@ -1,9 +1,7 @@
-.name "fork"
-.comment "fork"
+.name "tester"
+.comment "test fork"
 
-fork %:la
-la:
-sti r1,500,%500
-sti r1,500,%500
-live %2
-fork %:la
+
+fork %65535
+
+#this will created the same process at the same place

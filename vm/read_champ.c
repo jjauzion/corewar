@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 17:25:23 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/25 15:59:37 by tmerli           ###   ########.fr       */
+/*   Updated: 2018/06/26 14:15:43 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,13 +73,15 @@ t_champion			*read_champ(char *file)
 	if (ret < (2 * nb_byte + PROG_NAME_LENGTH + COMMENT_LENGTH + 8))
 		return (error_ptr(champion, "File is too small to be a champion\n"));
 	close(fd);
-	champion->header.magic = mem2int(buff, 0, S_UINT);
+	if ((champion->header.magic = mem2int(buff, 0, S_UINT)) != COREWAR_EXEC_MAGIC)
+		return (error_ptr(champion, "Wrong magic number\n"));
 	if (!check_buf(champion, buff, nb_byte))
 		return (NULL);
+	if (ret - (2 * nb_byte + PROG_NAME_LENGTH + COMMENT_LENGTH + 8) != (int)champion->header.prog_size)
+		return (error_ptr(champion, "Champion's code differ from header inforamtion\n"));
 	if (!(champion->code = (t_uchar*)ft_memalloc(champion->header.prog_size)))
 		return (error_ptr(champion, "malloc error\n"));
 	ft_memcpy(champion->code, &buff[nb_byte * 2 + PROG_NAME_LENGTH +
-			1 + COMMENT_LENGTH + 1 + 6],
-			champion->header.prog_size);
+			1 + COMMENT_LENGTH + 1 + 6], champion->header.prog_size);
 	return (champion);
 }
