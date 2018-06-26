@@ -2,7 +2,7 @@
 .comment "test ldi"
 
 
-ldi 1, %256, r4
+ldi 1, %255, r4
 st r4, 57
 
 #i believe this is a bug, 

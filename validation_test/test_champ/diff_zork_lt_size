@@ -1,4 +1,4 @@
 --- ./test_champ/demo_zork_lt_size	2018-06-26 13:53:49.000000000 +0200
-+++ ./test_champ/vm_zork_lt_size	2018-06-26 14:18:26.000000000 +0200
++++ ./test_champ/vm_zork_lt_size	2018-06-26 16:13:52.000000000 +0200
 @@ -0,0 +1 @@
 +Champion's code differ from header inforamtion

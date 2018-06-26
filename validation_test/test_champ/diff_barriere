@@ -1,4 +1,4 @@
 --- ./test_champ/demo_barriere	2018-06-26 13:53:39.000000000 +0200
-+++ ./test_champ/vm_barriere	2018-06-26 14:17:24.000000000 +0200
++++ ./test_champ/vm_barriere	2018-06-26 16:13:02.000000000 +0200
 @@ -0,0 +1 @@
 +Champion's code is too large

@@ -1,5 +1,5 @@
-.name "tester"
 .comment "test aff"
+.name "tester"
 
 
 ld %52, r3

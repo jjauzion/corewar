@@ -1,4 +1,4 @@
 --- ./test_champ/demo_magic_number	2018-06-26 13:53:43.000000000 +0200
-+++ ./test_champ/vm_magic_number	2018-06-26 14:17:53.000000000 +0200
++++ ./test_champ/vm_magic_number	2018-06-26 16:13:26.000000000 +0200
 @@ -0,0 +1 @@
 +Wrong magic number

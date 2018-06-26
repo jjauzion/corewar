@@ -1,4 +1,4 @@
 --- ./test_champ/demo_wrong_nb_instr	2018-06-26 13:53:48.000000000 +0200
-+++ ./test_champ/vm_wrong_nb_instr	2018-06-26 14:18:21.000000000 +0200
++++ ./test_champ/vm_wrong_nb_instr	2018-06-26 16:13:47.000000000 +0200
 @@ -0,0 +1 @@
 +Champion's code differ from header inforamtion

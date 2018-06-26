@@ -26,7 +26,7 @@ It is now cycle 23
 It is now cycle 24
 It is now cycle 25
 P    1 | ldi -469761791 256 r4
-       | -> load from -469761791 + 256 = -469761535 (with pc and mod 3585)
+       | -> load from -469761791 + 256 = -469761535 (with pc and mod -511)
 ADV 7 (0x0000 -> 0x0007) 0a e4 00 01 01 00 04 
 It is now cycle 26
 It is now cycle 27
