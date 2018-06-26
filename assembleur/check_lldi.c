@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 13:07:37 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/21 16:21:26 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/26 13:15:33 by spliesei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	check_lldi_errors(t_params *params, char *arg1, char *arg2, char *arg3)
 		exit(0);
 	}
 	if (check_type(params, arg2) != DIR_CODE &&
-		check_type(params, arg2) != IND_CODE)
+		check_type(params, arg2) != REG_CODE)
 	{
 		ft_printf("Error: Wrong type of arg2 for (lldi)!\n");
 		exit(0);
