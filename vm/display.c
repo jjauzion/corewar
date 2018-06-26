@@ -39,7 +39,7 @@ int		display(t_arena *arena, t_process *process, int step)
 		i = -1;
 		while (++i < arena->nb_champion)
 		{
-			ft_printf("champion %d has lived %d since last check\n",
+			ft_printf("champion %d has lived %d\n",
 					i, arena->champions[i]->nb_live);
 			ft_printf("champion %d last live cycle\n",
 					i, arena->champions[i]->last_live_cycle);

@@ -1,4 +1,5 @@
 .name "TEST_champ"
 .comment "TEST TEST TEST"
+.comment "TEST"
 
-st r3, r6
+st r17, r6
