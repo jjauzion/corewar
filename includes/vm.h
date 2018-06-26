@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:02:07 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/23 15:05:09 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/26 14:49:42 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,12 @@
 
 # include "op.h"
 # include "ft_printf.h"
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <fcntl.h>
 
 # define SUCCESS 0
+# define ERROR -1
 # define PID_MAX 2147483647
 # define REG_LENGTH 1
 
