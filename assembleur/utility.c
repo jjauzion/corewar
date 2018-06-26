@@ -32,6 +32,11 @@ int	check_reg(char *arg)
 				ft_nbrlen(ft_atoi(arg + 1), 10))
 				return (REG_CODE);
 		}
+		else
+		{
+			ft_printf("Error: Wrong register number!\n");
+			exit(0);
+		}
 	}
 	return (0);
 }

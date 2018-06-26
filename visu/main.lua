@@ -21,12 +21,15 @@ function get_init_values() -- FIRST PARSING TO GET: arena_s player_name player_c
     nbr_champs = tonumber(string.sub(line, 16, string.len(line)))
     if (nbr_champs > 4) then io.write("nbr champs is too hight! max 4") love.event.quit() end
     for index=1, nbr_champs do
-        line = io.read("*line")
+		while (string.sub(line, 10, 13) ~= "name") do
+			line = io.read("*line")
+		end
         player_name[index] = string.sub(line, 17, string.len(line))
-        line = io.read("*line")
+        -- line = io.read("*line")
         player_com[index] = string.sub(line, 20, string.len(line))
         if (string.len(player_com[index]) > 25) then player_com[index] = string.sub(player_com[index], 0, 13) .. "..." end
-        if (string.len(player_name[index]) > 15) then player_name[index] = string.sub(player_name[index], 0, 13) .. "..." end
+        if (string.len(player_name[index]) > 45) then player_name[index] = string.sub(player_name[index], 0, 21) .. "..." end
+		line = io.read("*line")
     end
 end
 
@@ -37,7 +40,7 @@ function print_title()
     local lag_title = font_title:getHeight("COREWAR")
     love.graphics.setFont(font_info)
     love.graphics.setColor(1, 0.5, 0.5, 0.7)
-    love.graphics.print("By smortier, jjauzion, theo, simon", 10, lag_title)
+    love.graphics.print("By smortier, jjauzion, tmerli, spliesei", 10, lag_title)
     love.graphics.setColor(255, 255, 255)
 end
 
@@ -46,11 +49,13 @@ function refresh_players()
         love.graphics.setCanvas(canvas_player[index])
         love.graphics.setColor(1, 0, 0)
         love.graphics.clear()
-        love.graphics.rectangle('line', 0, 0, canvas_player[index]:getWidth(), canvas_player[index]:getHeight())
+		love.graphics.setColor(0, 1, 1, 0.6)
+        love.graphics.rectangle('fill', 0, 0, canvas_player[index]:getWidth(), canvas_player[index]:getHeight())
         love.graphics.setFont(font_player_name)
-        love.graphics.print(player_name[index], 0, 0)
-        love.graphics.setFont(font_player_com)
-        love.graphics.print(player_com[index], 0 + 3, font_player_name:getHeight())
+		love.graphics.setColor(1, 1, 0, 1)
+        love.graphics.print(player_name[index], canvas_player[index]:getWidth() / 2 - font_player_name:getWidth(player_name[index]) / 2, 10)
+        -- love.graphics.setFont(font_player_com)
+        -- love.graphics.print(player_com[index], 0 + 3, font_player_name:getHeight())
         love.graphics.setCanvas()
         -- love.graphics.setCanvas(canvas_all_players)
         -- love.graphics.draw(canvas_player[index], index * canvas_player[index]:getWidth() - canvas_player[index]:getWidth(), 0)
@@ -75,15 +80,17 @@ function        refresh_arena()
     -- love.graphics.setColor(0, 1, 0.5, 0.4)
     love.graphics.setColor(0, 1, 1, 1)
     love.graphics.rectangle('line', 0, 0, canvas_arena:getWidth(), canvas_arena:getHeight())
-    love.graphics.setColor(0, 1, 0, 1)
+    love.graphics.setColor(1, 1, 1, 1)
 	local index = 1
     for y=1, 64 * h_box, h_box do
         for x=1, 64 * w_box, w_box do
             -- io.write("y = " .. y .. " && x = " .. x .. '\n')
 			love.graphics.setFont(font_normal)
+			love.graphics.setColor(1, 1, 1, 0.75)
 			if (data[index] ~= "00 ") then
-				love.graphics.print(data[index], x + w_box / 2 - 3, y - 3)
+				love.graphics.setColor(0, 1, 0, 1)
 			end
+			love.graphics.print(data[index], x + w_box / 2 - font_normal:getWidth(data[index]) / 2, y)
 			-- io.write(index .. '\n')
 			index = index + 1
 			-- love.graphics.setColor(0, 1, 1, 0.5)
@@ -98,8 +105,8 @@ function        draw_arena()
 end
 
 function init_canvas()
-    canvas_all_players = love.graphics.newCanvas(w_widht - 10, w_height / 7 - 10) --uselss pour le moment
-    canvas_arena = love.graphics.newCanvas(w_widht - 60 - 30, round(w_height  - (w_height / 3) + 100, 0))
+    canvas_all_players = love.graphics.newCanvas(w_widht, w_height / 7 - 10) --uselss pour le moment
+    canvas_arena = love.graphics.newCanvas(w_widht - 60, round(w_height  - (w_height / 3) + 85, 0))
     for index=0, nbr_champs do
         canvas_player[index] = love.graphics.newCanvas(canvas_all_players:getWidth() / nbr_champs,
                                                         canvas_all_players:getHeight())
@@ -131,6 +138,7 @@ function        love.load()
     success = love.window.setFullscreen(true)
     w_widht, w_height = love.graphics.getDimensions()
     io.write(w_widht .. '\n' .. w_height .. '\n')
+	cycle = 1
     player_name = {}
     player_com = {}
     canvas_player = {}
@@ -150,8 +158,8 @@ function        love.update()
 	line = io.read("*line")
 	while (line ~= "Arena_memory :") do
 		line = io.read("*line")
-		if (string.sub(line, 1, 3) == "cyc") then
-			io.write(line .. '\n')
+		if (string.sub(line, 1, 7) == "cycle =") then
+			cycle = tonumber(string.sub(line, 9, string.len(line)))
 		end
 	end
 	local index = 1
@@ -175,6 +183,9 @@ function        love.draw()
     love.graphics.print("Time since begin : " .. round(love.timer.getTime() - start_time, 0) .. " seconds", w_widht - font_info:getWidth("Time since begin : " .. round(love.timer.getTime() - start_time, 0) .. " seconds") - 10, 70)
 	love.graphics.setFont(font_title)
 	love.graphics.print("25 BONUS POINTS", w_widht / 2 - (font_title:getWidth("25 BONUS POINTS") / 2), 10)
+	love.graphics.setFont(font_player_name)
+	love.graphics.setColor(0, 1, 0, 0.7)
+	love.graphics.print("Cycles : " .. cycle , w_widht / 2 - font_player_name:getWidth("Cycles : ") / 2, font_title:getHeight("25 BONUS POINTS") + 5)
     -- love.graphics.print(round(love.timer.getTime() - start_time, 0), 10, 70)
     --DRAW LES DEUX RECTANGLES
     love.graphics.setColor(1, 1, 1)
