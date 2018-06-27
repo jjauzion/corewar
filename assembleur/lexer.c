@@ -19,7 +19,8 @@ t_lexer		*new_lexer(char *line)
 
 	if (!(new_lexer = (t_lexer *)ft_memalloc(sizeof(t_lexer))))
 		exit(0);
-	new_lexer->line = ft_strdup(line);
+	if (!(new_lexer->line = ft_strdup(line)))
+		exit (0);
 	return (new_lexer);
 }
 
