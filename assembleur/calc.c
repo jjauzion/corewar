@@ -72,7 +72,7 @@ void	fill_arg_values(t_params *params)
 	{
 		index = -1;
 		if (!(tmp->arg_value = (int *)ft_memalloc(sizeof(int) * tmp->nbr_arg)))
-			return ;
+			exit(0);
 		while (++index < tmp->nbr_arg)
 		{
 			if (tmp->arg_type[index] == REG_CODE)
