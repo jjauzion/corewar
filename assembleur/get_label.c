@@ -39,7 +39,7 @@ t_label	*new_label(t_params *params, int pos, char *line)
 	char	**split;
 
 	if (!(new_label = (t_label *)ft_memalloc(sizeof(t_label))))
-		return (NULL);
+		exit(0);
 	split = ft_strsplit(line, LABEL_CHAR);
 	new_label->name = ft_strsub(split[0], 0, ft_strlen(split[0]));
 	check_name_label(new_label->name);

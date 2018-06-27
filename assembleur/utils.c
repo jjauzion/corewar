@@ -17,7 +17,7 @@ t_instr	*new_instr(void)
 	t_instr *new_instr;
 
 	if (!(new_instr = (t_instr *)ft_memalloc(sizeof(t_instr))))
-		return (NULL);
+		exit(0);
 	return (new_instr);
 }
 

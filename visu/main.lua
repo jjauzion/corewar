@@ -30,6 +30,7 @@ function get_init_values() -- FIRST PARSING TO GET: arena_s player_name player_c
     line = io.read("*line")
 	if (line == nil) then love.quit() end
     arena_s = tonumber(string.sub(line, 14, string.len(line)))
+	if (arena_s ~= 4096) then love.event.quit() end
     line = io.read("*line")
     nbr_champs = tonumber(string.sub(line, 16, string.len(line)))
     if (nbr_champs > 4) then io.write("nbr champs is too hight! max 4") love.event.quit() end
@@ -182,7 +183,7 @@ function        love.load()
     init_canvas()
 	data = {}
     w_box, h_box = get_box_size()
-    io.write(arena_s, '\n', w_box,'\n', h_box, '\n')
+    -- io.write(arena_s, '\n', w_box,'\n', h_box, '\n')
     start_time = love.timer.getTime()
     -- love.graphics.setBackgroundColor(255, 200, 200)
     -- love.timer.sleep(6)

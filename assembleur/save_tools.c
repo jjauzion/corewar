@@ -19,7 +19,7 @@ void	get_params(t_instr *tmp, char *line)
 
 	split = ft_strsplit(line, SEPARATOR_CHAR);
 	if (!(tmp->arg = (char **)ft_memalloc(sizeof(char *) * (tmp->nbr_arg + 1))))
-		return ;
+		exit(0);
 	tmp->arg[tmp->nbr_arg] = NULL;
 	index = -1;
 	while (split[++index])
@@ -81,7 +81,7 @@ void	fill_arg_types(t_params *params, t_instr *tmp)
 
 	index = -1;
 	if (!(tmp->arg_type = (int *)ft_memalloc(sizeof(int) * tmp->nbr_arg)))
-		return ;
+		exit(0);
 	while (tmp->arg[++index])
 		tmp->arg_type[index] = check_type(params, tmp->arg[index]);
 }
