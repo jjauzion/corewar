@@ -20,9 +20,9 @@ static unsigned int	ft_realloc_index(unsigned int **index,
 	unsigned int	i;
 
 	if (!(tmp1 = (unsigned int *)malloc(sizeof(unsigned int) * (size + add))))
-		return (1);
+		exit(0);
 	if (!(tmp2 = (unsigned int *)malloc(sizeof(unsigned int) * (size + add))))
-		return (1);
+		exit(0);
 	i = 0;
 	while (i < size)
 	{
@@ -55,7 +55,7 @@ static unsigned int	ft_run_scan(const char *s, char c, unsigned int *nb_word,
 			index[1][*nb_word - 1] = (i - 1) - index[0][*nb_word - 1] + 1;
 		if (*nb_word > 99)
 			if (ft_realloc_index(index, *nb_word, 100))
-				return (1);
+				exit (0);
 	}
 	return (0);
 }
@@ -65,11 +65,11 @@ static unsigned int	**ft_scan_str(const char *s, char c, unsigned int *nb_word)
 	unsigned int		**index;
 
 	if (!(index = (unsigned int **)malloc(sizeof(unsigned int *) * 2)))
-		return (NULL);
+		exit(0);
 	if (!(index[0] = (unsigned int *)malloc(sizeof(unsigned int) * 100)))
-		return (NULL);
+		exit(0);
 	if (!(index[1] = (unsigned int *)malloc(sizeof(unsigned int) * 100)))
-		return (NULL);
+		exit(0);
 	*nb_word = 0;
 	if (ft_run_scan(s, c, nb_word, index))
 		return (NULL);
@@ -89,7 +89,7 @@ char				**ft_strsplit(char const *s, char c)
 	if (!(index = ft_scan_str(s, c, &nb_word)))
 		return (NULL);
 	if (!(tab = (char **)malloc(sizeof(char *) * (nb_word + 1))))
-		return (NULL);
+		exit(0);
 	i = 0;
 	while (i < nb_word)
 	{

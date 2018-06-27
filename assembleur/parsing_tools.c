@@ -56,6 +56,8 @@ char	*pass_ws(char *str)
 {
 	int	index;
 
+	if (!str)
+		exit(0);
 	index = -1;
 	while (str[++index] && (str[index] == ' ' || str[index] == '\t'))
 		;

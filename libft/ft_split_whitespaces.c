@@ -59,7 +59,9 @@ void	malloc_all_tab(char **tab, char *str)
 			i++;
 			if (char_is_sep(str[i]) || str[i] == '\0')
 			{
-				(tab[compteur_tab]) = (char *)malloc(sizeof(char) * c_m + 1);
+				if (!(tab[compteur_tab] =
+					(char *)ft_memalloc(sizeof(char) * c_m + 1)))
+					exit (0);
 				compteur_tab += 1;
 			}
 		}
@@ -100,7 +102,8 @@ char	**ft_split_whitespaces(char *str)
 	char	**tab;
 
 	count_w = ft_count_words(str);
-	tab = (char **)malloc(sizeof(char *) * (count_w + 1));
+	if (!(tab = (char **)ft_memalloc(sizeof(char *) * (count_w + 1))))
+		exit (0);
 	tab[count_w] = 0;
 	malloc_all_tab(tab, str);
 	fill_tab(count_w, str, tab);

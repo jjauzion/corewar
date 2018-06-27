@@ -51,7 +51,7 @@ static int		ft_add(char **line, char *buf)
 	free(*line);
 	size = ft_strlen(tmp) + ft_strlen(buf) + 1;
 	if (!(*line = (char*)malloc(sizeof(char) * size)))
-		return (-1);
+		exit(0);
 	ft_strcpy(*line, tmp);
 	free(tmp);
 	ft_strcat(*line, buf);
