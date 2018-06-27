@@ -60,6 +60,7 @@ SRC_NAME1 =	main.c \
 		header_tools.c \
 		check_name_and_comment.c \
 		parsing_tools.c \
+		multi_line_holder.c \
 
 
 SRC_NAME2 =

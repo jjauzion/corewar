@@ -45,16 +45,40 @@ void	get_file(t_params *params, int fd, int index)
 		if (line[0] && (pass_ws(line)[0] != COMMENT_CHAR && pass_ws(line)[0]
 			!= COMMENT_CHAR_TWO) && !str_is_empty(line))
 		{
-			if (ft_strstr(line, COMMENT_CMD_STRING))
+			if (!ft_strncmp(line, COMMENT_CMD_STRING,
+				ft_strlen(COMMENT_CMD_STRING)))
 			{
-				if (ft_strchr(ft_strchr(line, '"') + 1, '"'))
-					params->file[++index] = line;
-				else
-				{
-					params->file[++index] = get_all_comment_line(fd, line);
-					ft_memdel((void **)&line);
-				}
+				params->file[++index] = multi_line_holder(fd, line);
+				if (ft_strcmp(line, params->file[index]))
+					ft_strdel(&line);
 			}
+			else if (!ft_strncmp(line, NAME_CMD_STRING,
+				ft_strlen(NAME_CMD_STRING)))
+			{
+				params->file[++index] = multi_line_holder(fd, line);
+				if (ft_strcmp(line, params->file[index]))
+					ft_strdel(&line);
+			}
+			// if (ft_strstr(line, COMMENT_CMD_STRING))
+			// {
+			// 	if (ft_strchr(ft_strchr(line, '"') + 1, '"'))
+			// 		params->file[++index] = line;
+			// 	else
+			// 	{
+			// 		params->file[++index] = get_all_comment_line(fd, line);
+			// 		ft_memdel((void **)&line);
+			// 	}
+			// }
+			// else if (ft_strstr(line, NAME_CMD_STRING))
+			// {
+			// 	if (ft_strchr(ft_strchr(line, '"') + 1, '"'))
+			// 		params->file[++index] = line;
+			// 	else
+			// 	{
+			// 		params->file[++index] = get_all_name_line(fd, line);
+			// 		ft_memdel((void **)&line);
+			// 	}
+			// }
 			else
 				params->file[++index] = line;
 		}

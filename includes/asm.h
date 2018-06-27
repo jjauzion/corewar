@@ -80,9 +80,12 @@ void	write_bytecode(t_params *params);
 int		get_program_size(t_params *params);
 void    check_name_and_comment(t_params *params);
 char    *get_all_comment_line(int fd, char *line);
+char	*get_all_name_line(int fd, char *line);
 char    *pass_ws(char *str);
 void	print(t_params *params);
 void	check_name_label(char *str);
+char 	*multi_line_holder(int fd, char *line);
+
 
 
 /*

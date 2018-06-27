@@ -37,19 +37,17 @@ void	check_name_and_comment(t_params *params)
 	index = -1;
 	while (params->file[++index])
 	{
-		ft_strstr(params->file[index], NAME_CMD_STRING) ? name += 1 : 0;
-		ft_strstr(params->file[index], COMMENT_CMD_STRING) ? comment += 1 : 0;
+		!ft_strncmp(pass_ws(params->file[index]), NAME_CMD_STRING,
+			ft_strlen(NAME_CMD_STRING)) ? name += 1 : 0;
+		!ft_strncmp(pass_ws(params->file[index]), COMMENT_CMD_STRING,
+			ft_strlen(COMMENT_CMD_STRING)) ? comment += 1 : 0;
 	}
 	if (comment != 1)
-	{
 		ft_printf("Error: Number of comments in the file is wrong!\n");
-		exit(0);
-	}
 	if (name != 1)
-	{
 		ft_printf("Error: Number of names in the file is wrong!\n");
+	if (name != 1 || comment != 1)
 		exit(0);
-	}
 	index = -1;
 	while (params->file[++index])
 		clear_comments(&(params->file[index]));

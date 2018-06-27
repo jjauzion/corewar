@@ -1,0 +1,14 @@
+.name"THIS
+IS
+A
+TEST
+OF
+MULTILINE
+=)"
+.comment "THIS
+ASWELL
+IS
+A MULTILINE
+TEST"
+
+live %1

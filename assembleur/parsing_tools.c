@@ -12,6 +12,25 @@
 
 #include "asm.h"
 
+char	*get_all_name_line(int fd, char *line)
+{
+	char	*ret;
+	char	*line2;
+
+	ret = (char *)ft_memalloc(sizeof(char) * PROG_NAME_LENGTH + 1);
+	ft_strcat(ret, line);
+	ft_strcat(ret, "\n");
+	while (get_next_line(fd, &line2) == 1 && !ft_strchr(line2, '"'))
+	{
+		ft_strcat(ret, line2);
+		ft_strcat(ret, "\n");
+		ft_strdel(&line2);
+	}
+	ft_strcat(ret, line2);
+	ft_strdel(&line2);
+	return (ret);
+}
+
 char	*get_all_comment_line(int fd, char *line)
 {
 	char	*ret;
