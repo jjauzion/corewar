@@ -6,7 +6,7 @@
 /*   By: jjauzion <jjauzion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/25 15:17:12 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/27 10:00:50 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/27 18:34:11 by tmerli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,15 @@ int			ft_str_arg(t_var var, t_spec *spec)
 		tmp = ft_strdup("(null)");
 	else
 		tmp = ft_strdup(var.s);
+	if (!tmp)
+		return (1);
 	if (spec->precision >= 0)
 		spec->field = ft_strsub(tmp, 0, spec->precision);
 	else
 		spec->field = ft_strdup(tmp);
 	ft_strdel(&tmp);
+	if (!spec->field)
+		return (1);
 	ft_generate_wfield(spec);
 	return (0);
 }
