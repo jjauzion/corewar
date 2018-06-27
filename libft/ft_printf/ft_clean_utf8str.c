@@ -6,7 +6,7 @@
 /*   By: jjauzion <jjauzion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/14 12:44:50 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/01/22 12:56:34 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/27 09:39:35 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void		ft_clean_utf8str(char *str)
 	int i;
 	int	count;
 
-	if (MB_CUR_MAX == 1)
+	if (MB_CUR_MAX == 1 || !str)
 		return ;
 	i = ft_strlen(str) - 1;
 	if (!(str[i] & 0x80))

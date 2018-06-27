@@ -6,7 +6,7 @@
 /*   By: jjauzion <jjauzion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/19 13:55:54 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/01/29 18:42:03 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/27 10:41:46 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int		ft_get_param(va_list ap, t_spec *spec)
 	int		i;
 	t_var	var;
 
+	if (!spec->attribute)
+		return (1);
 	var = ft_get_arg(ap, spec);
 	i = 0;
 	while (!ft_strchr(g_type[i].type, (int)spec->c_specifier) &&
@@ -32,7 +34,8 @@ int		ft_get_param(va_list ap, t_spec *spec)
 int		ft_pct_arg(t_var var, t_spec *spec)
 {
 	(void)var;
-	spec->field = ft_strdup("%");
+	if (!(spec->field = ft_strdup("%")))
+		return (1);
 	ft_generate_wfield(spec);
 	return (0);
 }

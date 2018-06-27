@@ -2,8 +2,8 @@
 .comment "test ldi"
 
 
-ldi 1, %255, r4
-st r4, 57
+ldi 1, %256, r4
+st r4, 0
 
 #i believe this is a bug, 
 #ldi 1, %255, r4 have this hex 0a e4 00 01 00 ff 04

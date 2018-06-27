@@ -6,7 +6,7 @@
 /*   By: jjauzion <jjauzion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 10:33:10 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/03/02 16:09:52 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/27 10:41:25 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ const char	*ft_parse(va_list ap, const char *format, t_spec *spec)
 
 	spec->attribute = ft_get_attribute(&format);
 	tmp = ft_get_value(ap, &format);
-	if (spec->attribute[0] == '\0')
+	if (spec->attribute && spec->attribute[0] == '\0')
+	{
 		if (*format == '$')
 		{
 			format++;
@@ -57,6 +58,7 @@ const char	*ft_parse(va_list ap, const char *format, t_spec *spec)
 			spec->attribute = ft_get_attribute(&format);
 			tmp = ft_get_value(ap, &format);
 		}
+	}
 	spec->width = ft_check_width(spec, tmp);
 	spec->precision = ft_get_precision(ap, &format);
 	spec->l_modifier = ft_get_lmodifier(&format);

@@ -6,7 +6,7 @@
 /*   By: jjauzion <jjauzion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/07 19:47:29 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/01/25 12:08:40 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/27 10:13:30 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ char		*ft_get_attribute(const char **format)
 	valid_attribute = ft_strdup("#0-+ '");
 	ptr = (char*)valid_attribute;
 	attribute = ft_strnew(ft_strlen(*format) + 1);
+	if (!attribute || !valid_attribute)
+		return (NULL);
 	i = 0;
 	while ((ptr = ft_strchr(valid_attribute, (int)(**format))))
 	{

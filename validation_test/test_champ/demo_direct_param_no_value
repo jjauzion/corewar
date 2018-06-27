@@ -1,8 +1,5 @@
 Introducing contestants...
-* Player 1, weighing 5 bytes, "zork" ("I'M ALIII
-f
-f
-IVEas") !
+* Player 1, weighing 10 bytes, "zork" ("I'M ]ALIIIIVE") !
 It is now cycle 1
 It is now cycle 2
 It is now cycle 3
@@ -25,6 +22,8 @@ It is now cycle 17
 It is now cycle 18
 It is now cycle 19
 It is now cycle 20
+P    1 | live 0
+ADV 5 (0x0005 -> 0x000a) 01 00 00 00 00 
 It is now cycle 21
 It is now cycle 22
 It is now cycle 23
@@ -3077,5 +3076,5 @@ It is now cycle 3069
 It is now cycle 3070
 It is now cycle 3071
 It is now cycle 3072
-Process 1 hasn't lived for 3062 cycles (CTD 1536)
+Process 1 hasn't lived for 3052 cycles (CTD 1536)
 Contestant 1, "zork", has won !

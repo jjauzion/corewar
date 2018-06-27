@@ -6,7 +6,7 @@
 /*   By: jjauzion <jjauzion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/25 15:17:12 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/03/02 16:13:30 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/27 10:00:50 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,9 @@ static int	ft_wstr_arg(t_var var, t_spec *spec)
 	if (!var.ws)
 		tmp = ft_strdup("(null)");
 	else
-	{
-		if (!(tmp = ft_wstr2str(var.ws, spec->precision)))
-		{
-			spec->width = -1;
-			spec->field = ft_strnew(0);
-			return (1);
-		}
-	}
+		tmp = ft_wstr2str(var.ws, spec->precision);
+	if (!tmp)
+		return (1);
 	if (spec->precision >= 0)
 	{
 		spec->field = ft_strsub(tmp, 0, spec->precision);
@@ -35,6 +30,8 @@ static int	ft_wstr_arg(t_var var, t_spec *spec)
 	else
 		spec->field = ft_strdup(tmp);
 	ft_strdel(&tmp);
+	if (!spec->field)
+		return (1);
 	ft_generate_wfield(spec);
 	return (0);
 }

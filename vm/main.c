@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:30:29 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/25 18:04:57 by tmerli           ###   ########.fr       */
+/*   Updated: 2018/06/27 11:05:21 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,8 @@ int				main(int argc, char **argv)
 		return (free_arena(arena));
 	if (!(arena->mem = (t_uchar*)ft_memalloc(MEM_SIZE)))
 		return (free_arena(arena));
-	init_arena(arena);
+	if (init_arena(arena) == ERROR)
+		return (ERROR);
 	print_champions(arena);
 	if (run_arena(arena) != ERROR)
 		print_winner(arena);

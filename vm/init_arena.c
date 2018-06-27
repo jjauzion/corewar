@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/04 17:05:31 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/20 15:12:22 by tmerli           ###   ########.fr       */
+/*   Updated: 2018/06/27 11:06:27 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ int		init_arena(t_arena *arena)
 	{
 		address = i * MEM_SIZE / arena->nb_champion;
 		arena->champions[i]->id = -i - 1;
-		new_process = create_process(address, arena->champions[i]->id, NULL);
+		if (!(new_process =
+					create_process(address, arena->champions[i]->id, NULL)))
+			return (ERROR);
 		arena->nb_process++;
 		new_process->next = arena->process;
 		arena->process = new_process;

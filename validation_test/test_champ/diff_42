@@ -1,4 +1,4 @@
---- ./test_champ/demo_42	2018-06-26 13:53:36.000000000 +0200
-+++ ./test_champ/vm_42	2018-06-26 16:12:51.000000000 +0200
+--- ./validation_test/test_champ/demo_42	2018-06-26 17:38:16.000000000 +0200
++++ ./validation_test/test_champ/vm_42	2018-06-27 11:22:44.000000000 +0200
 @@ -0,0 +1 @@
 +Champion's code is too large
