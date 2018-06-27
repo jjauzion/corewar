@@ -1,0 +1,21 @@
+0000000100001178	e8 8b 85 00 00 	callq	0x100009708 ## symbol stub for: _malloc
+_ft_memalloc:
+00000001000014e0	e8 23 82 00 00 	callq	0x100009708 ## symbol stub for: _malloc
+0000000100001564	e8 9f 81 00 00 	callq	0x100009708 ## symbol stub for: _malloc
+000000010000172a	e8 a1 fd ff ff 	callq	_ft_memalloc
+0000000100001870	e8 93 7e 00 00 	callq	0x100009708 ## symbol stub for: _malloc
+0000000100001a2a	e8 d9 7c 00 00 	callq	0x100009708 ## symbol stub for: _malloc
+0000000100001abf	e8 0c fa ff ff 	callq	_ft_memalloc
+0000000100002050	e8 b3 76 00 00 	callq	0x100009708 ## symbol stub for: _malloc
+00000001000025d0	e8 33 71 00 00 	callq	0x100009708 ## symbol stub for: _malloc
+00000001000054e0	e8 eb bf ff ff 	callq	_ft_memalloc
+0000000100005539	e8 92 bf ff ff 	callq	_ft_memalloc
+00000001000058ec	e8 df bb ff ff 	callq	_ft_memalloc
+0000000100005906	48 8d 35 29 41 00 00 	leaq	0x4129(%rip), %rsi ## literal pool for: "malloc error\n"
+00000001000059f7	e8 d4 ba ff ff 	callq	_ft_memalloc
+0000000100005a14	48 8d 35 1b 40 00 00 	leaq	0x401b(%rip), %rsi ## literal pool for: "malloc error\n"
+0000000100006303	e8 c8 b1 ff ff 	callq	_ft_memalloc
+00000001000066ec	e8 df ad ff ff 	callq	_ft_memalloc
+0000000100006703	48 8d 35 2d 35 00 00 	leaq	0x352d(%rip), %rsi ## literal pool for: "new process malloc error"
+0000000100009643	e8 88 7e ff ff 	callq	_ft_memalloc
+000000010000965a	48 8d 35 3d 09 00 00 	leaq	0x93d(%rip), %rsi ## literal pool for: "error op malloc\n"

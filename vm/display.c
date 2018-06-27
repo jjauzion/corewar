@@ -6,13 +6,33 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/23 11:41:41 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/26 14:42:59 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/27 20:02:13 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vm.h"
 
-int		display(t_arena *arena, t_process *process, int step)
+static void		print_cycle(t_arena *arena)
+{
+	int		i;
+
+	ft_printf("cycle = %d\n", arena->cycle + arena->last_check);
+	ft_printf("cycle_to_die = %d\n", arena->cycle2die);
+	ft_printf("nb of processes = %d\n", arena->nb_process);
+	i = -1;
+	while (++i < arena->nb_champion)
+	{
+		ft_printf("champion %d has lived %d\n",
+				i, arena->champions[i]->nb_live);
+		ft_printf("champion %d last live cycle\n",
+				i, arena->champions[i]->last_live_cycle);
+	}
+	ft_printf("Arena_memory :\n");
+	print_arena(arena, 0, MEM_SIZE);
+	ft_printf("--------------------------------------------------------\n");
+}
+
+int				display(t_arena *arena, t_process *process, int step)
 {
 	int		i;
 
@@ -32,21 +52,6 @@ int		display(t_arena *arena, t_process *process, int step)
 	else if (step == 10)
 		ft_printf("process %d, pc position = %d\n", process->pid, process->pc);
 	else if (step == 100)
-	{
-		ft_printf("cycle = %d\n", arena->cycle + arena->last_check);
-		ft_printf("cycle_to_die = %d\n", arena->cycle2die);
-		ft_printf("nb of processes = %d\n", arena->nb_process);
-		i = -1;
-		while (++i < arena->nb_champion)
-		{
-			ft_printf("champion %d has lived %d\n",
-					i, arena->champions[i]->nb_live);
-			ft_printf("champion %d last live cycle\n",
-					i, arena->champions[i]->last_live_cycle);
-		}
-		ft_printf("Arena_memory :\n");
-		print_arena(arena, 0, MEM_SIZE);
-		ft_printf("--------------------------------------------------------\n");
-	}
+		print_cycle(arena);
 	return (1);
 }

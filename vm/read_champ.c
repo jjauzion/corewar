@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 17:25:23 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/26 16:12:32 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/27 20:58:44 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ static t_champion	*check_buf(t_champion *champion, t_uchar *buff, int nb_byte)
 				(int)buff[j + nb_byte + PROG_NAME_LENGTH + 1 + 2 + 1], 1);
 	if (champion->header.prog_size > CHAMP_MAX_SIZE)
 		return (error_ptr(champion, "Champion's code is too large\n"));
+	if (champion->header.prog_size == 0)
+		return (error_ptr(champion, "No champion's code in file\n"));
 	j = -1;
 	while (buff[++j + nb_byte * 2 + PROG_NAME_LENGTH + 1 + 2 + 1] != 0)
 	{
