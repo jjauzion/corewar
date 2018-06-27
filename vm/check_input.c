@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/04 14:05:19 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/25 18:01:08 by tmerli           ###   ########.fr       */
+/*   Updated: 2018/06/27 16:31:29 by tmerli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,24 +24,29 @@ void				*usage(char *prog_name)
 	return (NULL);
 }
 
-static t_champion	**add_champ(t_champion **champions, t_arena *arena, char *c)
+static void			*free_champ(t_champion **champions, t_arena *arena, char* m)
 {
-	if (arena->nb_champion >= MAX_PLAYERS)
-		return (error_ptr(NULL, "Error: too many champions\n"));
-	if (!(champions = realloc(champions,
-					sizeof(t_champion*) * (arena->nb_champion + 1))))
-		return (error_ptr(NULL, "error realloc at champion creation"));
-	if (!(champions[arena->nb_champion] = read_champ(c)))
-	{
-		while (arena->nb_champion > 0)
+	while (arena->nb_champion > 0)
 		{
 			free(champions[arena->nb_champion - 1]->code);
 			free(champions[arena->nb_champion - 1]);
 			(arena->nb_champion)--;
 		}
 		free(champions);
+		if (m)
+			ft_putstr(m);
 		return (NULL);
-	}
+}
+
+static t_champion	**add_champ(t_champion **champions, t_arena *arena, char *c)
+{
+	if (arena->nb_champion >= MAX_PLAYERS)
+		return (free_champ(champions, arena, "Error: too many champions\n"));
+	if (!(champions = realloc(champions,
+					sizeof(t_champion*) * (arena->nb_champion + 1))))
+		return (error_ptr(NULL, "error realloc at champion creation"));
+	if (!(champions[arena->nb_champion] = read_champ(c)))
+		return (free_champ(champions, arena, NULL));
 	(arena->nb_champion)++;
 	return (champions);
 }
