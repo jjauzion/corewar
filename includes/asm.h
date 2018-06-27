@@ -24,46 +24,46 @@
 
 # define COMMENT_CHAR_TWO		';'
 
-typedef struct		s_label
+typedef struct			s_label
 {
-	int					pos; // means the line in the file
+	int					pos;
 	int					instr;
 	int					value;
 	char				*name;
 	struct s_label		*next;
-}					t_label;
+}						t_label;
 
-typedef	struct		s_instr
+typedef	struct			s_instr
 {
-	int					id; // supposed to his place in the memory
+	int					id;
 	int					d2;
 	int					opcode;
 	int 				address;
 	int					nbr_arg;
-	char				**arg; //just the args withouts parsings
-	int					*arg_type; //type of the arg like : 1 for label, 2 for direct etc
-	int					*arg_value; //final parsing to get the value of each arg
-	int					ocp; //the ocp finded thx to arg_type
+	char				**arg;
+	int					*arg_type;
+	int					*arg_value;
+	int					ocp;
 	int 				nbr_bytes;
 	struct s_instr		*next;
-}					t_instr;
+}						t_instr;
 
-typedef struct		s_lexer //actually just the file cleared from labels
+typedef struct			s_lexer
 {
-	char			*line;
-	struct s_lexer	*next;
-}					t_lexer;
+	char				*line;
+	struct s_lexer		*next;
+}						t_lexer;
 
-typedef struct		s_params // The main struct, the one we put in each functions of main
+typedef struct			s_params
 {
-	char		**file;
-	int			file_len;
-	char		*file_name;
-	t_header	header;
-	t_lexer		*lexer;
-	t_label		*label;
-	t_instr		*instr;
-}					t_params;
+	char				**file;
+	int					file_len;
+	char				*file_name;
+	t_header			header;
+	t_lexer				*lexer;
+	t_label				*label;
+	t_instr				*instr;
+}						t_params;
 
 void	lexer(t_params *params);
 
@@ -86,20 +86,7 @@ void	print(t_params *params);
 void	check_name_label(char *str);
 char 	*multi_line_holder(int fd, char *line);
 
-
-
-/*
-**	check label
-**/
-
-
 void 	check_label_name(t_params *params, char *name);
-
-
-
-/*
-**	save functions
-**/
 
 void	get_params(t_instr *tmp, char *line);
 void 	calc_ocp(t_instr *tmp);
@@ -107,8 +94,6 @@ void	fill_arg_types(t_params *params, t_instr *tmp);
 void	calc_bytes(t_instr *tmp);
 void	print_header(int file, t_params *params);
 void	printbits_int(unsigned int v, int fd);
-
-
 
 void	save_live(t_params *params, int id, char *line);
 void	save_ld(t_params *params, int id, char *line);
@@ -150,11 +135,5 @@ int		check_aff_par(t_params *params, char *line, int index_line);
 
 
 int		check_type(t_params *params, char *arg);
-
-/*
-**	utility functions
-**/
-
-// void	ft_error(t_params *params, char *line, int index_line);
 
 #endif
