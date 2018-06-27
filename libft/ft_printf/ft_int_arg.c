@@ -6,7 +6,7 @@
 /*   By: jjauzion <jjauzion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 10:51:28 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/01/29 18:40:56 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/27 19:19:18 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ int		ft_int_arg(t_var var, t_spec *spec)
 		arg = (ptrdiff_t)var.im;
 	else
 		arg = (int)var.im;
-	spec->field = ft_imtoa(arg);
+	if (!(spec->field = ft_imtoa(arg)))
+		return (1);
 	ft_add_precision(spec);
 	ft_generate_field(spec);
 	return (0);

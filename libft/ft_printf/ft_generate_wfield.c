@@ -6,7 +6,7 @@
 /*   By: jjauzion <jjauzion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/13 17:01:28 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/01/25 15:43:05 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/27 19:04:27 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_generate_wfield(t_spec *spec)
 	int		len;
 	int		width;
 
+	if (!spec->field)
+		return ;
 	len = ft_strlen(spec->field);
 	width = ft_width(spec, 0);
 	if (width != len)

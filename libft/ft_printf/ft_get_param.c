@@ -6,7 +6,7 @@
 /*   By: jjauzion <jjauzion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/19 13:55:54 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/27 10:41:46 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/27 19:09:42 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ int		ft_pct_arg(t_var var, t_spec *spec)
 int		ft_usage(t_var var, t_spec *spec)
 {
 	(void)var;
-	spec->field = ft_strcnew(1, spec->c_specifier);
+	if (!(spec->field = ft_strcnew(1, spec->c_specifier)))
+		return (1);
 	ft_generate_wfield(spec);
 	return (0);
 }

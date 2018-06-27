@@ -6,7 +6,7 @@
 /*   By: jjauzion <jjauzion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 10:51:52 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/01/29 09:41:30 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/27 19:21:10 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ int					ft_uint_arg(t_var var, t_spec *spec)
 	arg = ft_cast_var(var, spec);
 	if (arg == 0 && ft_strchr("xX", spec->c_specifier))
 		spec->attribute = ft_str_del_char(&spec->attribute, '#');
-	spec->field = ft_uitoa_base(arg, base);
+	if (!(spec->field = ft_uitoa_base(arg, base)))
+		return (1);
 	if (spec->c_specifier == 'X')
 		spec->field = ft_strremapi(spec->field, &ft_toupper);
 	ft_add_precision(spec);

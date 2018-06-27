@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:30:29 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/27 11:05:21 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/27 19:28:37 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,12 @@ static	void	print_champions(t_arena *arena)
 	i = -1;
 	ft_printf("Introducing contestants...\n");
 	while (++i < arena->nb_champion)
+	{
 		ft_printf("* Player %d, weighing %d bytes, \"%s\" (\"%s\") !\n",
 				i + 1, arena->champions[i]->header.prog_size,
 				arena->champions[i]->header.prog_name,
 				arena->champions[i]->header.comment);
+	}
 }
 
 static	int		free_arena(t_arena *arena)
