@@ -5,14 +5,22 @@ function round(num, dec) --Arrondit num avec une precision de dec
   return math.floor(num * mult + 0.5) / mult
 end
 
+function is_in_tab(nb, tab, size)
+	for i=1, size do
+		if (nb == tab[i]) then return 1	end
+	end
+	return 0
+end
+
 function love.keypressed(k)
    if k == 'escape' then
       love.event.quit()
    end
    if k == 'space' then
-       love.event.quit()
+	  pause = not pause
    end
 end
+
 
 function get_init_values() -- FIRST PARSING TO GET: arena_s player_name player_com
     line = io.read("*line")
@@ -42,6 +50,8 @@ function print_title()
     love.graphics.setColor(1, 0.5, 0.5, 0.7)
     love.graphics.print("By smortier, jjauzion, tmerli, spliesei", 10, lag_title)
     love.graphics.setColor(255, 255, 255)
+	love.graphics.print("Cycle To DIE : " .. cycle_to_die, w_widht / 2 + 500, 30)
+	love.graphics.print("Number of processes : " .. index_process - 1, w_widht / 2 + 500, 30 + font_info:getHeight("CDIE"))
 end
 
 function refresh_players()
@@ -54,6 +64,7 @@ function refresh_players()
         love.graphics.setFont(font_player_name)
 		love.graphics.setColor(1, 1, 0, 1)
         love.graphics.print(player_name[index], canvas_player[index]:getWidth() / 2 - font_player_name:getWidth(player_name[index]) / 2, 10)
+		love.graphics.print("Number of live since last check : " .. player_live[index], 10, font_player_name:getHeight("H") + 20)
         -- love.graphics.setFont(font_player_com)
         -- love.graphics.print(player_com[index], 0 + 3, font_player_name:getHeight())
         love.graphics.setCanvas()
@@ -89,6 +100,10 @@ function        refresh_arena()
 			love.graphics.setColor(1, 1, 1, 0.75)
 			if (data[index] ~= "00 ") then
 				love.graphics.setColor(0, 1, 0, 1)
+			end
+			if (is_in_tab(index, process_tab, index_process) == 1) then
+				love.graphics.setColor(0, 1, 0, 0.5)
+				love.graphics.rectangle('fill', x, y, w_box, h_box)
 			end
 			love.graphics.print(data[index], x + w_box / 2 - font_normal:getWidth(data[index]) / 2, y)
 			-- io.write(index .. '\n')
@@ -133,14 +148,27 @@ end
 
 -------MAIN
 
+function		winner()
+	love.graphics.setCanvas(canvas_arena)
+    love.graphics.clear()
+	love.graphics.setFont(font_title)
+	love.graphics.print(line, canvas_arena:getWidth() / 2, canvas_arena:getHeight() / 2)
+	love.timer.sleep(5)
+	love.graphics.setCanvas()
+	love.event.quit()
+	os.exit()
+end
+
 function        love.load()
     love.window.setMode(2560, 1440, {resizable=false, vsync=false, minwidth=400, minheight=300})
     success = love.window.setFullscreen(true)
     w_widht, w_height = love.graphics.getDimensions()
     io.write(w_widht .. '\n' .. w_height .. '\n')
 	cycle = 1
+	process_tab = {}
     player_name = {}
     player_com = {}
+	player_live = {}
     canvas_player = {}
     init_fonts()
     get_init_values()
@@ -155,11 +183,30 @@ function        love.load()
 end
 
 function        love.update()
+	if (pause == true) then return end
 	line = io.read("*line")
+	index_process = 1
+	local champ = 1
 	while (line ~= "Arena_memory :") do
 		line = io.read("*line")
+		if (string.sub(line, 1, 7) == "Contest") then
+			return
+		end
+		if (string.sub(line, 1, 7) == "process") then
+			process_tab[index_process] = tonumber(string.sub(line , 26, string.len(line)))
+			-- io.write(process_tab[index_process] .. '\n')
+			index_process = index_process + 1;
+		end
 		if (string.sub(line, 1, 7) == "cycle =") then
 			cycle = tonumber(string.sub(line, 9, string.len(line)))
+		end
+		if (string.sub(line, 1, 12) == "cycle_to_die") then
+			cycle_to_die = tonumber(string.sub(line, 16, string.len(line)))
+		end
+		if (string.sub(line, 1, 8) == "champion") then
+			player_live[champ] = tonumber(string.sub(line, 22, string.len(line)))
+			champ = champ + 1
+			io.read("*line")
 		end
 	end
 	local index = 1
@@ -177,6 +224,7 @@ function        love.update()
 end
 
 function        love.draw()
+
     print_title()
     love.graphics.print('Press Escape to Leave', w_widht - font_info:getWidth("Press Escape to Leave") - 10, 10)
     love.graphics.print("Current FPS: "..tostring(love.timer.getFPS( )), w_widht - font_info:getWidth("Current FPS: "..tostring(love.timer.getFPS( ))) - 10, 30)
@@ -189,6 +237,16 @@ function        love.draw()
     -- love.graphics.print(round(love.timer.getTime() - start_time, 0), 10, 70)
     --DRAW LES DEUX RECTANGLES
     love.graphics.setColor(1, 1, 1)
+	if (string.sub(line, 1, 7) == "Contest") then
+		-- love.graphics.setCanvas(canvas_arena)
+		love.graphics.clear()
+		love.graphics.setFont(font_title)
+		love.graphics.print(line, 0, 0)
+		love.timer.sleep(5)
+		-- love.graphics.setCanvas()
+		love.event.quit()
+		os.exit()
+	end
     refresh_arena()
     refresh_players()
     draw_arena()
