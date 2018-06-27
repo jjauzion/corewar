@@ -1,0 +1,6 @@
+mc.py EXE_FILE [arg]
+cat .sym_logs
+otool -tVj EXE_FILE.infected | grep @malloc -a40
+
+ex:
+python secure_malloc/mc.py ./asm -a validation_test/test_champ/tests/asm/valid2/run_Kitty_RUN.s
