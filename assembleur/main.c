@@ -46,14 +46,9 @@ void	get_file(t_params *params, int fd, int index)
 			!= COMMENT_CHAR_TWO) && !str_is_empty(line))
 		{
 			if (!ft_strncmp(line, COMMENT_CMD_STRING,
-				ft_strlen(COMMENT_CMD_STRING)))
-			{
-				params->file[++index] = multi_line_holder(fd, line);
-				if (ft_strcmp(line, params->file[index]))
-					ft_strdel(&line);
-			}
-			else if (!ft_strncmp(line, NAME_CMD_STRING,
-				ft_strlen(NAME_CMD_STRING)))
+				ft_strlen(COMMENT_CMD_STRING)) ||
+				!ft_strncmp(line, NAME_CMD_STRING,
+					ft_strlen(NAME_CMD_STRING)))
 			{
 				params->file[++index] = multi_line_holder(fd, line);
 				if (ft_strcmp(line, params->file[index]))
