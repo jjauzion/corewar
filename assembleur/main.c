@@ -59,26 +59,6 @@ void	get_file(t_params *params, int fd, int index)
 				if (ft_strcmp(line, params->file[index]))
 					ft_strdel(&line);
 			}
-			// if (ft_strstr(line, COMMENT_CMD_STRING))
-			// {
-			// 	if (ft_strchr(ft_strchr(line, '"') + 1, '"'))
-			// 		params->file[++index] = line;
-			// 	else
-			// 	{
-			// 		params->file[++index] = get_all_comment_line(fd, line);
-			// 		ft_memdel((void **)&line);
-			// 	}
-			// }
-			// else if (ft_strstr(line, NAME_CMD_STRING))
-			// {
-			// 	if (ft_strchr(ft_strchr(line, '"') + 1, '"'))
-			// 		params->file[++index] = line;
-			// 	else
-			// 	{
-			// 		params->file[++index] = get_all_name_line(fd, line);
-			// 		ft_memdel((void **)&line);
-			// 	}
-			// }
 			else
 				params->file[++index] = line;
 		}
