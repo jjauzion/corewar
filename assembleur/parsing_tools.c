@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/19 17:16:46 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/19 17:39:10 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/28 10:09:00 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*get_all_name_line(int fd, char *line)
 	char	*line2;
 
 	if (!(ret = (char *)ft_memalloc(sizeof(char) * PROG_NAME_LENGTH + 1)))
-		exit (0);
+		exit(0);
 	ft_strcat(ret, line);
 	ft_strcat(ret, "\n");
 	while (get_next_line(fd, &line2) == 1 && !ft_strchr(line2, '"'))

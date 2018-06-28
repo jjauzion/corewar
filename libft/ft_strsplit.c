@@ -6,7 +6,7 @@
 /*   By: jjauzion <jjauzion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 14:18:21 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/02/19 11:45:10 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/28 10:06:23 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static unsigned int	ft_run_scan(const char *s, char c, unsigned int *nb_word,
 			index[1][*nb_word - 1] = (i - 1) - index[0][*nb_word - 1] + 1;
 		if (*nb_word > 99)
 			if (ft_realloc_index(index, *nb_word, 100))
-				exit (0);
+				exit(0);
 	}
 	return (0);
 }

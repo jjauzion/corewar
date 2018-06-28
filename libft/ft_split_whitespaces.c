@@ -6,7 +6,7 @@
 /*   By: smortier <smortier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/10 22:06:20 by smortier          #+#    #+#             */
-/*   Updated: 2018/06/10 13:19:46 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/28 10:07:04 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	malloc_all_tab(char **tab, char *str)
 			{
 				if (!(tab[compteur_tab] =
 					(char *)ft_memalloc(sizeof(char) * c_m + 1)))
-					exit (0);
+					exit(0);
 				compteur_tab += 1;
 			}
 		}
@@ -103,7 +103,7 @@ char	**ft_split_whitespaces(char *str)
 
 	count_w = ft_count_words(str);
 	if (!(tab = (char **)ft_memalloc(sizeof(char *) * (count_w + 1))))
-		exit (0);
+		exit(0);
 	tab[count_w] = 0;
 	malloc_all_tab(tab, str);
 	fill_tab(count_w, str, tab);

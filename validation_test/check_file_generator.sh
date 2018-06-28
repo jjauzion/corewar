@@ -32,9 +32,10 @@ for file in "$CHAMPIONSHIP"/*.cor;
 do
 	output="`dirname $file`/demo_`basename $file | rev | cut -d'.' -f2- | rev`"; 
 	rm "$output" 2>/dev/null
+	printf "${output} ..."
 	for i in 15000 20000 25000 30000;
 	do
 		$EXE $OPT $i "$file" >> $output
 	done
-	echo $output "done"
+	printf "done!\n"
 done

@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 17:25:23 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/27 20:58:44 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/28 10:05:01 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,7 @@ static t_champion	*check(t_champion *champion, t_uchar *buff, int nb_byte,
 		return (NULL);
 	if (ret - (2 * nb_byte + PROG_NAME_LENGTH + COMMENT_LENGTH + 8) !=
 			(int)champion->header.prog_size)
-		return (error_ptr(champion,
-					"Champion's code differ from header inforamtion\n"));
+		return (error_ptr(champion, "Champion's code size error\n"));
 	return (champion);
 }
 

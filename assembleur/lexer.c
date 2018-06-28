@@ -6,7 +6,7 @@
 /*   By: smortier <smortier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 16:41:31 by smortier          #+#    #+#             */
-/*   Updated: 2018/06/21 16:36:06 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/28 10:09:15 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_lexer		*new_lexer(char *line)
 	if (!(new_lexer = (t_lexer *)ft_memalloc(sizeof(t_lexer))))
 		exit(0);
 	if (!(new_lexer->line = ft_strdup(line)))
-		exit (0);
+		exit(0);
 	return (new_lexer);
 }
 

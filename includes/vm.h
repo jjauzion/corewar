@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:02:07 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/26 14:49:42 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/28 10:10:07 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ int						run_arena(t_arena *arena);
 t_op					*read_op_code(t_arena *arena, t_process *process);
 void					read_op(t_arena *arena, t_process *process);
 int						exec_op(t_process *process, t_arena *arena);
-void					print_arena(t_arena *arena, size_t index, size_t length);
+void					print_arena(t_arena *arena, size_t i, size_t length);
 void					show_cycle(
 		t_arena *arena, t_process *process, int step, int dump);
 void					show_death(t_arena *arena, t_process *process);

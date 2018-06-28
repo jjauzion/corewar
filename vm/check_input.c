@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/04 14:05:19 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/27 17:42:22 by tmerli           ###   ########.fr       */
+/*   Updated: 2018/06/28 10:00:13 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,18 @@ void				*usage(char *prog_name)
 	return (NULL);
 }
 
-static void			*free_champ(t_champion **champions, t_arena *arena, char* m)
+static void			*free_champ(t_champion **champions, t_arena *arena, char *m)
 {
 	while (arena->nb_champion > 0)
-		{
-			free(champions[arena->nb_champion - 1]->code);
-			free(champions[arena->nb_champion - 1]);
-			(arena->nb_champion)--;
-		}
-		free(champions);
-		if (m)
-			ft_putstr(m);
-		return (NULL);
+	{
+		free(champions[arena->nb_champion - 1]->code);
+		free(champions[arena->nb_champion - 1]);
+		(arena->nb_champion)--;
+	}
+	free(champions);
+	if (m)
+		ft_putstr(m);
+	return (NULL);
 }
 
 static t_champion	**add_champ(t_champion **champions, t_arena *arena, char *c)
