@@ -1,4 +1,4 @@
---- ./test_champ/demo_header_max_name	2018-06-28 10:24:36.000000000 +0200
-+++ ./test_champ/vm_header_max_name	2018-06-28 10:25:54.000000000 +0200
+--- ./test_champ/demo_header_max_name	2018-06-28 15:06:14.000000000 +0200
++++ ./test_champ/vm_header_max_name	2018-06-28 15:07:52.000000000 +0200
 @@ -0,0 +1 @@
 +File is too small to be a champion

@@ -17,7 +17,9 @@ void	clear_comments(char **line)
 	int		index;
 
 	index = 0;
-	if (ft_strchr(*line, COMMENT_CHAR) || ft_strchr(*line, COMMENT_CHAR_TWO))
+	if ((ft_strchr(*line, COMMENT_CHAR) || ft_strchr(*line, COMMENT_CHAR_TWO))
+		&& !ft_strstr(*line, COMMENT_CMD_STRING) &&
+		!ft_strstr(*line, NAME_CMD_STRING))
 	{
 		while ((*line)[index] && ((*line)[index] != COMMENT_CHAR &&
 				(*line)[index] != COMMENT_CHAR_TWO))

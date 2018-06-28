@@ -11,7 +11,7 @@ CHAMPS=$CHAMPS_PATH/*.s
 for f in $CHAMPS
 do
   # echo "Processing $f file..." >/dev/null
-  ../asm $f >/dev/null
+  ../asm $f #>/dev/null
   # take action on each file. $f store current file name
 done
 

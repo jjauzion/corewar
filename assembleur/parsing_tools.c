@@ -17,7 +17,8 @@ char	*get_all_name_line(int fd, char *line)
 	char	*ret;
 	char	*line2;
 
-	if (!(ret = (char *)ft_memalloc(sizeof(char) * PROG_NAME_LENGTH + 1)))
+	if (!(ret = (char *)ft_memalloc(sizeof(char) * PROG_NAME_LENGTH +
+		ft_strlen(line) + 2)))
 		exit(0);
 	ft_strcat(ret, line);
 	ft_strcat(ret, "\n");
@@ -28,6 +29,11 @@ char	*get_all_name_line(int fd, char *line)
 		ft_strdel(&line2);
 	}
 	ft_strcat(ret, line2);
+	if (ft_strchr(line2, '"') && (ft_strchr(line2, '"')[1] != '\0'))
+	{
+		ft_printf("Error: Syntax error after name !\n");
+		exit(0);
+	}
 	ft_strdel(&line2);
 	return (ret);
 }
@@ -38,7 +44,7 @@ char	*get_all_comment_line(int fd, char *line)
 	char	*line2;
 
 	if (!(ret = (char *)ft_memalloc(sizeof(char) *
-					(COMMENT_LENGTH + ft_strlen(COMMENT_CMD_STRING) + 600))))
+					(COMMENT_LENGTH + ft_strlen(line) + 2))))
 		exit(0);
 	ft_strcat(ret, line);
 	ft_strcat(ret, "\n");
@@ -49,6 +55,11 @@ char	*get_all_comment_line(int fd, char *line)
 		ft_strdel(&line2);
 	}
 	ft_strcat(ret, line2);
+	if (ft_strchr(line2, '"') && (ft_strchr(line2, '"')[1] != '\0'))
+	{
+		ft_printf("Error: Syntax error after comment !\n");
+		exit(0);
+	}
 	ft_strdel(&line2);
 	return (ret);
 }

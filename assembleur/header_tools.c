@@ -21,9 +21,13 @@ void	store_name(t_params *params, char *line)
 	index_line = -1;
 	while (line[++index_line] && line[index_line] != '"')
 		;
-	while (line[++index_line] && line[index_line] != '"')
-	{
+	while (line[++index_line] && line[index_line] != '"' && index_name <
+		PROG_NAME_LENGTH + 1)
 		params->header.prog_name[++index_name] = line[index_line];
+	if (index_name >= PROG_NAME_LENGTH)
+	{
+		ft_printf("Error: Name is too long !\n");
+		exit(0);
 	}
 	while (++index_name <= PROG_NAME_LENGTH)
 		params->header.prog_name[index_name] = 0;
@@ -38,9 +42,15 @@ void	store_comment(t_params *params, char *line)
 	index_line = -1;
 	while (line[++index_line] && line[index_line] != '"')
 		;
-	while (line[++index_line] && line[index_line] != '"' && index_comment < 2049)
+	while (line[++index_line] && line[index_line] != '"' && index_comment <
+		COMMENT_LENGTH + 1)
 		params->header.comment[++index_comment] = line[index_line];
-	while (++index_comment <= COMMENT_LENGTH)
+	if (index_comment >= COMMENT_LENGTH)
+	{
+		ft_printf("Error: Comment is too long !\n");
+		exit(0);
+	}
+	while (++index_comment < COMMENT_LENGTH + 1)
 		params->header.comment[index_comment] = 0;
 }
 
@@ -78,7 +88,6 @@ int		get_program_size(t_params *params)
 
 void	print_header(int file, t_params *params)
 {
-	get_header(params);
 	printbits_int(COREWAR_EXEC_MAGIC, file);
 	write(file, params->header.prog_name, PROG_NAME_LENGTH);
 	write(file, "\0\0\0\0", 4);

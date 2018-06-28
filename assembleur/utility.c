@@ -73,6 +73,12 @@ int	check_dir(t_params *params, char *arg)
 		check_label_name(params, arg + 2);
 		return (DIR_CODE);
 	}
+	else if (arg[0] == DIRECT_CHAR &&
+		!ft_isdigit(arg[1]) && arg[1] != LABEL_CHAR && arg[1] != '-')
+	{
+		ft_printf("Error: Direct no Value\n");
+		exit(0);
+	}
 	else if (arg[0] == DIRECT_CHAR && check_integer(arg + 1))
 		return (DIR_CODE);
 	return (0);

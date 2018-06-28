@@ -11,7 +11,7 @@ ld %0,r10
 ld %0,r10
 zjmp %10
 ld 500,r1
-ld 0,r4
+ld 0,r0
 ld 500,r1
 live:
 live %723712

@@ -56,7 +56,7 @@ live %3
 aff r1
 st r2,r6
 st r2,-15
-sti r1,r1,r3
+sti r0,r1,r3
 sti r2,r1,r3
 sti r2,%1,r3
 sti r2,%1,%12

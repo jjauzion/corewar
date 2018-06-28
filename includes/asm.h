@@ -132,6 +132,7 @@ int					check_lld_par(t_params *params, char *line, int index_line);
 int					check_lldi_par(t_params *params, char *line, int ind_line);
 int					check_lfork_par(t_params *params, char *line, int ind_line);
 int					check_aff_par(t_params *params, char *line, int index_line);
+void				get_header(t_params *params);
 
 int					check_type(t_params *params, char *arg);
 

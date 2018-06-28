@@ -11,7 +11,7 @@ ld %10,r2
 zjmp %:ici
 st r1,511
 zjmp %:ici
-st r1,511
+st r0,511
 zjmp %:ici
 st r2,0
 zjmp %:ici
@@ -19,11 +19,11 @@ sti r1,%510,%1
 zjmp %:ici
 sti r2,%0,%0
 zjmp %:ici
-sti r1,%0,%0
+sti r0,%0,%0
 zjmp %:ici
 sti r1,%0,%0
 zjmp %:ici
-ld %1,r1
+ld %1,r0
 zjmp %:suite
 ld %1,r1
 zjmp %:suite
@@ -37,7 +37,7 @@ ldi %0,%0,r3
 zjmp %:suite
 ldi %1,%1,r1
 zjmp %:suite
-ldi %1,%1,r1
+ldi %1,%1,r0
 zjmp %:suite
 ldi 511,%0,r3
 zjmp %:suite

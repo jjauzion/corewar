@@ -12,5 +12,5 @@ ldi r3,%5,r3
 st r3,1000
 ldi %:ici,%0,r3
 st r3,1000
-ldi 3,%5,r2
-ld 10, r3
+ldi 3,%5,r0
+ld 10, r3 

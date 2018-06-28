@@ -91,6 +91,7 @@ void	write_bytecode(t_params *params)
 
 	name = ft_strjoin(params->file_name, ".cor");
 	tmp = params->instr;
+	get_header(params);
 	file = open(name, O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR);
 	ft_strdel(&name);
 	print_header(file, params);
