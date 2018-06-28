@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 17:42:20 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/21 14:20:36 by spliesei         ###   ########.fr       */
+/*   Updated: 2018/06/28 12:01:11 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	store_comment(t_params *params, char *line)
 	index_line = -1;
 	while (line[++index_line] && line[index_line] != '"')
 		;
-	while (line[++index_line] && line[index_line] != '"')
+	while (line[++index_line] && line[index_line] != '"' && index_comment < 2049)
 		params->header.comment[++index_comment] = line[index_line];
 	while (++index_comment <= COMMENT_LENGTH)
 		params->header.comment[index_comment] = 0;

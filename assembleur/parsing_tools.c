@@ -6,7 +6,7 @@
 /*   By: spliesei <spliesei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/19 17:16:46 by spliesei          #+#    #+#             */
-/*   Updated: 2018/06/28 10:09:00 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/06/28 11:47:46 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ char	*get_all_comment_line(int fd, char *line)
 	char	*ret;
 	char	*line2;
 
-	if (!(ret = (char *)ft_memalloc(sizeof(char) * COMMENT_LENGTH + 1)))
+	if (!(ret = (char *)ft_memalloc(sizeof(char) *
+					(COMMENT_LENGTH + ft_strlen(COMMENT_CMD_STRING) + 600))))
 		exit(0);
 	ft_strcat(ret, line);
 	ft_strcat(ret, "\n");
