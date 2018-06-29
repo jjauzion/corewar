@@ -1,11 +1,14 @@
 #!/bin/bash
 
-OUR_PATH=~/corewar/asm_test/our_asm
-THEIR_PATH=~/corewar/asm_test/their_asm
-CHAMPS_PATH=~/corewar/asm_test/champs
+OUR_PATH=/tmp/corewar/asm_test/our_asm
+THEIR_PATH=/tmp/corewar/asm_test/their_asm
+CHAMPS_PATH=/tmp/corewar/asm_test/champs
 
-rm $THEIR_PATH/*.cor
-rm $OUR_PATH/*.cor
+mkdir $OUR_PATH 2> /dev/null
+mkdir $THEIR_PATH 2> /dev/null
+
+rm $THEIR_PATH/*.cor 2> /dev/null
+rm $OUR_PATH/*.cor 2> /dev/null
 
 CHAMPS=$CHAMPS_PATH/*.s
 for f in $CHAMPS

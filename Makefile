@@ -6,7 +6,7 @@
 #    By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 11:25:23 by jjauzion          #+#    #+#              #
-#    Updated: 2018/06/03 16:33:55 by smortier         ###   ########.fr        #
+#    Updated: 2018/06/28 15:36:40 by smortier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,18 +34,18 @@ endif
 
 all: $(NAME1) $(NAME2)
 
-$(NAME1):
-	make -C vm
+$(NAME1): virtual_machine
+	make -C virtual_machine
 
-$(NAME2): 
+$(NAME2): assembleur 
 	make -C assembleur
 
 clean:
-	@make -C vm clean
+	@make -C virtual_machine clean
 	@make -C assembleur clean
 
 fclean: clean
-	@make -C vm fclean
+	@make -C virtual_machine fclean
 	@make -C assembleur fclean
 
 re: fclean all
