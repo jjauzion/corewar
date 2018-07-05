@@ -43,12 +43,13 @@ make
 
 Assembler:
 ./asm [-a] <file.s>
+
 Option: 
-	-a : verbose mode
+  * -a : verbose mode
 
 ./corewar [-d N -dcoplk] <champion1.cor> <...>
 Option:
-	-d N : dump memory after N cycles and then exit
+  * -d N : dump memory after N cycles and then exit
 
 Option: 
 
