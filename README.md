@@ -1,5 +1,7 @@
 ## Corewar
-Corewar is game where programs (a.k.a champions) fight till death in a memory area (a.k.a the Arena) managed by a Virtual Machine.
+Corewar is a very peculiar game. It’s about bringing “players” together around a “virtual machine”, which will load some “champions” who will fight against one another with the support of “processes”, with the objective being for these champions to stay “alive”.
+The game ends when all the processes are dead. The winner is the last player
+reported to be “alive”.
 
 This project is made of three parts:
 - The assembler: compile the Champions' code written in pseudo assembly code into binary file (bytecode)
@@ -8,7 +10,7 @@ This project is made of three parts:
 
 - The Champion: fight in the arena and (try) to win.
 
-## List of instruction
+## Assembly language
 
 Mnemonic | Opcode | Effect
 ----|----|----
@@ -39,7 +41,16 @@ make
 
 ## run
 
-./fractal mandelbort
+Assembler:
+./asm [-a] <file.s>
+Option: 
+	-a : verbose mode
+
+./corewar [-d N -dcoplk] <champion1.cor> <...>
+Option:
+	-d N : dump memory after N cycles and then exit
+
+Option: 
 
 ## Install löve for graphic output:
 
