@@ -10,6 +10,37 @@ This project is made of three parts:
 
 - The Champion: fight in the arena and (try) to win.
 
+## compile
+
+make
+
+## Execute Assembler
+
+./asm [-a] <file.s>
+
+Option: 
+  * -a : verbose mode
+
+## Execute VM
+
+./corewar [-d N -coplkv] <champion1.cor> <...>
+
+Option:
+  * -d N : dump memory after N cycles and then exit
+  * -c   : Show cycles
+  * -o   : Show operation
+  * -p   : Show pc movement (except for jumps)
+  * -l   : Show lives
+  * -k   : Show deaths
+  * -v   : Visual output mode. Pipe output to love visu
+    * Ex: ./corewar -v champ.cor | love visu
+
+## Install löve for graphic output:
+
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null ; brew install caskroom/cask/brew-cask 2> /dev/null
+
+brew cask install love
+
 ## Assembly language
 
 Mnemonic | Opcode | Effect
@@ -34,36 +65,6 @@ Suivie de 4 octets qui représente le numéro du joueur. Cette instruction ind
 
 ## compatibility
 Mac OS 
-
-## compile
-
-make
-
-## run
-
-Assembler:
-./asm [-a] <file.s>
-
-Option: 
-  * -a : verbose mode
-
-./corewar [-d N -coplkv] <champion1.cor> <...>
-
-Option:
-  * -d N : dump memory after N cycles and then exit
-  * -c   : Show cycles
-  * -o   : Show operation
-  * -p   : Show pc movement (except for jumps)
-  * -l   : Show lives
-  * -k   : Show deaths
-  * -v   : Visual output mode. Pipe output to love visu
-    * Ex: ./corewar -v champ.cor | love visu
-
-## Install löve for graphic output:
-
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null ; brew install caskroom/cask/brew-cask 2> /dev/null
-
-brew cask install love
 
 ## Mandelbrot fractal
 
