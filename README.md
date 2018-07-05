@@ -65,7 +65,3 @@ Suivie de 4 octets qui représente le numéro du joueur. Cette instruction ind
 
 ## compatibility
 Mac OS 
-
-## Mandelbrot fractal
-
-![alt text](https://raw.githubusercontent.com/kylax/fractol/master/img/mandelbrot.png)
