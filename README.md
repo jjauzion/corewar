@@ -47,11 +47,17 @@ Assembler:
 Option: 
   * -a : verbose mode
 
-./corewar [-d N -dcoplk] <champion1.cor> <...>
+./corewar [-d N -coplkv] <champion1.cor> <...>
+
 Option:
   * -d N : dump memory after N cycles and then exit
-
-Option: 
+  * -c   : Show cycles
+  * -o   : Show operation
+  * -p   : Show pc movement (except for jumps)
+  * -l   : Show lives
+  * -k   : Show deaths
+  * -v   : Visual output mode. Pipe output to love visu
+   * Ex: ./corewar -v champ.cor | love visu
 
 ## Install löve for graphic output:
 
