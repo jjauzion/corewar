@@ -57,7 +57,7 @@ Option:
   * -l   : Show lives
   * -k   : Show deaths
   * -v   : Visual output mode. Pipe output to love visu
-   * Ex: ./corewar -v champ.cor | love visu
+    * Ex: ./corewar -v champ.cor | love visu
 
 ## Install löve for graphic output:
 
