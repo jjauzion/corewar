@@ -61,7 +61,5 @@ or | 0x07 | This operation is an bit-to-bit OR, in the same spirit and principle
 xor | 0x07 | This operation is an bit-to-bit XOR.
 zjmp | 0x09 | Take an index and jump to this address if the carry is 1.
 
-Suivie de 4 octets qui représente le numéro du joueur. Cette instruction indique que ce joueur est en vie. Pas d’octet de codage des paramètres.
-
 ## compatibility
 Mac OS 
