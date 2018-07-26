@@ -1,4 +1,0 @@
---- ./test_champ/demo_wrong_nb_instr	2018-06-28 15:06:24.000000000 +0200
-+++ ./test_champ/vm_wrong_nb_instr	2018-06-28 15:09:03.000000000 +0200
-@@ -0,0 +1 @@
-+Champion's code size error

@@ -1,8 +1,8 @@
 #!/bin/bash
 
-OUR_PATH=/tmp/corewar/asm_test/our_asm
-THEIR_PATH=/tmp/corewar/asm_test/their_asm
-CHAMPS_PATH=/tmp/corewar/asm_test/champs
+OUR_PATH=/Users/jjauzion/42/corewar/asm_test/our_asm
+THEIR_PATH=/Users/jjauzion/42/corewar/asm_test/their_asm
+CHAMPS_PATH=/Users/jjauzion/42/corewar/asm_test/champs
 
 mkdir $OUR_PATH 2> /dev/null
 mkdir $THEIR_PATH 2> /dev/null
