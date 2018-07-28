@@ -23,97 +23,49 @@ mkdir $DIFF_PATH 2> /dev/null
 
 rm $THEIR_PATH/*.cor 2> /dev/null
 rm $OUR_PATH/*.cor 2> /dev/null
+rm $DIFF_PATH/* 2> /dev/null
 
 CHAMPS=$BASIC_TEST_PATH/*.s
+echo "Compiling .cor files:"
 for f in $CHAMPS
 do
-  # echo "Processing $f file..." >/dev/null
-  $OUR_EXE $f #>/dev/null
-  #output="$BASIC_TEST_PATH/`basename $f | cut -d'.' -f1`.cor"
-  # take action on each file. $f store current file name
-done
-
-MOVE=$BASIC_TEST_PATH/*.cor
-for f in $MOVE
-do
-    mv $f $OUR_PATH
-    #printf "\e[32mI move $f in $OUR_PATH\e[0m\n"
-done
-
-for f in $CHAMPS
-do
-  # echo "Processing $f file..." >/dev/null
+  $OUR_EXE $f >/dev/null
+  champ_cor="`echo $f | rev | cut -d'.' -f2- | rev`.cor"
+  mv $champ_cor $OUR_PATH 2>/dev/null
   $THEIR_EXE $f >/dev/null
-  # take action on each file. $f store current file name
+  mv $champ_cor $THEIR_PATH 2>/dev/null
+  echo -n "."
 done
+echo "\nDone!"
 
-MOVE=$BASIC_TEST_PATH/*.cor
-for f in $MOVE
-do
-    mv $f $THEIR_PATH
-    #printf "\e[31mI move $f in $OUR_PATH\e[0m\n"
-done
-
-
-OUR_COR=$OUR_PATH/*.cor
-THEIR_COR=$THEIR_PATH/*.cor
-
-
-for f in $OUR_COR
-do
-	for d in $THEIR_COR
-	do
-		name1=${f##*/}
-		name2=${d##*/}
-		# echo "Name1: $name1"
-		# echo "Name2: $name2"
-		result="$DIFF_PATH/diff_`basename $f`"
-		rm $result 2>/dev/null
-		if [[ $name1 == $name2 ]]; then
-			diff="`diff -q $OUR_PATH/$name1 $THEIR_PATH/$name2`"
-			if ! [ -z "${diff}" ]; then
-				echo "$diff" > $result
-				printf "\e[31m$name1: KO\e[0m\n"
-			else
-				printf "\e[32m$name1: OK\e[0m\n"
-			fi
+for champ_file in "${BASIC_TEST_PATH}"/*.s; do
+	their_champ="$THEIR_PATH/`basename $champ_file | cut -d'.' -f1`.cor"
+	our_champ="$OUR_PATH/`basename $champ_file | cut -d'.' -f1`.cor"
+	if [ -f "${their_champ}" ] && [ -f "${our_champ}" ]; then
+		diff="`diff -q $their_champ $our_champ`"
+		if ! [ -z "${diff}" ]; then
+			result="$DIFF_PATH/KO_`basename $champ_file | cut -d'.' -f1`"
+			echo "-----------------------------" > $result
+			echo "$diff" >> $result
+			printf "\e[31m%-30s:\t[KO]\e[0m\n" `basename ${champ_file}`
+		else
+			printf "\e[32m%-30s:\t[OK]\e[0m\n" `basename ${champ_file}`
 		fi
-	done
+	elif [ -f $their_champ ] && ! [ -f $our_champ ]; then
+		printf "\e[38;5;226m%-30s:\t[SHOULD COMPILE]\e[0m\n" `basename ${champ_file}`
+		result="$DIFF_PATH/SHOULD_COMPILE_`basename $champ_file | cut -d'.' -f1`"
+		echo "-----------------------------" > $result
+		echo "File : $champ_file" >> $result
+		echo "Our asm says:" >> $result
+		$OUR_EXE $champ_file >> $result 2>&1
+	elif ! [ -f $their_champ ] && [ -f $our_champ ]; then
+		printf "\e[38;5;202m%-30s:\t[SHOULD NOT COMPILE]\e[0m\n" `basename ${champ_file}`
+		result="$DIFF_PATH/SHOULD_NOT_COMPILE_`basename $champ_file | cut -d'.' -f1`"
+		echo "-----------------------------" > $result
+		echo "File : $champ_file" >> $result
+		echo "Their asm says:" >> $result
+		$THEIR_EXE $champ_file >> $result 2>&1
+	else
+		printf "\e[32m%-30s:\t[OK]\e[0m\n" `basename ${champ_file}`
+	fi
 done
-
-
-#Find files that should compile
-for f in $OUR_COR
-do
-    finded=0
-    for d in $THEIR_COR
-    do
-    name1=${f##*/}
-    name2=${d##*/}
-    if [[ $name1 == $name2 ]]; then
-        finded=1
-    fi
-    done
-    if [[ $finded == 0 ]]; then
-        printf "\e[38;5;202mKO : $name1 compile but it shouldn't\e[0m\n"
-    fi
-done
-
-#find files that shoul compile bit does not
-for f in $THEIR_COR
-do
-    finded=0
-    for d in $OUR_COR
-    do
-    name1=${f##*/}
-    name2=${d##*/}
-    if [[ $name1 == $name2 ]]; then
-        finded=1
-    fi
-    done
-    if [[ $finded == 0 ]]; then
-        printf "\e[38;5;226mKO : $name1 may compile but doesn't\e[0m\n"
-    fi
-done
-
-#printf "\e[31mKO : $(diff -r $THEIR_PATH $OUR_PATH)\e[0m\n"
