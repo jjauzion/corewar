@@ -1,8 +1,6 @@
 # My Files #
 ############
 push_swap
-asm
-corewar
 validation_test/check_file/
 validation_test/diff_vm/
 validation_test/diff_asm/
