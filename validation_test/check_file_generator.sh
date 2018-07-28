@@ -1,7 +1,7 @@
 #!/bin/sh
 
 EXE="resource/corewar"
-TEST_DIR="basic_test"
+TEST_DIR="our_asm"
 OUTPUT_DIR="check_file"
 CHAMPIONSHIP="championship"
 
@@ -23,7 +23,7 @@ else
 fi
 
 OPT="-v 31 "
-for file in "$TEST_DIR"/*.cor;
+for file in "${TEST_DIR}"/*.cor;
 do
 	output="$OUTPUT_DIR/demo_`basename $file | rev | cut -d'.' -f2- | rev`"; 
 	printf "${file} ..."

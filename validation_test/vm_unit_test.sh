@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MY_EXE="../corewar"
-SOURCE_DIR="basic_test"
+SOURCE_DIR="our_asm"
 CHECK_FILE_DIR="check_file"
 DIFF_DIR="diff_vm"
 
