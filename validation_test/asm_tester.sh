@@ -1,39 +1,53 @@
 #!/bin/bash
 
-OUR_PATH=/Users/jjauzion/42/corewar/asm_test/our_asm
-THEIR_PATH=/Users/jjauzion/42/corewar/asm_test/their_asm
-CHAMPS_PATH=/Users/jjauzion/42/corewar/asm_test/champs
+OUR_PATH="our_asm"
+THEIR_PATH="their_asm"
+BASIC_TEST_PATH="basic_test"
+CHAMPIONSHIP_PATH="championship"
+OUR_EXE="../asm"
+THEIR_EXE="resource/asm"
+DIFF_PATH="diff_asm"
+
+DIR="`dirname "${0}"`"
+OUR_PATH=""$DIR"/"$OUR_PATH""
+THEIR_PATH=""$DIR"/"$THEIR_PATH""
+BASIC_TEST_PATH=""$DIR"/"$BASIC_TEST_PATH""
+CHAMPIONSHIP_PATH=""$DIR"/"$CHAMPIONSHIP_PATH""
+DIFF_PATH=""$DIR"/"$DIFF_PATH""
+OUR_EXE=""$DIR"/"$OUR_EXE""
+THEIR_EXE=""$DIR"/"$THEIR_EXE""
 
 mkdir $OUR_PATH 2> /dev/null
 mkdir $THEIR_PATH 2> /dev/null
+mkdir $DIFF_PATH 2> /dev/null
 
 rm $THEIR_PATH/*.cor 2> /dev/null
 rm $OUR_PATH/*.cor 2> /dev/null
 
-CHAMPS=$CHAMPS_PATH/*.s
+CHAMPS=$BASIC_TEST_PATH/*.s
 for f in $CHAMPS
 do
   # echo "Processing $f file..." >/dev/null
-  ../asm $f #>/dev/null
+  $OUR_EXE $f #>/dev/null
+  #output="$BASIC_TEST_PATH/`basename $f | cut -d'.' -f1`.cor"
   # take action on each file. $f store current file name
 done
 
-MOVE=$CHAMPS_PATH/*.cor
+MOVE=$BASIC_TEST_PATH/*.cor
 for f in $MOVE
 do
     mv $f $OUR_PATH
     #printf "\e[32mI move $f in $OUR_PATH\e[0m\n"
 done
 
-FILES_THEIR=$THEIR_PATH/*.s
 for f in $CHAMPS
 do
   # echo "Processing $f file..." >/dev/null
-  ../resource/asm $f >/dev/null
+  $THEIR_EXE $f >/dev/null
   # take action on each file. $f store current file name
 done
 
-MOVE=$CHAMPS_PATH/*.cor
+MOVE=$BASIC_TEST_PATH/*.cor
 for f in $MOVE
 do
     mv $f $THEIR_PATH
@@ -53,11 +67,15 @@ do
 		name2=${d##*/}
 		# echo "Name1: $name1"
 		# echo "Name2: $name2"
+		result="$DIFF_PATH/diff_`basename $f`"
+		rm $result 2>/dev/null
 		if [[ $name1 == $name2 ]]; then
-			if ! diff -q $OUR_PATH/$name1 $THEIR_PATH/$name2 &>/dev/null; then
-				>&2 printf "\e[31m$name1: KO\e[0m\n"
+			diff="`diff -q $OUR_PATH/$name1 $THEIR_PATH/$name2`"
+			if ! [ -z "${diff}" ]; then
+				echo "$diff" > $result
+				printf "\e[31m$name1: KO\e[0m\n"
 			else
-				>&2 printf "\e[32m$name1: OK\e[0m\n"
+				printf "\e[32m$name1: OK\e[0m\n"
 			fi
 		fi
 	done

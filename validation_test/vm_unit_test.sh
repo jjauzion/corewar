@@ -1,13 +1,21 @@
 #!/bin/sh
 
 MY_EXE="../corewar"
-TEST_DIR="test_champ"
-CHAMPIONSHIP="championship"
+SOURCE_DIR="basic_test"
+CHECK_FILE_DIR="check_file"
+DIFF_DIR="diff_vm"
 
 DIR="`dirname "${0}"`"
-TEST_DIR=""$DIR"/"$TEST_DIR""
-CHAMPIONSHIP=""$DIR"/"$CHAMPIONSHIP""
+SOURCE_DIR=""$DIR"/"$SOURCE_DIR""
+CHECK_FILE_DIR=""$DIR"/"$CHECK_FILE_DIR""
+DIFF_DIR=""$DIR"/"$DIFF_DIR""
+CHAMPIONSHIP_SRC=""$DIR"/championship"
+CHAMPIONSHIP_CHECK_FILE=""$CHECK_FILE_DIR"/championship"
 MY_EXE=""$DIR"/"$MY_EXE""
+
+if ! [ -d $DIFF_DIR ]; then
+	mkdir $DIFF_DIR
+fi
 
 RED="\033[0;31m"
 GREEN="\033[0;32m"
@@ -19,12 +27,12 @@ else
 	BASIC=0
 fi
 OPT="-klcpo"
-for file in "${TEST_DIR}"/demo_*;
+for file in "${CHECK_FILE_DIR}"/demo_*;
 do
-	test_file="`dirname $file`/`basename $file | cut -f2- -d'_'`.cor";
-	output="`dirname $test_file`/vm_`basename $test_file | cut -f1 -d'.'`"
-	diff="`dirname $test_file`/diff_`basename $test_file | cut -f1 -d'.'`"
-	$MY_EXE $OPT $test_file > $output
+	test_file="$SOURCE_DIR/`basename $file | cut -f2- -d'_'`.cor";
+	output="$CHECK_FILE_DIR/vm_`basename $test_file | cut -f1 -d'.'`"
+	diff="$DIFF_DIR/diff_`basename $test_file | cut -f1 -d'.'`"
+	$MY_EXE $OPT $test_file &> $output
 	rm $diff 2>/dev/null
 	result="`diff -u $file $output`"
 	if ! [ -z "${result}" ]; then
@@ -41,16 +49,16 @@ if [ $BASIC == 1 ]; then
 fi
 
 OPT="-d "
-for file in "${CHAMPIONSHIP}"/demo_*;
+for file in "${CHAMPIONSHIP_CHECK_FILE}"/demo_*;
 do
-	test_file="`dirname $file`/`basename $file | cut -f2- -d'_'`.cor";
-	output="`dirname $test_file`/vm_`basename $test_file | cut -f1 -d'.'`"
-	diff="`dirname $test_file`/diff_`basename $test_file | cut -f1 -d'.'`"
+	test_file="$CHAMPIONSHIP_SRC/`basename $file | cut -f2- -d'_'`.cor";
+	output="$CHAMPIONSHIP_CHECK_FILE/vm_`basename $test_file | cut -f1 -d'.'`"
+	diff="$DIFF_DIR/diff_`basename $test_file | cut -f1 -d'.'`"
 	rm $output 2>/dev/null
 	rm $diff 2>/dev/null
 	for i in 15000 20000 25000 30000;
 	do
-		$MY_EXE $OPT $i $test_file >> $output
+		$MY_EXE $OPT $i $test_file >> $output 2>&1
 	done
 	result="`diff -u $file $output`"
 	if ! [ -z "${result}" ]; then

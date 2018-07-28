@@ -3,6 +3,11 @@
 push_swap
 asm
 corewar
+validation_test/check_file/
+validation_test/diff_vm/
+validation_test/diff_asm/
+validation_test/basic_test/their_asm/
+validation_test/basic_test/our_asm/
 *.swp
 *.dSYM
 *.a

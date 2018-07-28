@@ -1,7 +1,18 @@
-.name #"nom"
-.comment "test ocp 0x24 add"
+.name #"25 Bonus Points"
+.comment"Thx for the bonus points"
 
-ld %1060, r2
-st r2, 58
-ld %1, r3
-st r3, 59
+begin:
+	sti r1, %:live, %1
+	ld	%747522,r2
+	ld %0,r3
+
+live:
+	live %1
+	fork %:somewhere
+	zjmp %:begin
+
+somewhere:
+	sti r2,%511,%0
+	zjmp %511
+
+	
