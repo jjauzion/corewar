@@ -1,46 +1,42 @@
 #!/bin/bash
 
-./vm_option_test.sh
-
 TEST_RESULT_DIR="test_result"
 
-OUR_COR="$TEST_RESULT_DIR/our_asm"
-THEIR_COR="$TEST_RESULT_DIR/their_asm"
+COR_DIR="$TEST_RESULT_DIR/their_asm"
 CHECK_FILE_DIR="$TEST_RESULT_DIR/check_file"
 DIFF_DIR="$TEST_RESULT_DIR/diff_vm"
 MY_EXE="../corewar"
-THEIR_ASM="resource/asm"
-OUR_ASM="../asm"
+ASM_EXE="resource/asm"
+CHECK_FILE_GENERATOR="check_file_generator.sh"
 
 DIR="`dirname "${0}"`"
 TEST_RESULT_DIR=""$DIR"/"$TEST_RESULT_DIR""
-OUR_COR=""$DIR"/"$OUR_COR""
-THEIR_COR=""$DIR"/"$THEIR_COR""
+COR_DIR=""$DIR"/"$COR_DIR""
 CHECK_FILE_DIR=""$DIR"/"$CHECK_FILE_DIR""
 DIFF_DIR=""$DIR"/"$DIFF_DIR""
 MY_EXE=""$DIR"/"$MY_EXE""
-THEIR_ASM=""$DIR"/"$THEIR_ASM""
-OUR_ASM=""$DIR"/"$OUR_ASM""
+ASM_EXE=""$DIR"/"$ASM_EXE""
+CHECK_FILE_GENERATOR=""$DIR"/"$CHECK_FILE_GENERATOR""
 
 CHAMPIONSHIP_SRC=""$DIR"/championship"
 CHAMPIONSHIP_CHECK_FILE=""$CHECK_FILE_DIR"/championship"
 BASIC_TEST=""$DIR"/basic_test"
 
-if ! [ -f $OUR_ASM ]; then
-	echo "Using their asm"
-	ASM_EXE=$THEIR_ASM
-	COR_DIR=$THEIR_COR
+if [ "${1}" == "basic" ]; then
+	BASIC=1
 else
-	echo "Using our asm"
-	ASM_EXE=$OUR_ASM
-	COR_DIR=$OUR_COR
+	BASIC=0
 fi
 
 if ! [ -d $TEST_RESULT_DIR ]; then
 	mkdir $TEST_RESULT_DIR
 fi
-if ! [ -d $COR_DIR ]; then
-	mkdir $COR_DIR
+if ! [ -d $CHECK_FILE_DIR ]; then
+	if [ $BASIC == 1 ]; then
+		$CHECK_FILE_GENERATOR basic
+	else
+		$CHECK_FILE_GENERATOR
+	fi
 fi
 if ! [ -d $DIFF_DIR ]; then
 	mkdir $DIFF_DIR
@@ -50,22 +46,10 @@ RED="\033[0;31m"
 GREEN="\033[0;32m"
 NC="\033[0m"
 
-if [ "${1}" == "basic" ]; then
-	BASIC=1
-else
-	BASIC=0
-fi
-
 OPT="-klcpo"
 for file in "${CHECK_FILE_DIR}"/demo_*;
 do
 	test_file="$COR_DIR/`basename $file | cut -f2- -d'_'`.cor";
-	if ! [ -f $test_file ]; then
-		s_file="$BASIC_TEST/`basename $test_file | rev | cut -d'.' -f2- | rev`.s"
-		$ASM_EXE $s_file &>/dev/null
-		cor_file="`echo $s_file | rev | cut -d'.' -f2- | rev`.cor"
-		mv $cor_file $COR_DIR
-	fi
 	output="$CHECK_FILE_DIR/vm_`basename $test_file | cut -f1 -d'.'`"
 	diff="$DIFF_DIR/diff_`basename $test_file | cut -f1 -d'.'`"
 	$MY_EXE $OPT $test_file &> $output
