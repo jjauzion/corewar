@@ -38,6 +38,11 @@ t_lexer		*create_lexer(t_params *params, char *line)
 	{
 		tmp = params->lexer;
 		save = tmp;
+		if (!tmp)
+		{
+			ft_printf("Wrong file, please check instructions ...\n");
+			exit(0);
+		}
 		while (tmp->next)
 			tmp = tmp->next;
 		tmp->next = new_lexer(line);

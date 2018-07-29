@@ -35,6 +35,11 @@ t_instr	*create_instr(t_params *params)
 	{
 		tmp = params->instr;
 		save = tmp;
+		if (!tmp)
+		{
+			ft_printf("Wrong file, please check instructions ...\n");
+			exit(0);
+		}
 		while (tmp->next)
 			tmp = tmp->next;
 		tmp->next = new_instr();

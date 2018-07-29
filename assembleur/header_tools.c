@@ -80,6 +80,11 @@ int		get_program_size(t_params *params)
 	t_instr	*tmp;
 
 	tmp = params->instr;
+	if (!tmp)
+	{
+		ft_printf("Wrong file, please check instructions ...\n");
+		exit(0);
+	}
 	while (tmp->next)
 		tmp = tmp->next;
 	params->header.prog_size = tmp->address + tmp->nbr_bytes;

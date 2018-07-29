@@ -18,6 +18,11 @@ void	save_zjmp(t_params *params, int id, char *line)
 
 	init_instr(params);
 	tmp = params->instr;
+	if (!tmp)
+	{
+		ft_printf("Wrong file, please check instructions ...\n");
+		exit(0);
+	}
 	while (tmp->next)
 		tmp = tmp->next;
 	tmp->id = id;

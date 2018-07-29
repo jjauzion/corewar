@@ -15,13 +15,14 @@
 void				*usage(char *prog_name)
 {
 	ft_printf("Usage : %s [-d N -coplkv] <champion1.cor> <...>\n", prog_name);
-	ft_printf("\t -d N\t: Dumps memory after N cycles then exits\n", prog_name);
-	ft_printf("\t -c  \t: Show cycles\n", prog_name);
-	ft_printf("\t -o  \t: Show operations\n", prog_name);
-	ft_printf("\t -p  \t: Show pc movement (except for jumps)\n", prog_name);
-	ft_printf("\t -l  \t: Show lives\n", prog_name);
-	ft_printf("\t -k  \t: Show deaths\n", prog_name);
-	ft_printf("\t -v  \t: Visual output mode. Pipe output to love visu\n\t\t  Ex: ./corewar -v champ.cor | love visu\n", prog_name);
+	ft_printf("\t -d N\t: Dumps memory after N cycles then exits\n");
+	ft_printf("\t -c  \t: Show cycles\n");
+	ft_printf("\t -o  \t: Show operations\n");
+	ft_printf("\t -p  \t: Show pc movement (except for jumps)\n");
+	ft_printf("\t -l  \t: Show lives\n");
+	ft_printf("\t -k  \t: Show deaths\n");
+	ft_printf("\t -v  \t: Visual output mode. Pipe output to love visu\n\t\t");
+	ft_printf("Ex: ./corewar -v champ.cor | love visu\n");
 	return (NULL);
 }
 
