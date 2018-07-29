@@ -28,6 +28,48 @@ void	clear_comments(char **line)
 	}
 }
 
+int		check_name_com(char *name)
+{
+	int		index;
+
+	index = -1;
+	if (!ft_strchr(name, '"'))
+	{
+		ft_printf("Error: syntax error on name\n");
+		exit(0);
+	}
+	while (name[++index] && name[index] != '"')
+	{
+		if (name[index] == COMMENT_CHAR)
+		{
+			ft_printf("Error: %c in name\n", COMMENT_CHAR);
+			exit(0);
+		}
+	}
+	return (1);
+}
+
+int		check_com_com(char *comment)
+{
+	int		index;
+
+	index = -1;
+	if (!ft_strchr(comment, '"'))
+	{
+		ft_printf("Error: syntax error on name\n");
+		exit(0);
+	}
+	while (comment[++index] && comment[index] != '"')
+	{
+		if (comment[index] == COMMENT_CHAR)
+		{
+			ft_printf("Error: %c in name\n", COMMENT_CHAR);
+			exit(0);
+		}
+	}
+	return (1);
+}
+
 void	check_name_and_comment(t_params *params)
 {
 	int	index;
@@ -40,9 +82,11 @@ void	check_name_and_comment(t_params *params)
 	while (params->file[++index])
 	{
 		!ft_strncmp(pass_ws(params->file[index]), NAME_CMD_STRING,
-			ft_strlen(NAME_CMD_STRING)) ? name += 1 : 0;
+			ft_strlen(NAME_CMD_STRING)) ? name +=
+						check_name_com(params->file[index]) : 0;
 		!ft_strncmp(pass_ws(params->file[index]), COMMENT_CMD_STRING,
-			ft_strlen(COMMENT_CMD_STRING)) ? comment += 1 : 0;
+			ft_strlen(COMMENT_CMD_STRING)) ? comment +=
+				check_com_com(params->file[index]) : 0;
 	}
 	if (comment != 1)
 		ft_printf("Error: Number of comments in the file is wrong!\n");
