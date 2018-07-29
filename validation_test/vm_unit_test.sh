@@ -1,5 +1,7 @@
 #!/bin/bash
 
+./vm_option_test.sh
+
 TEST_RESULT_DIR="test_result"
 
 OUR_COR="$TEST_RESULT_DIR/our_asm"
@@ -53,6 +55,7 @@ if [ "${1}" == "basic" ]; then
 else
 	BASIC=0
 fi
+
 OPT="-klcpo"
 for file in "${CHECK_FILE_DIR}"/demo_*;
 do

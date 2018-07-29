@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/04 14:05:31 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/11 11:01:24 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/07/29 18:00:17 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,14 @@ static int		set_option(int *index, t_option *option, char *arg1, char *arg2)
 	arg1++;
 	while (*arg1)
 	{
-		if (*arg1 == 'd')
+		if (*arg1 == 'd' || *arg1 == 'n')
 		{
 			if (arg2 == NULL || !ft_isnumber(arg2))
 				return (ERROR);
-			else
+			else if (*arg1 == 'd')
 				option->d_cycle = ft_atoi(arg2);
+			else if (*arg1 == 'n')
+				option->champ_order = arg2;
 			(*index)++;
 		}
 		tmp = 1;

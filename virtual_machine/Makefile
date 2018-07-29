@@ -6,7 +6,7 @@
 #    By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/08 11:25:23 by jjauzion          #+#    #+#              #
-#    Updated: 2018/06/23 11:48:35 by jjauzion         ###   ########.fr        #
+#    Updated: 2018/07/29 19:45:07 by jjauzion         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,7 +66,7 @@ CC = gcc
 ifdef FLAG
 	ifeq ($(FLAG), no)
 	CFLAGS =
-	DBFLAGS =
+	DBFLAGS = -g3
 endif
 ifeq ($(FLAG), debug)
 	CFLAGS = -Wall -Wextra -Werror

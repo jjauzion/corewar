@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:02:07 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/28 10:10:07 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/07/29 17:52:34 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,13 @@ typedef unsigned char	t_uchar;
 typedef unsigned int	t_uint;
 
 # define VALID_OPT "kcoplv"
-# define VALID_OPT_WITH_VAL "d"
+# define VALID_OPT_WITH_VAL "dn"
 
 typedef struct			s_option
 {
 	int				option;
 	int				d_cycle;
+	char			*champ_order;
 }						t_option;
 
 typedef	struct			s_op

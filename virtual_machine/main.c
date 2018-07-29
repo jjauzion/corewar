@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:30:29 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/28 10:48:31 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/07/29 20:04:48 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,22 @@ static	void	print_champions(t_arena *arena)
 	}
 }
 
+static	void	free_champions(t_arena *arena)
+{
+	int		i;
+
+	i = -1;
+	while (++i < arena->nb_champion)
+	{
+		free(arena->champions[i]->code);
+		free(arena->champions[i]);
+	}
+	free(arena->champions);
+}
+
 static	int		free_arena(t_arena *arena)
 {
+	free_champions(arena);
 	free(arena->option);
 	free(arena->mem);
 	free(arena);
@@ -66,7 +80,7 @@ int				main(int argc, char **argv)
 	(void)argv;
 	if (!(arena = (t_arena*)ft_memalloc(sizeof(t_arena))))
 		return (ERROR);
-	if ((arena->champions = check_input(argc, argv, arena)) == NULL)
+	if (check_input(argc, argv, arena) == NULL)
 		return (free_arena(arena));
 	if (!(arena->mem = (t_uchar*)ft_memalloc(MEM_SIZE)))
 		return (free_arena(arena));
@@ -75,13 +89,6 @@ int				main(int argc, char **argv)
 	print_champions(arena);
 	if (run_arena(arena) != ERROR)
 		print_winner(arena);
-	while (arena->nb_champion)
-	{
-		free(arena->champions[arena->nb_champion - 1]->code);
-		free(arena->champions[arena->nb_champion - 1]);
-		arena->nb_champion--;
-	}
-	free(arena->champions);
 	free_arena(arena);
 	return (SUCCESS);
 }
