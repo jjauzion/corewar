@@ -1,12 +1,12 @@
 #!/bin/bash
 
-OUR_PATH="our_asm"
-THEIR_PATH="their_asm"
+OUR_PATH="test_result/our_asm"
+THEIR_PATH="test_result/their_asm"
 BASIC_TEST_PATH="basic_test"
 CHAMPIONSHIP_PATH="championship"
 OUR_EXE="../asm"
 THEIR_EXE="resource/asm"
-DIFF_PATH="diff_asm"
+DIFF_PATH="test_result/diff_asm"
 
 DIR="`dirname "${0}"`"
 OUR_PATH=""$DIR"/"$OUR_PATH""
@@ -17,6 +17,7 @@ DIFF_PATH=""$DIR"/"$DIFF_PATH""
 OUR_EXE=""$DIR"/"$OUR_EXE""
 THEIR_EXE=""$DIR"/"$THEIR_EXE""
 
+mkdir "test_result" 2> /dev/null
 mkdir $OUR_PATH 2> /dev/null
 mkdir $THEIR_PATH 2> /dev/null
 mkdir $DIFF_PATH 2> /dev/null
