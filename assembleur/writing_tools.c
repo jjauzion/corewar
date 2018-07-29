@@ -98,6 +98,11 @@ void	write_bytecode(t_params *params)
 	}
 	get_header(params);
 	file = open(name, O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR);
+	if (file == -1)
+	{
+		ft_printf("Error: Unable to open file \e[31m%s\e[0m\n", name);
+		exit(0);
+	}
 	ft_strdel(&name);
 	print_header(file, params);
 	print_body(file, tmp);
