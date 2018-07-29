@@ -1,11 +1,7 @@
 # My Files #
 ############
 push_swap
-validation_test/test_result/check_file/
-validation_test/test_result/diff_vm/
-validation_test/test_result/diff_asm/
-validation_test/test_result/their_asm/
-validation_test/test_result/our_asm/
+validation_test/test_result/
 *.swp
 *.dSYM
 *.a

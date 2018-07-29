@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:30:29 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/07/29 20:04:48 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/07/29 20:21:24 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,18 @@ static	void	free_champions(t_arena *arena)
 
 static	int		free_arena(t_arena *arena)
 {
+	t_process *next;
+
 	free_champions(arena);
 	free(arena->option);
 	free(arena->mem);
+	while (arena->process)
+	{
+		next = arena->process->next;
+		free(arena->process->op);
+		free(arena->process);
+		arena->process = next;
+	}
 	free(arena);
 	return (ERROR);
 }
