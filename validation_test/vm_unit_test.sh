@@ -1,18 +1,45 @@
-#!/bin/sh
+#!/bin/bash
 
+TEST_RESULT_DIR="test_result"
+
+OUR_COR="$TEST_RESULT_DIR/our_asm"
+THEIR_COR="$TEST_RESULT_DIR/their_asm"
+CHECK_FILE_DIR="$TEST_RESULT_DIR/check_file"
+DIFF_DIR="$TEST_RESULT_DIR/diff_vm"
 MY_EXE="../corewar"
-SOURCE_DIR="our_asm"
-CHECK_FILE_DIR="check_file"
-DIFF_DIR="diff_vm"
+THEIR_ASM="resource/asm"
+OUR_ASM="../asm"
 
 DIR="`dirname "${0}"`"
-SOURCE_DIR=""$DIR"/"$SOURCE_DIR""
+TEST_RESULT_DIR=""$DIR"/"$TEST_RESULT_DIR""
+OUR_COR=""$DIR"/"$OUR_COR""
+THEIR_COR=""$DIR"/"$THEIR_COR""
 CHECK_FILE_DIR=""$DIR"/"$CHECK_FILE_DIR""
 DIFF_DIR=""$DIR"/"$DIFF_DIR""
+MY_EXE=""$DIR"/"$MY_EXE""
+THEIR_ASM=""$DIR"/"$THEIR_ASM""
+OUR_ASM=""$DIR"/"$OUR_ASM""
+
 CHAMPIONSHIP_SRC=""$DIR"/championship"
 CHAMPIONSHIP_CHECK_FILE=""$CHECK_FILE_DIR"/championship"
-MY_EXE=""$DIR"/"$MY_EXE""
+BASIC_TEST=""$DIR"/basic_test"
 
+if ! [ -f $OUR_ASM ]; then
+	echo "Using their asm"
+	ASM_EXE=$THEIR_ASM
+	COR_DIR=$THEIR_COR
+else
+	echo "Using our asm"
+	ASM_EXE=$OUR_ASM
+	COR_DIR=$OUR_COR
+fi
+
+if ! [ -d $TEST_RESULT_DIR ]; then
+	mkdir $TEST_RESULT_DIR
+fi
+if ! [ -d $COR_DIR ]; then
+	mkdir $COR_DIR
+fi
 if ! [ -d $DIFF_DIR ]; then
 	mkdir $DIFF_DIR
 fi
@@ -29,7 +56,13 @@ fi
 OPT="-klcpo"
 for file in "${CHECK_FILE_DIR}"/demo_*;
 do
-	test_file="$SOURCE_DIR/`basename $file | cut -f2- -d'_'`.cor";
+	test_file="$COR_DIR/`basename $file | cut -f2- -d'_'`.cor";
+	if ! [ -f $test_file ]; then
+		s_file="$BASIC_TEST/`basename $test_file | rev | cut -d'.' -f2- | rev`.s"
+		$ASM_EXE $s_file &>/dev/null
+		cor_file="`echo $s_file | rev | cut -d'.' -f2- | rev`.cor"
+		mv $cor_file $COR_DIR
+	fi
 	output="$CHECK_FILE_DIR/vm_`basename $test_file | cut -f1 -d'.'`"
 	diff="$DIFF_DIR/diff_`basename $test_file | cut -f1 -d'.'`"
 	$MY_EXE $OPT $test_file &> $output

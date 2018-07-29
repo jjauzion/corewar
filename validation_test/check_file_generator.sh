@@ -1,16 +1,35 @@
-#!/bin/sh
+#!/bin/bash
 
+TEST_RESULT_DIR="test_result"
+
+ASM_EXE="resource/asm"
 EXE="resource/corewar"
-TEST_DIR="our_asm"
-OUTPUT_DIR="check_file"
+COR_DIR="$TEST_RESULT_DIR/their_asm"
+OUTPUT_DIR="$TEST_RESULT_DIR/check_file"
 CHAMPIONSHIP="championship"
+BASIC_TEST="basic_test"
 
 DIR="`dirname "${0}"`"
+ASM_EXE=""$DIR"/"$ASM_EXE""
 EXE=""$DIR"/"$EXE""
-TEST_DIR=""$DIR"/"$TEST_DIR""
+COR_DIR=""$DIR"/"$COR_DIR""
 OUTPUT_DIR=""$DIR"/"$OUTPUT_DIR""
 CHAMPIONSHIP=""$DIR"/"$CHAMPIONSHIP""
+BASIC_TEST=""$DIR"/"$BASIC_TEST""
 
+if ! [ -d $TEST_RESULT_DIR ]; then
+	mkdir $TEST_RESULT_DIR
+fi
+if ! [ -d $COR_DIR ]; then
+	mkdir $COR_DIR
+	echo -n "Compiling champions ..."
+	for champs in "${BASIC_TEST}"/*.s; do
+		$ASM_EXE $champs >/dev/null
+		cor_file="`echo $champs | rev | cut -d'.' -f2- | rev`.cor"
+		mv $cor_file $COR_DIR &>/dev/null
+	done
+	echo " done !"
+fi
 if ! [ -d $OUTPUT_DIR ]; then
 	mkdir $OUTPUT_DIR
 	mkdir "$OUTPUT_DIR/championship"
@@ -23,7 +42,7 @@ else
 fi
 
 OPT="-v 31 "
-for file in "${TEST_DIR}"/*.cor;
+for file in "${COR_DIR}"/*.cor;
 do
 	output="$OUTPUT_DIR/demo_`basename $file | rev | cut -d'.' -f2- | rev`"; 
 	printf "${file} ..."
