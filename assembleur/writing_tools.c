@@ -91,6 +91,11 @@ void	write_bytecode(t_params *params)
 
 	name = ft_strjoin(params->file_name, ".cor");
 	tmp = params->instr;
+	if (!tmp)
+	{
+		ft_printf("Wrong file, please check instructions ...\n");
+		exit(0);
+	}
 	get_header(params);
 	file = open(name, O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR);
 	ft_strdel(&name);
