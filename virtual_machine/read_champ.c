@@ -6,13 +6,11 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 17:25:23 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/06/28 10:05:01 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/08/11 11:15:15 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vm.h"
-#define BUFF_SIZE1 2 * (int)S_UINT + CHAMP_MAX_SIZE + PROG_NAME_LENGTH
-#define BUF_SIZE BUFF_SIZE1 + 1 + COMMENT_LENGTH + 1 + 6
 
 static	t_champion	*progname(t_champion *champion, t_uchar *buff, int nb_byte)
 {
@@ -74,7 +72,7 @@ static t_champion	*check(t_champion *champion, t_uchar *buff, int nb_byte,
 t_champion			*read_champ(char *file)
 {
 	int			fd;
-	t_uchar		buff[BUF_SIZE];
+	t_uchar		buff[16 + CHAMP_MAX_SIZE + PROG_NAME_LENGTH + COMMENT_LENGTH];
 	t_champion	*champion;
 	int			nb_byte;
 	int			ret;

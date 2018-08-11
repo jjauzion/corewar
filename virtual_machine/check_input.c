@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/04 14:05:19 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/07/29 20:01:19 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/08/11 10:52:45 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,8 @@ t_champion			**check_input(int argc, char **argv, t_arena *arena)
 	{
 		if ((ret = option(&i, argc, argv, arena->option)) == 1)
 		{
-			if (!(arena->champions = add_champ(arena->champions, arena, argv[i])))
+			if (!(arena->champions =
+						add_champ(arena->champions, arena, argv[i])))
 				return (NULL);
 		}
 		else if (ret == ERROR)
