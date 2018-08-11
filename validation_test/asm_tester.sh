@@ -73,3 +73,35 @@ for champ_file in "${BASIC_TEST_PATH}"/*.s; do
 		printf "\e[32m%-30s:\t[OK]\e[0m\n" `basename ${champ_file}`
 	fi
 done
+
+for champ_file in "${CHAMPIONSHIP_PATH}"/*.s; do
+	their_champ="$THEIR_PATH/`basename $champ_file | cut -d'.' -f1`.cor"
+	our_champ="$OUR_PATH/`basename $champ_file | cut -d'.' -f1`.cor"
+	if [ -f "${their_champ}" ] && [ -f "${our_champ}" ]; then
+		diff="`diff -q $their_champ $our_champ`"
+		if ! [ -z "${diff}" ]; then
+			result="$DIFF_PATH/KO_`basename $champ_file | cut -d'.' -f1`"
+			echo "-----------------------------" > $result
+			echo "$diff" >> $result
+			printf "\e[31m%-30s:\t[KO]\e[0m\n" `basename ${champ_file}`
+		else
+			printf "\e[32m%-30s:\t[OK]\e[0m\n" `basename ${champ_file}`
+		fi
+	elif [ -f $their_champ ] && ! [ -f $our_champ ]; then
+		printf "\e[38;5;226m%-30s:\t[SHOULD COMPILE]\e[0m\n" `basename ${champ_file}`
+		result="$DIFF_PATH/SHOULD_COMPILE_`basename $champ_file | cut -d'.' -f1`"
+		echo "-----------------------------" > $result
+		echo "File : $champ_file" >> $result
+		echo "Our asm says:" >> $result
+		$OUR_EXE $champ_file >> $result 2>&1
+	elif ! [ -f $their_champ ] && [ -f $our_champ ]; then
+		printf "\e[38;5;202m%-30s:\t[SHOULD NOT COMPILE]\e[0m\n" `basename ${champ_file}`
+		result="$DIFF_PATH/SHOULD_NOT_COMPILE_`basename $champ_file | cut -d'.' -f1`"
+		echo "-----------------------------" > $result
+		echo "File : $champ_file" >> $result
+		echo "Their asm says:" >> $result
+		$THEIR_EXE $champ_file >> $result 2>&1
+	else
+		printf "\e[32m%-30s:\t[OK]\e[0m\n" `basename ${champ_file}`
+	fi
+done
