@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:02:07 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/07/29 17:52:34 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/08/11 11:34:22 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@
 # define PID_MAX 2147483647
 # define REG_LENGTH 1
 
-# define S_UINT sizeof(unsigned int)
-# define S_SHORT sizeof(short)
+# define S_UINT 4
+# define S_SHORT 2
 
 typedef unsigned char	t_uchar;
 typedef unsigned int	t_uint;
