@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 14:02:07 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/08/11 11:34:22 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/08/11 14:19:14 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,6 +136,7 @@ int						get_arg_val(
 		t_process *process, int arg_id, t_uchar *mem, int arg_index);
 int						get_arg_id(
 		t_process *process, int arg_id, t_uchar *mem, int arg_index);
+void					*free_champions(t_champion **champions, int nb_champ);
 
 int						ld(t_process *process, t_arena *arena);
 int						lld(t_process *process, t_arena *arena);

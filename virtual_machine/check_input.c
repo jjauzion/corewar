@@ -6,7 +6,7 @@
 /*   By: jjauzion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/04 14:05:19 by jjauzion          #+#    #+#             */
-/*   Updated: 2018/08/11 10:52:45 by jjauzion         ###   ########.fr       */
+/*   Updated: 2018/08/11 14:20:28 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,9 @@ static void			*reorder_champs(t_champion ***champions, t_arena *arena)
 	while (++i < arena->nb_champion)
 	{
 		new_position = arena->option->champ_order[i] - '0' - 1;
-		if (new_position < 0 || new_position >= MAX_PLAYERS)
-			return (error_ptr(new_list, "Wrong order number after -n\n"));
-		if (!(new_list[i] = (*champions)[new_position]))
-			return (error_ptr(new_list, "Wrong order number after -n\n"));
+		if ((new_position < 0 || new_position >= arena->nb_champion) ||
+				(!(new_list[i] = (*champions)[new_position])))
+			return (free_champions(new_list, arena->nb_champion));
 		(*champions)[new_position] = NULL;
 	}
 	free(*champions);
