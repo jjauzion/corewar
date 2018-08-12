@@ -1,4 +1,4 @@
-.name"25 Bonus Points"
+.name "25 bonus point"
 .comment"Thx for the bonus points"
 
 begin:
