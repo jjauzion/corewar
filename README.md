@@ -63,3 +63,7 @@ zjmp | 0x09 | Take an index and jump to this address if the carry is 1.
 
 ## compatibility
 Mac OS 
+
+## Interface
+
+![alt text](https://raw.githubusercontent.com/kylax/corewar/master/img/corewar.png)
