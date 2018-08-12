@@ -6,7 +6,7 @@
 /*   By: smortier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/27 19:03:22 by smortier          #+#    #+#             */
-/*   Updated: 2018/06/27 19:03:25 by smortier         ###   ########.fr       */
+/*   Updated: 2018/08/12 18:40:17 by jjauzion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 char	*multi_line_holder(int fd, char *line)
 {
+	if (!ft_strchr(line, '"'))
+		exit(0);
 	if (!ft_strncmp(line, COMMENT_CMD_STRING,
 				ft_strlen(COMMENT_CMD_STRING)))
 	{
